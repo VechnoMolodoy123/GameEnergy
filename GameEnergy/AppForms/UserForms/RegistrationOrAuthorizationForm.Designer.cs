@@ -131,17 +131,19 @@
             this.logInButton.Size = new System.Drawing.Size(118, 34);
             this.logInButton.TabIndex = 12;
             this.logInButton.Text = "ВОЙТИ";
+            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
             // logInVisiblePassword
             // 
             this.logInVisiblePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.logInVisiblePassword.Image = global::GameEnergy.Properties.Resources.visiblePussword;
-            this.logInVisiblePassword.Location = new System.Drawing.Point(233, 95);
+            this.logInVisiblePassword.Location = new System.Drawing.Point(235, 97);
             this.logInVisiblePassword.Name = "logInVisiblePassword";
-            this.logInVisiblePassword.Size = new System.Drawing.Size(25, 22);
+            this.logInVisiblePassword.Size = new System.Drawing.Size(21, 18);
             this.logInVisiblePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logInVisiblePassword.TabIndex = 15;
             this.logInVisiblePassword.TabStop = false;
+            this.logInVisiblePassword.Click += new System.EventHandler(this.logInVisiblePassword_Click);
             // 
             // logInUnvisiblePassword
             // 
@@ -154,6 +156,7 @@
             this.logInUnvisiblePassword.TabIndex = 14;
             this.logInUnvisiblePassword.TabStop = false;
             this.logInUnvisiblePassword.Visible = false;
+            this.logInUnvisiblePassword.Click += new System.EventHandler(this.logInUnvisiblePassword_Click);
             // 
             // fogetPasswordLabel
             // 
@@ -166,13 +169,14 @@
             this.fogetPasswordLabel.Size = new System.Drawing.Size(121, 17);
             this.fogetPasswordLabel.TabIndex = 13;
             this.fogetPasswordLabel.Text = "Забыли пароль?";
+            this.fogetPasswordLabel.Click += new System.EventHandler(this.fogetPasswordLabel_Click);
             // 
             // logInPasswordTextField
             // 
-            this.logInPasswordTextField.BackColor = System.Drawing.SystemColors.Control;
+            this.logInPasswordTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.logInPasswordTextField.Depth = 0;
             this.logInPasswordTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logInPasswordTextField.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.logInPasswordTextField.ForeColor = System.Drawing.Color.IndianRed;
             this.logInPasswordTextField.Hint = "Пароль";
             this.logInPasswordTextField.Location = new System.Drawing.Point(37, 94);
             this.logInPasswordTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -187,10 +191,10 @@
             // 
             // logInNameTextField
             // 
-            this.logInNameTextField.BackColor = System.Drawing.SystemColors.Control;
+            this.logInNameTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.logInNameTextField.Depth = 0;
             this.logInNameTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logInNameTextField.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.logInNameTextField.ForeColor = System.Drawing.Color.White;
             this.logInNameTextField.Hint = "Логин или почта";
             this.logInNameTextField.Location = new System.Drawing.Point(37, 51);
             this.logInNameTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -224,12 +228,13 @@
             // 
             this.unvisiblePassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.unvisiblePassword.Image = global::GameEnergy.Properties.Resources.visiblePussword;
-            this.unvisiblePassword.Location = new System.Drawing.Point(233, 122);
+            this.unvisiblePassword.Location = new System.Drawing.Point(235, 124);
             this.unvisiblePassword.Name = "unvisiblePassword";
-            this.unvisiblePassword.Size = new System.Drawing.Size(25, 22);
+            this.unvisiblePassword.Size = new System.Drawing.Size(21, 18);
             this.unvisiblePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.unvisiblePassword.TabIndex = 17;
             this.unvisiblePassword.TabStop = false;
+            this.unvisiblePassword.Click += new System.EventHandler(this.unvisiblePassword_Click);
             // 
             // visiblePassword
             // 
@@ -242,6 +247,7 @@
             this.visiblePassword.TabIndex = 16;
             this.visiblePassword.TabStop = false;
             this.visiblePassword.Visible = false;
+            this.visiblePassword.Click += new System.EventHandler(this.visiblePassword_Click);
             // 
             // registerButton
             // 
@@ -263,13 +269,14 @@
             this.registerButton.Size = new System.Drawing.Size(184, 34);
             this.registerButton.TabIndex = 11;
             this.registerButton.Text = "ЗАРЕГИСТРИРОВАТЬСЯ";
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // mailTextField
             // 
             this.mailTextField.BackColor = System.Drawing.SystemColors.Control;
             this.mailTextField.Depth = 0;
             this.mailTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.mailTextField.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mailTextField.ForeColor = System.Drawing.Color.White;
             this.mailTextField.Hint = "Почта";
             this.mailTextField.Location = new System.Drawing.Point(37, 70);
             this.mailTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -287,7 +294,7 @@
             this.confirmPasswordTextField.BackColor = System.Drawing.SystemColors.Control;
             this.confirmPasswordTextField.Depth = 0;
             this.confirmPasswordTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.confirmPasswordTextField.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.confirmPasswordTextField.ForeColor = System.Drawing.Color.White;
             this.confirmPasswordTextField.Hint = "Подтверждение пароля";
             this.confirmPasswordTextField.Location = new System.Drawing.Point(37, 141);
             this.confirmPasswordTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -305,7 +312,7 @@
             this.passwordTextField.BackColor = System.Drawing.SystemColors.Control;
             this.passwordTextField.Depth = 0;
             this.passwordTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.passwordTextField.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.passwordTextField.ForeColor = System.Drawing.Color.White;
             this.passwordTextField.Hint = "Пароль";
             this.passwordTextField.Location = new System.Drawing.Point(37, 105);
             this.passwordTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -323,7 +330,7 @@
             this.nameTextField.BackColor = System.Drawing.SystemColors.Control;
             this.nameTextField.Depth = 0;
             this.nameTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.nameTextField.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.nameTextField.ForeColor = System.Drawing.Color.White;
             this.nameTextField.Hint = "Логин";
             this.nameTextField.Location = new System.Drawing.Point(37, 35);
             this.nameTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -346,6 +353,7 @@
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(305, 30);
             this.navigationPanel.TabIndex = 3;
+            this.navigationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.navigationPanel_MouseDown);
             // 
             // closeButton
             // 
@@ -358,6 +366,7 @@
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 20;
             this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // collapseButton
             // 
@@ -370,14 +379,18 @@
             this.collapseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.collapseButton.TabIndex = 21;
             this.collapseButton.TabStop = false;
+            this.collapseButton.Click += new System.EventHandler(this.collapseButton_Click);
             // 
             // line
             // 
+            this.line.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.line.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.line.BorderRadius = 1;
-            this.line.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.line.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.line.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.line.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.line.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.line.DisabledState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.line.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.line.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.line.Enabled = false;
             this.line.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.line.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.line.ForeColor = System.Drawing.Color.White;
@@ -408,6 +421,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrationOrAuthorizationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация/Авторизация";
             this.registrationOrAuthorizationTabControl.ResumeLayout(false);
             this.Authorization.ResumeLayout(false);
