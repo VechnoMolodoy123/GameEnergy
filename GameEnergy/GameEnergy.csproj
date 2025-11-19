@@ -79,6 +79,12 @@
     <Compile Include="AppForms\UserForms\ForgetPasswordForm.Designer.cs">
       <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\UserForms\GameInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\GameInfoForm.Designer.cs">
+      <DependentUpon>GameInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UserForms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     <Compile Include="Models\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\UserForms\GameInfoForm.resx">
+      <DependentUpon>GameInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>

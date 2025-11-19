@@ -1,6 +1,7 @@
 ﻿using GameEnergy.AppForms.UserForms;
 using GameEnergy.Classes.Animations;
 using GameEnergy.Classes.Customization;
+using GameEnergy.Classes.Validation;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -75,14 +76,37 @@ namespace GameEnergy
 
         private async void logInButton_Click(object sender, EventArgs e)
         {
-            MainForm form = new MainForm();
-            form.Show();
-            this.Hide();
+            MaterialSingleLineTextField[] fields = { logInNameTextField, logInPasswordTextField };
+
+            if (await ValidationHelper.ValidateFieldIsEmpty(fields))
+            {
+                if (ValidationHelper.ValidateLogIn(logInNameTextField, logInPasswordTextField))
+                {
+                    MainForm form = new MainForm();
+                    form.Show();
+                    this.Hide();
+                }
+            }
         }
 
         private async void registerButton_Click(object sender, EventArgs e)
         {
-            registrationOrAuthorizationTabControl.SelectedIndex = 0;
+            MaterialSingleLineTextField[] fields = { nameTextField, mailTextField, passwordTextField, confirmPasswordTextField };
+            string mail = mailTextField.Text?.Trim();
+
+            if (await ValidationHelper.ValidateFieldIsEmpty(fields))
+            {
+                if (ValidationHelper.ValidateMailField(mail))
+                {
+                    if (ValidationHelper.ValidationPasswordField(passwordTextField, confirmPasswordTextField))
+                    {
+                        if (ValidationHelper.ValidationRegistration(nameTextField, mailTextField, passwordTextField, confirmPasswordTextField))
+                        {
+                            registrationOrAuthorizationTabControl.SelectedIndex = 0;
+                        }
+                    }
+                }
+            }
         }
 
         private void closeButton_Click(object sender, EventArgs e)
