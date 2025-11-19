@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
@@ -59,6 +59,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -81,6 +83,21 @@
     <Compile Include="Classes\Customization\VisibilityHelper.cs" />
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
+    <Compile Include="Models\GameDevelopers.cs" />
+    <Compile Include="Models\GameEnergyModel.cs" />
+    <Compile Include="Models\GameReportCategory.cs" />
+    <Compile Include="Models\GameReports.cs" />
+    <Compile Include="Models\Games.cs" />
+    <Compile Include="Models\Genres.cs" />
+    <Compile Include="Models\MainCategory.cs" />
+    <Compile Include="Models\OrderItems.cs" />
+    <Compile Include="Models\Orders.cs" />
+    <Compile Include="Models\Rating.cs" />
+    <Compile Include="Models\Reviews.cs" />
+    <Compile Include="Models\SystemNotifications.cs" />
+    <Compile Include="Models\UserLibrary.cs" />
+    <Compile Include="Models\UserRoles.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
@@ -112,9 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppForms\AdminForms\" />
+    <Folder Include="Classes\Key\" />
     <Folder Include="CustomControls\" />
     <Folder Include="Docs\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
@@ -127,9 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gear.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />
@@ -190,6 +204,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

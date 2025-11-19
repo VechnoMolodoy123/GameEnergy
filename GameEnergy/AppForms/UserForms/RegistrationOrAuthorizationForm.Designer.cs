@@ -73,23 +73,23 @@
             this.registrationOrAuthorizationTabControl.SelectedIndex = 0;
             this.registrationOrAuthorizationTabControl.Size = new System.Drawing.Size(305, 301);
             this.registrationOrAuthorizationTabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.registrationOrAuthorizationTabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.registrationOrAuthorizationTabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(54)))), ((int)(((byte)(54)))));
             this.registrationOrAuthorizationTabControl.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.registrationOrAuthorizationTabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
-            this.registrationOrAuthorizationTabControl.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.registrationOrAuthorizationTabControl.TabButtonHoverState.InnerColor = System.Drawing.Color.DimGray;
             this.registrationOrAuthorizationTabControl.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.registrationOrAuthorizationTabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.registrationOrAuthorizationTabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.registrationOrAuthorizationTabControl.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.registrationOrAuthorizationTabControl.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-            this.registrationOrAuthorizationTabControl.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.registrationOrAuthorizationTabControl.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-            this.registrationOrAuthorizationTabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.registrationOrAuthorizationTabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-            this.registrationOrAuthorizationTabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.registrationOrAuthorizationTabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.DarkGray;
             this.registrationOrAuthorizationTabControl.TabButtonSize = new System.Drawing.Size(150, 40);
             this.registrationOrAuthorizationTabControl.TabIndex = 4;
-            this.registrationOrAuthorizationTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.registrationOrAuthorizationTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(24)))));
             this.registrationOrAuthorizationTabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             // 
             // Authorization
@@ -394,7 +394,7 @@
             this.Controls.Add(this.navigationPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrationOrAuthorizationForm";
             this.Text = "Регистрация/Авторизация";
             this.registrationOrAuthorizationTabControl.ResumeLayout(false);
