@@ -71,14 +71,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppForms\UserForms\Form1.cs">
+    <Compile Include="AppForms\UserForms\RegistrationOrAuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppForms\UserForms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AppForms\UserForms\RegistrationOrAuthorizationForm.Designer.cs">
+      <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
+      <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
