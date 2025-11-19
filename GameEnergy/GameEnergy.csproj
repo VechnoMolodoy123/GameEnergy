@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
@@ -84,6 +87,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -105,7 +109,81 @@
     <Folder Include="CustomControls\" />
     <Folder Include="Docs\" />
     <Folder Include="Models\" />
-    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DefaultTrailerImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifyingGlass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainActive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainDiscount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainGame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainOperator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainPersonalDiscount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximaze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PlayTrailer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redLike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unVisiblePussword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\visiblePussword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteLike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellowStar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
