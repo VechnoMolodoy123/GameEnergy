@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Classes\Animations\FormDrag.cs" />
     <Compile Include="Classes\Customization\VisibilityHelper.cs" />
+    <Compile Include="Classes\DataAccess\UserAvatarDataHelper.cs" />
     <Compile Include="Classes\Hash\HashHelper.cs" />
     <Compile Include="Classes\Images\InstallingImages\ImageLoader.cs" />
     <Compile Include="Classes\Images\StoreImages\CodingOrDecoding.cs" />
