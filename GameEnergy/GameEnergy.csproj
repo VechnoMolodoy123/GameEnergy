@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Classes\Animations\FormDrag.cs" />
     <Compile Include="Classes\Customization\VisibilityHelper.cs" />
+    <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
