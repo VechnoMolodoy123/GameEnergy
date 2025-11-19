@@ -5,6 +5,7 @@ using GameEnergy.Models;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -123,6 +124,28 @@ namespace GameEnergy.Classes.Validation
                 MessageHelper.ShowErrorMessage("Пользователь не найден");
                 return false;
             }
+        }
+
+        public static async Task<bool> ValidateFieldIsEmpty(MaterialSingleLineTextField[] fields)
+        {
+            Color errorColor = ColorTranslator.FromHtml("#b71c1c");
+            bool allFieldsFilled = true;
+
+            var tasks = fields.Select(async field =>
+            {
+                Color originalColor = field.BackColor;
+
+                if (field.Text == "")
+                {
+                    field.BackColor = errorColor;
+                    await Task.Delay(500);
+                    field.BackColor = originalColor;
+                    allFieldsFilled = false;
+                }
+            });
+
+            await Task.WhenAll(tasks);
+            return allFieldsFilled;
         }
     }
 }
