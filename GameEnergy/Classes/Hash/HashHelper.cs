@@ -9,7 +9,7 @@ namespace GameEnergy.Classes.Hash
     /// <summary>
     /// Хэширование и верификация данных.
     /// </summary>
-    internal class HachHelper
+    internal class HashHelper
     {
         /// <summary>
         /// Хэширование данных.
