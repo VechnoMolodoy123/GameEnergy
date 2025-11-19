@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationOrAuthorizationForm));
             this.registrationOrAuthorizationTabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.Authorization = new System.Windows.Forms.TabPage();
@@ -49,6 +50,7 @@
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.collapseButton = new System.Windows.Forms.PictureBox();
             this.line = new Guna.UI2.WinForms.Guna2Button();
+            this.BorderlessForm = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.registrationOrAuthorizationTabControl.SuspendLayout();
             this.Authorization.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logInVisiblePassword)).BeginInit();
@@ -384,6 +386,16 @@
             this.line.Size = new System.Drawing.Size(305, 4);
             this.line.TabIndex = 5;
             // 
+            // BorderlessForm
+            // 
+            this.BorderlessForm.AnimateWindow = true;
+            this.BorderlessForm.BorderRadius = 20;
+            this.BorderlessForm.ContainerControl = this;
+            this.BorderlessForm.DockIndicatorTransparencyValue = 0.6D;
+            this.BorderlessForm.DragForm = false;
+            this.BorderlessForm.DragStartTransparencyValue = 0.4D;
+            this.BorderlessForm.TransparentWhileDrag = true;
+            // 
             // RegistrationOrAuthorizationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +446,7 @@
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox collapseButton;
         private Guna.UI2.WinForms.Guna2Button line;
+        private Guna.UI2.WinForms.Guna2BorderlessForm BorderlessForm;
     }
 }
 
