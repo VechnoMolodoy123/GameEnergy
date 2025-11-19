@@ -27,11 +27,10 @@ namespace GameEnergy
         private void SetFormStyle()
         {
             var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
 
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Grey600, Primary.Grey500, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-            var logInNameTextBox = (TextBox)logInNameTextField.Controls[0];
-            var logInPasswordTextBox = (TextBox)logInPasswordTextField.Controls[0];
             var nameTextBox = (TextBox)nameTextField.Controls[0];
             var mailTextBox = (TextBox)mailTextField.Controls[0];
             var passwordTextBox = (TextBox)passwordTextField.Controls[0];

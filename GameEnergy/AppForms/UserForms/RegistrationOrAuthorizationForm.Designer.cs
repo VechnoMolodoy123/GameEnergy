@@ -39,8 +39,8 @@
             this.logInPasswordTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.logInNameTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.Registration = new System.Windows.Forms.TabPage();
-            this.unvisiblePassword = new System.Windows.Forms.PictureBox();
             this.visiblePassword = new System.Windows.Forms.PictureBox();
+            this.unvisiblePassword = new System.Windows.Forms.PictureBox();
             this.registerButton = new Guna.UI2.WinForms.Guna2Button();
             this.mailTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.confirmPasswordTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -56,8 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.logInVisiblePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logInUnvisiblePassword)).BeginInit();
             this.Registration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unvisiblePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiblePassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unvisiblePassword)).BeginInit();
             this.navigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).BeginInit();
@@ -91,7 +91,7 @@
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.DarkGray;
             this.registrationOrAuthorizationTabControl.TabButtonSize = new System.Drawing.Size(150, 40);
             this.registrationOrAuthorizationTabControl.TabIndex = 4;
-            this.registrationOrAuthorizationTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(30)))), ((int)(((byte)(24)))));
+            this.registrationOrAuthorizationTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.registrationOrAuthorizationTabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             // 
             // Authorization
@@ -210,8 +210,8 @@
             // Registration
             // 
             this.Registration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.Registration.Controls.Add(this.unvisiblePassword);
             this.Registration.Controls.Add(this.visiblePassword);
+            this.Registration.Controls.Add(this.unvisiblePassword);
             this.Registration.Controls.Add(this.registerButton);
             this.Registration.Controls.Add(this.mailTextField);
             this.Registration.Controls.Add(this.confirmPasswordTextField);
@@ -224,30 +224,30 @@
             this.Registration.TabIndex = 1;
             this.Registration.Text = "Регистрация";
             // 
-            // unvisiblePassword
-            // 
-            this.unvisiblePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.unvisiblePassword.Image = global::GameEnergy.Properties.Resources.visiblePussword;
-            this.unvisiblePassword.Location = new System.Drawing.Point(235, 124);
-            this.unvisiblePassword.Name = "unvisiblePassword";
-            this.unvisiblePassword.Size = new System.Drawing.Size(21, 18);
-            this.unvisiblePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.unvisiblePassword.TabIndex = 17;
-            this.unvisiblePassword.TabStop = false;
-            this.unvisiblePassword.Click += new System.EventHandler(this.unvisiblePassword_Click);
-            // 
             // visiblePassword
             // 
             this.visiblePassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.visiblePassword.Image = global::GameEnergy.Properties.Resources.unVisiblePussword;
-            this.visiblePassword.Location = new System.Drawing.Point(233, 122);
+            this.visiblePassword.Image = global::GameEnergy.Properties.Resources.visiblePussword;
+            this.visiblePassword.Location = new System.Drawing.Point(235, 136);
             this.visiblePassword.Name = "visiblePassword";
-            this.visiblePassword.Size = new System.Drawing.Size(25, 22);
+            this.visiblePassword.Size = new System.Drawing.Size(21, 18);
             this.visiblePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.visiblePassword.TabIndex = 16;
+            this.visiblePassword.TabIndex = 17;
             this.visiblePassword.TabStop = false;
-            this.visiblePassword.Visible = false;
             this.visiblePassword.Click += new System.EventHandler(this.visiblePassword_Click);
+            // 
+            // unvisiblePassword
+            // 
+            this.unvisiblePassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.unvisiblePassword.Image = global::GameEnergy.Properties.Resources.unVisiblePussword;
+            this.unvisiblePassword.Location = new System.Drawing.Point(233, 134);
+            this.unvisiblePassword.Name = "unvisiblePassword";
+            this.unvisiblePassword.Size = new System.Drawing.Size(25, 22);
+            this.unvisiblePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.unvisiblePassword.TabIndex = 16;
+            this.unvisiblePassword.TabStop = false;
+            this.unvisiblePassword.Visible = false;
+            this.unvisiblePassword.Click += new System.EventHandler(this.unvisiblePassword_Click);
             // 
             // registerButton
             // 
@@ -429,8 +429,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.logInVisiblePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logInUnvisiblePassword)).EndInit();
             this.Registration.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.unvisiblePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.visiblePassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unvisiblePassword)).EndInit();
             this.navigationPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).EndInit();
@@ -449,8 +449,8 @@
         private MaterialSkin.Controls.MaterialSingleLineTextField logInPasswordTextField;
         private MaterialSkin.Controls.MaterialSingleLineTextField logInNameTextField;
         private System.Windows.Forms.TabPage Registration;
-        private System.Windows.Forms.PictureBox unvisiblePassword;
         private System.Windows.Forms.PictureBox visiblePassword;
+        private System.Windows.Forms.PictureBox unvisiblePassword;
         private Guna.UI2.WinForms.Guna2Button registerButton;
         private MaterialSkin.Controls.MaterialSingleLineTextField mailTextField;
         private MaterialSkin.Controls.MaterialSingleLineTextField confirmPasswordTextField;
