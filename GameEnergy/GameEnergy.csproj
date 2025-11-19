@@ -77,6 +77,7 @@
     <Compile Include="AppForms\UserForms\RegistrationOrAuthorizationForm.Designer.cs">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\Animations\FormDrag.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
@@ -108,7 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppForms\AdminForms\" />
-    <Folder Include="Classes\" />
     <Folder Include="CustomControls\" />
     <Folder Include="Docs\" />
     <Folder Include="Models\" />
