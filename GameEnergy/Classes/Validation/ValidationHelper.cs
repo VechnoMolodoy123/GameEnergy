@@ -147,5 +147,29 @@ namespace GameEnergy.Classes.Validation
             await Task.WhenAll(tasks);
             return allFieldsFilled;
         }
+
+        public static bool ValidateMailField(string mail)
+        {
+            try
+            {
+                if (!Regex.IsMatch(mail, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+                {
+                    MessageHelper.ShowErrorMessage("Неверный формат email. Пример: example@domain.com");
+                    return false;
+                }
+
+                return true;
+            }
+            catch (ArgumentException)
+            {
+                MessageHelper.ShowErrorMessage("Некорректный email.");
+                return false;
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                MessageHelper.ShowErrorMessage("Слишком сложный email. Попробуйте ещё раз.");
+                return false;
+            }
+        }
     }
 }
