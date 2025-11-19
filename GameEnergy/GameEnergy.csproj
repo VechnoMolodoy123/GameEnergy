@@ -95,6 +95,7 @@
     <Compile Include="Classes\Customization\VisibilityHelper.cs" />
     <Compile Include="Classes\Hash\HashHelper.cs" />
     <Compile Include="Classes\Images\InstallingImages\ImageLoader.cs" />
+    <Compile Include="Classes\Images\StoreImages\CodingOrDecoding.cs" />
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
@@ -144,7 +145,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppForms\AdminForms\" />
-    <Folder Include="Classes\Images\StoreImages\" />
     <Folder Include="Classes\Key\" />
     <Folder Include="CustomControls\" />
     <Folder Include="Docs\" />
@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\defaultAvatar.png" />
     <None Include="Resources\DefaultGameImage.png" />
     <None Include="Resources\Icon.ico" />
   </ItemGroup>

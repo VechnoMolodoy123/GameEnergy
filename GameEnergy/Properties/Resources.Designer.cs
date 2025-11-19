@@ -83,6 +83,16 @@ namespace GameEnergy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap defaultAvatar {
+            get {
+                object obj = ResourceManager.GetObject("defaultAvatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DefaultGameImage {
             get {
                 object obj = ResourceManager.GetObject("DefaultGameImage", resourceCulture);
