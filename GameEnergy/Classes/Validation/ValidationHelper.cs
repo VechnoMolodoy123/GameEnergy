@@ -35,5 +35,17 @@ namespace GameEnergy.Classes.Validation
             MessageHelper.ShowErrorMessage("Логин/почта или пароль введены неверно");
             return false;
         }
+
+
+
+        public static bool IsUsernameOrMailTaken(string login, string mail)
+        {
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(mail))
+                return true;
+
+            // Используем запрос к базе данных без загрузки всех пользователей
+            return Program.context.Users
+                .Any(u => u.Username == login || u.Email == mail);
+        }
     }
 }
