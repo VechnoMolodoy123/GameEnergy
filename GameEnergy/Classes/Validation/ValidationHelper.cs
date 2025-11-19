@@ -171,5 +171,73 @@ namespace GameEnergy.Classes.Validation
                 return false;
             }
         }
+
+        private static readonly Regex _hasUpperChar = new Regex(@"[A-Z]");
+        private static readonly Regex _hasLowerChar = new Regex(@"[a-z]");
+        private static readonly Regex _hasDigit = new Regex(@"\d");
+        private static readonly Regex _hasSpecialChar = new Regex(@"[\W_]");
+
+        public static bool ValidatePassword(string password, string confirmPassword)
+        {
+            if (!_onlyEnglishChars.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать только английские буквы.");
+                return false;
+            }
+
+            if (password.Contains(" "))
+            {
+                MessageHelper.ShowErrorMessage("Пароль не должен содержать пробелов.");
+                return false;
+            }
+
+            if (!_hasUpperChar.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы одну заглавную букву.");
+                return false;
+            }
+
+            if (!_hasLowerChar.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы одну строчную букву.");
+                return false;
+            }
+
+            if (!_hasDigit.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы одну цифру.");
+                return false;
+            }
+
+            if (!_hasSpecialChar.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы один специальный символ.");
+                return false;
+            }
+
+            if (password.Length < 8)
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать минимум 8 символов.");
+                return false;
+            }
+
+            if (password.Length > 32)
+            {
+                MessageHelper.ShowErrorMessage("Пароль не должен превышать 32 символа.");
+                return false;
+            }
+
+            if (password != confirmPassword)
+            {
+                MessageHelper.ShowErrorMessage("Пароли не совпадают.");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidationPasswordField(MaterialSingleLineTextField passwordField, MaterialSingleLineTextField confirmPasswordField)
+        {
+            return ValidatePassword(passwordField.Text, confirmPasswordField.Text);
+        }
     }
 }
