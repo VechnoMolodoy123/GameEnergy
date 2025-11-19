@@ -1,4 +1,5 @@
 ﻿using GameEnergy.Classes.Hash;
+using GameEnergy.Classes.Images.StoreImages;
 using GameEnergy.Classes.Messages;
 using GameEnergy.Models;
 using MaterialSkin.Controls;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GameEnergy.Classes.Validation
@@ -36,7 +38,58 @@ namespace GameEnergy.Classes.Validation
             return false;
         }
 
+        private static readonly Regex _onlyEnglishChars = new Regex(@"^[A-Za-z\d\W_]+$");
 
+        public static bool ValidationRegistration(MaterialSingleLineTextField LoginField, MaterialSingleLineTextField MailField, MaterialSingleLineTextField PasswordField, MaterialSingleLineTextField ConfirmPasswordField)
+        {
+            string originalUsername = LoginField.Text;
+            string newUsername = originalUsername?.Replace(" ", "");
+            string originalMail = MailField.Text;
+            string newMail = originalMail?.Replace(" ", "");
+            string originalPassword = PasswordField.Text;
+            string newPassword = originalPassword?.Replace(" ", "");
+
+            bool hadSpaces = originalUsername.Contains(" ") || originalMail.Contains(" ") || originalPassword.Contains(" ");
+
+            if (_onlyEnglishChars.IsMatch(newUsername))
+            {
+                if (!IsUsernameOrMailTaken(newUsername, newMail))
+                {
+                    string passwordHash = HashHelper.HashData(newPassword);
+                    string base64Avatar = CodingOrDecoding.ImageCoding(null);
+
+                    Users newUser = new Users
+                    {
+                        Username = newUsername,
+                        Email = newMail,
+                        PasswordHash = passwordHash,
+                        UserRoleID = 1,
+                        RegistrationDate = DateTime.Now,
+                        Avatar = base64Avatar
+                    };
+
+                    LoginField.Clear();
+                    MailField.Clear();
+                    PasswordField.Clear();
+                    ConfirmPasswordField.Clear();
+
+                    Program.context.Users.Add(newUser);
+                    Program.context.SaveChanges();
+
+                    string registrationMessage = hadSpaces
+                        ? "Пробелы в полях были удалены.\n\nПриветствуем в наших рядах читателей!"
+                        : "Приветствуем в наших рядах читателей!";
+
+                    MessageHelper.ShowInformationMessage(registrationMessage, "Регистрация прошла успешно");
+
+                    return true;
+                }
+                MessageHelper.ShowErrorMessage("Имя пользователя или почта уже существуют.");
+                return false;
+            }
+            MessageHelper.ShowErrorMessage("Имя пользователя должно содержать только английские буквы, символы или цифры.");
+            return false;
+        }
 
         public static bool IsUsernameOrMailTaken(string login, string mail)
         {
