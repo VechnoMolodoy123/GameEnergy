@@ -100,5 +100,29 @@ namespace GameEnergy.Classes.Validation
             return Program.context.Users
                 .Any(u => u.Username == login || u.Email == mail);
         }
+
+        public static bool ValidationPasswordFields(Users user, string PasswordField)
+        {
+            string passwordHash = HashHelper.HashData(PasswordField);
+
+            bool isPasswordValid = HashHelper.VerifyData(PasswordField, user.PasswordHash);
+
+            if (isPasswordValid)
+            {
+                MessageHelper.ShowErrorMessage("Новый пароль должен отличаться от старого");
+                return false;
+            }
+            else if (user != null)
+            {
+                user.PasswordHash = passwordHash;
+                Program.context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                MessageHelper.ShowErrorMessage("Пользователь не найден");
+                return false;
+            }
+        }
     }
 }
