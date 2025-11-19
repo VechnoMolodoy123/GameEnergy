@@ -93,7 +93,9 @@
     </Compile>
     <Compile Include="Classes\Animations\FormDrag.cs" />
     <Compile Include="Classes\Customization\VisibilityHelper.cs" />
+    <Compile Include="Classes\Hash\HachHelper.cs" />
     <Compile Include="Classes\Messages\MessageHelper.cs" />
+    <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
     <Compile Include="Models\GameDevelopers.cs" />
     <Compile Include="Models\GameEnergyModel.cs" />
