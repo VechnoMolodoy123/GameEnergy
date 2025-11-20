@@ -23,9 +23,41 @@ namespace GameEnergy.CustomControls
             _gameID = gameID;
             _titleOverride = titleOverride;
 
-            //LoadGameInfo();
+            LoadGameInfo();
         }
 
+        private void LoadGameInfo()
+        {
+            try
+            {
+                var game = Program.context.Games.FirstOrDefault(g => g.GameID == _gameID);
+                string imageName = game.GameImage + "Slide";
 
+                if (game == null)
+                {
+                    headerLabel.Text = "Игра не найдена";
+                    priceLabel.Text = "0 ₽";
+                    discountLabel.Text = "-0%";
+                    gameImage.Image = Properties.Resources.DefaultGameImage;
+                    return;
+                }
+
+                headerLabel.Text = _titleOverride;
+                priceLabel.Text = game.DiscountedPrice.HasValue ? $"{game.DiscountedPrice} ₽" : $"{game.Price} ₽";
+                discountLabel.Text = game.Discount.HasValue ? $"-{game.Discount}%" : "";
+
+                string resourceName = game.GameImage + "Slide";
+
+                var resourceManager = Properties.Resources.ResourceManager;
+                var image = resourceManager.GetObject(resourceName) as Image;
+
+                gameImage.Image = image ?? Properties.Resources.DefaultGameImage;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка в GamePromoSlide: {ex.Message}");
+                gameImage.Image = Properties.Resources.DefaultGameImage;
+            }
+        }
     }
 }

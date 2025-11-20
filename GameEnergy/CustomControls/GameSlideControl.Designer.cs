@@ -31,8 +31,8 @@
             this.headerLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
             this.discountLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gameImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gameImage)).BeginInit();
             this.SuspendLayout();
             // 
             // headerLabel
@@ -71,30 +71,30 @@
             this.discountLabel.TabIndex = 2;
             this.discountLabel.Text = "-99%";
             // 
-            // pictureBox1
+            // gameImage
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::GameEnergy.Properties.Resources.ARC_RaidersSlide;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.gameImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gameImage.Image = global::GameEnergy.Properties.Resources.ARC_RaidersSlide;
+            this.gameImage.Location = new System.Drawing.Point(0, 100);
+            this.gameImage.Name = "gameImage";
+            this.gameImage.Size = new System.Drawing.Size(180, 100);
+            this.gameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gameImage.TabIndex = 3;
+            this.gameImage.TabStop = false;
             // 
             // GameSlideControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.gameImage);
             this.Controls.Add(this.discountLabel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.headerLabel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "GameSlideControl";
             this.Size = new System.Drawing.Size(180, 200);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,6 +104,6 @@
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label discountLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox gameImage;
     }
 }
