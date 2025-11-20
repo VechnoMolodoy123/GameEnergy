@@ -34,30 +34,32 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.hitGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gamesSlidePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.bannerPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.mainImage5 = new System.Windows.Forms.PictureBox();
             this.mainImage4 = new System.Windows.Forms.PictureBox();
             this.mainImageLabel1 = new System.Windows.Forms.Label();
             this.mainImage2 = new System.Windows.Forms.PictureBox();
             this.mainImage1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.GamesTabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.newGames = new System.Windows.Forms.TabPage();
-            this.topSellers = new System.Windows.Forms.TabPage();
-            this.latestArrivals = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.gamesSlidePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.hitGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.newGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.topSellers = new System.Windows.Forms.TabPage();
             this.topSellersPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.latestArrivals = new System.Windows.Forms.TabPage();
             this.latestArrivalsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.topPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.bannerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).BeginInit();
@@ -67,8 +69,6 @@
             this.newGames.SuspendLayout();
             this.topSellers.SuspendLayout();
             this.latestArrivals.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormRounded
@@ -107,8 +107,56 @@
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(100, 52);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(526, 159);
+            this.topPanel.Size = new System.Drawing.Size(526, 210);
             this.topPanel.TabIndex = 25;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.hitGamesPanel);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(180, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(346, 200);
+            this.panel2.TabIndex = 3;
+            // 
+            // hitGamesPanel
+            // 
+            this.hitGamesPanel.AutoSize = true;
+            this.hitGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hitGamesPanel.Location = new System.Drawing.Point(0, 0);
+            this.hitGamesPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.hitGamesPanel.Name = "hitGamesPanel";
+            this.hitGamesPanel.Size = new System.Drawing.Size(346, 200);
+            this.hitGamesPanel.TabIndex = 27;
+            this.hitGamesPanel.WrapContents = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.gamesSlidePanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(180, 200);
+            this.panel4.TabIndex = 2;
+            // 
+            // gamesSlidePanel
+            // 
+            this.gamesSlidePanel.AutoSize = true;
+            this.gamesSlidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gamesSlidePanel.Location = new System.Drawing.Point(0, 0);
+            this.gamesSlidePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.gamesSlidePanel.Name = "gamesSlidePanel";
+            this.gamesSlidePanel.Size = new System.Drawing.Size(180, 200);
+            this.gamesSlidePanel.TabIndex = 26;
+            this.gamesSlidePanel.WrapContents = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(526, 10);
+            this.panel1.TabIndex = 0;
             // 
             // navigationControl
             // 
@@ -134,10 +182,34 @@
             this.bannerPanel.Controls.Add(this.mainImage2);
             this.bannerPanel.Controls.Add(this.mainImage1);
             this.bannerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bannerPanel.Location = new System.Drawing.Point(100, 211);
+            this.bannerPanel.Location = new System.Drawing.Point(100, 262);
             this.bannerPanel.Name = "bannerPanel";
             this.bannerPanel.Size = new System.Drawing.Size(526, 92);
             this.bannerPanel.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label3.Location = new System.Drawing.Point(432, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 32);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Любовь\r\nк играм";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label2.Location = new System.Drawing.Point(291, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 32);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Активное\r\nкомьюнити";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -207,36 +279,12 @@
             this.mainImage1.TabIndex = 0;
             this.mainImage1.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label2.Location = new System.Drawing.Point(291, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 32);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Активное\r\nкомьюнити";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label3.Location = new System.Drawing.Point(432, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 32);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Любовь\r\nк играм";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(100, 303);
+            this.panel3.Location = new System.Drawing.Point(100, 354);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(526, 23);
+            this.panel3.Size = new System.Drawing.Size(526, 10);
             this.panel3.TabIndex = 27;
             // 
             // GamesTabControl
@@ -247,10 +295,10 @@
             this.GamesTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GamesTabControl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.GamesTabControl.ItemSize = new System.Drawing.Size(173, 40);
-            this.GamesTabControl.Location = new System.Drawing.Point(100, 326);
+            this.GamesTabControl.Location = new System.Drawing.Point(100, 364);
             this.GamesTabControl.Name = "GamesTabControl";
             this.GamesTabControl.SelectedIndex = 0;
-            this.GamesTabControl.Size = new System.Drawing.Size(526, 104);
+            this.GamesTabControl.Size = new System.Drawing.Size(526, 66);
             this.GamesTabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.GamesTabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(100)))), ((int)(((byte)(46)))));
             this.GamesTabControl.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -278,9 +326,18 @@
             this.newGames.Location = new System.Drawing.Point(4, 44);
             this.newGames.Name = "newGames";
             this.newGames.Padding = new System.Windows.Forms.Padding(3);
-            this.newGames.Size = new System.Drawing.Size(518, 56);
+            this.newGames.Size = new System.Drawing.Size(518, 18);
             this.newGames.TabIndex = 0;
             this.newGames.Text = "Новинки";
+            // 
+            // newGamesPanel
+            // 
+            this.newGamesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.newGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.newGamesPanel.Location = new System.Drawing.Point(3, 3);
+            this.newGamesPanel.Name = "newGamesPanel";
+            this.newGamesPanel.Size = new System.Drawing.Size(512, 12);
+            this.newGamesPanel.TabIndex = 75;
             // 
             // topSellers
             // 
@@ -289,9 +346,18 @@
             this.topSellers.Location = new System.Drawing.Point(4, 44);
             this.topSellers.Name = "topSellers";
             this.topSellers.Padding = new System.Windows.Forms.Padding(3);
-            this.topSellers.Size = new System.Drawing.Size(518, 56);
+            this.topSellers.Size = new System.Drawing.Size(518, 18);
             this.topSellers.TabIndex = 1;
             this.topSellers.Text = "Лидеры продаж";
+            // 
+            // topSellersPanel
+            // 
+            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
+            this.topSellersPanel.Name = "topSellersPanel";
+            this.topSellersPanel.Size = new System.Drawing.Size(512, 12);
+            this.topSellersPanel.TabIndex = 76;
             // 
             // latestArrivals
             // 
@@ -300,75 +366,9 @@
             this.latestArrivals.Location = new System.Drawing.Point(4, 44);
             this.latestArrivals.Name = "latestArrivals";
             this.latestArrivals.Padding = new System.Windows.Forms.Padding(3);
-            this.latestArrivals.Size = new System.Drawing.Size(518, 56);
+            this.latestArrivals.Size = new System.Drawing.Size(518, 18);
             this.latestArrivals.TabIndex = 2;
             this.latestArrivals.Text = "Последние поступления";
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 136);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 23);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.hitGamesPanel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(206, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(320, 136);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.gamesSlidePanel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(206, 136);
-            this.panel4.TabIndex = 2;
-            // 
-            // gamesSlidePanel
-            // 
-            this.gamesSlidePanel.AutoSize = true;
-            this.gamesSlidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gamesSlidePanel.Location = new System.Drawing.Point(0, 0);
-            this.gamesSlidePanel.Margin = new System.Windows.Forms.Padding(2);
-            this.gamesSlidePanel.Name = "gamesSlidePanel";
-            this.gamesSlidePanel.Size = new System.Drawing.Size(206, 136);
-            this.gamesSlidePanel.TabIndex = 26;
-            this.gamesSlidePanel.WrapContents = false;
-            // 
-            // hitGamesPanel
-            // 
-            this.hitGamesPanel.AutoSize = true;
-            this.hitGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hitGamesPanel.Location = new System.Drawing.Point(0, 0);
-            this.hitGamesPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.hitGamesPanel.Name = "hitGamesPanel";
-            this.hitGamesPanel.Size = new System.Drawing.Size(320, 136);
-            this.hitGamesPanel.TabIndex = 27;
-            this.hitGamesPanel.WrapContents = false;
-            // 
-            // newGamesPanel
-            // 
-            this.newGamesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.newGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.newGamesPanel.Location = new System.Drawing.Point(3, 3);
-            this.newGamesPanel.Name = "newGamesPanel";
-            this.newGamesPanel.Size = new System.Drawing.Size(512, 50);
-            this.newGamesPanel.TabIndex = 75;
-            // 
-            // topSellersPanel
-            // 
-            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
-            this.topSellersPanel.Name = "topSellersPanel";
-            this.topSellersPanel.Size = new System.Drawing.Size(512, 50);
-            this.topSellersPanel.TabIndex = 76;
             // 
             // latestArrivalsPanel
             // 
@@ -376,7 +376,7 @@
             this.latestArrivalsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.latestArrivalsPanel.Location = new System.Drawing.Point(3, 3);
             this.latestArrivalsPanel.Name = "latestArrivalsPanel";
-            this.latestArrivalsPanel.Size = new System.Drawing.Size(512, 50);
+            this.latestArrivalsPanel.Size = new System.Drawing.Size(512, 12);
             this.latestArrivalsPanel.TabIndex = 77;
             // 
             // MainForm
@@ -398,6 +398,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная форма";
             this.topPanel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.bannerPanel.ResumeLayout(false);
             this.bannerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).EndInit();
@@ -408,10 +412,6 @@
             this.newGames.ResumeLayout(false);
             this.topSellers.ResumeLayout(false);
             this.latestArrivals.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -136,6 +136,12 @@
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
+    <Compile Include="CustomControls\GameSlideControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\GameSlideControl.Designer.cs">
+      <DependentUpon>GameSlideControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\NavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\GameSlideControl.resx">
+      <DependentUpon>GameSlideControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\NavigationControl.resx">
       <DependentUpon>NavigationControl.cs</DependentUpon>
