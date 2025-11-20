@@ -63,6 +63,16 @@ namespace GameEnergy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ARC_RaidersSlide {
+            get {
+                object obj = ResourceManager.GetObject("ARC_RaidersSlide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatarButtonImage {
             get {
                 object obj = ResourceManager.GetObject("avatarButtonImage", resourceCulture);
@@ -103,6 +113,16 @@ namespace GameEnergy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Days_GoneSlide {
+            get {
+                object obj = ResourceManager.GetObject("Days_GoneSlide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap defaultAvatar {
             get {
                 object obj = ResourceManager.GetObject("defaultAvatar", resourceCulture);
@@ -126,6 +146,16 @@ namespace GameEnergy.Properties {
         internal static System.Drawing.Bitmap DefaultTrailerImage {
             get {
                 object obj = ResourceManager.GetObject("DefaultTrailerImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Europa_Universalis_VSlide {
+            get {
+                object obj = ResourceManager.GetObject("Europa_Universalis_VSlide", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +263,16 @@ namespace GameEnergy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Manor_LordsSlide {
+            get {
+                object obj = ResourceManager.GetObject("Manor_LordsSlide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximaze {
             get {
                 object obj = ResourceManager.GetObject("maximaze", resourceCulture);
@@ -276,6 +316,16 @@ namespace GameEnergy.Properties {
         internal static System.Drawing.Bitmap report {
             get {
                 object obj = ResourceManager.GetObject("report", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Resident_Evil_7Slide {
+            get {
+                object obj = ResourceManager.GetObject("Resident_Evil_7Slide", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

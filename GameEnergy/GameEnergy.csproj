@@ -273,6 +273,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Resident Evil 7Slide.png" />
+    <None Include="Resources\Manor LordsSlide.png" />
+    <None Include="Resources\Europa Universalis VSlide.png" />
+    <None Include="Resources\Days GoneSlide.png" />
+    <None Include="Resources\ARC RaidersSlide.png" />
     <None Include="Resources\notifi.png" />
     <None Include="Resources\avatarButtonImage.png" />
     <None Include="Resources\cart.png" />
