@@ -142,6 +142,8 @@
     <Compile Include="CustomControls\NavigationControl.Designer.cs">
       <DependentUpon>NavigationControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItems.cs" />
     <Compile Include="Models\GameDevelopers.cs" />
     <Compile Include="Models\GameEnergyModel.cs" />
     <Compile Include="Models\GameReportCategory.cs" />

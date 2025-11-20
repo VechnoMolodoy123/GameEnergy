@@ -8,10 +8,12 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel")
+            : base("name=GameEnergyModel1")
         {
         }
 
+        public virtual DbSet<Cart> Cart { get; set; }
+        public virtual DbSet<CartItems> CartItems { get; set; }
         public virtual DbSet<GameDevelopers> GameDevelopers { get; set; }
         public virtual DbSet<GameReportCategory> GameReportCategory { get; set; }
         public virtual DbSet<GameReports> GameReports { get; set; }
@@ -29,6 +31,14 @@ namespace GameEnergy.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Cart>()
+                .Property(e => e.TotalAmount)
+                .HasPrecision(10, 2);
+
+            modelBuilder.Entity<CartItems>()
+                .Property(e => e.PriceAtAdd)
+                .HasPrecision(10, 2);
+
             modelBuilder.Entity<GameReportCategory>()
                 .HasMany(e => e.GameReports)
                 .WithRequired(e => e.GameReportCategory)
@@ -37,6 +47,11 @@ namespace GameEnergy.Models
             modelBuilder.Entity<Games>()
                 .Property(e => e.AverageRating)
                 .HasPrecision(5, 2);
+
+            modelBuilder.Entity<Games>()
+                .HasMany(e => e.CartItems)
+                .WithRequired(e => e.Games)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Games>()
                 .HasMany(e => e.GameReports)
@@ -69,6 +84,11 @@ namespace GameEnergy.Models
             modelBuilder.Entity<UserRoles>()
                 .HasMany(e => e.Users)
                 .WithRequired(e => e.UserRoles)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.Cart)
+                .WithRequired(e => e.Users)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()

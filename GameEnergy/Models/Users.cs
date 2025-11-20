@@ -11,6 +11,7 @@ namespace GameEnergy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Users()
         {
+            Cart = new HashSet<Cart>();
             GameReports = new HashSet<GameReports>();
             Orders = new HashSet<Orders>();
             Rating = new HashSet<Rating>();
@@ -43,6 +44,9 @@ namespace GameEnergy.Models
         public string ConfirmationCodeHash { get; set; }
 
         public DateTime? ConfirmationCodeExpiration { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cart> Cart { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameReports> GameReports { get; set; }

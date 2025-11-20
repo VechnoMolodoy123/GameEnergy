@@ -11,6 +11,7 @@ namespace GameEnergy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Games()
         {
+            CartItems = new HashSet<CartItems>();
             GameReports = new HashSet<GameReports>();
             OrderItems = new HashSet<OrderItems>();
             Rating = new HashSet<Rating>();
@@ -50,6 +51,9 @@ namespace GameEnergy.Models
 
         [Column(TypeName = "date")]
         public DateTime? ReleaseDate { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CartItems> CartItems { get; set; }
 
         public virtual GameDevelopers GameDevelopers { get; set; }
 
