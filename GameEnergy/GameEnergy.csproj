@@ -106,6 +106,12 @@
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
+    <Compile Include="CustomControls\NavigationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\NavigationControl.Designer.cs">
+      <DependentUpon>NavigationControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\GameDevelopers.cs" />
     <Compile Include="Models\GameEnergyModel.cs" />
     <Compile Include="Models\GameReportCategory.cs" />
@@ -126,8 +132,14 @@
     <EmbeddedResource Include="AppForms\UserForms\GameInfoForm.resx">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\NavigationControl.resx">
+      <DependentUpon>NavigationControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -156,7 +168,6 @@
   <ItemGroup>
     <Folder Include="AppForms\AdminForms\" />
     <Folder Include="Classes\Key\" />
-    <Folder Include="CustomControls\" />
     <Folder Include="Docs\" />
   </ItemGroup>
   <ItemGroup>
@@ -230,6 +241,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\notifi.png" />
+    <None Include="Resources\avatarButtonImage.png" />
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\MainIcon.png" />
     <None Include="Resources\defaultAvatar.png" />
     <None Include="Resources\DefaultGameImage.png" />
     <None Include="Resources\Icon.ico" />
