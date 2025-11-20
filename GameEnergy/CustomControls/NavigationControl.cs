@@ -34,9 +34,11 @@ namespace GameEnergy.CustomControls
             mainButton.Click += (s, e) => OpenForm<MainForm>();
             catalogButton.Click += (s, e) => OpenForm<GameСatalogForm>();
             notificationsButton.Click += (s, e) => OpenForm<NotifyForm>();
+            notifiPanel.Click += (s, e) => OpenForm<NotifyForm>();
             profileButton.Click += (s, e) => OpenForm<ProfileForm>();
             libraryButton.Click += (s, e) => OpenForm<LibraryForm>();
             cartButton.Click += (s, e) => OpenForm<CartForm>();
+            cartNotifiPanel.Click += (s, e) => OpenForm<CartForm>();
         }
 
         private void HideOrClose()
@@ -53,7 +55,10 @@ namespace GameEnergy.CustomControls
 
         private void NavigationControl_Load(object sender, EventArgs e)
         {
-            UpdateNotificationsCount();
+            if (!this.DesignMode) // ← Только во время выполнения!
+            {
+                UpdateNotificationsCount();
+            }
         }
 
         private void OpenForm<T>() where T : Form, new()
@@ -94,7 +99,7 @@ namespace GameEnergy.CustomControls
             // Обновляем интерфейс
             hasNotifications = notificationsCount > 0;
             hasCartNotifications = cartNotificationsCount > 0;
-            notifyPanel.Visible = hasNotifications;
+            notifiPanel.Visible = hasNotifications;
             cartNotifiPanel.Visible = hasCartNotifications;
         }
 

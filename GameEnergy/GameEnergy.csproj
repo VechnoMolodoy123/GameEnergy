@@ -164,6 +164,9 @@
     <EmbeddedResource Include="AppForms\UserForms\GameInfoForm.resx">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\GameСatalogForm.resx">
+      <DependentUpon>GameСatalogForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,9 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MainOperator.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MainPersonalDiscount.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maximaze.png" />

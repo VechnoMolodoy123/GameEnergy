@@ -1,4 +1,5 @@
-﻿using GameEnergy.Classes.Messages;
+﻿using GameEnergy.AppForms.UserForms;
+using GameEnergy.Classes.Messages;
 using GameEnergy.Models;
 using System;
 using System.Collections.Generic;

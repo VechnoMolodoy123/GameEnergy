@@ -80,10 +80,10 @@
             this.registrationOrAuthorizationTabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
             this.registrationOrAuthorizationTabControl.TabButtonHoverState.InnerColor = System.Drawing.Color.DimGray;
             this.registrationOrAuthorizationTabControl.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.registrationOrAuthorizationTabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.registrationOrAuthorizationTabControl.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.registrationOrAuthorizationTabControl.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.registrationOrAuthorizationTabControl.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-            this.registrationOrAuthorizationTabControl.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.registrationOrAuthorizationTabControl.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -91,7 +91,7 @@
             this.registrationOrAuthorizationTabControl.TabButtonSelectedState.InnerColor = System.Drawing.Color.DarkGray;
             this.registrationOrAuthorizationTabControl.TabButtonSize = new System.Drawing.Size(150, 40);
             this.registrationOrAuthorizationTabControl.TabIndex = 4;
-            this.registrationOrAuthorizationTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.registrationOrAuthorizationTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.registrationOrAuthorizationTabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             // 
             // Authorization
@@ -176,7 +176,7 @@
             this.logInPasswordTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.logInPasswordTextField.Depth = 0;
             this.logInPasswordTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.logInPasswordTextField.ForeColor = System.Drawing.Color.IndianRed;
+            this.logInPasswordTextField.ForeColor = System.Drawing.Color.White;
             this.logInPasswordTextField.Hint = "Пароль";
             this.logInPasswordTextField.Location = new System.Drawing.Point(37, 94);
             this.logInPasswordTextField.MouseState = MaterialSkin.MouseState.HOVER;
@@ -273,7 +273,7 @@
             // 
             // mailTextField
             // 
-            this.mailTextField.BackColor = System.Drawing.SystemColors.Control;
+            this.mailTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.mailTextField.Depth = 0;
             this.mailTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.mailTextField.ForeColor = System.Drawing.Color.White;
@@ -291,7 +291,7 @@
             // 
             // confirmPasswordTextField
             // 
-            this.confirmPasswordTextField.BackColor = System.Drawing.SystemColors.Control;
+            this.confirmPasswordTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.confirmPasswordTextField.Depth = 0;
             this.confirmPasswordTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.confirmPasswordTextField.ForeColor = System.Drawing.Color.White;
@@ -309,7 +309,7 @@
             // 
             // passwordTextField
             // 
-            this.passwordTextField.BackColor = System.Drawing.SystemColors.Control;
+            this.passwordTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.passwordTextField.Depth = 0;
             this.passwordTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.passwordTextField.ForeColor = System.Drawing.Color.White;
@@ -327,7 +327,7 @@
             // 
             // nameTextField
             // 
-            this.nameTextField.BackColor = System.Drawing.SystemColors.Control;
+            this.nameTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.nameTextField.Depth = 0;
             this.nameTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.nameTextField.ForeColor = System.Drawing.Color.White;
@@ -394,9 +394,9 @@
             this.line.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
             this.line.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.line.ForeColor = System.Drawing.Color.White;
-            this.line.Location = new System.Drawing.Point(0, 26);
+            this.line.Location = new System.Drawing.Point(0, 27);
             this.line.Name = "line";
-            this.line.Size = new System.Drawing.Size(305, 4);
+            this.line.Size = new System.Drawing.Size(305, 3);
             this.line.TabIndex = 5;
             // 
             // BorderlessForm

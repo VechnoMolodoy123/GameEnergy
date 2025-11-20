@@ -78,8 +78,8 @@ namespace GameEnergy.Classes.Validation
                     Program.context.SaveChanges();
 
                     string registrationMessage = hadSpaces
-                        ? "Пробелы в полях были удалены.\n\nПриветствуем в наших рядах читателей!"
-                        : "Приветствуем в наших рядах читателей!";
+                        ? $"Пробелы в полях были удалены.\n\nПриветствуем, {newUsername}!"
+                        : $"Приветствуем, {newUsername}!";
 
                     MessageHelper.ShowInformationMessage(registrationMessage, "Регистрация прошла успешно");
 
