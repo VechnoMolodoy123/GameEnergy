@@ -31,7 +31,6 @@ namespace GameEnergy.CustomControls
             try
             {
                 var game = Program.context.Games.FirstOrDefault(g => g.GameID == _gameID);
-                string imageName = game.GameImage + "Slide";
 
                 if (game == null)
                 {
@@ -46,7 +45,9 @@ namespace GameEnergy.CustomControls
                 priceLabel.Text = game.DiscountedPrice.HasValue ? $"{game.DiscountedPrice} ₽" : $"{game.Price} ₽";
                 discountLabel.Text = game.Discount.HasValue ? $"-{game.Discount}%" : "";
 
-                string resourceName = game.GameImage + "Slide";
+                string baseName = game.Title + "Slide";
+
+                string resourceName = ToResourceName(baseName);
 
                 var resourceManager = Properties.Resources.ResourceManager;
                 var image = resourceManager.GetObject(resourceName) as Image;
@@ -58,6 +59,12 @@ namespace GameEnergy.CustomControls
                 Console.WriteLine($"Ошибка в GamePromoSlide: {ex.Message}");
                 gameImage.Image = Properties.Resources.DefaultGameImage;
             }
+        }
+
+        private string ToResourceName(string fileName)
+        {
+            // Заменяем недопустимые символы на подчёркивания
+            return System.Text.RegularExpressions.Regex.Replace(fileName, @"[^a-zA-Z0-9_]", "_");
         }
     }
 }

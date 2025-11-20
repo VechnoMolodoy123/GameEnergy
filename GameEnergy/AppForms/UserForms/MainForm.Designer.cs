@@ -33,13 +33,6 @@
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.hitGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.gamesSlidePanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.bannerPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,9 +50,14 @@
             this.topSellersPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.latestArrivals = new System.Windows.Forms.TabPage();
             this.latestArrivalsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.topPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.gamesSlidePanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.hitGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.bannerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).BeginInit();
@@ -69,6 +67,9 @@
             this.newGames.SuspendLayout();
             this.topSellers.SuspendLayout();
             this.latestArrivals.SuspendLayout();
+            this.topPanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormRounded
@@ -98,78 +99,6 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(100, 378);
             this.leftPanel.TabIndex = 22;
-            // 
-            // topPanel
-            // 
-            this.topPanel.Controls.Add(this.panel2);
-            this.topPanel.Controls.Add(this.panel4);
-            this.topPanel.Controls.Add(this.panel1);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(100, 52);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(526, 210);
-            this.topPanel.TabIndex = 25;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.hitGamesPanel);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(180, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(346, 200);
-            this.panel2.TabIndex = 3;
-            // 
-            // hitGamesPanel
-            // 
-            this.hitGamesPanel.AutoSize = true;
-            this.hitGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.hitGamesPanel.Location = new System.Drawing.Point(0, 0);
-            this.hitGamesPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.hitGamesPanel.Name = "hitGamesPanel";
-            this.hitGamesPanel.Size = new System.Drawing.Size(346, 200);
-            this.hitGamesPanel.TabIndex = 27;
-            this.hitGamesPanel.WrapContents = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.gamesSlidePanel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(180, 200);
-            this.panel4.TabIndex = 2;
-            // 
-            // gamesSlidePanel
-            // 
-            this.gamesSlidePanel.AutoSize = true;
-            this.gamesSlidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gamesSlidePanel.Location = new System.Drawing.Point(0, 0);
-            this.gamesSlidePanel.Margin = new System.Windows.Forms.Padding(2);
-            this.gamesSlidePanel.Name = "gamesSlidePanel";
-            this.gamesSlidePanel.Size = new System.Drawing.Size(180, 200);
-            this.gamesSlidePanel.TabIndex = 26;
-            this.gamesSlidePanel.WrapContents = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 200);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 10);
-            this.panel1.TabIndex = 0;
-            // 
-            // navigationControl
-            // 
-            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationControl.leftPanel = null;
-            this.navigationControl.LeftPanelWidth = 0;
-            this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Name = "navigationControl";
-            this.navigationControl.rightPanel = null;
-            this.navigationControl.RightPanelWidth = 0;
-            this.navigationControl.Size = new System.Drawing.Size(726, 52);
-            this.navigationControl.TabIndex = 0;
             // 
             // bannerPanel
             // 
@@ -379,6 +308,89 @@
             this.latestArrivalsPanel.Size = new System.Drawing.Size(512, 12);
             this.latestArrivalsPanel.TabIndex = 77;
             // 
+            // navigationControl
+            // 
+            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationControl.leftPanel = null;
+            this.navigationControl.LeftPanelWidth = 0;
+            this.navigationControl.Location = new System.Drawing.Point(0, 0);
+            this.navigationControl.Name = "navigationControl";
+            this.navigationControl.rightPanel = null;
+            this.navigationControl.RightPanelWidth = 0;
+            this.navigationControl.Size = new System.Drawing.Size(726, 52);
+            this.navigationControl.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 200);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(526, 10);
+            this.panel1.TabIndex = 0;
+            // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.panel5);
+            this.topPanel.Controls.Add(this.panel4);
+            this.topPanel.Controls.Add(this.panel2);
+            this.topPanel.Controls.Add(this.panel1);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(100, 52);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(526, 210);
+            this.topPanel.TabIndex = 25;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(526, 30);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.AutoSize = true;
+            this.panel4.Controls.Add(this.gamesSlidePanel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 30);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(0, 170);
+            this.panel4.TabIndex = 4;
+            // 
+            // gamesSlidePanel
+            // 
+            this.gamesSlidePanel.AutoSize = true;
+            this.gamesSlidePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gamesSlidePanel.Location = new System.Drawing.Point(0, 0);
+            this.gamesSlidePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.gamesSlidePanel.Name = "gamesSlidePanel";
+            this.gamesSlidePanel.Size = new System.Drawing.Size(0, 170);
+            this.gamesSlidePanel.TabIndex = 26;
+            this.gamesSlidePanel.WrapContents = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.hitGamesPanel);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 30);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(526, 170);
+            this.panel5.TabIndex = 6;
+            // 
+            // hitGamesPanel
+            // 
+            this.hitGamesPanel.AutoSize = true;
+            this.hitGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.hitGamesPanel.Location = new System.Drawing.Point(0, 0);
+            this.hitGamesPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.hitGamesPanel.Name = "hitGamesPanel";
+            this.hitGamesPanel.Size = new System.Drawing.Size(526, 170);
+            this.hitGamesPanel.TabIndex = 27;
+            this.hitGamesPanel.WrapContents = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -397,11 +409,8 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Главная форма";
-            this.topPanel.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.bannerPanel.ResumeLayout(false);
             this.bannerPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).EndInit();
@@ -412,6 +421,12 @@
             this.newGames.ResumeLayout(false);
             this.topSellers.ResumeLayout(false);
             this.latestArrivals.ResumeLayout(false);
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -422,7 +437,6 @@
         private CustomControls.NavigationControl navigationControl;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel leftPanel;
-        private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel bannerPanel;
         private System.Windows.Forms.PictureBox mainImage1;
         private System.Windows.Forms.PictureBox mainImage2;
@@ -437,13 +451,15 @@
         private System.Windows.Forms.TabPage topSellers;
         private System.Windows.Forms.TabPage latestArrivals;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel newGamesPanel;
-        private System.Windows.Forms.FlowLayoutPanel hitGamesPanel;
-        private System.Windows.Forms.FlowLayoutPanel gamesSlidePanel;
         private System.Windows.Forms.FlowLayoutPanel topSellersPanel;
         private System.Windows.Forms.FlowLayoutPanel latestArrivalsPanel;
+        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.FlowLayoutPanel gamesSlidePanel;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.FlowLayoutPanel hitGamesPanel;
     }
 }
