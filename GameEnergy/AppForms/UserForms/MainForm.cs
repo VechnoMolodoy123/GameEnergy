@@ -1,4 +1,5 @@
-﻿using GameEnergy.CustomControls;
+﻿using GameEnergy.Classes.Messages;
+using GameEnergy.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace GameEnergy.AppForms.UserForms
 {
     public partial class MainForm : Form
     {
+        public event EventHandler WindowStateChanged = delegate { };
         private List<GameSlideControl> _slides = new List<GameSlideControl>();
         private Timer _autoSlideTimer;
         private int _currentIndex = 0;
@@ -24,8 +26,6 @@ namespace GameEnergy.AppForms.UserForms
 
         private void LoadPromoSlider()
         {
-            if (this.DesignMode) return;
-
             try
             {
                 // Желаемый порядок ID
@@ -71,8 +71,7 @@ namespace GameEnergy.AppForms.UserForms
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка загрузки слайдера: {ex.Message}", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageHelper.ShowErrorMessage($"Ошибка загрузки слайдера: {ex.Message}");
             }
         }
 
@@ -107,6 +106,8 @@ namespace GameEnergy.AppForms.UserForms
 
         private void SetFormStyle()
         {
+            navigationControl.leftPanel = leftPanel;
+            navigationControl.rightPanel = rightPanel;
             topPanel.Height = 262;
         }
 
@@ -114,6 +115,12 @@ namespace GameEnergy.AppForms.UserForms
         {
             _autoSlideTimer?.Stop();
             _autoSlideTimer?.Dispose();
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            navigationControl.HandleFormResize(this);
+            WindowStateChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

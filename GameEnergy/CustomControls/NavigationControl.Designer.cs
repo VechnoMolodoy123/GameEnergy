@@ -32,37 +32,39 @@
             this.line = new Guna.UI2.WinForms.Guna2Button();
             this.topLeftPanel = new System.Windows.Forms.Panel();
             this.topRightPanel = new System.Windows.Forms.Panel();
-            this.navigationPanel = new System.Windows.Forms.Panel();
-            this.cartNotifiPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.notifiPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.delimiter3 = new System.Windows.Forms.Panel();
-            this.delimiter5 = new System.Windows.Forms.Panel();
-            this.delimiter4 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.delimiter2 = new System.Windows.Forms.Panel();
-            this.catalogButton = new Guna.UI2.WinForms.Guna2Button();
-            this.delimiter1 = new System.Windows.Forms.Panel();
-            this.bottomNavigationPanel = new System.Windows.Forms.Panel();
-            this.topNavigationPanel = new System.Windows.Forms.Panel();
-            this.searchButton = new Guna.UI2.WinForms.Guna2Button();
-            this.notificationsButton = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.profileButton = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.libraryButton = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.cartButton = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.mainButton = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.maximizeButton = new System.Windows.Forms.PictureBox();
             this.restoreButton = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new System.Windows.Forms.PictureBox();
+            this.navigationPanel = new System.Windows.Forms.Panel();
+            this.cartNotifiPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.notifiPanel = new Guna.UI2.WinForms.Guna2Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.notificationsButton = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.delimiter3 = new System.Windows.Forms.Panel();
+            this.profileButton = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.delimiter5 = new System.Windows.Forms.Panel();
+            this.libraryButton = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.delimiter4 = new System.Windows.Forms.Panel();
+            this.cartButton = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.delimiter2 = new System.Windows.Forms.Panel();
+            this.catalogButton = new Guna.UI2.WinForms.Guna2Button();
+            this.delimiter1 = new System.Windows.Forms.Panel();
+            this.mainButton = new System.Windows.Forms.PictureBox();
+            this.bottomNavigationPanel = new System.Windows.Forms.Panel();
+            this.topNavigationPanel = new System.Windows.Forms.Panel();
+            this.searchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.topRightPanel.SuspendLayout();
-            this.navigationPanel.SuspendLayout();
-            this.panel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainButton)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.restoreButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeButton)).BeginInit();
+            this.navigationPanel.SuspendLayout();
+            this.panel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainButton)).BeginInit();
             this.SuspendLayout();
             // 
             // line
@@ -97,22 +99,72 @@
             // 
             // topRightPanel
             // 
-            this.topRightPanel.Controls.Add(this.closeButton);
-            this.topRightPanel.Controls.Add(this.maximizeButton);
-            this.topRightPanel.Controls.Add(this.restoreButton);
-            this.topRightPanel.Controls.Add(this.minimizeButton);
+            this.topRightPanel.Controls.Add(this.panel2);
             this.topRightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.topRightPanel.Location = new System.Drawing.Point(626, 0);
+            this.topRightPanel.Margin = new System.Windows.Forms.Padding(2);
             this.topRightPanel.Name = "topRightPanel";
             this.topRightPanel.Size = new System.Drawing.Size(100, 49);
-            this.topRightPanel.TabIndex = 58;
-            this.topRightPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
+            this.topRightPanel.TabIndex = 60;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.closeButton);
+            this.panel2.Controls.Add(this.maximizeButton);
+            this.panel2.Controls.Add(this.restoreButton);
+            this.panel2.Controls.Add(this.minimizeButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(100, 49);
+            this.panel2.TabIndex = 60;
+            // 
+            // closeButton
+            // 
+            this.closeButton.Image = global::GameEnergy.Properties.Resources.close;
+            this.closeButton.Location = new System.Drawing.Point(69, 18);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(15, 15);
+            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.closeButton.TabIndex = 7;
+            this.closeButton.TabStop = false;
+            // 
+            // maximizeButton
+            // 
+            this.maximizeButton.Image = global::GameEnergy.Properties.Resources.maximaze;
+            this.maximizeButton.Location = new System.Drawing.Point(43, 18);
+            this.maximizeButton.Name = "maximizeButton";
+            this.maximizeButton.Size = new System.Drawing.Size(15, 15);
+            this.maximizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.maximizeButton.TabIndex = 6;
+            this.maximizeButton.TabStop = false;
+            // 
+            // restoreButton
+            // 
+            this.restoreButton.Image = global::GameEnergy.Properties.Resources.restore;
+            this.restoreButton.Location = new System.Drawing.Point(43, 18);
+            this.restoreButton.Name = "restoreButton";
+            this.restoreButton.Size = new System.Drawing.Size(15, 15);
+            this.restoreButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.restoreButton.TabIndex = 5;
+            this.restoreButton.TabStop = false;
+            this.restoreButton.Visible = false;
+            // 
+            // minimizeButton
+            // 
+            this.minimizeButton.Image = global::GameEnergy.Properties.Resources.collapse;
+            this.minimizeButton.Location = new System.Drawing.Point(17, 18);
+            this.minimizeButton.Name = "minimizeButton";
+            this.minimizeButton.Size = new System.Drawing.Size(15, 15);
+            this.minimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.minimizeButton.TabIndex = 4;
+            this.minimizeButton.TabStop = false;
             // 
             // navigationPanel
             // 
+            this.navigationPanel.Controls.Add(this.searchTextBox);
             this.navigationPanel.Controls.Add(this.cartNotifiPanel);
             this.navigationPanel.Controls.Add(this.notifiPanel);
-            this.navigationPanel.Controls.Add(this.searchButton);
             this.navigationPanel.Controls.Add(this.panel1);
             this.navigationPanel.Controls.Add(this.notificationsButton);
             this.navigationPanel.Controls.Add(this.delimiter3);
@@ -128,7 +180,7 @@
             this.navigationPanel.Location = new System.Drawing.Point(100, 0);
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(526, 49);
-            this.navigationPanel.TabIndex = 59;
+            this.navigationPanel.TabIndex = 61;
             // 
             // cartNotifiPanel
             // 
@@ -160,6 +212,29 @@
             this.panel1.Size = new System.Drawing.Size(5, 34);
             this.panel1.TabIndex = 101;
             // 
+            // notificationsButton
+            // 
+            this.notificationsButton.Animated = true;
+            this.notificationsButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.notificationsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.notificationsButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.notificationsButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.notificationsButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.notificationsButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.notificationsButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.notificationsButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.notificationsButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.notificationsButton.ForeColor = System.Drawing.Color.White;
+            this.notificationsButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.notificationsButton.Image = global::GameEnergy.Properties.Resources.notifi;
+            this.notificationsButton.ImageSize = new System.Drawing.Size(19, 21);
+            this.notificationsButton.Location = new System.Drawing.Point(375, 9);
+            this.notificationsButton.Name = "notificationsButton";
+            this.notificationsButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.notificationsButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.notificationsButton.Size = new System.Drawing.Size(34, 34);
+            this.notificationsButton.TabIndex = 100;
+            // 
             // delimiter3
             // 
             this.delimiter3.Dock = System.Windows.Forms.DockStyle.Right;
@@ -167,6 +242,28 @@
             this.delimiter3.Name = "delimiter3";
             this.delimiter3.Size = new System.Drawing.Size(5, 34);
             this.delimiter3.TabIndex = 98;
+            // 
+            // profileButton
+            // 
+            this.profileButton.Animated = true;
+            this.profileButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.profileButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.profileButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.profileButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.profileButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.profileButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.profileButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.profileButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.profileButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.profileButton.ForeColor = System.Drawing.Color.White;
+            this.profileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.profileButton.Image = global::GameEnergy.Properties.Resources.avatarButtonImage;
+            this.profileButton.Location = new System.Drawing.Point(414, 9);
+            this.profileButton.Name = "profileButton";
+            this.profileButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.profileButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.profileButton.Size = new System.Drawing.Size(34, 34);
+            this.profileButton.TabIndex = 99;
             // 
             // delimiter5
             // 
@@ -176,6 +273,29 @@
             this.delimiter5.Size = new System.Drawing.Size(5, 34);
             this.delimiter5.TabIndex = 97;
             // 
+            // libraryButton
+            // 
+            this.libraryButton.Animated = true;
+            this.libraryButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.libraryButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.libraryButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.libraryButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.libraryButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.libraryButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.libraryButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.libraryButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.libraryButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.libraryButton.ForeColor = System.Drawing.Color.White;
+            this.libraryButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.libraryButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
+            this.libraryButton.ImageSize = new System.Drawing.Size(22, 20);
+            this.libraryButton.Location = new System.Drawing.Point(453, 9);
+            this.libraryButton.Name = "libraryButton";
+            this.libraryButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.libraryButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.libraryButton.Size = new System.Drawing.Size(34, 34);
+            this.libraryButton.TabIndex = 96;
+            // 
             // delimiter4
             // 
             this.delimiter4.Dock = System.Windows.Forms.DockStyle.Right;
@@ -183,6 +303,29 @@
             this.delimiter4.Name = "delimiter4";
             this.delimiter4.Size = new System.Drawing.Size(5, 34);
             this.delimiter4.TabIndex = 95;
+            // 
+            // cartButton
+            // 
+            this.cartButton.Animated = true;
+            this.cartButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.cartButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cartButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.cartButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.cartButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.cartButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.cartButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cartButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.cartButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cartButton.ForeColor = System.Drawing.Color.White;
+            this.cartButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.cartButton.Image = global::GameEnergy.Properties.Resources.cart;
+            this.cartButton.ImageSize = new System.Drawing.Size(22, 20);
+            this.cartButton.Location = new System.Drawing.Point(492, 9);
+            this.cartButton.Name = "cartButton";
+            this.cartButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.cartButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.cartButton.Size = new System.Drawing.Size(34, 34);
+            this.cartButton.TabIndex = 94;
             // 
             // panel16
             // 
@@ -237,139 +380,6 @@
             this.delimiter1.Size = new System.Drawing.Size(5, 34);
             this.delimiter1.TabIndex = 68;
             // 
-            // bottomNavigationPanel
-            // 
-            this.bottomNavigationPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomNavigationPanel.Location = new System.Drawing.Point(0, 43);
-            this.bottomNavigationPanel.Name = "bottomNavigationPanel";
-            this.bottomNavigationPanel.Size = new System.Drawing.Size(526, 6);
-            this.bottomNavigationPanel.TabIndex = 0;
-            this.bottomNavigationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
-            // 
-            // topNavigationPanel
-            // 
-            this.topNavigationPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topNavigationPanel.Location = new System.Drawing.Point(0, 0);
-            this.topNavigationPanel.Name = "topNavigationPanel";
-            this.topNavigationPanel.Size = new System.Drawing.Size(526, 9);
-            this.topNavigationPanel.TabIndex = 54;
-            this.topNavigationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
-            // 
-            // searchButton
-            // 
-            this.searchButton.Animated = true;
-            this.searchButton.BorderColor = System.Drawing.Color.Gray;
-            this.searchButton.BorderRadius = 17;
-            this.searchButton.BorderThickness = 1;
-            this.searchButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.searchButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.searchButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.searchButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.searchButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.searchButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchButton.FillColor = System.Drawing.Color.Transparent;
-            this.searchButton.Font = new System.Drawing.Font("Segoe UI", 11.25F);
-            this.searchButton.ForeColor = System.Drawing.Color.White;
-            this.searchButton.Image = global::GameEnergy.Properties.Resources.magnifyingGlass;
-            this.searchButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.searchButton.Location = new System.Drawing.Point(155, 9);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.PressedColor = System.Drawing.Color.Empty;
-            this.searchButton.Size = new System.Drawing.Size(215, 34);
-            this.searchButton.TabIndex = 102;
-            this.searchButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // notificationsButton
-            // 
-            this.notificationsButton.Animated = true;
-            this.notificationsButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.notificationsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.notificationsButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.notificationsButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.notificationsButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.notificationsButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.notificationsButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.notificationsButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.notificationsButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.notificationsButton.ForeColor = System.Drawing.Color.White;
-            this.notificationsButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.notificationsButton.Image = global::GameEnergy.Properties.Resources.notifi;
-            this.notificationsButton.ImageSize = new System.Drawing.Size(19, 21);
-            this.notificationsButton.Location = new System.Drawing.Point(375, 9);
-            this.notificationsButton.Name = "notificationsButton";
-            this.notificationsButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.notificationsButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.notificationsButton.Size = new System.Drawing.Size(34, 34);
-            this.notificationsButton.TabIndex = 100;
-            // 
-            // profileButton
-            // 
-            this.profileButton.Animated = true;
-            this.profileButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.profileButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.profileButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.profileButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.profileButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.profileButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.profileButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.profileButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.profileButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.profileButton.ForeColor = System.Drawing.Color.White;
-            this.profileButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.profileButton.Image = global::GameEnergy.Properties.Resources.avatarButtonImage;
-            this.profileButton.Location = new System.Drawing.Point(414, 9);
-            this.profileButton.Name = "profileButton";
-            this.profileButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.profileButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.profileButton.Size = new System.Drawing.Size(34, 34);
-            this.profileButton.TabIndex = 99;
-            // 
-            // libraryButton
-            // 
-            this.libraryButton.Animated = true;
-            this.libraryButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.libraryButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.libraryButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.libraryButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.libraryButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.libraryButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.libraryButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.libraryButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.libraryButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.libraryButton.ForeColor = System.Drawing.Color.White;
-            this.libraryButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.libraryButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
-            this.libraryButton.ImageSize = new System.Drawing.Size(22, 20);
-            this.libraryButton.Location = new System.Drawing.Point(453, 9);
-            this.libraryButton.Name = "libraryButton";
-            this.libraryButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.libraryButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.libraryButton.Size = new System.Drawing.Size(34, 34);
-            this.libraryButton.TabIndex = 96;
-            // 
-            // cartButton
-            // 
-            this.cartButton.Animated = true;
-            this.cartButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.cartButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cartButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.cartButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.cartButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.cartButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.cartButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cartButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.cartButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.cartButton.ForeColor = System.Drawing.Color.White;
-            this.cartButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.cartButton.Image = global::GameEnergy.Properties.Resources.cart;
-            this.cartButton.ImageSize = new System.Drawing.Size(22, 20);
-            this.cartButton.Location = new System.Drawing.Point(492, 9);
-            this.cartButton.Name = "cartButton";
-            this.cartButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.cartButton.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.cartButton.Size = new System.Drawing.Size(34, 34);
-            this.cartButton.TabIndex = 94;
-            // 
             // mainButton
             // 
             this.mainButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -382,46 +392,45 @@
             this.mainButton.TabIndex = 57;
             this.mainButton.TabStop = false;
             // 
-            // closeButton
+            // bottomNavigationPanel
             // 
-            this.closeButton.Image = global::GameEnergy.Properties.Resources.close;
-            this.closeButton.Location = new System.Drawing.Point(69, 18);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(15, 15);
-            this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.closeButton.TabIndex = 7;
-            this.closeButton.TabStop = false;
+            this.bottomNavigationPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomNavigationPanel.Location = new System.Drawing.Point(0, 43);
+            this.bottomNavigationPanel.Name = "bottomNavigationPanel";
+            this.bottomNavigationPanel.Size = new System.Drawing.Size(526, 6);
+            this.bottomNavigationPanel.TabIndex = 0;
             // 
-            // maximizeButton
+            // topNavigationPanel
             // 
-            this.maximizeButton.Image = global::GameEnergy.Properties.Resources.maximaze;
-            this.maximizeButton.Location = new System.Drawing.Point(43, 18);
-            this.maximizeButton.Name = "maximizeButton";
-            this.maximizeButton.Size = new System.Drawing.Size(15, 15);
-            this.maximizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.maximizeButton.TabIndex = 6;
-            this.maximizeButton.TabStop = false;
+            this.topNavigationPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topNavigationPanel.Location = new System.Drawing.Point(0, 0);
+            this.topNavigationPanel.Name = "topNavigationPanel";
+            this.topNavigationPanel.Size = new System.Drawing.Size(526, 9);
+            this.topNavigationPanel.TabIndex = 54;
             // 
-            // restoreButton
+            // searchTextBox
             // 
-            this.restoreButton.Image = global::GameEnergy.Properties.Resources.restore;
-            this.restoreButton.Location = new System.Drawing.Point(43, 18);
-            this.restoreButton.Name = "restoreButton";
-            this.restoreButton.Size = new System.Drawing.Size(15, 15);
-            this.restoreButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.restoreButton.TabIndex = 5;
-            this.restoreButton.TabStop = false;
-            this.restoreButton.Visible = false;
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Image = global::GameEnergy.Properties.Resources.collapse;
-            this.minimizeButton.Location = new System.Drawing.Point(17, 18);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.Size = new System.Drawing.Size(15, 15);
-            this.minimizeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minimizeButton.TabIndex = 4;
-            this.minimizeButton.TabStop = false;
+            this.searchTextBox.BorderColor = System.Drawing.Color.Gray;
+            this.searchTextBox.BorderRadius = 17;
+            this.searchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTextBox.DefaultText = "";
+            this.searchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.searchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchTextBox.ForeColor = System.Drawing.Color.White;
+            this.searchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.searchTextBox.IconRight = global::GameEnergy.Properties.Resources.magnifyingGlass;
+            this.searchTextBox.Location = new System.Drawing.Point(155, 9);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.PlaceholderText = "";
+            this.searchTextBox.SelectedText = "";
+            this.searchTextBox.Size = new System.Drawing.Size(215, 34);
+            this.searchTextBox.TabIndex = 102;
             // 
             // NavigationControl
             // 
@@ -436,14 +445,15 @@
             this.Size = new System.Drawing.Size(726, 52);
             this.Load += new System.EventHandler(this.NavigationControl_Load);
             this.topRightPanel.ResumeLayout(false);
-            this.navigationPanel.ResumeLayout(false);
-            this.navigationPanel.PerformLayout();
-            this.panel16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.mainButton)).EndInit();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maximizeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.restoreButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizeButton)).EndInit();
+            this.navigationPanel.ResumeLayout(false);
+            this.navigationPanel.PerformLayout();
+            this.panel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainButton)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -453,21 +463,14 @@
         private Guna.UI2.WinForms.Guna2Button line;
         private System.Windows.Forms.Panel topLeftPanel;
         private System.Windows.Forms.Panel topRightPanel;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox maximizeButton;
         private System.Windows.Forms.PictureBox restoreButton;
         private System.Windows.Forms.PictureBox minimizeButton;
         private System.Windows.Forms.Panel navigationPanel;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel delimiter2;
-        private Guna.UI2.WinForms.Guna2Button catalogButton;
-        private System.Windows.Forms.Panel delimiter1;
-        private System.Windows.Forms.PictureBox mainButton;
-        private System.Windows.Forms.Panel bottomNavigationPanel;
-        private System.Windows.Forms.Panel topNavigationPanel;
         private Guna.UI2.WinForms.Guna2Panel cartNotifiPanel;
         private Guna.UI2.WinForms.Guna2Panel notifiPanel;
-        private Guna.UI2.WinForms.Guna2Button searchButton;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2CircleButton notificationsButton;
         private System.Windows.Forms.Panel delimiter3;
@@ -476,5 +479,13 @@
         private Guna.UI2.WinForms.Guna2CircleButton libraryButton;
         private System.Windows.Forms.Panel delimiter4;
         private Guna.UI2.WinForms.Guna2CircleButton cartButton;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel delimiter2;
+        private Guna.UI2.WinForms.Guna2Button catalogButton;
+        private System.Windows.Forms.Panel delimiter1;
+        private System.Windows.Forms.PictureBox mainButton;
+        private System.Windows.Forms.Panel bottomNavigationPanel;
+        private System.Windows.Forms.Panel topNavigationPanel;
+        private Guna.UI2.WinForms.Guna2TextBox searchTextBox;
     }
 }

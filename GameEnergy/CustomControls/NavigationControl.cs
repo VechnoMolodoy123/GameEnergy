@@ -190,6 +190,15 @@ namespace GameEnergy.CustomControls
             }
         }
 
+        public void UpdatePanelsWidth()
+        {
+            if (leftPanel != null)
+                leftPanel.Width = LeftPanelWidth > 0 ? LeftPanelWidth : _leftPanelDefaultWidth;
+
+            if (rightPanel != null)
+                rightPanel.Width = RightPanelWidth > 0 ? RightPanelWidth : _rightPanelDefaultWidth;
+        }
+
         private void Form_MouseDown(object sender, MouseEventArgs e)
         {
             FormDrag.DragingForm(FindForm());

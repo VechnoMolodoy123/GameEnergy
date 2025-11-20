@@ -167,6 +167,9 @@
     <Compile Include="Models\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\UserForms\CartForm.resx">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\GameInfoForm.resx">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
     </EmbeddedResource>
