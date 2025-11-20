@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\UserForms\CartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\CartForm.Designer.cs">
+      <DependentUpon>CartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UserForms\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,11 +91,35 @@
     <Compile Include="AppForms\UserForms\GameInfoForm.Designer.cs">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\UserForms\GameСatalogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\GameСatalogForm.Designer.cs">
+      <DependentUpon>GameСatalogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\UserForms\LibraryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\LibraryForm.Designer.cs">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UserForms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppForms\UserForms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\UserForms\NotifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\NotifyForm.Designer.cs">
+      <DependentUpon>NotifyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\UserForms\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\UserForms\RegistrationOrAuthorizationForm.cs">
       <SubType>Form</SubType>

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationControl));
             this.line = new Guna.UI2.WinForms.Guna2Button();
             this.topLeftPanel = new System.Windows.Forms.Panel();
-            this.topRight = new System.Windows.Forms.Panel();
+            this.topRightPanel = new System.Windows.Forms.Panel();
             this.navigationPanel = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.delimiter2 = new System.Windows.Forms.Panel();
@@ -55,7 +55,7 @@
             this.delimiter4 = new System.Windows.Forms.Panel();
             this.cartButton = new Guna.UI2.WinForms.Guna2CircleButton();
             this.searchButton = new Guna.UI2.WinForms.Guna2Button();
-            this.topRight.SuspendLayout();
+            this.topRightPanel.SuspendLayout();
             this.navigationPanel.SuspendLayout();
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainButton)).BeginInit();
@@ -83,6 +83,7 @@
             this.line.Name = "line";
             this.line.Size = new System.Drawing.Size(726, 3);
             this.line.TabIndex = 6;
+            this.line.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             // 
             // topLeftPanel
             // 
@@ -92,18 +93,20 @@
             this.topLeftPanel.Name = "topLeftPanel";
             this.topLeftPanel.Size = new System.Drawing.Size(100, 49);
             this.topLeftPanel.TabIndex = 57;
+            this.topLeftPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             // 
-            // topRight
+            // topRightPanel
             // 
-            this.topRight.Controls.Add(this.closeButton);
-            this.topRight.Controls.Add(this.maximizeButton);
-            this.topRight.Controls.Add(this.restoreButton);
-            this.topRight.Controls.Add(this.minimizeButton);
-            this.topRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.topRight.Location = new System.Drawing.Point(626, 0);
-            this.topRight.Name = "topRight";
-            this.topRight.Size = new System.Drawing.Size(100, 49);
-            this.topRight.TabIndex = 58;
+            this.topRightPanel.Controls.Add(this.closeButton);
+            this.topRightPanel.Controls.Add(this.maximizeButton);
+            this.topRightPanel.Controls.Add(this.restoreButton);
+            this.topRightPanel.Controls.Add(this.minimizeButton);
+            this.topRightPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.topRightPanel.Location = new System.Drawing.Point(626, 0);
+            this.topRightPanel.Name = "topRightPanel";
+            this.topRightPanel.Size = new System.Drawing.Size(100, 49);
+            this.topRightPanel.TabIndex = 58;
+            this.topRightPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             // 
             // navigationPanel
             // 
@@ -163,9 +166,10 @@
             this.catalogButton.FillColor = System.Drawing.Color.Transparent;
             this.catalogButton.Font = new System.Drawing.Font("Segoe UI", 11.25F);
             this.catalogButton.ForeColor = System.Drawing.Color.White;
+            this.catalogButton.HoverState.FillColor = System.Drawing.Color.White;
             this.catalogButton.Location = new System.Drawing.Point(39, 0);
             this.catalogButton.Name = "catalogButton";
-            this.catalogButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(43)))));
+            this.catalogButton.PressedColor = System.Drawing.Color.White;
             this.catalogButton.Size = new System.Drawing.Size(85, 34);
             this.catalogButton.TabIndex = 69;
             this.catalogButton.Text = "Каталог";
@@ -185,6 +189,7 @@
             this.bottomNavigationPanel.Name = "bottomNavigationPanel";
             this.bottomNavigationPanel.Size = new System.Drawing.Size(526, 6);
             this.bottomNavigationPanel.TabIndex = 0;
+            this.bottomNavigationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             // 
             // topNavigationPanel
             // 
@@ -193,6 +198,7 @@
             this.topNavigationPanel.Name = "topNavigationPanel";
             this.topNavigationPanel.Size = new System.Drawing.Size(526, 9);
             this.topNavigationPanel.TabIndex = 54;
+            this.topNavigationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
             // 
             // mainButton
             // 
@@ -405,7 +411,7 @@
             this.searchButton.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.searchButton.Location = new System.Drawing.Point(129, 9);
             this.searchButton.Name = "searchButton";
-            this.searchButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(39)))), ((int)(((byte)(43)))));
+            this.searchButton.PressedColor = System.Drawing.Color.Empty;
             this.searchButton.Size = new System.Drawing.Size(241, 34);
             this.searchButton.TabIndex = 102;
             this.searchButton.Text = "Поиск";
@@ -417,12 +423,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.navigationPanel);
-            this.Controls.Add(this.topRight);
+            this.Controls.Add(this.topRightPanel);
             this.Controls.Add(this.topLeftPanel);
             this.Controls.Add(this.line);
             this.Name = "NavigationControl";
             this.Size = new System.Drawing.Size(726, 52);
-            this.topRight.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.NavigationControl_Load);
+            this.topRightPanel.ResumeLayout(false);
             this.navigationPanel.ResumeLayout(false);
             this.navigationPanel.PerformLayout();
             this.panel16.ResumeLayout(false);
@@ -439,7 +446,7 @@
 
         private Guna.UI2.WinForms.Guna2Button line;
         private System.Windows.Forms.Panel topLeftPanel;
-        private System.Windows.Forms.Panel topRight;
+        private System.Windows.Forms.Panel topRightPanel;
         private System.Windows.Forms.PictureBox closeButton;
         private System.Windows.Forms.PictureBox maximizeButton;
         private System.Windows.Forms.PictureBox restoreButton;

@@ -68,27 +68,27 @@ BEGIN
     END
 END;
 
-CREATE TRIGGER trg_UpdateOrderTotal
-ON [dbo].[OrderItems]
+CREATE TRIGGER [dbo].[trg_UpdateCartTotal]
+ON [dbo].[CartItems]
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Собираем OrderID из затронутых строк
-    DECLARE @OrderIDs TABLE (OrderID INT);
-    INSERT INTO @OrderIDs
-    SELECT OrderID FROM inserted
+    DECLARE @CartIDs TABLE (CartID INT);
+    INSERT INTO @CartIDs
+    SELECT CartID FROM inserted
     UNION
-    SELECT OrderID FROM deleted;
+    SELECT CartID FROM deleted;
 
-    -- Обновляем TotalAmount в Orders
-    UPDATE o
-    SET TotalAmount = ISNULL((
-        SELECT SUM(oi.PriceAtPurchase)
-        FROM [dbo].[OrderItems] oi
-        WHERE oi.OrderID = o.OrderID
-    ), 0)
-    FROM [dbo].[Orders] o
-    INNER JOIN @OrderIDs t ON o.OrderID = t.OrderID;
+    UPDATE c
+    SET 
+        TotalAmount = ISNULL((
+            SELECT SUM(ci.PriceAtAdd)
+            FROM [dbo].[CartItems] ci
+            WHERE ci.CartID = c.CartID
+        ), 0),
+        ModifiedDate = GETDATE()
+    FROM [dbo].[Cart] c
+    INNER JOIN @CartIDs t ON c.CartID = t.CartID;
 END;

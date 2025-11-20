@@ -28,8 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.SuspendLayout();
+            // 
+            // FormRounded
+            // 
+            this.FormRounded.BorderRadius = 11;
+            this.FormRounded.ContainerControl = this;
+            this.FormRounded.DockIndicatorTransparencyValue = 0.6D;
+            this.FormRounded.DragForm = false;
+            this.FormRounded.ResizeForm = false;
+            this.FormRounded.TransparentWhileDrag = true;
             // 
             // MainForm
             // 
@@ -47,5 +58,7 @@
         }
 
         #endregion
+
+        private Guna.UI2.WinForms.Guna2BorderlessForm FormRounded;
     }
 }
