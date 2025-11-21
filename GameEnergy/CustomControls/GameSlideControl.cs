@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.CustomControls
 {
@@ -15,6 +16,7 @@ namespace GameEnergy.CustomControls
     {
         private int _gameID;
         private string _titleOverride;
+        public event EventHandler<Games> GameClicked;
 
         public GameSlideControl(int gameID, string titleOverride)
         {
@@ -65,6 +67,12 @@ namespace GameEnergy.CustomControls
         {
             // Заменяем недопустимые символы на подчёркивания
             return System.Text.RegularExpressions.Regex.Replace(fileName, @"[^a-zA-Z0-9_]", "_");
+        }
+
+        private void GameSlideControl_Click(object sender, EventArgs e)
+        {
+            var game = Program.context.Games.FirstOrDefault(g => g.GameID == _gameID);
+            GameClicked?.Invoke(this, game);
         }
     }
 }

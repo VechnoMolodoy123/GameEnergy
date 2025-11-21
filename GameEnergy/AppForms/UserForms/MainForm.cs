@@ -1,5 +1,7 @@
-﻿using GameEnergy.Classes.Messages;
+﻿using GameEnergy.Classes.Customization;
+using GameEnergy.Classes.Messages;
 using GameEnergy.CustomControls;
+using GameEnergy.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.AppForms.UserForms
 {
@@ -58,7 +61,7 @@ namespace GameEnergy.AppForms.UserForms
 
                     var slide = new GameSlideControl(game.GameID, title);
                     slide.Visible = false; // скрыты по умолчанию
-
+                    slide.GameClicked += GameControl_GameClicked;
                     gamesSlidePanel.Controls.Add(slide);
                     _slides.Add(slide);
                 }
@@ -95,6 +98,13 @@ namespace GameEnergy.AppForms.UserForms
 
             // Показываем новый
             _slides[_currentIndex].Visible = true;
+        }
+
+        private void GameControl_GameClicked(object sender, Games game)
+        {
+            var gameInfoForm = new GameInfoForm(game);
+            VisibilityHelper.ShowNewForm(this, gameInfoForm);
+            this.Hide();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

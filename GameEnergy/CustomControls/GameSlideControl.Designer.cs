@@ -46,6 +46,7 @@
             this.headerLabel.Size = new System.Drawing.Size(173, 87);
             this.headerLabel.TabIndex = 0;
             this.headerLabel.Text = "ОБЪЕДИНЯЙТЕСЬ С ВЫЖИВШИМИ В ARC RAIDERS";
+            this.headerLabel.Click += new System.EventHandler(this.GameSlideControl_Click);
             // 
             // priceLabel
             // 
@@ -58,6 +59,7 @@
             this.priceLabel.Size = new System.Drawing.Size(86, 21);
             this.priceLabel.TabIndex = 1;
             this.priceLabel.Text = "3999 ₽";
+            this.priceLabel.Click += new System.EventHandler(this.GameSlideControl_Click);
             // 
             // discountLabel
             // 
@@ -70,6 +72,7 @@
             this.discountLabel.Size = new System.Drawing.Size(46, 16);
             this.discountLabel.TabIndex = 2;
             this.discountLabel.Text = "-99%";
+            this.discountLabel.Click += new System.EventHandler(this.GameSlideControl_Click);
             // 
             // gameImage
             // 
@@ -84,6 +87,7 @@
             this.gameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gameImage.TabIndex = 4;
             this.gameImage.TabStop = false;
+            this.gameImage.Click += new System.EventHandler(this.GameSlideControl_Click);
             // 
             // GameSlideControl
             // 
@@ -97,6 +101,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "GameSlideControl";
             this.Size = new System.Drawing.Size(180, 220);
+            this.Click += new System.EventHandler(this.GameSlideControl_Click);
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
             this.ResumeLayout(false);
 

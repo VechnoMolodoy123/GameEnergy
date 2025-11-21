@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameEnergy.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace GameEnergy.AppForms.UserForms
 {
     public partial class GameInfoForm : Form
     {
-        public GameInfoForm()
+        Games _game;
+
+        public GameInfoForm(Games game)
         {
             InitializeComponent();
+
+            _game = game;
         }
     }
 }
