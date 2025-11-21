@@ -142,6 +142,12 @@
     <Compile Include="CustomControls\GameSlideControl.Designer.cs">
       <DependentUpon>GameSlideControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\HitGameControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\HitGameControl.Designer.cs">
+      <DependentUpon>HitGameControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\NavigationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\GameSlideControl.resx">
       <DependentUpon>GameSlideControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\HitGameControl.resx">
+      <DependentUpon>HitGameControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\NavigationControl.resx">
       <DependentUpon>NavigationControl.cs</DependentUpon>
