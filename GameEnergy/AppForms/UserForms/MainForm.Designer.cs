@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.categoryGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.delimiterPanel4 = new System.Windows.Forms.Panel();
@@ -40,12 +39,11 @@
             this.topSellersButton = new Guna.UI2.WinForms.Guna2Button();
             this.newGamesButton = new Guna.UI2.WinForms.Guna2Button();
             this.bannerPanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mainImage5 = new System.Windows.Forms.PictureBox();
+            this.mainImagePanel4 = new System.Windows.Forms.Panel();
+            this.mainImagePanel3 = new System.Windows.Forms.Panel();
+            this.mainImagePanel1 = new System.Windows.Forms.Panel();
             this.mainImage4 = new System.Windows.Forms.PictureBox();
-            this.mainImageLabel1 = new System.Windows.Forms.Label();
+            this.mainImage3 = new System.Windows.Forms.PictureBox();
             this.mainImage2 = new System.Windows.Forms.PictureBox();
             this.mainImage1 = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
@@ -59,12 +57,21 @@
             this.delimiterPanel3 = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
+            this.mainImagePanel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.delimiterPanel4.SuspendLayout();
             this.categoryButtonsPanel.SuspendLayout();
             this.bannerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).BeginInit();
+            this.mainImagePanel4.SuspendLayout();
+            this.mainImagePanel3.SuspendLayout();
+            this.mainImagePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage1)).BeginInit();
             this.topPanel.SuspendLayout();
@@ -72,6 +79,7 @@
             this.delimiterPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
+            this.mainImagePanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormRounded
@@ -82,19 +90,6 @@
             this.FormRounded.DragForm = false;
             this.FormRounded.ResizeForm = false;
             this.FormRounded.TransparentWhileDrag = true;
-            // 
-            // navigationControl
-            // 
-            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationControl.leftPanel = null;
-            this.navigationControl.LeftPanelWidth = 0;
-            this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Name = "navigationControl";
-            this.navigationControl.rightPanel = null;
-            this.navigationControl.RightPanelWidth = 0;
-            this.navigationControl.Size = new System.Drawing.Size(726, 52);
-            this.navigationControl.TabIndex = 0;
             // 
             // mainPanel
             // 
@@ -217,12 +212,12 @@
             // 
             // bannerPanel
             // 
-            this.bannerPanel.Controls.Add(this.label3);
-            this.bannerPanel.Controls.Add(this.label2);
-            this.bannerPanel.Controls.Add(this.label1);
-            this.bannerPanel.Controls.Add(this.mainImage5);
+            this.bannerPanel.Controls.Add(this.mainImagePanel4);
+            this.bannerPanel.Controls.Add(this.mainImagePanel3);
+            this.bannerPanel.Controls.Add(this.mainImagePanel2);
+            this.bannerPanel.Controls.Add(this.mainImagePanel1);
             this.bannerPanel.Controls.Add(this.mainImage4);
-            this.bannerPanel.Controls.Add(this.mainImageLabel1);
+            this.bannerPanel.Controls.Add(this.mainImage3);
             this.bannerPanel.Controls.Add(this.mainImage2);
             this.bannerPanel.Controls.Add(this.mainImage1);
             this.bannerPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -231,75 +226,51 @@
             this.bannerPanel.Size = new System.Drawing.Size(526, 92);
             this.bannerPanel.TabIndex = 29;
             // 
-            // label3
+            // mainImagePanel4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label3.Location = new System.Drawing.Point(432, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 32);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Любовь\r\nк играм";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mainImagePanel4.Controls.Add(this.label6);
+            this.mainImagePanel4.Location = new System.Drawing.Point(407, 44);
+            this.mainImagePanel4.Name = "mainImagePanel4";
+            this.mainImagePanel4.Size = new System.Drawing.Size(106, 42);
+            this.mainImagePanel4.TabIndex = 13;
             // 
-            // label2
+            // mainImagePanel3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label2.Location = new System.Drawing.Point(291, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 32);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Активное\r\nкомьюнити";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mainImagePanel3.Controls.Add(this.label5);
+            this.mainImagePanel3.Location = new System.Drawing.Point(275, 44);
+            this.mainImagePanel3.Name = "mainImagePanel3";
+            this.mainImagePanel3.Size = new System.Drawing.Size(106, 42);
+            this.mainImagePanel3.TabIndex = 12;
             // 
-            // label1
+            // mainImagePanel1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label1.Location = new System.Drawing.Point(151, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Оперативная\r\nподдержка";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // mainImage5
-            // 
-            this.mainImage5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainImage5.Image = global::GameEnergy.Properties.Resources.MainGame;
-            this.mainImage5.Location = new System.Drawing.Point(394, 0);
-            this.mainImage5.Name = "mainImage5";
-            this.mainImage5.Size = new System.Drawing.Size(132, 92);
-            this.mainImage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mainImage5.TabIndex = 5;
-            this.mainImage5.TabStop = false;
+            this.mainImagePanel1.Controls.Add(this.label4);
+            this.mainImagePanel1.Location = new System.Drawing.Point(13, 44);
+            this.mainImagePanel1.Name = "mainImagePanel1";
+            this.mainImagePanel1.Size = new System.Drawing.Size(106, 42);
+            this.mainImagePanel1.TabIndex = 10;
             // 
             // mainImage4
             // 
             this.mainImage4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainImage4.Image = global::GameEnergy.Properties.Resources.MainActive;
-            this.mainImage4.Location = new System.Drawing.Point(263, 0);
+            this.mainImage4.Image = global::GameEnergy.Properties.Resources.MainGame;
+            this.mainImage4.Location = new System.Drawing.Point(394, 0);
             this.mainImage4.Name = "mainImage4";
-            this.mainImage4.Size = new System.Drawing.Size(131, 92);
+            this.mainImage4.Size = new System.Drawing.Size(132, 92);
             this.mainImage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mainImage4.TabIndex = 4;
+            this.mainImage4.TabIndex = 5;
             this.mainImage4.TabStop = false;
             // 
-            // mainImageLabel1
+            // mainImage3
             // 
-            this.mainImageLabel1.AutoSize = true;
-            this.mainImageLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mainImageLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.mainImageLabel1.Location = new System.Drawing.Point(22, 48);
-            this.mainImageLabel1.Name = "mainImageLabel1";
-            this.mainImageLabel1.Size = new System.Drawing.Size(86, 32);
-            this.mainImageLabel1.TabIndex = 2;
-            this.mainImageLabel1.Text = "Скидки\r\nкруглый год";
-            this.mainImageLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mainImage3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mainImage3.Image = global::GameEnergy.Properties.Resources.MainActive;
+            this.mainImage3.Location = new System.Drawing.Point(263, 0);
+            this.mainImage3.Name = "mainImage3";
+            this.mainImage3.Size = new System.Drawing.Size(131, 92);
+            this.mainImage3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mainImage3.TabIndex = 4;
+            this.mainImage3.TabStop = false;
             // 
             // mainImage2
             // 
@@ -368,9 +339,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GameEnergy.Properties.Resources.hitLabel;
-            this.pictureBox1.Location = new System.Drawing.Point(25, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(40, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(15, 89);
+            this.pictureBox1.Size = new System.Drawing.Size(16, 115);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -432,6 +403,75 @@
             this.leftPanel.Size = new System.Drawing.Size(100, 378);
             this.leftPanel.TabIndex = 26;
             // 
+            // navigationControl
+            // 
+            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationControl.leftPanel = null;
+            this.navigationControl.LeftPanelWidth = 0;
+            this.navigationControl.Location = new System.Drawing.Point(0, 0);
+            this.navigationControl.Name = "navigationControl";
+            this.navigationControl.rightPanel = null;
+            this.navigationControl.RightPanelWidth = 0;
+            this.navigationControl.Size = new System.Drawing.Size(726, 52);
+            this.navigationControl.TabIndex = 0;
+            // 
+            // mainImagePanel2
+            // 
+            this.mainImagePanel2.Controls.Add(this.label1);
+            this.mainImagePanel2.Location = new System.Drawing.Point(143, 44);
+            this.mainImagePanel2.Name = "mainImagePanel2";
+            this.mainImagePanel2.Size = new System.Drawing.Size(108, 42);
+            this.mainImagePanel2.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label4.Location = new System.Drawing.Point(9, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 32);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Скидки\r\nкруглый год";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(6, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 32);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Оперативная\r\nподдержка";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label5.Location = new System.Drawing.Point(13, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 32);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Активное\r\nкомьюнити";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label6.Location = new System.Drawing.Point(25, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 32);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Любовь\r\nк играм";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,9 +493,14 @@
             this.delimiterPanel4.ResumeLayout(false);
             this.categoryButtonsPanel.ResumeLayout(false);
             this.bannerPanel.ResumeLayout(false);
-            this.bannerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).EndInit();
+            this.mainImagePanel4.ResumeLayout(false);
+            this.mainImagePanel4.PerformLayout();
+            this.mainImagePanel3.ResumeLayout(false);
+            this.mainImagePanel3.PerformLayout();
+            this.mainImagePanel1.ResumeLayout(false);
+            this.mainImagePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage1)).EndInit();
             this.topPanel.ResumeLayout(false);
@@ -465,6 +510,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.mainImagePanel2.ResumeLayout(false);
+            this.mainImagePanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -492,13 +539,17 @@
         private Guna.UI2.WinForms.Guna2Button topSellersButton;
         private Guna.UI2.WinForms.Guna2Button newGamesButton;
         private System.Windows.Forms.FlowLayoutPanel categoryGamesPanel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox mainImage5;
         private System.Windows.Forms.PictureBox mainImage4;
-        private System.Windows.Forms.Label mainImageLabel1;
+        private System.Windows.Forms.PictureBox mainImage3;
         private System.Windows.Forms.PictureBox mainImage2;
         private System.Windows.Forms.PictureBox mainImage1;
+        private System.Windows.Forms.Panel mainImagePanel1;
+        private System.Windows.Forms.Panel mainImagePanel3;
+        private System.Windows.Forms.Panel mainImagePanel4;
+        private System.Windows.Forms.Panel mainImagePanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

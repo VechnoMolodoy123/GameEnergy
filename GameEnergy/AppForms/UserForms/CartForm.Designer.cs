@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.GamesTabControl = new Guna.UI2.WinForms.Guna2TabControl();
-            this.newGames = new System.Windows.Forms.TabPage();
-            this.newGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.topSellers = new System.Windows.Forms.TabPage();
             this.topSellersPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.latestArrivals = new System.Windows.Forms.TabPage();
             this.latestArrivalsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.newGames = new System.Windows.Forms.TabPage();
+            this.newGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.GamesTabControl.SuspendLayout();
-            this.newGames.SuspendLayout();
             this.topSellers.SuspendLayout();
             this.latestArrivals.SuspendLayout();
+            this.newGames.SuspendLayout();
             this.SuspendLayout();
             // 
             // GamesTabControl
@@ -73,6 +73,46 @@
             this.GamesTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.GamesTabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
             // 
+            // topSellers
+            // 
+            this.topSellers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.topSellers.Controls.Add(this.topSellersPanel);
+            this.topSellers.Location = new System.Drawing.Point(4, 44);
+            this.topSellers.Name = "topSellers";
+            this.topSellers.Padding = new System.Windows.Forms.Padding(3);
+            this.topSellers.Size = new System.Drawing.Size(1312, 33);
+            this.topSellers.TabIndex = 1;
+            this.topSellers.Text = "Лидеры продаж";
+            // 
+            // topSellersPanel
+            // 
+            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
+            this.topSellersPanel.Name = "topSellersPanel";
+            this.topSellersPanel.Size = new System.Drawing.Size(1306, 27);
+            this.topSellersPanel.TabIndex = 76;
+            // 
+            // latestArrivals
+            // 
+            this.latestArrivals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.latestArrivals.Controls.Add(this.latestArrivalsPanel);
+            this.latestArrivals.Location = new System.Drawing.Point(4, 44);
+            this.latestArrivals.Name = "latestArrivals";
+            this.latestArrivals.Padding = new System.Windows.Forms.Padding(3);
+            this.latestArrivals.Size = new System.Drawing.Size(1312, 33);
+            this.latestArrivals.TabIndex = 2;
+            this.latestArrivals.Text = "Последние поступления";
+            // 
+            // latestArrivalsPanel
+            // 
+            this.latestArrivalsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.latestArrivalsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.latestArrivalsPanel.Location = new System.Drawing.Point(3, 3);
+            this.latestArrivalsPanel.Name = "latestArrivalsPanel";
+            this.latestArrivalsPanel.Size = new System.Drawing.Size(1306, 27);
+            this.latestArrivalsPanel.TabIndex = 77;
+            // 
             // newGames
             // 
             this.newGames.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -93,46 +133,6 @@
             this.newGamesPanel.Size = new System.Drawing.Size(712, 27);
             this.newGamesPanel.TabIndex = 75;
             // 
-            // topSellers
-            // 
-            this.topSellers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.topSellers.Controls.Add(this.topSellersPanel);
-            this.topSellers.Location = new System.Drawing.Point(4, 44);
-            this.topSellers.Name = "topSellers";
-            this.topSellers.Padding = new System.Windows.Forms.Padding(3);
-            this.topSellers.Size = new System.Drawing.Size(518, 33);
-            this.topSellers.TabIndex = 1;
-            this.topSellers.Text = "Лидеры продаж";
-            // 
-            // topSellersPanel
-            // 
-            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
-            this.topSellersPanel.Name = "topSellersPanel";
-            this.topSellersPanel.Size = new System.Drawing.Size(512, 27);
-            this.topSellersPanel.TabIndex = 76;
-            // 
-            // latestArrivals
-            // 
-            this.latestArrivals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.latestArrivals.Controls.Add(this.latestArrivalsPanel);
-            this.latestArrivals.Location = new System.Drawing.Point(4, 44);
-            this.latestArrivals.Name = "latestArrivals";
-            this.latestArrivals.Padding = new System.Windows.Forms.Padding(3);
-            this.latestArrivals.Size = new System.Drawing.Size(518, 33);
-            this.latestArrivals.TabIndex = 2;
-            this.latestArrivals.Text = "Последние поступления";
-            // 
-            // latestArrivalsPanel
-            // 
-            this.latestArrivalsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.latestArrivalsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.latestArrivalsPanel.Location = new System.Drawing.Point(3, 3);
-            this.latestArrivalsPanel.Name = "latestArrivalsPanel";
-            this.latestArrivalsPanel.Size = new System.Drawing.Size(512, 27);
-            this.latestArrivalsPanel.TabIndex = 77;
-            // 
             // CartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,9 +145,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CartForm";
             this.GamesTabControl.ResumeLayout(false);
-            this.newGames.ResumeLayout(false);
             this.topSellers.ResumeLayout(false);
             this.latestArrivals.ResumeLayout(false);
+            this.newGames.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -155,11 +155,11 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TabControl GamesTabControl;
-        private System.Windows.Forms.TabPage newGames;
-        private System.Windows.Forms.FlowLayoutPanel newGamesPanel;
         private System.Windows.Forms.TabPage topSellers;
         private System.Windows.Forms.FlowLayoutPanel topSellersPanel;
         private System.Windows.Forms.TabPage latestArrivals;
         private System.Windows.Forms.FlowLayoutPanel latestArrivalsPanel;
+        private System.Windows.Forms.TabPage newGames;
+        private System.Windows.Forms.FlowLayoutPanel newGamesPanel;
     }
 }

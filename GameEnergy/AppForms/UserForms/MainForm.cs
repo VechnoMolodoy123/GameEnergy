@@ -36,8 +36,8 @@ namespace GameEnergy.AppForms.UserForms
         private void SetFormStyle()
         {
             AutoScrollHelper.ConfigureScrollbars(mainPanel, disableHorizontal: true, disableVertical: true);
-            AutoScrollHelper.ConfigureScrollbars(hitGamesPanel, disableHorizontal: true, disableVertical: false);
-            AutoScrollHelper.ConfigureScrollbars(categoryGamesPanel, disableHorizontal: true, disableVertical: false);
+            AutoScrollHelper.ConfigureScrollbars(hitGamesPanel, disableHorizontal: true, disableVertical: true);
+            AutoScrollHelper.ConfigureScrollbars(categoryGamesPanel, disableHorizontal: true, disableVertical: true);
 
             topPanel.Height = 352;
             navigationControl.leftPanel = leftPanel;
@@ -133,7 +133,7 @@ namespace GameEnergy.AppForms.UserForms
         private void StartAutoSlide()
         {
             _autoSlideTimer = new Timer();
-            _autoSlideTimer.Interval = 3000; // 3 секунды
+            _autoSlideTimer.Interval = 4000; // 4 секунды
             _autoSlideTimer.Tick += OnAutoSlideTick;
             _autoSlideTimer.Start();
         }
@@ -145,6 +145,40 @@ namespace GameEnergy.AppForms.UserForms
             _currentIndex = (_currentIndex + 1) % _slideData.Count;
             var next = _slideData[_currentIndex];
             _currentSlide.UpdateContent(next.GameID, next.TitleOverride);
+        }
+
+        private void categoryButtonsLocation()
+        {
+            int width = (delimiterPanel4.Width - categoryButtonsPanel.Width) / 2;
+            categoryButtonsPanel.Location = new Point(width, 20);
+        }
+
+        private void mainImageLocation()
+        {
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                bannerPanel.Height = 230;
+                mainImage1.Width = 330;
+                mainImage2.Width = 330;
+                mainImage3.Width = 330;
+                mainImage4.Width = 330;
+                mainImagePanel1.Visible = false;
+                mainImagePanel2.Visible = false;
+                mainImagePanel3.Visible = false;
+                mainImagePanel4.Visible = false;
+            }
+            else
+            {
+                bannerPanel.Height = 92;
+                mainImage1.Width = 132;
+                mainImage2.Width = 131;
+                mainImage3.Width = 131;
+                mainImage4.Width = 132;
+                mainImagePanel1.Visible = true;
+                mainImagePanel2.Visible = true;
+                mainImagePanel3.Visible = true;
+                mainImagePanel4.Visible = true;
+            }
         }
 
         private void SetActiveButton(Guna2Button activeButton)
@@ -230,13 +264,8 @@ namespace GameEnergy.AppForms.UserForms
             navigationControl.HandleFormResize(this);
             WindowStateChanged?.Invoke(this, EventArgs.Empty);
 
-            int width = (delimiterPanel4.Width - categoryButtonsPanel.Width) / 2;
-            categoryButtonsPanel.Location = new Point(width, 20);
-
-            //if (this.WindowState == FormWindowState.Maximized)
-            //{
-                
-            //}
+            mainImageLocation();
+            categoryButtonsLocation();
         }
     }
 }
