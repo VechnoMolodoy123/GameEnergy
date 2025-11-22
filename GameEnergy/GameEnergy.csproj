@@ -156,6 +156,12 @@
     <Compile Include="CustomControls\NavigationControl.Designer.cs">
       <DependentUpon>NavigationControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\UserCommentsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\UserCommentsControl.Designer.cs">
+      <DependentUpon>UserCommentsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItems.cs" />
     <Compile Include="Models\GameDevelopers.cs" />

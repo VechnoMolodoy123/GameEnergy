@@ -1,7 +1,9 @@
 ﻿using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Classes.Video;
+using GameEnergy.CustomControls;
 using GameEnergy.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.AppForms.UserForms
 {
@@ -21,6 +24,7 @@ namespace GameEnergy.AppForms.UserForms
         private int CurrentRating = 0;
         private int _currentUserId = Program.CurrentUser.UserID;
         private bool _isUserAdmin = false;
+        private string _currentSortMode = "new";
 
         public GameInfoForm(Games game)
         {
@@ -186,6 +190,46 @@ namespace GameEnergy.AppForms.UserForms
             }
         }
 
+        private void ShowComments(Func<IQueryable<Reviews>, IOrderedQueryable<Reviews>> sortingFunction = null)
+        {
+            commentsPanel.Controls.Clear();
+
+            DateTime now = DateTime.Now;
+
+            IQueryable<Reviews> query = Program.context.Reviews.Where(game => game.GameID == _game.GameID);
+
+            IOrderedQueryable<Reviews> orderedQuery = sortingFunction != null ?
+                sortingFunction(query) :
+                query.OrderByDescending(date => date.ReviewDate);
+
+            List<Reviews> comments = orderedQuery.ToList();
+
+            foreach (Reviews comment in comments)
+            {
+                var commentControl = new UserCommentsControl(this, comment);
+                commentControl.Margin = new Padding(10);
+                commentsPanel.Controls.Add(commentControl);
+            }
+        }
+
+        private void SetActiveButton(Guna2Button activeButton, Guna2Button inactiveButton)
+        {
+            activeButton.Checked = true;
+
+            inactiveButton.Checked = false;
+        }
+
+        private void SortCommentsByDate()
+        {
+            ShowComments(q => q.OrderByDescending(date => date.ReviewDate));
+        }
+
+        private void SortCommentsByLikes()
+        {
+            ShowComments(q => q.OrderByDescending(comment => comment.LikesCount)
+                .ThenByDescending(date => date.ReviewDate));
+        }
+
         private int CalculateLabelHeight(string text, Font font, int width)
         {
             using (Graphics graphics = this.CreateGraphics())
@@ -246,6 +290,24 @@ namespace GameEnergy.AppForms.UserForms
             int index = GetStarIndex(clickedStar);
             CurrentRating = index;
             UpdateStars(index);
+        }
+
+        private void sortNewCommentButton_Click(object sender, EventArgs e)
+        {
+            if (_currentSortMode == "new") return;
+
+            SetActiveButton(sortNewCommentButton, sortInterestingCommentButton);
+            _currentSortMode = "new";
+            SortCommentsByDate();
+        }
+
+        private void sortInterestingCommentButton_Click(object sender, EventArgs e)
+        {
+            if (_currentSortMode == "interesting") return;
+
+            SetActiveButton(sortInterestingCommentButton, sortNewCommentButton);
+            _currentSortMode = "interesting";
+            SortCommentsByLikes();
         }
 
         private void SendCommentButton_Click(object sender, EventArgs e)
