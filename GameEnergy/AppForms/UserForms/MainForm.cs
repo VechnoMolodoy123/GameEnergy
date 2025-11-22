@@ -2,6 +2,7 @@
 using GameEnergy.Classes.Messages;
 using GameEnergy.CustomControls;
 using GameEnergy.Models;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,8 @@ namespace GameEnergy.AppForms.UserForms
         private List<GameSlideControl> _slides = new List<GameSlideControl>();
         private Timer _autoSlideTimer;
         private int _currentIndex = 0;
+        private int categoryButtonsPanelWidth = 427;
+        private string _currentSortMode = "Новинки";
 
         public MainForm()
         {
@@ -35,6 +38,8 @@ namespace GameEnergy.AppForms.UserForms
             topPanel.Height = 352;
             navigationControl.leftPanel = leftPanel;
             navigationControl.rightPanel = rightPanel;
+
+            SetActiveButton(newGamesButton);
         }
 
         private void LoadPromoSlider()
@@ -88,6 +93,27 @@ namespace GameEnergy.AppForms.UserForms
             }
         }
 
+        private void ShowGames(Func<IQueryable<Games>, IQueryable<int>> filterFunction = null)
+        {
+            categoryGamesPanel.Controls.Clear();
+
+            var gamesQuery = Program.context.Games;
+
+            IQueryable<int> gameCategory = filterFunction != null ? filterFunction(gamesQuery) : gamesQuery
+                .Where(g => g.CategoryID == 2)
+                .Select(g => g.GameID);
+
+            List<Games> games = Program.context.Games.Where(game => gameCategory.Contains(game.GameID)).ToList();
+
+            foreach (Games game in games)
+            {
+                var mainControl = new MainGameControl(game);
+                mainControl.Margin = new Padding(10);
+                mainControl.GameClicked += GameControl_GameClicked;
+                categoryGamesPanel.Controls.Add(mainControl);
+            }
+        }
+
         private void StartAutoSlide()
         {
             _autoSlideTimer = new Timer();
@@ -110,6 +136,63 @@ namespace GameEnergy.AppForms.UserForms
             _slides[_currentIndex].Visible = true;
         }
 
+        private void SetActiveButton(Guna2Button activeButton)
+        {
+            foreach (var control in categoryButtonsPanel.Controls)
+            {
+                if (control is Guna2Button button)
+                {
+                    if (button == activeButton)
+                    {
+                        button.Checked = true;
+                    }
+                    else
+                    {
+                        button.Checked = false;
+                    }
+                }
+            }
+        }
+
+        private void ShowNewGames()
+        {
+            ShowGames(query => query.Where(g => g.CategoryID == 2).Select(g => g.GameID));
+        }
+
+        private void ShowTopSellersGames()
+        {
+            ShowGames(query => query.Where(g => g.CategoryID == 3).Select(g => g.GameID));
+        }
+
+        private void ShowLatestArrivalsGames()
+        {
+            ShowGames(query => query.Where(g => g.CategoryID == 4).Select(g => g.GameID));
+        }
+
+        private void newGamesButton_Click(object sender, EventArgs e)
+        {
+            if (_currentSortMode == "Новинки") return;
+            SetActiveButton(newGamesButton);
+            _currentSortMode = "Новинки";
+            ShowNewGames();
+        }
+
+        private void topSellersButton_Click(object sender, EventArgs e)
+        {
+            if (_currentSortMode == "Лидеры продаж") return;
+            SetActiveButton(topSellersButton);
+            _currentSortMode = "Лидеры продаж";
+            ShowTopSellersGames();
+        }
+
+        private void latestArrivalsButton_Click(object sender, EventArgs e)
+        {
+            if (_currentSortMode == "Последние поступления") return;
+            SetActiveButton(latestArrivalsButton);
+            _currentSortMode = "Последние поступления";
+            ShowLatestArrivalsGames();
+        }
+
         private void GameControl_GameClicked(object sender, Games game)
         {
             var gameInfoForm = new GameInfoForm(game);
@@ -121,6 +204,7 @@ namespace GameEnergy.AppForms.UserForms
         {
             LoadPromoSlider();
             StartAutoSlide();
+            ShowGames();
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -133,6 +217,14 @@ namespace GameEnergy.AppForms.UserForms
         {
             navigationControl.HandleFormResize(this);
             WindowStateChanged?.Invoke(this, EventArgs.Empty);
+
+            int width = (delimiterPanel4.Width - categoryButtonsPanel.Width) / 2;
+            categoryButtonsPanel.Location = new Point(width, 20);
+
+            //if (this.WindowState == FormWindowState.Maximized)
+            //{
+                
+            //}
         }
     }
 }

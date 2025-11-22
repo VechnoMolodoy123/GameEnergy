@@ -35,14 +35,6 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.delimiterPanel4 = new System.Windows.Forms.Panel();
             this.bannerPanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mainImage5 = new System.Windows.Forms.PictureBox();
-            this.mainImage4 = new System.Windows.Forms.PictureBox();
-            this.mainImageLabel1 = new System.Windows.Forms.Label();
-            this.mainImage2 = new System.Windows.Forms.PictureBox();
-            this.mainImage1 = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.hitGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -59,19 +51,27 @@
             this.topSellersButton = new Guna.UI2.WinForms.Guna2Button();
             this.newGamesButton = new Guna.UI2.WinForms.Guna2Button();
             this.categoryGamesPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.mainImage1 = new System.Windows.Forms.PictureBox();
+            this.mainImage2 = new System.Windows.Forms.PictureBox();
+            this.mainImageLabel1 = new System.Windows.Forms.Label();
+            this.mainImage4 = new System.Windows.Forms.PictureBox();
+            this.mainImage5 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.delimiterPanel4.SuspendLayout();
             this.bannerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage1)).BeginInit();
             this.topPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             this.delimiterPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.categoryButtonsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).BeginInit();
             this.SuspendLayout();
             // 
             // FormRounded
@@ -134,98 +134,6 @@
             this.bannerPanel.Name = "bannerPanel";
             this.bannerPanel.Size = new System.Drawing.Size(526, 92);
             this.bannerPanel.TabIndex = 29;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label3.Location = new System.Drawing.Point(432, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 32);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Любовь\r\nк играм";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label2.Location = new System.Drawing.Point(291, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 32);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Активное\r\nкомьюнити";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label1.Location = new System.Drawing.Point(151, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Оперативная\r\nподдержка";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // mainImage5
-            // 
-            this.mainImage5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainImage5.Image = global::GameEnergy.Properties.Resources.MainGame;
-            this.mainImage5.Location = new System.Drawing.Point(394, 0);
-            this.mainImage5.Name = "mainImage5";
-            this.mainImage5.Size = new System.Drawing.Size(132, 92);
-            this.mainImage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mainImage5.TabIndex = 5;
-            this.mainImage5.TabStop = false;
-            // 
-            // mainImage4
-            // 
-            this.mainImage4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainImage4.Image = global::GameEnergy.Properties.Resources.MainActive;
-            this.mainImage4.Location = new System.Drawing.Point(263, 0);
-            this.mainImage4.Name = "mainImage4";
-            this.mainImage4.Size = new System.Drawing.Size(131, 92);
-            this.mainImage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mainImage4.TabIndex = 4;
-            this.mainImage4.TabStop = false;
-            // 
-            // mainImageLabel1
-            // 
-            this.mainImageLabel1.AutoSize = true;
-            this.mainImageLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.mainImageLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.mainImageLabel1.Location = new System.Drawing.Point(22, 48);
-            this.mainImageLabel1.Name = "mainImageLabel1";
-            this.mainImageLabel1.Size = new System.Drawing.Size(86, 32);
-            this.mainImageLabel1.TabIndex = 2;
-            this.mainImageLabel1.Text = "Скидки\r\nкруглый год";
-            this.mainImageLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // mainImage2
-            // 
-            this.mainImage2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainImage2.Image = global::GameEnergy.Properties.Resources.MainOperator;
-            this.mainImage2.Location = new System.Drawing.Point(132, 0);
-            this.mainImage2.Name = "mainImage2";
-            this.mainImage2.Size = new System.Drawing.Size(131, 92);
-            this.mainImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mainImage2.TabIndex = 1;
-            this.mainImage2.TabStop = false;
-            // 
-            // mainImage1
-            // 
-            this.mainImage1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.mainImage1.Image = global::GameEnergy.Properties.Resources.MainDiscount;
-            this.mainImage1.Location = new System.Drawing.Point(0, 0);
-            this.mainImage1.Name = "mainImage1";
-            this.mainImage1.Size = new System.Drawing.Size(132, 92);
-            this.mainImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.mainImage1.TabIndex = 0;
-            this.mainImage1.TabStop = false;
             // 
             // topPanel
             // 
@@ -360,6 +268,8 @@
             this.latestArrivalsButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.latestArrivalsButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.latestArrivalsButton.ForeColor = System.Drawing.Color.White;
+            this.latestArrivalsButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.latestArrivalsButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.latestArrivalsButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.latestArrivalsButton.Location = new System.Drawing.Point(235, 0);
             this.latestArrivalsButton.Name = "latestArrivalsButton";
@@ -381,6 +291,8 @@
             this.topSellersButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.topSellersButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.topSellersButton.ForeColor = System.Drawing.Color.White;
+            this.topSellersButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.topSellersButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.topSellersButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.topSellersButton.Location = new System.Drawing.Point(94, 0);
             this.topSellersButton.Name = "topSellersButton";
@@ -402,6 +314,8 @@
             this.newGamesButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.newGamesButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.newGamesButton.ForeColor = System.Drawing.Color.White;
+            this.newGamesButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.newGamesButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.newGamesButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.newGamesButton.Location = new System.Drawing.Point(0, 0);
             this.newGamesButton.Name = "newGamesButton";
@@ -418,6 +332,98 @@
             this.categoryGamesPanel.Size = new System.Drawing.Size(526, 61);
             this.categoryGamesPanel.TabIndex = 31;
             this.categoryGamesPanel.WrapContents = false;
+            // 
+            // mainImage1
+            // 
+            this.mainImage1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mainImage1.Image = global::GameEnergy.Properties.Resources.MainDiscount;
+            this.mainImage1.Location = new System.Drawing.Point(0, 0);
+            this.mainImage1.Name = "mainImage1";
+            this.mainImage1.Size = new System.Drawing.Size(132, 92);
+            this.mainImage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mainImage1.TabIndex = 0;
+            this.mainImage1.TabStop = false;
+            // 
+            // mainImage2
+            // 
+            this.mainImage2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mainImage2.Image = global::GameEnergy.Properties.Resources.MainOperator;
+            this.mainImage2.Location = new System.Drawing.Point(132, 0);
+            this.mainImage2.Name = "mainImage2";
+            this.mainImage2.Size = new System.Drawing.Size(131, 92);
+            this.mainImage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mainImage2.TabIndex = 1;
+            this.mainImage2.TabStop = false;
+            // 
+            // mainImageLabel1
+            // 
+            this.mainImageLabel1.AutoSize = true;
+            this.mainImageLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.mainImageLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.mainImageLabel1.Location = new System.Drawing.Point(22, 48);
+            this.mainImageLabel1.Name = "mainImageLabel1";
+            this.mainImageLabel1.Size = new System.Drawing.Size(86, 32);
+            this.mainImageLabel1.TabIndex = 2;
+            this.mainImageLabel1.Text = "Скидки\r\nкруглый год";
+            this.mainImageLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mainImage4
+            // 
+            this.mainImage4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mainImage4.Image = global::GameEnergy.Properties.Resources.MainActive;
+            this.mainImage4.Location = new System.Drawing.Point(263, 0);
+            this.mainImage4.Name = "mainImage4";
+            this.mainImage4.Size = new System.Drawing.Size(131, 92);
+            this.mainImage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mainImage4.TabIndex = 4;
+            this.mainImage4.TabStop = false;
+            // 
+            // mainImage5
+            // 
+            this.mainImage5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.mainImage5.Image = global::GameEnergy.Properties.Resources.MainGame;
+            this.mainImage5.Location = new System.Drawing.Point(394, 0);
+            this.mainImage5.Name = "mainImage5";
+            this.mainImage5.Size = new System.Drawing.Size(132, 92);
+            this.mainImage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.mainImage5.TabIndex = 5;
+            this.mainImage5.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(151, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 32);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Оперативная\r\nподдержка";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label2.Location = new System.Drawing.Point(291, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 32);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Активное\r\nкомьюнити";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label3.Location = new System.Drawing.Point(432, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 32);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Любовь\r\nк играм";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -439,10 +445,6 @@
             this.delimiterPanel4.ResumeLayout(false);
             this.bannerPanel.ResumeLayout(false);
             this.bannerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mainImage1)).EndInit();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -451,6 +453,10 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.categoryButtonsPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainImage5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,14 +474,6 @@
         private System.Windows.Forms.Panel delimiterPanel1;
         private System.Windows.Forms.Panel delimiterPanel3;
         private System.Windows.Forms.Panel bannerPanel;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox mainImage5;
-        private System.Windows.Forms.PictureBox mainImage4;
-        private System.Windows.Forms.Label mainImageLabel1;
-        private System.Windows.Forms.PictureBox mainImage2;
-        private System.Windows.Forms.PictureBox mainImage1;
         private System.Windows.Forms.Panel delimiterPanel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.FlowLayoutPanel hitGamesPanel;
@@ -486,5 +484,13 @@
         private Guna.UI2.WinForms.Guna2Button topSellersButton;
         private Guna.UI2.WinForms.Guna2Button newGamesButton;
         private System.Windows.Forms.FlowLayoutPanel categoryGamesPanel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox mainImage5;
+        private System.Windows.Forms.PictureBox mainImage4;
+        private System.Windows.Forms.Label mainImageLabel1;
+        private System.Windows.Forms.PictureBox mainImage2;
+        private System.Windows.Forms.PictureBox mainImage1;
     }
 }
