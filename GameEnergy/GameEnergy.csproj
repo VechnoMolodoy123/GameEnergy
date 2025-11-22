@@ -128,7 +128,8 @@
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Animations\FormDrag.cs" />
-    <Compile Include="Classes\Customization\VisibilityHelper.cs" />
+    <Compile Include="Classes\Customization\AutoScrollHelper.cs" />
+    <Compile Include="Classes\Visibility\VisibilityHelper.cs" />
     <Compile Include="Classes\DataAccess\UserAvatarDataHelper.cs" />
     <Compile Include="Classes\Hash\HashHelper.cs" />
     <Compile Include="Classes\Images\InstallingImages\ImageLoader.cs" />
@@ -142,11 +143,11 @@
     <Compile Include="CustomControls\GameSlideControl.Designer.cs">
       <DependentUpon>GameSlideControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomControls\HitGameControl.cs">
+    <Compile Include="CustomControls\MainGameControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\HitGameControl.Designer.cs">
-      <DependentUpon>HitGameControl.cs</DependentUpon>
+    <Compile Include="CustomControls\MainGameControl.Designer.cs">
+      <DependentUpon>MainGameControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\NavigationControl.cs">
       <SubType>UserControl</SubType>
@@ -191,8 +192,8 @@
     <EmbeddedResource Include="CustomControls\GameSlideControl.resx">
       <DependentUpon>GameSlideControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\HitGameControl.resx">
-      <DependentUpon>HitGameControl.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\MainGameControl.resx">
+      <DependentUpon>MainGameControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\NavigationControl.resx">
       <DependentUpon>NavigationControl.cs</DependentUpon>
@@ -294,6 +295,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\hitLabel.png" />
     <None Include="Resources\Resident Evil 7Slide.png" />
     <None Include="Resources\Manor LordsSlide.png" />
     <None Include="Resources\Europa Universalis VSlide.png" />

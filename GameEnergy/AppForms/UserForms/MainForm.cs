@@ -25,6 +25,16 @@ namespace GameEnergy.AppForms.UserForms
         public MainForm()
         {
             InitializeComponent();
+
+            SetFormStyle();
+        }
+
+        private void SetFormStyle()
+        {
+            AutoScrollHelper.ConfigureScrollbars(mainPanel, disableHorizontal: true, disableVertical: true);
+            topPanel.Height = 352;
+            navigationControl.leftPanel = leftPanel;
+            navigationControl.rightPanel = rightPanel;
         }
 
         private void LoadPromoSlider()
@@ -109,16 +119,8 @@ namespace GameEnergy.AppForms.UserForms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetFormStyle();
             LoadPromoSlider();
             StartAutoSlide();
-        }
-
-        private void SetFormStyle()
-        {
-            navigationControl.leftPanel = leftPanel;
-            navigationControl.rightPanel = rightPanel;
-            topPanel.Height = 262;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace GameEnergy.CustomControls
 {
-    public partial class HitGameControl : UserControl
+    public partial class MainGameControl : UserControl
     {
-        public HitGameControl()
+        public MainGameControl()
         {
             InitializeComponent();
-        }
-
-        private void gameImage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HitGameControl_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -43,7 +43,7 @@
             this.headerLabel.ForeColor = System.Drawing.Color.White;
             this.headerLabel.Location = new System.Drawing.Point(4, 4);
             this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(173, 87);
+            this.headerLabel.Size = new System.Drawing.Size(243, 80);
             this.headerLabel.TabIndex = 0;
             this.headerLabel.Text = "ОБЪЕДИНЯЙТЕСЬ С ВЫЖИВШИМИ В ARC RAIDERS";
             this.headerLabel.Click += new System.EventHandler(this.GameSlideControl_Click);
@@ -54,7 +54,7 @@
             this.priceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.ForeColor = System.Drawing.Color.White;
-            this.priceLabel.Location = new System.Drawing.Point(4, 91);
+            this.priceLabel.Location = new System.Drawing.Point(4, 95);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(86, 21);
             this.priceLabel.TabIndex = 1;
@@ -65,13 +65,14 @@
             // 
             this.discountLabel.AutoEllipsis = true;
             this.discountLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.discountLabel.Location = new System.Drawing.Point(134, 94);
+            this.discountLabel.Location = new System.Drawing.Point(193, 95);
             this.discountLabel.Name = "discountLabel";
-            this.discountLabel.Size = new System.Drawing.Size(46, 16);
+            this.discountLabel.Size = new System.Drawing.Size(54, 21);
             this.discountLabel.TabIndex = 2;
             this.discountLabel.Text = "-99%";
+            this.discountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.discountLabel.Click += new System.EventHandler(this.GameSlideControl_Click);
             // 
             // gameImage
@@ -81,9 +82,9 @@
             this.gameImage.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gameImage.Image = global::GameEnergy.Properties.Resources.ARC_RaidersSlide;
             this.gameImage.ImageRotate = 0F;
-            this.gameImage.Location = new System.Drawing.Point(0, 120);
+            this.gameImage.Location = new System.Drawing.Point(0, 131);
             this.gameImage.Name = "gameImage";
-            this.gameImage.Size = new System.Drawing.Size(180, 100);
+            this.gameImage.Size = new System.Drawing.Size(250, 139);
             this.gameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gameImage.TabIndex = 4;
             this.gameImage.TabStop = false;
@@ -100,7 +101,7 @@
             this.Controls.Add(this.headerLabel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "GameSlideControl";
-            this.Size = new System.Drawing.Size(180, 220);
+            this.Size = new System.Drawing.Size(250, 270);
             this.Click += new System.EventHandler(this.GameSlideControl_Click);
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
             this.ResumeLayout(false);
