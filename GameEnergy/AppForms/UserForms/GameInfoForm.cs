@@ -47,6 +47,7 @@ namespace GameEnergy.AppForms.UserForms
             LoadGameInfo();
             CheckUserRole();
             CheckIfReviewExists();
+            UpdateLikeButtonState();
         }
 
         private void LoadGameInfo()
@@ -68,13 +69,6 @@ namespace GameEnergy.AppForms.UserForms
             {
                 gameImage.Image = image;
             }
-
-            likeButtonLogic();
-        }
-
-        private void likeButtonLogic()
-        {
-            //likeButton.Image = 
         }
 
         private int GetStarIndex(PictureBox star)
@@ -117,6 +111,16 @@ namespace GameEnergy.AppForms.UserForms
                 delimiterPanel5.Visible = false;
                 reviewPanel.Visible = false;
             }
+        }
+
+        private void UpdateLikeButtonState()
+        {
+            bool isInLibrary = Program.context.UserLibrary
+                .Any(ul => ul.UserID == _currentUserId && ul.GameID == _game.GameID);
+
+            likeButton.Image = isInLibrary
+                ? Properties.Resources.redLike
+                : Properties.Resources.whiteLike;
         }
 
         private void SendCommentLogic()
@@ -173,6 +177,7 @@ namespace GameEnergy.AppForms.UserForms
                         UserID = _currentUserId,
                         GameID = _game.GameID,
                         Comment = comment,
+                        LikesCount = 0,
                         ReviewDate = DateTime.Now
                     };
                     Program.context.Reviews.Add(newReview);
@@ -187,6 +192,44 @@ namespace GameEnergy.AppForms.UserForms
             {
                 string logPath = "errorUserReviews_log.txt";
                 File.AppendAllText(logPath, $"[{DateTime.Now}] Ошибка при отправке отзыва: {ex.Message}\n");
+            }
+        }
+
+        private void likeButtonLogic()
+        {
+            bool isInLibrary = Program.context.UserLibrary.Any(ul => ul.UserID == _currentUserId && ul.GameID == _game.GameID);
+
+            try
+            {
+                if (isInLibrary)
+                {
+                    // Удаляем из избранного
+                    var entryToRemove = Program.context.UserLibrary
+                        .First(ul => ul.UserID == _currentUserId && ul.GameID == _game.GameID);
+
+                    Program.context.UserLibrary.Remove(entryToRemove);
+                }
+                else
+                {
+                    // Добавляем в избранное
+                    var newEntry = new UserLibrary
+                    {
+                        UserID = _currentUserId,
+                        GameID = _game.GameID,
+                        AddedDate = DateTime.Now
+                    };
+                    Program.context.UserLibrary.Add(newEntry);
+                }
+
+                Program.context.SaveChanges();
+
+                // Обновляем изображение кнопки
+                UpdateLikeButtonState();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при обновлении избранного: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -313,6 +356,11 @@ namespace GameEnergy.AppForms.UserForms
         private void SendCommentButton_Click(object sender, EventArgs e)
         {
             SendCommentLogic();
+        }
+
+        private void LikeButton_Click(object sender, EventArgs e)
+        {
+            likeButtonLogic();
         }
 
         private void trailerPictureBox_Click(object sender, EventArgs e)

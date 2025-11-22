@@ -543,6 +543,7 @@
             this.likeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.likeButton.TabIndex = 0;
             this.likeButton.TabStop = false;
+            this.likeButton.Click += new System.EventHandler(this.LikeButton_Click);
             // 
             // cartButton
             // 
