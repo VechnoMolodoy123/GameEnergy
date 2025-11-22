@@ -277,9 +277,6 @@
     <None Include="Resources\restore.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\star.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\trash.png" />
   </ItemGroup>
   <ItemGroup>
@@ -292,10 +289,9 @@
     <None Include="Resources\whiteLike.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\yellowStar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\yellowStar.png" />
     <None Include="Resources\sendMessage.png" />
     <None Include="Resources\hitLabel.png" />
     <None Include="Resources\Resident Evil 7Slide.png" />
