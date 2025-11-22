@@ -153,9 +153,9 @@
             this.panel6.AutoSize = true;
             this.panel6.Controls.Add(this.hitGamesPanel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(44, 30);
+            this.panel6.Location = new System.Drawing.Point(56, 30);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(482, 115);
+            this.panel6.Size = new System.Drawing.Size(470, 115);
             this.panel6.TabIndex = 7;
             // 
             // hitGamesPanel
@@ -164,7 +164,7 @@
             this.hitGamesPanel.Location = new System.Drawing.Point(0, 0);
             this.hitGamesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.hitGamesPanel.Name = "hitGamesPanel";
-            this.hitGamesPanel.Size = new System.Drawing.Size(482, 115);
+            this.hitGamesPanel.Size = new System.Drawing.Size(470, 115);
             this.hitGamesPanel.TabIndex = 27;
             this.hitGamesPanel.WrapContents = false;
             // 
@@ -174,7 +174,7 @@
             this.delimiterPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel2.Location = new System.Drawing.Point(0, 30);
             this.delimiterPanel2.Name = "delimiterPanel2";
-            this.delimiterPanel2.Size = new System.Drawing.Size(44, 115);
+            this.delimiterPanel2.Size = new System.Drawing.Size(56, 115);
             this.delimiterPanel2.TabIndex = 5;
             // 
             // pictureBox1

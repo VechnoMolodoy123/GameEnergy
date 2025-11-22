@@ -35,6 +35,9 @@ namespace GameEnergy.AppForms.UserForms
         private void SetFormStyle()
         {
             AutoScrollHelper.ConfigureScrollbars(mainPanel, disableHorizontal: true, disableVertical: true);
+            AutoScrollHelper.ConfigureScrollbars(hitGamesPanel, disableHorizontal: true, disableVertical: false);
+            AutoScrollHelper.ConfigureScrollbars(categoryGamesPanel, disableHorizontal: true, disableVertical: false);
+
             topPanel.Height = 352;
             navigationControl.leftPanel = leftPanel;
             navigationControl.rightPanel = rightPanel;
@@ -62,8 +65,8 @@ namespace GameEnergy.AppForms.UserForms
 
                 // Словарь заголовков (можно расширить)
                 string[] titles = {
-                    "ОБЪЕДИНЯЙТЕСЬ С ВЫЖИВШИМИ В ARC RAIDERS",
-                    "СОЗДАЙТЕ ИМПЕРИЮ В EUROPA UNIVERSALIS V",
+                    "ОБЪЕДИНЯЙСЯ С ВЫЖИВШИМИ В ARC RAIDERS",
+                    "СОЗДАЙ СВОЮ ИМПЕРИЮ В EUROPA UNIVERSALIS V",
                     "РАЗГРОМИ ОРДУ В DAYS GONE",
                     "ПОКАЖИ СВОИ СТАЛЬНЫЕ НЕРВЫ В RESIDENT EVIL 7",
                     "ЗАХВАТИ ВЕСЬ МИР В MANOR LORDS"
@@ -111,6 +114,19 @@ namespace GameEnergy.AppForms.UserForms
                 mainControl.Margin = new Padding(10);
                 mainControl.GameClicked += GameControl_GameClicked;
                 categoryGamesPanel.Controls.Add(mainControl);
+            }
+        }
+
+        private void ShowHitGames()
+        {
+            List<Games> games = Program.context.Games.Where(game => game.CategoryID == 1).ToList();
+
+            foreach (Games game in games)
+            {
+                var mainControl = new MainGameControl(game);
+                mainControl.Margin = new Padding(10);
+                mainControl.GameClicked += GameControl_GameClicked;
+                hitGamesPanel.Controls.Add(mainControl);
             }
         }
 
@@ -204,6 +220,7 @@ namespace GameEnergy.AppForms.UserForms
         {
             LoadPromoSlider();
             StartAutoSlide();
+            ShowHitGames();
             ShowGames();
         }
 

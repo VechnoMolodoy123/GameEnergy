@@ -93,12 +93,11 @@
             // 
             this.gameImage.BackColor = System.Drawing.Color.Transparent;
             this.gameImage.BorderRadius = 13;
-            this.gameImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.gameImage.Image = global::GameEnergy.Properties.Resources.DefaultGameImage;
             this.gameImage.ImageRotate = 0F;
-            this.gameImage.Location = new System.Drawing.Point(0, 0);
+            this.gameImage.Location = new System.Drawing.Point(1, 1);
             this.gameImage.Name = "gameImage";
-            this.gameImage.Size = new System.Drawing.Size(146, 182);
+            this.gameImage.Size = new System.Drawing.Size(144, 179);
             this.gameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gameImage.TabIndex = 9;
             this.gameImage.TabStop = false;
