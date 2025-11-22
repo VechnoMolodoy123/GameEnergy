@@ -46,6 +46,7 @@
             this.guna2Panel1.Controls.Add(this.priceLabel);
             this.guna2Panel1.Controls.Add(this.titleLabel);
             this.guna2Panel1.Controls.Add(this.gameImage);
+            this.guna2Panel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
@@ -56,6 +57,7 @@
             // discountLabel
             // 
             this.discountLabel.AutoSize = true;
+            this.discountLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.discountLabel.Location = new System.Drawing.Point(106, 245);
@@ -68,6 +70,7 @@
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
+            this.priceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.ForeColor = System.Drawing.Color.White;
             this.priceLabel.Location = new System.Drawing.Point(3, 245);
@@ -80,6 +83,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoEllipsis = true;
+            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(3, 189);
@@ -93,6 +97,7 @@
             // 
             this.gameImage.BackColor = System.Drawing.Color.Transparent;
             this.gameImage.BorderRadius = 13;
+            this.gameImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gameImage.Image = global::GameEnergy.Properties.Resources.DefaultGameImage;
             this.gameImage.ImageRotate = 0F;
             this.gameImage.Location = new System.Drawing.Point(1, 1);
@@ -109,6 +114,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.guna2Panel1);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "MainGameControl";
             this.Size = new System.Drawing.Size(146, 270);
             this.Click += new System.EventHandler(this.MainGameControl_Click);

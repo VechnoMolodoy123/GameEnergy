@@ -1,6 +1,7 @@
 ﻿using GameEnergy.AppForms.UserForms;
 using GameEnergy.Classes.Animations;
 using GameEnergy.Classes.Customization;
+using GameEnergy.Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace GameEnergy.CustomControls
 {
     public partial class NavigationControl : UserControl
     {
+        private FlowLayoutPanel _searchResultsPanel;
+        public event EventHandler<string> SearchTextChanged;
         // Дефолтный размер панелей
         private int _leftPanelDefaultWidth = 100;
         private int _rightPanelDefaultWidth = 100;
@@ -39,6 +42,7 @@ namespace GameEnergy.CustomControls
             libraryButton.Click += (s, e) => OpenForm<LibraryForm>();
             cartButton.Click += (s, e) => OpenForm<CartForm>();
             cartNotifiPanel.Click += (s, e) => OpenForm<CartForm>();
+            searchTextBox.TextChanged += searchTextBox_TextChanged;
         }
 
         private void HideOrClose()
@@ -197,6 +201,92 @@ namespace GameEnergy.CustomControls
 
             if (rightPanel != null)
                 rightPanel.Width = RightPanelWidth > 0 ? RightPanelWidth : _rightPanelDefaultWidth;
+        }
+
+        private void PerformSearch(string query)
+        {
+            try
+            {
+                _searchResultsPanel.Controls.Clear();
+
+                // 🔍 Поиск по названию ИЛИ имени разработчика
+                var games = (from g in Program.context.Games
+                             join dev in Program.context.GameDevelopers
+                                 on g.DeveloperID equals dev.DeveloperID into devGroup
+                             from dev in devGroup.DefaultIfEmpty()
+                             where g.Title.Contains(query) ||
+                                   (dev != null && dev.DeveloperName.Contains(query))
+                             select g)
+                            .Take(20)
+                            .ToList();
+
+                foreach (var game in games)
+                {
+                    var gameControl = new MainGameControl(game);
+                    gameControl.Margin = new Padding(10);
+                    gameControl.GameClicked += GameControl_GameClicked;
+                    _searchResultsPanel.Controls.Add(gameControl);
+                }
+
+                _searchResultsPanel.Visible = games.Any();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка поиска: {ex.Message}");
+                _searchResultsPanel.Visible = false;
+            }
+        }
+
+        private void GameControl_GameClicked(object sender, Games game)
+        {
+            var gameInfoForm = new GameInfoForm(game);
+            VisibilityHelper.ShowNewForm(this.FindForm(), gameInfoForm);
+            this.FindForm().Hide();
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string query = searchTextBox.Text;
+
+            if (_searchResultsPanel == null)
+            {
+                _searchResultsPanel = new FlowLayoutPanel
+                {
+                    AutoSize = false,
+                    WrapContents = true,
+                    FlowDirection = FlowDirection.LeftToRight,
+                    Visible = false,
+                    BackColor = Color.FromArgb(20, 17, 17), // чуть светлее для контраста
+                    BorderStyle = BorderStyle.None
+                };
+                AutoScrollHelper.ConfigureScrollbars(_searchResultsPanel, disableHorizontal: true, disableVertical: true);
+                this.FindForm().Controls.Add(_searchResultsPanel);
+            }
+            if (string.IsNullOrEmpty(query))
+            {
+                _searchResultsPanel.Visible = false;
+                return;
+            }
+
+            // Находим mainPanel
+            var mainPanel = this.FindForm().Controls.Find("mainPanel", true).FirstOrDefault() as Panel;
+            if (mainPanel != null && mainPanel.Width > 100 && mainPanel.Height > 100)
+            {
+                _searchResultsPanel.Size = mainPanel.Size;
+                _searchResultsPanel.Location = new Point(mainPanel.Left, this.Bottom);
+            }
+            else
+            {
+                // Резерв: ширина формы, высота 400
+                _searchResultsPanel.Size = new Size(this.ClientSize.Width - 40, 400);
+                _searchResultsPanel.Location = new Point(20, this.Bottom);
+            }
+
+            PerformSearch(query);
+
+            // Принудительное обновление
+            _searchResultsPanel.BringToFront();
+            this.FindForm().Refresh();
         }
 
         private void Form_MouseDown(object sender, MouseEventArgs e)

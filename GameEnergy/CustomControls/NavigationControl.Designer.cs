@@ -38,6 +38,7 @@
             this.restoreButton = new System.Windows.Forms.PictureBox();
             this.minimizeButton = new System.Windows.Forms.PictureBox();
             this.navigationPanel = new System.Windows.Forms.Panel();
+            this.searchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.cartNotifiPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.notifiPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -55,7 +56,6 @@
             this.mainButton = new System.Windows.Forms.PictureBox();
             this.bottomNavigationPanel = new System.Windows.Forms.Panel();
             this.topNavigationPanel = new System.Windows.Forms.Panel();
-            this.searchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.topRightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
@@ -181,6 +181,32 @@
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(526, 49);
             this.navigationPanel.TabIndex = 61;
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.BorderColor = System.Drawing.Color.Gray;
+            this.searchTextBox.BorderRadius = 17;
+            this.searchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTextBox.DefaultText = "";
+            this.searchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.searchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.searchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.searchTextBox.FocusedState.BorderColor = System.Drawing.Color.Gray;
+            this.searchTextBox.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.searchTextBox.ForeColor = System.Drawing.Color.White;
+            this.searchTextBox.HoverState.BorderColor = System.Drawing.Color.White;
+            this.searchTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.searchTextBox.IconRight = global::GameEnergy.Properties.Resources.magnifyingGlass;
+            this.searchTextBox.Location = new System.Drawing.Point(155, 9);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.PlaceholderText = "";
+            this.searchTextBox.SelectedText = "";
+            this.searchTextBox.Size = new System.Drawing.Size(215, 34);
+            this.searchTextBox.TabIndex = 102;
             // 
             // cartNotifiPanel
             // 
@@ -407,30 +433,6 @@
             this.topNavigationPanel.Name = "topNavigationPanel";
             this.topNavigationPanel.Size = new System.Drawing.Size(526, 9);
             this.topNavigationPanel.TabIndex = 54;
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.BorderColor = System.Drawing.Color.Gray;
-            this.searchTextBox.BorderRadius = 17;
-            this.searchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.searchTextBox.DefaultText = "";
-            this.searchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.searchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.searchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.searchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.searchTextBox.ForeColor = System.Drawing.Color.White;
-            this.searchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.searchTextBox.IconRight = global::GameEnergy.Properties.Resources.magnifyingGlass;
-            this.searchTextBox.Location = new System.Drawing.Point(155, 9);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.PlaceholderText = "";
-            this.searchTextBox.SelectedText = "";
-            this.searchTextBox.Size = new System.Drawing.Size(215, 34);
-            this.searchTextBox.TabIndex = 102;
             // 
             // NavigationControl
             // 
