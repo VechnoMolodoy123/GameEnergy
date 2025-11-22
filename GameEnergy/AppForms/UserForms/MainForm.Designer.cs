@@ -40,8 +40,13 @@
             this.newGamesButton = new Guna.UI2.WinForms.Guna2Button();
             this.bannerPanel = new System.Windows.Forms.Panel();
             this.mainImagePanel4 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.mainImagePanel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.mainImagePanel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.mainImagePanel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.mainImage4 = new System.Windows.Forms.PictureBox();
             this.mainImage3 = new System.Windows.Forms.PictureBox();
             this.mainImage2 = new System.Windows.Forms.PictureBox();
@@ -58,17 +63,13 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
-            this.mainImagePanel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.delimiterPanel4.SuspendLayout();
             this.categoryButtonsPanel.SuspendLayout();
             this.bannerPanel.SuspendLayout();
             this.mainImagePanel4.SuspendLayout();
             this.mainImagePanel3.SuspendLayout();
+            this.mainImagePanel2.SuspendLayout();
             this.mainImagePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage3)).BeginInit();
@@ -79,7 +80,6 @@
             this.delimiterPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
-            this.mainImagePanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormRounded
@@ -142,6 +142,7 @@
             this.latestArrivalsButton.BorderThickness = 1;
             this.latestArrivalsButton.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.latestArrivalsButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.latestArrivalsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.latestArrivalsButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.latestArrivalsButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.latestArrivalsButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -167,6 +168,7 @@
             this.topSellersButton.BorderThickness = 1;
             this.topSellersButton.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.topSellersButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.topSellersButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.topSellersButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.topSellersButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.topSellersButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -192,6 +194,7 @@
             this.newGamesButton.BorderThickness = 1;
             this.newGamesButton.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.newGamesButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.newGamesButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newGamesButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.newGamesButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.newGamesButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -234,6 +237,18 @@
             this.mainImagePanel4.Size = new System.Drawing.Size(106, 42);
             this.mainImagePanel4.TabIndex = 13;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label6.Location = new System.Drawing.Point(25, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 32);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Любовь\r\nк играм";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mainImagePanel3
             // 
             this.mainImagePanel3.Controls.Add(this.label5);
@@ -242,6 +257,38 @@
             this.mainImagePanel3.Size = new System.Drawing.Size(106, 42);
             this.mainImagePanel3.TabIndex = 12;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label5.Location = new System.Drawing.Point(13, 3);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 32);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Активное\r\nкомьюнити";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // mainImagePanel2
+            // 
+            this.mainImagePanel2.Controls.Add(this.label1);
+            this.mainImagePanel2.Location = new System.Drawing.Point(143, 44);
+            this.mainImagePanel2.Name = "mainImagePanel2";
+            this.mainImagePanel2.Size = new System.Drawing.Size(108, 42);
+            this.mainImagePanel2.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label1.Location = new System.Drawing.Point(6, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 32);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Оперативная\r\nподдержка";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mainImagePanel1
             // 
             this.mainImagePanel1.Controls.Add(this.label4);
@@ -249,6 +296,18 @@
             this.mainImagePanel1.Name = "mainImagePanel1";
             this.mainImagePanel1.Size = new System.Drawing.Size(106, 42);
             this.mainImagePanel1.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.label4.Location = new System.Drawing.Point(9, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 32);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Скидки\r\nкруглый год";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainImage4
             // 
@@ -416,62 +475,6 @@
             this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 0;
             // 
-            // mainImagePanel2
-            // 
-            this.mainImagePanel2.Controls.Add(this.label1);
-            this.mainImagePanel2.Location = new System.Drawing.Point(143, 44);
-            this.mainImagePanel2.Name = "mainImagePanel2";
-            this.mainImagePanel2.Size = new System.Drawing.Size(108, 42);
-            this.mainImagePanel2.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label4.Location = new System.Drawing.Point(9, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 32);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Скидки\r\nкруглый год";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label1.Location = new System.Drawing.Point(6, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 32);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Оперативная\r\nподдержка";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label5.Location = new System.Drawing.Point(13, 3);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 32);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Активное\r\nкомьюнити";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label6.Location = new System.Drawing.Point(25, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 32);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Любовь\r\nк играм";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -497,6 +500,8 @@
             this.mainImagePanel4.PerformLayout();
             this.mainImagePanel3.ResumeLayout(false);
             this.mainImagePanel3.PerformLayout();
+            this.mainImagePanel2.ResumeLayout(false);
+            this.mainImagePanel2.PerformLayout();
             this.mainImagePanel1.ResumeLayout(false);
             this.mainImagePanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage4)).EndInit();
@@ -510,8 +515,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.mainImagePanel2.ResumeLayout(false);
-            this.mainImagePanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

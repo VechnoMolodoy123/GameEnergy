@@ -80,7 +80,7 @@
             this.topSellers.Location = new System.Drawing.Point(4, 44);
             this.topSellers.Name = "topSellers";
             this.topSellers.Padding = new System.Windows.Forms.Padding(3);
-            this.topSellers.Size = new System.Drawing.Size(1312, 33);
+            this.topSellers.Size = new System.Drawing.Size(718, 33);
             this.topSellers.TabIndex = 1;
             this.topSellers.Text = "Лидеры продаж";
             // 
@@ -90,7 +90,7 @@
             this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
             this.topSellersPanel.Name = "topSellersPanel";
-            this.topSellersPanel.Size = new System.Drawing.Size(1306, 27);
+            this.topSellersPanel.Size = new System.Drawing.Size(712, 27);
             this.topSellersPanel.TabIndex = 76;
             // 
             // latestArrivals
@@ -100,7 +100,7 @@
             this.latestArrivals.Location = new System.Drawing.Point(4, 44);
             this.latestArrivals.Name = "latestArrivals";
             this.latestArrivals.Padding = new System.Windows.Forms.Padding(3);
-            this.latestArrivals.Size = new System.Drawing.Size(1312, 33);
+            this.latestArrivals.Size = new System.Drawing.Size(718, 33);
             this.latestArrivals.TabIndex = 2;
             this.latestArrivals.Text = "Последние поступления";
             // 
@@ -110,7 +110,7 @@
             this.latestArrivalsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.latestArrivalsPanel.Location = new System.Drawing.Point(3, 3);
             this.latestArrivalsPanel.Name = "latestArrivalsPanel";
-            this.latestArrivalsPanel.Size = new System.Drawing.Size(1306, 27);
+            this.latestArrivalsPanel.Size = new System.Drawing.Size(712, 27);
             this.latestArrivalsPanel.TabIndex = 77;
             // 
             // newGames

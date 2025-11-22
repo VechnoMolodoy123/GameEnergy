@@ -18,7 +18,6 @@ namespace GameEnergy.CustomControls
     public partial class NavigationControl : UserControl
     {
         private FlowLayoutPanel _searchResultsPanel;
-        public event EventHandler<string> SearchTextChanged;
         // Дефолтный размер панелей
         private int _leftPanelDefaultWidth = 100;
         private int _rightPanelDefaultWidth = 100;
