@@ -30,7 +30,7 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.discountLabel = new System.Windows.Forms.Label();
-            this.costLabel = new System.Windows.Forms.Label();
+            this.priceLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.gameImage = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
@@ -43,7 +43,7 @@
             this.guna2Panel1.BorderRadius = 11;
             this.guna2Panel1.BorderThickness = 1;
             this.guna2Panel1.Controls.Add(this.discountLabel);
-            this.guna2Panel1.Controls.Add(this.costLabel);
+            this.guna2Panel1.Controls.Add(this.priceLabel);
             this.guna2Panel1.Controls.Add(this.titleLabel);
             this.guna2Panel1.Controls.Add(this.gameImage);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -51,6 +51,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(146, 270);
             this.guna2Panel1.TabIndex = 0;
+            this.guna2Panel1.Click += new System.EventHandler(this.MainGameControl_Click);
             // 
             // discountLabel
             // 
@@ -62,17 +63,19 @@
             this.discountLabel.Size = new System.Drawing.Size(37, 16);
             this.discountLabel.TabIndex = 13;
             this.discountLabel.Text = "-50%";
+            this.discountLabel.Click += new System.EventHandler(this.MainGameControl_Click);
             // 
-            // costLabel
+            // priceLabel
             // 
-            this.costLabel.AutoSize = true;
-            this.costLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.costLabel.ForeColor = System.Drawing.Color.White;
-            this.costLabel.Location = new System.Drawing.Point(3, 245);
-            this.costLabel.Name = "costLabel";
-            this.costLabel.Size = new System.Drawing.Size(45, 16);
-            this.costLabel.TabIndex = 12;
-            this.costLabel.Text = "3999 ₽";
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceLabel.ForeColor = System.Drawing.Color.White;
+            this.priceLabel.Location = new System.Drawing.Point(3, 245);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(45, 16);
+            this.priceLabel.TabIndex = 12;
+            this.priceLabel.Text = "3999 ₽";
+            this.priceLabel.Click += new System.EventHandler(this.MainGameControl_Click);
             // 
             // titleLabel
             // 
@@ -84,6 +87,7 @@
             this.titleLabel.Size = new System.Drawing.Size(140, 50);
             this.titleLabel.TabIndex = 11;
             this.titleLabel.Text = "Название";
+            this.titleLabel.Click += new System.EventHandler(this.MainGameControl_Click);
             // 
             // gameImage
             // 
@@ -98,15 +102,17 @@
             this.gameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gameImage.TabIndex = 9;
             this.gameImage.TabStop = false;
+            this.gameImage.Click += new System.EventHandler(this.MainGameControl_Click);
             // 
-            // HitGameControl
+            // MainGameControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "HitGameControl";
+            this.Name = "MainGameControl";
             this.Size = new System.Drawing.Size(146, 270);
+            this.Click += new System.EventHandler(this.MainGameControl_Click);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
@@ -118,7 +124,7 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox gameImage;
-        private System.Windows.Forms.Label costLabel;
+        private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label discountLabel;
     }

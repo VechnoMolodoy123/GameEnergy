@@ -273,9 +273,11 @@
             this.latestArrivalsButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.latestArrivalsButton.Location = new System.Drawing.Point(235, 0);
             this.latestArrivalsButton.Name = "latestArrivalsButton";
+            this.latestArrivalsButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.latestArrivalsButton.Size = new System.Drawing.Size(192, 30);
             this.latestArrivalsButton.TabIndex = 2;
             this.latestArrivalsButton.Text = "ПОСЛЕДНИЕ ПОСТУПЛЕНИЯ";
+            this.latestArrivalsButton.Click += new System.EventHandler(this.latestArrivalsButton_Click);
             // 
             // topSellersButton
             // 
@@ -296,9 +298,11 @@
             this.topSellersButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.topSellersButton.Location = new System.Drawing.Point(94, 0);
             this.topSellersButton.Name = "topSellersButton";
+            this.topSellersButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.topSellersButton.Size = new System.Drawing.Size(135, 30);
             this.topSellersButton.TabIndex = 1;
             this.topSellersButton.Text = "ЛИДЕРЫ ПРОДАЖ";
+            this.topSellersButton.Click += new System.EventHandler(this.topSellersButton_Click);
             // 
             // newGamesButton
             // 
@@ -319,17 +323,20 @@
             this.newGamesButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.newGamesButton.Location = new System.Drawing.Point(0, 0);
             this.newGamesButton.Name = "newGamesButton";
+            this.newGamesButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.newGamesButton.Size = new System.Drawing.Size(88, 30);
             this.newGamesButton.TabIndex = 0;
             this.newGamesButton.Text = "НОВИНКИ";
+            this.newGamesButton.Click += new System.EventHandler(this.newGamesButton_Click);
             // 
             // categoryGamesPanel
             // 
-            this.categoryGamesPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryGamesPanel.AutoSize = true;
+            this.categoryGamesPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.categoryGamesPanel.Location = new System.Drawing.Point(100, 317);
             this.categoryGamesPanel.Margin = new System.Windows.Forms.Padding(2);
             this.categoryGamesPanel.Name = "categoryGamesPanel";
-            this.categoryGamesPanel.Size = new System.Drawing.Size(526, 61);
+            this.categoryGamesPanel.Size = new System.Drawing.Size(526, 0);
             this.categoryGamesPanel.TabIndex = 31;
             this.categoryGamesPanel.WrapContents = false;
             // 
@@ -442,6 +449,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.delimiterPanel4.ResumeLayout(false);
             this.bannerPanel.ResumeLayout(false);
             this.bannerPanel.PerformLayout();

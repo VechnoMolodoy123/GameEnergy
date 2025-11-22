@@ -15,9 +15,9 @@ namespace GameEnergy.Classes.Images.InstallingImages
     {
         private static readonly string _path = "C:\\Users\\lamki\\OneDrive\\Документы\\GameEnergyRes\\";
 
-        public static Image LoadBookImage(string imagePath)
+        public static Image LoadGameImage(string imagePath)
         {
-            string fullImagePath = _path + imagePath;
+            string fullImagePath = _path + imagePath + ".jpg";
 
             if (string.IsNullOrEmpty(fullImagePath) || !File.Exists(fullImagePath))
             {
