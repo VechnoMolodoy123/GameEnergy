@@ -1,4 +1,5 @@
 ﻿using GameEnergy.Classes.Customization;
+using GameEnergy.Classes.DataAccess;
 using GameEnergy.Classes.Messages;
 using GameEnergy.CustomControls;
 using GameEnergy.Models;
@@ -19,11 +20,11 @@ namespace GameEnergy.AppForms.UserForms
     public partial class MainForm : Form
     {
         public event EventHandler WindowStateChanged = delegate { };
-        private List<GameSlideControl> _slides = new List<GameSlideControl>();
         private Timer _autoSlideTimer;
         private int _currentIndex = 0;
-        private int categoryButtonsPanelWidth = 427;
         private string _currentSortMode = "Новинки";
+        private GameSlideControl _currentSlide;
+        private List<GameSlideData> _slideData;
 
         public MainForm()
         {
@@ -59,10 +60,6 @@ namespace GameEnergy.AppForms.UserForms
                     .OrderBy(g => Array.IndexOf(desiredOrder, g.GameID))
                     .ToList();
 
-                // Очищаем панель
-                gamesSlidePanel.Controls.Clear();
-                _slides.Clear();
-
                 // Словарь заголовков (можно расширить)
                 string[] titles = {
                     "ОБЪЕДИНЯЙСЯ С ВЫЖИВШИМИ В ARC RAIDERS",
@@ -72,22 +69,25 @@ namespace GameEnergy.AppForms.UserForms
                     "ЗАХВАТИ ВЕСЬ МИР В MANOR LORDS"
                 };
 
+                _slideData = new List<GameSlideData>();
                 for (int i = 0; i < promoGames.Count; i++)
                 {
-                    var game = promoGames[i];
-                    string title = i < titles.Length ? titles[i] : "Акция!";
-
-                    var slide = new GameSlideControl(game.GameID, title);
-                    slide.Visible = false; // скрыты по умолчанию
-                    slide.GameClicked += GameControl_GameClicked;
-                    gamesSlidePanel.Controls.Add(slide);
-                    _slides.Add(slide);
+                    _slideData.Add(new GameSlideData
+                    {
+                        GameID = promoGames[i].GameID,
+                        TitleOverride = i < titles.Length ? titles[i] : "Акция!"
+                    });
                 }
 
-                // Показываем первый слайд
-                if (_slides.Count > 0)
+                // Создаём ОДИН слайд
+                _currentSlide = new GameSlideControl(0, "");
+                gamesSlidePanel.Controls.Clear();
+                gamesSlidePanel.Controls.Add(_currentSlide);
+
+                // Показываем первый
+                if (_slideData.Count > 0)
                 {
-                    _slides[0].Visible = true;
+                    _currentSlide.UpdateContent(_slideData[0].GameID, _slideData[0].TitleOverride);
                 }
             }
             catch (Exception ex)
@@ -140,16 +140,11 @@ namespace GameEnergy.AppForms.UserForms
 
         private void OnAutoSlideTick(object sender, EventArgs e)
         {
-            if (_slides.Count == 0) return;
+            if (_slideData == null || _slideData.Count == 0) return;
 
-            // Скрываем текущий
-            _slides[_currentIndex].Visible = false;
-
-            // Переходим к следующему (зацикленно)
-            _currentIndex = (_currentIndex + 1) % _slides.Count;
-
-            // Показываем новый
-            _slides[_currentIndex].Visible = true;
+            _currentIndex = (_currentIndex + 1) % _slideData.Count;
+            var next = _slideData[_currentIndex];
+            _currentSlide.UpdateContent(next.GameID, next.TitleOverride);
         }
 
         private void SetActiveButton(Guna2Button activeButton)

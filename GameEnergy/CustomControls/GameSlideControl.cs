@@ -63,6 +63,13 @@ namespace GameEnergy.CustomControls
             }
         }
 
+        public void UpdateContent(int gameID, string titleOverride)
+        {
+            _gameID = gameID;
+            _titleOverride = titleOverride;
+            LoadGameInfo(); // перезагружает текст и изображение
+        }
+
         private string ToResourceName(string fileName)
         {
             // Заменяем недопустимые символы на подчёркивания

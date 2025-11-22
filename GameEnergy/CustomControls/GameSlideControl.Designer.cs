@@ -100,6 +100,7 @@
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.headerLabel);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DoubleBuffered = true;
             this.Name = "GameSlideControl";
             this.Size = new System.Drawing.Size(250, 270);
             this.Click += new System.EventHandler(this.GameSlideControl_Click);
