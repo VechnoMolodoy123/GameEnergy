@@ -183,6 +183,7 @@
             this.sendReportButton.BorderThickness = 1;
             this.sendReportButton.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.sendReportButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.sendReportButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sendReportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.sendReportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.sendReportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));

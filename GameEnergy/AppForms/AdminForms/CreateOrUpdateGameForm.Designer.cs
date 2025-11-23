@@ -38,7 +38,6 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.nameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.gamePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.genreCheckedList = new System.Windows.Forms.CheckedListBox();
             this.trailerNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.developerComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.categoryComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -46,6 +45,7 @@
             this.priceTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.discountTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.addGameButton = new Guna.UI2.WinForms.Guna2Button();
+            this.genreCheckedList = new System.Windows.Forms.CheckedListBox();
             this.navigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).BeginInit();
@@ -62,6 +62,7 @@
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(305, 30);
             this.navigationPanel.TabIndex = 5;
+            this.navigationPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.navigationPanel_MouseDown);
             // 
             // closeButton
             // 
@@ -74,6 +75,7 @@
             this.closeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.closeButton.TabIndex = 20;
             this.closeButton.TabStop = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // collapseButton
             // 
@@ -86,6 +88,7 @@
             this.collapseButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.collapseButton.TabIndex = 21;
             this.collapseButton.TabStop = false;
+            this.collapseButton.Click += new System.EventHandler(this.collapseButton_Click);
             // 
             // line
             // 
@@ -161,31 +164,7 @@
             this.gamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gamePictureBox.TabIndex = 42;
             this.gamePictureBox.TabStop = false;
-            // 
-            // genreCheckedList
-            // 
-            this.genreCheckedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.genreCheckedList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.genreCheckedList.ColumnWidth = 187;
-            this.genreCheckedList.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.genreCheckedList.ForeColor = System.Drawing.Color.White;
-            this.genreCheckedList.FormattingEnabled = true;
-            this.genreCheckedList.Items.AddRange(new object[] {
-            "Souls-like",
-            "Экшен",
-            "Приключения",
-            "Ролевые",
-            "Симуляторы",
-            "Стратегии",
-            "Инди",
-            "Онлайн",
-            "Спорт",
-            "Гонки"});
-            this.genreCheckedList.Location = new System.Drawing.Point(16, 206);
-            this.genreCheckedList.MultiColumn = true;
-            this.genreCheckedList.Name = "genreCheckedList";
-            this.genreCheckedList.Size = new System.Drawing.Size(508, 100);
-            this.genreCheckedList.TabIndex = 45;
+            this.gamePictureBox.Click += new System.EventHandler(this.GamePictureBox_Click);
             // 
             // trailerNameTextBox
             // 
@@ -375,6 +354,7 @@
             this.addGameButton.BorderThickness = 1;
             this.addGameButton.CheckedState.BorderColor = System.Drawing.Color.Green;
             this.addGameButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.addGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addGameButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.addGameButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.addGameButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -389,7 +369,33 @@
             this.addGameButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.addGameButton.Size = new System.Drawing.Size(273, 36);
             this.addGameButton.TabIndex = 53;
-            this.addGameButton.Text = "Отправить жалобу";
+            this.addGameButton.Text = "Добавить игру";
+            this.addGameButton.Click += new System.EventHandler(this.addGameButton_Click);
+            // 
+            // genreCheckedList
+            // 
+            this.genreCheckedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.genreCheckedList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.genreCheckedList.ColumnWidth = 187;
+            this.genreCheckedList.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.genreCheckedList.ForeColor = System.Drawing.Color.White;
+            this.genreCheckedList.FormattingEnabled = true;
+            this.genreCheckedList.Items.AddRange(new object[] {
+            "Souls-like",
+            "Экшен",
+            "Приключения",
+            "Ролевые",
+            "Симуляторы",
+            "Стратегии",
+            "Инди",
+            "Онлайн",
+            "Спорт",
+            "Гонки"});
+            this.genreCheckedList.Location = new System.Drawing.Point(16, 206);
+            this.genreCheckedList.MultiColumn = true;
+            this.genreCheckedList.Name = "genreCheckedList";
+            this.genreCheckedList.Size = new System.Drawing.Size(508, 100);
+            this.genreCheckedList.TabIndex = 45;
             // 
             // CreateOrUpdateGameForm
             // 
@@ -433,7 +439,6 @@
         private System.Windows.Forms.Label titleLabel;
         private Guna.UI2.WinForms.Guna2TextBox nameTextBox;
         private Guna.UI2.WinForms.Guna2PictureBox gamePictureBox;
-        private System.Windows.Forms.CheckedListBox genreCheckedList;
         private Guna.UI2.WinForms.Guna2TextBox trailerNameTextBox;
         private Guna.UI2.WinForms.Guna2ComboBox developerComboBox;
         private Guna.UI2.WinForms.Guna2ComboBox categoryComboBox;
@@ -441,5 +446,6 @@
         private Guna.UI2.WinForms.Guna2TextBox discountTextBox;
         private Guna.UI2.WinForms.Guna2TextBox priceTextBox;
         private Guna.UI2.WinForms.Guna2Button addGameButton;
+        private System.Windows.Forms.CheckedListBox genreCheckedList;
     }
 }

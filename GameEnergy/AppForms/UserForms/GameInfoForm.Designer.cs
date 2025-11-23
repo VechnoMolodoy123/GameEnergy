@@ -84,8 +84,8 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
+            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.mainPanel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -146,7 +146,7 @@
             this.commentsPanel.AutoSize = true;
             this.commentsPanel.BackColor = System.Drawing.Color.Transparent;
             this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 449);
+            this.commentsPanel.Location = new System.Drawing.Point(0, 374);
             this.commentsPanel.Name = "commentsPanel";
             this.commentsPanel.Size = new System.Drawing.Size(526, 0);
             this.commentsPanel.TabIndex = 56;
@@ -154,7 +154,7 @@
             // delimiterPanel7
             // 
             this.delimiterPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel7.Location = new System.Drawing.Point(0, 439);
+            this.delimiterPanel7.Location = new System.Drawing.Point(0, 364);
             this.delimiterPanel7.Name = "delimiterPanel7";
             this.delimiterPanel7.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel7.TabIndex = 55;
@@ -165,7 +165,7 @@
             this.panel21.Controls.Add(this.sortInterestingCommentButton);
             this.panel21.Controls.Add(this.sortNewCommentButton);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 409);
+            this.panel21.Location = new System.Drawing.Point(0, 334);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(526, 30);
             this.panel21.TabIndex = 54;
@@ -228,7 +228,7 @@
             // delimiterPanel6
             // 
             this.delimiterPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel6.Location = new System.Drawing.Point(0, 399);
+            this.delimiterPanel6.Location = new System.Drawing.Point(0, 324);
             this.delimiterPanel6.Name = "delimiterPanel6";
             this.delimiterPanel6.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel6.TabIndex = 36;
@@ -242,7 +242,7 @@
             this.reviewPanel.Controls.Add(this.commentPanel);
             this.reviewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(0, 319);
+            this.reviewPanel.Location = new System.Drawing.Point(0, 244);
             this.reviewPanel.Name = "reviewPanel";
             this.reviewPanel.Size = new System.Drawing.Size(526, 80);
             this.reviewPanel.TabIndex = 35;
@@ -383,7 +383,7 @@
             // delimiterPanel5
             // 
             this.delimiterPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel5.Location = new System.Drawing.Point(0, 309);
+            this.delimiterPanel5.Location = new System.Drawing.Point(0, 234);
             this.delimiterPanel5.Name = "delimiterPanel5";
             this.delimiterPanel5.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel5.TabIndex = 34;
@@ -400,7 +400,7 @@
             this.descriptionPanel.Controls.Add(this.panel10);
             this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionPanel.FillColor = System.Drawing.Color.Black;
-            this.descriptionPanel.Location = new System.Drawing.Point(0, 274);
+            this.descriptionPanel.Location = new System.Drawing.Point(0, 199);
             this.descriptionPanel.Name = "descriptionPanel";
             this.descriptionPanel.Size = new System.Drawing.Size(526, 35);
             this.descriptionPanel.TabIndex = 33;
@@ -449,7 +449,7 @@
             // delimiterPanel4
             // 
             this.delimiterPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel4.Location = new System.Drawing.Point(0, 264);
+            this.delimiterPanel4.Location = new System.Drawing.Point(0, 189);
             this.delimiterPanel4.Name = "delimiterPanel4";
             this.delimiterPanel4.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel4.TabIndex = 32;
@@ -461,7 +461,7 @@
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.infoPanel.Location = new System.Drawing.Point(0, 25);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(526, 239);
+            this.infoPanel.Size = new System.Drawing.Size(526, 164);
             this.infoPanel.TabIndex = 31;
             // 
             // titleAndImagePanel
@@ -473,7 +473,7 @@
             this.titleAndImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleAndImagePanel.Location = new System.Drawing.Point(170, 0);
             this.titleAndImagePanel.Name = "titleAndImagePanel";
-            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 239);
+            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 164);
             this.titleAndImagePanel.TabIndex = 35;
             // 
             // trailerPictureBox
@@ -498,6 +498,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.deleteButton);
             this.panel4.Controls.Add(this.oldPriceLabel);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.cartButton);
@@ -512,7 +513,7 @@
             // oldPriceLabel
             // 
             this.oldPriceLabel.AutoSize = true;
-            this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
             this.oldPriceLabel.Location = new System.Drawing.Point(212, 72);
@@ -535,7 +536,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoEllipsis = true;
-            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
@@ -589,7 +590,7 @@
             // discountLabel
             // 
             this.discountLabel.AutoSize = true;
-            this.discountLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.discountLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.discountLabel.Location = new System.Drawing.Point(282, 72);
@@ -601,7 +602,7 @@
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.priceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.ForeColor = System.Drawing.Color.White;
             this.priceLabel.Location = new System.Drawing.Point(142, 72);
@@ -615,7 +616,7 @@
             this.delimiterPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel3.Location = new System.Drawing.Point(0, 0);
             this.delimiterPanel3.Name = "delimiterPanel3";
-            this.delimiterPanel3.Size = new System.Drawing.Size(16, 239);
+            this.delimiterPanel3.Size = new System.Drawing.Size(16, 164);
             this.delimiterPanel3.TabIndex = 38;
             // 
             // imagePanel
@@ -626,7 +627,7 @@
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(170, 239);
+            this.imagePanel.Size = new System.Drawing.Size(170, 164);
             this.imagePanel.TabIndex = 34;
             // 
             // ratingPanel
@@ -651,7 +652,6 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.deleteButton);
             this.panel6.Controls.Add(this.genreLabel);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.reportButton);
@@ -660,13 +660,13 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 211);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(170, 28);
+            this.panel6.Size = new System.Drawing.Size(170, 0);
             this.panel6.TabIndex = 11;
             // 
             // genreLabel
             // 
             this.genreLabel.AutoEllipsis = true;
-            this.genreLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.genreLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.genreLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.genreLabel.ForeColor = System.Drawing.Color.White;
@@ -707,7 +707,7 @@
             // developerLabel
             // 
             this.developerLabel.AutoSize = true;
-            this.developerLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.developerLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.developerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.developerLabel.ForeColor = System.Drawing.Color.White;
             this.developerLabel.Location = new System.Drawing.Point(0, 85);
@@ -719,7 +719,7 @@
             // dateLabel
             // 
             this.dateLabel.AutoSize = true;
-            this.dateLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateLabel.ForeColor = System.Drawing.Color.White;
             this.dateLabel.Location = new System.Drawing.Point(-1, 58);
@@ -732,7 +732,7 @@
             // 
             this.gameImage.BackColor = System.Drawing.Color.Transparent;
             this.gameImage.BorderRadius = 13;
-            this.gameImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gameImage.Cursor = System.Windows.Forms.Cursors.Default;
             this.gameImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.gameImage.Image = global::GameEnergy.Properties.Resources.DefaultGameImage;
             this.gameImage.ImageRotate = 0F;
@@ -779,19 +779,6 @@
             this.FormRounded.ResizeForm = false;
             this.FormRounded.TransparentWhileDrag = true;
             // 
-            // navigationControl
-            // 
-            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationControl.leftPanel = null;
-            this.navigationControl.LeftPanelWidth = 0;
-            this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Name = "navigationControl";
-            this.navigationControl.rightPanel = null;
-            this.navigationControl.RightPanelWidth = 0;
-            this.navigationControl.Size = new System.Drawing.Size(726, 52);
-            this.navigationControl.TabIndex = 2;
-            // 
             // deleteButton
             // 
             this.deleteButton.Animated = true;
@@ -807,12 +794,26 @@
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.deleteButton.ForeColor = System.Drawing.Color.Black;
             this.deleteButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.deleteButton.Location = new System.Drawing.Point(0, 150);
+            this.deleteButton.Location = new System.Drawing.Point(6, 68);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(162, 30);
+            this.deleteButton.Size = new System.Drawing.Size(114, 30);
             this.deleteButton.TabIndex = 19;
             this.deleteButton.Text = "УДАЛИТЬ";
+            this.deleteButton.Visible = false;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // navigationControl
+            // 
+            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationControl.leftPanel = null;
+            this.navigationControl.LeftPanelWidth = 0;
+            this.navigationControl.Location = new System.Drawing.Point(0, 0);
+            this.navigationControl.Name = "navigationControl";
+            this.navigationControl.rightPanel = null;
+            this.navigationControl.RightPanelWidth = 0;
+            this.navigationControl.Size = new System.Drawing.Size(726, 52);
+            this.navigationControl.TabIndex = 2;
             // 
             // GameInfoForm
             // 

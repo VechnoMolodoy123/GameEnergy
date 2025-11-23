@@ -1,6 +1,7 @@
 ﻿using GameEnergy.AppForms.AdminForms;
 using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
+using GameEnergy.Classes.Messages;
 using GameEnergy.Classes.Validation;
 using GameEnergy.Classes.Video;
 using GameEnergy.CustomControls;
@@ -267,12 +268,12 @@ namespace GameEnergy.AppForms.UserForms
 
         private void DeleteGame()
         {
-            var bookToRemove = Program.context.Books.Find(_book.BookID);
+            var bookToRemove = Program.context.Games.Find(_game.GameID);
 
             if (bookToRemove != null)
             {
                 DialogResult result = MessageBox.Show(
-                    "Вы уверены, что хотите удалить эту книгу?",
+                    "Вы уверены, что хотите удалить эту игру?",
                     "Подтверждение удаления",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,
@@ -282,10 +283,10 @@ namespace GameEnergy.AppForms.UserForms
                 {
                     try
                     {
-                        Program.context.Books.Remove(bookToRemove);
+                        Program.context.Games.Remove(bookToRemove);
                         Program.context.SaveChanges();
 
-                        ValidationHelper.ShowInformationMessage("Книга успешно удалена", "Успех");
+                        MessageHelper.ShowInformationMessage("Книга успешно удалена", "Успех");
 
                         var mainform = new MainForm();
                         VisibilityHelper.ShowNewForm(this, mainform);
@@ -293,7 +294,7 @@ namespace GameEnergy.AppForms.UserForms
                     }
                     catch (Exception ex)
                     {
-                        ValidationHelper.ShowErrorMessage("Произошла ошибка при удалении книги: " + ex.Message);
+                        MessageHelper.ShowErrorMessage("Произошла ошибка при удалении книги: " + ex.Message);
                     }
                 }
                 else
@@ -303,7 +304,7 @@ namespace GameEnergy.AppForms.UserForms
             }
             else
             {
-                ValidationHelper.ShowErrorMessage("Книга не найдена в базе данных.");
+                MessageHelper.ShowErrorMessage("Книга не найдена в базе данных.");
             }
         }
 
