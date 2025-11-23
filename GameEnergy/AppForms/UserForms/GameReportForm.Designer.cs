@@ -38,7 +38,6 @@
             this.reportReasonComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.reportMessageTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.reportReasonLabel = new System.Windows.Forms.Label();
             this.sendReportButton = new Guna.UI2.WinForms.Guna2Button();
             this.navigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
@@ -127,13 +126,15 @@
             this.reportReasonComboBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.reportReasonComboBox.ItemHeight = 30;
             this.reportReasonComboBox.Items.AddRange(new object[] {
+            "Причина репорта",
             "Дубль",
             "Неверная информация",
             "Другое"});
             this.reportReasonComboBox.ItemsAppearance.ForeColor = System.Drawing.Color.White;
-            this.reportReasonComboBox.Location = new System.Drawing.Point(16, 122);
+            this.reportReasonComboBox.Location = new System.Drawing.Point(16, 110);
             this.reportReasonComboBox.Name = "reportReasonComboBox";
             this.reportReasonComboBox.Size = new System.Drawing.Size(275, 36);
+            this.reportReasonComboBox.StartIndex = 0;
             this.reportReasonComboBox.TabIndex = 32;
             this.reportReasonComboBox.TabStop = false;
             this.reportReasonComboBox.TextOffset = new System.Drawing.Point(5, 0);
@@ -166,23 +167,13 @@
             this.reportMessageTextBox.ForeColor = System.Drawing.Color.White;
             this.reportMessageTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.reportMessageTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
-            this.reportMessageTextBox.Location = new System.Drawing.Point(16, 177);
+            this.reportMessageTextBox.Location = new System.Drawing.Point(16, 165);
             this.reportMessageTextBox.Name = "reportMessageTextBox";
+            this.reportMessageTextBox.PlaceholderForeColor = System.Drawing.Color.White;
             this.reportMessageTextBox.PlaceholderText = "Сообщение";
             this.reportMessageTextBox.SelectedText = "";
             this.reportMessageTextBox.Size = new System.Drawing.Size(275, 36);
             this.reportMessageTextBox.TabIndex = 37;
-            // 
-            // reportReasonLabel
-            // 
-            this.reportReasonLabel.AutoSize = true;
-            this.reportReasonLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.reportReasonLabel.ForeColor = System.Drawing.Color.White;
-            this.reportReasonLabel.Location = new System.Drawing.Point(13, 100);
-            this.reportReasonLabel.Name = "reportReasonLabel";
-            this.reportReasonLabel.Size = new System.Drawing.Size(124, 15);
-            this.reportReasonLabel.TabIndex = 38;
-            this.reportReasonLabel.Text = "Причина репорта";
             // 
             // sendReportButton
             // 
@@ -198,21 +189,21 @@
             this.sendReportButton.ForeColor = System.Drawing.Color.White;
             this.sendReportButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.sendReportButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
-            this.sendReportButton.Location = new System.Drawing.Point(151, 233);
+            this.sendReportButton.Location = new System.Drawing.Point(151, 221);
             this.sendReportButton.Name = "sendReportButton";
             this.sendReportButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.sendReportButton.Size = new System.Drawing.Size(140, 36);
             this.sendReportButton.TabIndex = 39;
             this.sendReportButton.Text = "Отправить жалобу";
+            this.sendReportButton.Click += new System.EventHandler(this.sendReportButton_Click);
             // 
             // GameReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(305, 291);
+            this.ClientSize = new System.Drawing.Size(305, 276);
             this.Controls.Add(this.sendReportButton);
-            this.Controls.Add(this.reportReasonLabel);
             this.Controls.Add(this.reportMessageTextBox);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.reportReasonComboBox);
@@ -225,7 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -240,6 +230,5 @@
         private Guna.UI2.WinForms.Guna2ComboBox reportReasonComboBox;
         private Guna.UI2.WinForms.Guna2TextBox reportMessageTextBox;
         private Guna.UI2.WinForms.Guna2Button sendReportButton;
-        private System.Windows.Forms.Label reportReasonLabel;
     }
 }

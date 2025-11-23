@@ -405,7 +405,7 @@ namespace GameEnergy.AppForms.UserForms
             }
             else
             {
-                var form = new GameReportForm(_game);
+                var form = new GameReportForm(_game, _currentUserId);
                 form.ShowDialog();
             }
         }
