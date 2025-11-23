@@ -1,4 +1,5 @@
-﻿using GameEnergy.Classes.Customization;
+﻿using GameEnergy.AppForms.AdminForms;
+using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Classes.Video;
 using GameEnergy.CustomControls;
@@ -391,6 +392,27 @@ namespace GameEnergy.AppForms.UserForms
         private void GameInfoForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void reportButton_Click(object sender, EventArgs e)
+        {
+            if (_isUserAdmin)
+            {
+                var form = new CreateOrUpdateGameForm(_game);
+                form.GameUpdated += LoadGameInfo;
+                form.ShowDialog();
+                form.GameUpdated -= LoadGameInfo;
+            }
+            else
+            {
+                var form = new GameReportForm(_game);
+                form.ShowDialog();
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

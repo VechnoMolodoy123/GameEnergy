@@ -61,6 +61,7 @@
             this.trailerPictureBox = new System.Windows.Forms.PictureBox();
             this.delimiterPanel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.oldPriceLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,6 +71,8 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.delimiterPanel3 = new System.Windows.Forms.Panel();
             this.imagePanel = new System.Windows.Forms.Panel();
+            this.ratingPanel = new System.Windows.Forms.Panel();
+            this.ratingLabel = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.genreLabel = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -82,9 +85,7 @@
             this.leftPanel = new System.Windows.Forms.Panel();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
-            this.ratingPanel = new System.Windows.Forms.Panel();
-            this.ratingLabel = new System.Windows.Forms.Label();
-            this.oldPriceLabel = new System.Windows.Forms.Label();
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.mainPanel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -106,9 +107,9 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.likeButton)).BeginInit();
             this.imagePanel.SuspendLayout();
+            this.ratingPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).BeginInit();
-            this.ratingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -145,7 +146,7 @@
             this.commentsPanel.AutoSize = true;
             this.commentsPanel.BackColor = System.Drawing.Color.Transparent;
             this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 372);
+            this.commentsPanel.Location = new System.Drawing.Point(0, 449);
             this.commentsPanel.Name = "commentsPanel";
             this.commentsPanel.Size = new System.Drawing.Size(526, 0);
             this.commentsPanel.TabIndex = 56;
@@ -153,7 +154,7 @@
             // delimiterPanel7
             // 
             this.delimiterPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel7.Location = new System.Drawing.Point(0, 362);
+            this.delimiterPanel7.Location = new System.Drawing.Point(0, 439);
             this.delimiterPanel7.Name = "delimiterPanel7";
             this.delimiterPanel7.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel7.TabIndex = 55;
@@ -164,7 +165,7 @@
             this.panel21.Controls.Add(this.sortInterestingCommentButton);
             this.panel21.Controls.Add(this.sortNewCommentButton);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 332);
+            this.panel21.Location = new System.Drawing.Point(0, 409);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(526, 30);
             this.panel21.TabIndex = 54;
@@ -227,7 +228,7 @@
             // delimiterPanel6
             // 
             this.delimiterPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel6.Location = new System.Drawing.Point(0, 322);
+            this.delimiterPanel6.Location = new System.Drawing.Point(0, 399);
             this.delimiterPanel6.Name = "delimiterPanel6";
             this.delimiterPanel6.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel6.TabIndex = 36;
@@ -241,7 +242,7 @@
             this.reviewPanel.Controls.Add(this.commentPanel);
             this.reviewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(0, 242);
+            this.reviewPanel.Location = new System.Drawing.Point(0, 319);
             this.reviewPanel.Name = "reviewPanel";
             this.reviewPanel.Size = new System.Drawing.Size(526, 80);
             this.reviewPanel.TabIndex = 35;
@@ -382,7 +383,7 @@
             // delimiterPanel5
             // 
             this.delimiterPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel5.Location = new System.Drawing.Point(0, 232);
+            this.delimiterPanel5.Location = new System.Drawing.Point(0, 309);
             this.delimiterPanel5.Name = "delimiterPanel5";
             this.delimiterPanel5.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel5.TabIndex = 34;
@@ -399,7 +400,7 @@
             this.descriptionPanel.Controls.Add(this.panel10);
             this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionPanel.FillColor = System.Drawing.Color.Black;
-            this.descriptionPanel.Location = new System.Drawing.Point(0, 197);
+            this.descriptionPanel.Location = new System.Drawing.Point(0, 274);
             this.descriptionPanel.Name = "descriptionPanel";
             this.descriptionPanel.Size = new System.Drawing.Size(526, 35);
             this.descriptionPanel.TabIndex = 33;
@@ -448,7 +449,7 @@
             // delimiterPanel4
             // 
             this.delimiterPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel4.Location = new System.Drawing.Point(0, 187);
+            this.delimiterPanel4.Location = new System.Drawing.Point(0, 264);
             this.delimiterPanel4.Name = "delimiterPanel4";
             this.delimiterPanel4.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel4.TabIndex = 32;
@@ -460,7 +461,7 @@
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.infoPanel.Location = new System.Drawing.Point(0, 25);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(526, 162);
+            this.infoPanel.Size = new System.Drawing.Size(526, 239);
             this.infoPanel.TabIndex = 31;
             // 
             // titleAndImagePanel
@@ -472,7 +473,7 @@
             this.titleAndImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleAndImagePanel.Location = new System.Drawing.Point(170, 0);
             this.titleAndImagePanel.Name = "titleAndImagePanel";
-            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 162);
+            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 239);
             this.titleAndImagePanel.TabIndex = 35;
             // 
             // trailerPictureBox
@@ -507,6 +508,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(340, 104);
             this.panel4.TabIndex = 39;
+            // 
+            // oldPriceLabel
+            // 
+            this.oldPriceLabel.AutoSize = true;
+            this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
+            this.oldPriceLabel.Location = new System.Drawing.Point(212, 72);
+            this.oldPriceLabel.Name = "oldPriceLabel";
+            this.oldPriceLabel.Size = new System.Drawing.Size(64, 20);
+            this.oldPriceLabel.TabIndex = 16;
+            this.oldPriceLabel.Text = "3999 ₽";
+            this.oldPriceLabel.Visible = false;
             // 
             // panel1
             // 
@@ -601,7 +615,7 @@
             this.delimiterPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel3.Location = new System.Drawing.Point(0, 0);
             this.delimiterPanel3.Name = "delimiterPanel3";
-            this.delimiterPanel3.Size = new System.Drawing.Size(16, 162);
+            this.delimiterPanel3.Size = new System.Drawing.Size(16, 239);
             this.delimiterPanel3.TabIndex = 38;
             // 
             // imagePanel
@@ -612,11 +626,32 @@
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(170, 162);
+            this.imagePanel.Size = new System.Drawing.Size(170, 239);
             this.imagePanel.TabIndex = 34;
+            // 
+            // ratingPanel
+            // 
+            this.ratingPanel.BackColor = System.Drawing.Color.Black;
+            this.ratingPanel.Controls.Add(this.ratingLabel);
+            this.ratingPanel.Location = new System.Drawing.Point(125, 5);
+            this.ratingPanel.Name = "ratingPanel";
+            this.ratingPanel.Size = new System.Drawing.Size(40, 40);
+            this.ratingPanel.TabIndex = 13;
+            // 
+            // ratingLabel
+            // 
+            this.ratingLabel.AutoSize = true;
+            this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ratingLabel.ForeColor = System.Drawing.Color.White;
+            this.ratingLabel.Location = new System.Drawing.Point(2, 8);
+            this.ratingLabel.Name = "ratingLabel";
+            this.ratingLabel.Size = new System.Drawing.Size(35, 24);
+            this.ratingLabel.TabIndex = 0;
+            this.ratingLabel.Text = "4.5";
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.deleteButton);
             this.panel6.Controls.Add(this.genreLabel);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Controls.Add(this.reportButton);
@@ -625,7 +660,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(0, 211);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(170, 0);
+            this.panel6.Size = new System.Drawing.Size(170, 28);
             this.panel6.TabIndex = 11;
             // 
             // genreLabel
@@ -667,6 +702,7 @@
             this.reportButton.Size = new System.Drawing.Size(162, 30);
             this.reportButton.TabIndex = 15;
             this.reportButton.Text = "ПОЖАЛОВАТЬСЯ";
+            this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
             // 
             // developerLabel
             // 
@@ -756,38 +792,27 @@
             this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 2;
             // 
-            // ratingPanel
+            // deleteButton
             // 
-            this.ratingPanel.BackColor = System.Drawing.Color.Black;
-            this.ratingPanel.Controls.Add(this.ratingLabel);
-            this.ratingPanel.Location = new System.Drawing.Point(125, 5);
-            this.ratingPanel.Name = "ratingPanel";
-            this.ratingPanel.Size = new System.Drawing.Size(40, 40);
-            this.ratingPanel.TabIndex = 13;
-            // 
-            // ratingLabel
-            // 
-            this.ratingLabel.AutoSize = true;
-            this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ratingLabel.ForeColor = System.Drawing.Color.White;
-            this.ratingLabel.Location = new System.Drawing.Point(2, 8);
-            this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(35, 24);
-            this.ratingLabel.TabIndex = 0;
-            this.ratingLabel.Text = "4.5";
-            // 
-            // oldPriceLabel
-            // 
-            this.oldPriceLabel.AutoSize = true;
-            this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
-            this.oldPriceLabel.Location = new System.Drawing.Point(212, 72);
-            this.oldPriceLabel.Name = "oldPriceLabel";
-            this.oldPriceLabel.Size = new System.Drawing.Size(64, 20);
-            this.oldPriceLabel.TabIndex = 16;
-            this.oldPriceLabel.Text = "3999 ₽";
-            this.oldPriceLabel.Visible = false;
+            this.deleteButton.Animated = true;
+            this.deleteButton.BorderColor = System.Drawing.Color.Red;
+            this.deleteButton.BorderRadius = 8;
+            this.deleteButton.BorderThickness = 1;
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.deleteButton.ForeColor = System.Drawing.Color.Black;
+            this.deleteButton.HoverState.FillColor = System.Drawing.Color.White;
+            this.deleteButton.Location = new System.Drawing.Point(0, 150);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(162, 30);
+            this.deleteButton.TabIndex = 19;
+            this.deleteButton.Text = "УДАЛИТЬ";
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // GameInfoForm
             // 
@@ -829,11 +854,11 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.likeButton)).EndInit();
             this.imagePanel.ResumeLayout(false);
+            this.ratingPanel.ResumeLayout(false);
+            this.ratingPanel.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
-            this.ratingPanel.ResumeLayout(false);
-            this.ratingPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -894,5 +919,6 @@
         private System.Windows.Forms.Panel ratingPanel;
         private System.Windows.Forms.Label ratingLabel;
         private System.Windows.Forms.Label oldPriceLabel;
+        private Guna.UI2.WinForms.Guna2Button deleteButton;
     }
 }

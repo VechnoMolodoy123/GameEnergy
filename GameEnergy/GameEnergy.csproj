@@ -73,6 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\AdminForms\CreateOrUpdateGameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminForms\CreateOrUpdateGameForm.Designer.cs">
+      <DependentUpon>CreateOrUpdateGameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UserForms\CartForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="AppForms\UserForms\GameInfoForm.Designer.cs">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\UserForms\GameReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\GameReportForm.Designer.cs">
+      <DependentUpon>GameReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\UserForms\GameСatalogForm.cs">
       <SubType>Form</SubType>
@@ -182,11 +194,17 @@
     <Compile Include="Models\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AppForms\AdminForms\CreateOrUpdateGameForm.resx">
+      <DependentUpon>CreateOrUpdateGameForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\CartForm.resx">
       <DependentUpon>CartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\GameInfoForm.resx">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\GameReportForm.resx">
+      <DependentUpon>GameReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\GameСatalogForm.resx">
       <DependentUpon>GameСatalogForm.cs</DependentUpon>
@@ -231,7 +249,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppForms\AdminForms\" />
     <Folder Include="Classes\Key\" />
     <Folder Include="Docs\" />
   </ItemGroup>
