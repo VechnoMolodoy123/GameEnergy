@@ -1,6 +1,7 @@
 ﻿using GameEnergy.AppForms.AdminForms;
 using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
+using GameEnergy.Classes.Validation;
 using GameEnergy.Classes.Video;
 using GameEnergy.CustomControls;
 using GameEnergy.Models;
@@ -107,7 +108,8 @@ namespace GameEnergy.AppForms.UserForms
 
             if (_currentUser != null)
             {
-                reportButton.Text = "Удалить";
+                reportButton.Text = "Изменить";
+                deleteButton.Visible = true;
                 _isUserAdmin = true;
             }
         }
@@ -263,6 +265,48 @@ namespace GameEnergy.AppForms.UserForms
             }
         }
 
+        private void DeleteGame()
+        {
+            var bookToRemove = Program.context.Books.Find(_book.BookID);
+
+            if (bookToRemove != null)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Вы уверены, что хотите удалить эту книгу?",
+                    "Подтверждение удаления",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        Program.context.Books.Remove(bookToRemove);
+                        Program.context.SaveChanges();
+
+                        ValidationHelper.ShowInformationMessage("Книга успешно удалена", "Успех");
+
+                        var mainform = new MainForm();
+                        VisibilityHelper.ShowNewForm(this, mainform);
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        ValidationHelper.ShowErrorMessage("Произошла ошибка при удалении книги: " + ex.Message);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                ValidationHelper.ShowErrorMessage("Книга не найдена в базе данных.");
+            }
+        }
+
         private void SetActiveButton(Guna2Button activeButton, Guna2Button inactiveButton)
         {
             activeButton.Checked = true;
@@ -412,7 +456,7 @@ namespace GameEnergy.AppForms.UserForms
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-
+            DeleteGame();
         }
     }
 }

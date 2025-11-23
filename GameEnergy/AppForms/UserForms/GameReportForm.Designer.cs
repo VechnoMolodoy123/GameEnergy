@@ -123,7 +123,8 @@
             this.reportReasonComboBox.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.reportReasonComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.reportReasonComboBox.ForeColor = System.Drawing.Color.White;
-            this.reportReasonComboBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.reportReasonComboBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.reportReasonComboBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.reportReasonComboBox.ItemHeight = 30;
             this.reportReasonComboBox.Items.AddRange(new object[] {
             "Причина репорта",
@@ -177,9 +178,11 @@
             // 
             // sendReportButton
             // 
-            this.sendReportButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.sendReportButton.BorderColor = System.Drawing.Color.Green;
             this.sendReportButton.BorderRadius = 10;
             this.sendReportButton.BorderThickness = 1;
+            this.sendReportButton.CheckedState.BorderColor = System.Drawing.Color.Green;
+            this.sendReportButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.sendReportButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.sendReportButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.sendReportButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -187,7 +190,7 @@
             this.sendReportButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.sendReportButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sendReportButton.ForeColor = System.Drawing.Color.White;
-            this.sendReportButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.sendReportButton.HoverState.BorderColor = System.Drawing.Color.Green;
             this.sendReportButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.sendReportButton.Location = new System.Drawing.Point(151, 221);
             this.sendReportButton.Name = "sendReportButton";
@@ -211,6 +214,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameReportForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameReportForm";
             this.navigationPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();

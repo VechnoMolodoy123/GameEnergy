@@ -88,7 +88,7 @@ namespace GameEnergy.AppForms.UserForms
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void collapseButton_Click(object sender, EventArgs e)
