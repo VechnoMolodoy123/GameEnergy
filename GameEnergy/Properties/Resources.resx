@@ -223,6 +223,12 @@
   <data name="whiteLike" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whiteLike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="yellowCart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellowCart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yellowNotifi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yellowNotifi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="yellowStar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yellowStar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

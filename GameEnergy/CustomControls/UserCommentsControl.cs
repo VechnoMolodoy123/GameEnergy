@@ -16,7 +16,6 @@ namespace GameEnergy.CustomControls
         private readonly Form _parentForm;
         private Reviews _comment;
 
-
         public UserCommentsControl(Form parentForm, Reviews reviews)
         {
             InitializeComponent();

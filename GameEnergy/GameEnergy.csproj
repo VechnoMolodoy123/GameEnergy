@@ -315,6 +315,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\yellowNotifi.png" />
+    <None Include="Resources\yellowCart.png" />
     <None Include="Resources\star.png" />
     <None Include="Resources\yellowStar.png" />
     <None Include="Resources\sendMessage.png" />

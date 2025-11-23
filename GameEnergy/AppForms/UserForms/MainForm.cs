@@ -82,6 +82,7 @@ namespace GameEnergy.AppForms.UserForms
                 // Создаём ОДИН слайд
                 _currentSlide = new GameSlideControl(0, "");
                 gamesSlidePanel.Controls.Clear();
+                _currentSlide.GameClicked += GameControl_GameClicked;
                 gamesSlidePanel.Controls.Add(_currentSlide);
 
                 // Показываем первый

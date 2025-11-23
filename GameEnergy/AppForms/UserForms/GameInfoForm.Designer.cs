@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameInfoForm));
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.scrollPanel = new System.Windows.Forms.Panel();
             this.commentsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.delimiterPanel7 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -60,7 +60,8 @@
             this.titleAndImagePanel = new System.Windows.Forms.Panel();
             this.trailerPictureBox = new System.Windows.Forms.PictureBox();
             this.delimiterPanel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pricePanel = new System.Windows.Forms.Panel();
+            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.oldPriceLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -84,10 +85,9 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.deleteButton = new Guna.UI2.WinForms.Guna2Button();
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.mainPanel.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.scrollPanel.SuspendLayout();
             this.panel21.SuspendLayout();
             this.reviewPanel.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -102,7 +102,7 @@
             this.infoPanel.SuspendLayout();
             this.titleAndImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trailerPictureBox)).BeginInit();
-            this.panel4.SuspendLayout();
+            this.pricePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.likeButton)).BeginInit();
@@ -114,7 +114,7 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Controls.Add(this.panel7);
+            this.mainPanel.Controls.Add(this.scrollPanel);
             this.mainPanel.Controls.Add(this.rightPanel);
             this.mainPanel.Controls.Add(this.leftPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -123,30 +123,30 @@
             this.mainPanel.Size = new System.Drawing.Size(726, 378);
             this.mainPanel.TabIndex = 3;
             // 
-            // panel7
+            // scrollPanel
             // 
-            this.panel7.Controls.Add(this.commentsPanel);
-            this.panel7.Controls.Add(this.delimiterPanel7);
-            this.panel7.Controls.Add(this.panel21);
-            this.panel7.Controls.Add(this.delimiterPanel6);
-            this.panel7.Controls.Add(this.reviewPanel);
-            this.panel7.Controls.Add(this.delimiterPanel5);
-            this.panel7.Controls.Add(this.descriptionPanel);
-            this.panel7.Controls.Add(this.delimiterPanel4);
-            this.panel7.Controls.Add(this.infoPanel);
-            this.panel7.Controls.Add(this.delimiterPanel1);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(100, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(526, 378);
-            this.panel7.TabIndex = 31;
+            this.scrollPanel.Controls.Add(this.commentsPanel);
+            this.scrollPanel.Controls.Add(this.delimiterPanel7);
+            this.scrollPanel.Controls.Add(this.panel21);
+            this.scrollPanel.Controls.Add(this.delimiterPanel6);
+            this.scrollPanel.Controls.Add(this.reviewPanel);
+            this.scrollPanel.Controls.Add(this.delimiterPanel5);
+            this.scrollPanel.Controls.Add(this.descriptionPanel);
+            this.scrollPanel.Controls.Add(this.delimiterPanel4);
+            this.scrollPanel.Controls.Add(this.infoPanel);
+            this.scrollPanel.Controls.Add(this.delimiterPanel1);
+            this.scrollPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.scrollPanel.Location = new System.Drawing.Point(100, 0);
+            this.scrollPanel.Name = "scrollPanel";
+            this.scrollPanel.Size = new System.Drawing.Size(526, 378);
+            this.scrollPanel.TabIndex = 31;
             // 
             // commentsPanel
             // 
             this.commentsPanel.AutoSize = true;
             this.commentsPanel.BackColor = System.Drawing.Color.Transparent;
             this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 391);
+            this.commentsPanel.Location = new System.Drawing.Point(0, 375);
             this.commentsPanel.Name = "commentsPanel";
             this.commentsPanel.Size = new System.Drawing.Size(526, 0);
             this.commentsPanel.TabIndex = 56;
@@ -154,7 +154,7 @@
             // delimiterPanel7
             // 
             this.delimiterPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel7.Location = new System.Drawing.Point(0, 381);
+            this.delimiterPanel7.Location = new System.Drawing.Point(0, 365);
             this.delimiterPanel7.Name = "delimiterPanel7";
             this.delimiterPanel7.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel7.TabIndex = 55;
@@ -165,7 +165,7 @@
             this.panel21.Controls.Add(this.sortInterestingCommentButton);
             this.panel21.Controls.Add(this.sortNewCommentButton);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 351);
+            this.panel21.Location = new System.Drawing.Point(0, 335);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(526, 30);
             this.panel21.TabIndex = 54;
@@ -228,7 +228,7 @@
             // delimiterPanel6
             // 
             this.delimiterPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel6.Location = new System.Drawing.Point(0, 341);
+            this.delimiterPanel6.Location = new System.Drawing.Point(0, 325);
             this.delimiterPanel6.Name = "delimiterPanel6";
             this.delimiterPanel6.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel6.TabIndex = 36;
@@ -242,7 +242,7 @@
             this.reviewPanel.Controls.Add(this.commentPanel);
             this.reviewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(0, 261);
+            this.reviewPanel.Location = new System.Drawing.Point(0, 245);
             this.reviewPanel.Name = "reviewPanel";
             this.reviewPanel.Size = new System.Drawing.Size(526, 80);
             this.reviewPanel.TabIndex = 35;
@@ -383,7 +383,7 @@
             // delimiterPanel5
             // 
             this.delimiterPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel5.Location = new System.Drawing.Point(0, 251);
+            this.delimiterPanel5.Location = new System.Drawing.Point(0, 235);
             this.delimiterPanel5.Name = "delimiterPanel5";
             this.delimiterPanel5.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel5.TabIndex = 34;
@@ -400,7 +400,7 @@
             this.descriptionPanel.Controls.Add(this.panel10);
             this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionPanel.FillColor = System.Drawing.Color.Black;
-            this.descriptionPanel.Location = new System.Drawing.Point(0, 216);
+            this.descriptionPanel.Location = new System.Drawing.Point(0, 200);
             this.descriptionPanel.Name = "descriptionPanel";
             this.descriptionPanel.Size = new System.Drawing.Size(526, 35);
             this.descriptionPanel.TabIndex = 33;
@@ -449,7 +449,7 @@
             // delimiterPanel4
             // 
             this.delimiterPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel4.Location = new System.Drawing.Point(0, 206);
+            this.delimiterPanel4.Location = new System.Drawing.Point(0, 190);
             this.delimiterPanel4.Name = "delimiterPanel4";
             this.delimiterPanel4.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel4.TabIndex = 32;
@@ -461,19 +461,19 @@
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.infoPanel.Location = new System.Drawing.Point(0, 25);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(526, 181);
+            this.infoPanel.Size = new System.Drawing.Size(526, 165);
             this.infoPanel.TabIndex = 31;
             // 
             // titleAndImagePanel
             // 
             this.titleAndImagePanel.Controls.Add(this.trailerPictureBox);
             this.titleAndImagePanel.Controls.Add(this.delimiterPanel2);
-            this.titleAndImagePanel.Controls.Add(this.panel4);
+            this.titleAndImagePanel.Controls.Add(this.pricePanel);
             this.titleAndImagePanel.Controls.Add(this.delimiterPanel3);
             this.titleAndImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleAndImagePanel.Location = new System.Drawing.Point(170, 0);
             this.titleAndImagePanel.Name = "titleAndImagePanel";
-            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 181);
+            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 165);
             this.titleAndImagePanel.TabIndex = 35;
             // 
             // trailerPictureBox
@@ -496,19 +496,42 @@
             this.delimiterPanel2.Size = new System.Drawing.Size(340, 20);
             this.delimiterPanel2.TabIndex = 40;
             // 
-            // panel4
+            // pricePanel
             // 
-            this.panel4.Controls.Add(this.deleteButton);
-            this.panel4.Controls.Add(this.oldPriceLabel);
-            this.panel4.Controls.Add(this.panel1);
-            this.panel4.Controls.Add(this.cartButton);
-            this.panel4.Controls.Add(this.discountLabel);
-            this.panel4.Controls.Add(this.priceLabel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(16, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(340, 104);
-            this.panel4.TabIndex = 39;
+            this.pricePanel.Controls.Add(this.deleteButton);
+            this.pricePanel.Controls.Add(this.oldPriceLabel);
+            this.pricePanel.Controls.Add(this.panel1);
+            this.pricePanel.Controls.Add(this.cartButton);
+            this.pricePanel.Controls.Add(this.discountLabel);
+            this.pricePanel.Controls.Add(this.priceLabel);
+            this.pricePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pricePanel.Location = new System.Drawing.Point(16, 0);
+            this.pricePanel.Name = "pricePanel";
+            this.pricePanel.Size = new System.Drawing.Size(340, 104);
+            this.pricePanel.TabIndex = 39;
+            // 
+            // deleteButton
+            // 
+            this.deleteButton.Animated = true;
+            this.deleteButton.BorderColor = System.Drawing.Color.Red;
+            this.deleteButton.BorderRadius = 8;
+            this.deleteButton.BorderThickness = 1;
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.deleteButton.ForeColor = System.Drawing.Color.Black;
+            this.deleteButton.HoverState.FillColor = System.Drawing.Color.White;
+            this.deleteButton.Location = new System.Drawing.Point(6, 68);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(114, 30);
+            this.deleteButton.TabIndex = 19;
+            this.deleteButton.Text = "УДАЛИТЬ";
+            this.deleteButton.Visible = false;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // oldPriceLabel
             // 
@@ -616,7 +639,7 @@
             this.delimiterPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel3.Location = new System.Drawing.Point(0, 0);
             this.delimiterPanel3.Name = "delimiterPanel3";
-            this.delimiterPanel3.Size = new System.Drawing.Size(16, 181);
+            this.delimiterPanel3.Size = new System.Drawing.Size(16, 165);
             this.delimiterPanel3.TabIndex = 38;
             // 
             // imagePanel
@@ -627,7 +650,7 @@
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(170, 181);
+            this.imagePanel.Size = new System.Drawing.Size(170, 165);
             this.imagePanel.TabIndex = 34;
             // 
             // ratingPanel
@@ -779,29 +802,6 @@
             this.FormRounded.ResizeForm = false;
             this.FormRounded.TransparentWhileDrag = true;
             // 
-            // deleteButton
-            // 
-            this.deleteButton.Animated = true;
-            this.deleteButton.BorderColor = System.Drawing.Color.Red;
-            this.deleteButton.BorderRadius = 8;
-            this.deleteButton.BorderThickness = 1;
-            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.deleteButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.deleteButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.deleteButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.deleteButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.deleteButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.deleteButton.ForeColor = System.Drawing.Color.Black;
-            this.deleteButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.deleteButton.Location = new System.Drawing.Point(6, 68);
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(114, 30);
-            this.deleteButton.TabIndex = 19;
-            this.deleteButton.Text = "УДАЛИТЬ";
-            this.deleteButton.Visible = false;
-            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
-            // 
             // navigationControl
             // 
             this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -832,8 +832,8 @@
             this.SizeChanged += new System.EventHandler(this.GameInfoForm_SizeChanged);
             this.Resize += new System.EventHandler(this.GameInfoForm_Resize);
             this.mainPanel.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.scrollPanel.ResumeLayout(false);
+            this.scrollPanel.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.reviewPanel.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -849,8 +849,8 @@
             this.infoPanel.ResumeLayout(false);
             this.titleAndImagePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trailerPictureBox)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.pricePanel.ResumeLayout(false);
+            this.pricePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.likeButton)).EndInit();
@@ -870,7 +870,7 @@
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel leftPanel;
         private Guna.UI2.WinForms.Guna2BorderlessForm FormRounded;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel scrollPanel;
         private System.Windows.Forms.Panel delimiterPanel5;
         private Guna.UI2.WinForms.Guna2Panel descriptionPanel;
         private System.Windows.Forms.Label descriptionLabel;
@@ -882,7 +882,7 @@
         private System.Windows.Forms.Panel titleAndImagePanel;
         private System.Windows.Forms.PictureBox trailerPictureBox;
         private System.Windows.Forms.Panel delimiterPanel2;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pricePanel;
         private Guna.UI2.WinForms.Guna2Button cartButton;
         private System.Windows.Forms.Label discountLabel;
         private System.Windows.Forms.Label priceLabel;

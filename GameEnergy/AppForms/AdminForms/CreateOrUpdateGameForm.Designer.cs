@@ -36,16 +36,17 @@
             this.line = new Guna.UI2.WinForms.Guna2Button();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.titleLabel = new System.Windows.Forms.Label();
-            this.nameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.gamePictureBox = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.trailerNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.genreCheckedList = new System.Windows.Forms.CheckedListBox();
+            this.nameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.developerComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.trailerNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.categoryComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.descriptionTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.priceTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.discountTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.addGameButton = new Guna.UI2.WinForms.Guna2Button();
-            this.genreCheckedList = new System.Windows.Forms.CheckedListBox();
+            this.releaseDateTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.navigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).BeginInit();
@@ -128,6 +129,44 @@
             this.titleLabel.TabIndex = 35;
             this.titleLabel.Text = "Добавить игру";
             // 
+            // gamePictureBox
+            // 
+            this.gamePictureBox.BorderRadius = 13;
+            this.gamePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gamePictureBox.ImageRotate = 0F;
+            this.gamePictureBox.Location = new System.Drawing.Point(16, 84);
+            this.gamePictureBox.Name = "gamePictureBox";
+            this.gamePictureBox.Size = new System.Drawing.Size(85, 106);
+            this.gamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gamePictureBox.TabIndex = 42;
+            this.gamePictureBox.TabStop = false;
+            this.gamePictureBox.Click += new System.EventHandler(this.GamePictureBox_Click);
+            // 
+            // genreCheckedList
+            // 
+            this.genreCheckedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.genreCheckedList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.genreCheckedList.ColumnWidth = 187;
+            this.genreCheckedList.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.genreCheckedList.ForeColor = System.Drawing.Color.White;
+            this.genreCheckedList.FormattingEnabled = true;
+            this.genreCheckedList.Items.AddRange(new object[] {
+            "Souls-like",
+            "Экшен",
+            "Приключения",
+            "Ролевые",
+            "Симуляторы",
+            "Стратегии",
+            "Инди",
+            "Онлайн",
+            "Спорт",
+            "Гонки"});
+            this.genreCheckedList.Location = new System.Drawing.Point(16, 206);
+            this.genreCheckedList.MultiColumn = true;
+            this.genreCheckedList.Name = "genreCheckedList";
+            this.genreCheckedList.Size = new System.Drawing.Size(508, 100);
+            this.genreCheckedList.TabIndex = 45;
+            // 
             // nameTextBox
             // 
             this.nameTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
@@ -152,44 +191,6 @@
             this.nameTextBox.SelectedText = "";
             this.nameTextBox.Size = new System.Drawing.Size(173, 36);
             this.nameTextBox.TabIndex = 44;
-            // 
-            // gamePictureBox
-            // 
-            this.gamePictureBox.BorderRadius = 13;
-            this.gamePictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.gamePictureBox.ImageRotate = 0F;
-            this.gamePictureBox.Location = new System.Drawing.Point(16, 84);
-            this.gamePictureBox.Name = "gamePictureBox";
-            this.gamePictureBox.Size = new System.Drawing.Size(85, 106);
-            this.gamePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gamePictureBox.TabIndex = 42;
-            this.gamePictureBox.TabStop = false;
-            this.gamePictureBox.Click += new System.EventHandler(this.GamePictureBox_Click);
-            // 
-            // trailerNameTextBox
-            // 
-            this.trailerNameTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.trailerNameTextBox.BorderRadius = 10;
-            this.trailerNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.trailerNameTextBox.DefaultText = "";
-            this.trailerNameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.trailerNameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.trailerNameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.trailerNameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.trailerNameTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
-            this.trailerNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.trailerNameTextBox.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
-            this.trailerNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.trailerNameTextBox.ForeColor = System.Drawing.Color.White;
-            this.trailerNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.trailerNameTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
-            this.trailerNameTextBox.Location = new System.Drawing.Point(116, 142);
-            this.trailerNameTextBox.Name = "trailerNameTextBox";
-            this.trailerNameTextBox.PlaceholderForeColor = System.Drawing.Color.White;
-            this.trailerNameTextBox.PlaceholderText = "Код ролика";
-            this.trailerNameTextBox.SelectedText = "";
-            this.trailerNameTextBox.Size = new System.Drawing.Size(173, 36);
-            this.trailerNameTextBox.TabIndex = 48;
             // 
             // developerComboBox
             // 
@@ -239,6 +240,31 @@
             this.developerComboBox.TabIndex = 47;
             this.developerComboBox.TabStop = false;
             this.developerComboBox.TextOffset = new System.Drawing.Point(5, 0);
+            // 
+            // trailerNameTextBox
+            // 
+            this.trailerNameTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.trailerNameTextBox.BorderRadius = 10;
+            this.trailerNameTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.trailerNameTextBox.DefaultText = "";
+            this.trailerNameTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.trailerNameTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.trailerNameTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.trailerNameTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.trailerNameTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.trailerNameTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.trailerNameTextBox.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.trailerNameTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.trailerNameTextBox.ForeColor = System.Drawing.Color.White;
+            this.trailerNameTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.trailerNameTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.trailerNameTextBox.Location = new System.Drawing.Point(116, 142);
+            this.trailerNameTextBox.Name = "trailerNameTextBox";
+            this.trailerNameTextBox.PlaceholderForeColor = System.Drawing.Color.White;
+            this.trailerNameTextBox.PlaceholderText = "Код ролика";
+            this.trailerNameTextBox.SelectedText = "";
+            this.trailerNameTextBox.Size = new System.Drawing.Size(173, 36);
+            this.trailerNameTextBox.TabIndex = 48;
             // 
             // categoryComboBox
             // 
@@ -364,7 +390,7 @@
             this.addGameButton.ForeColor = System.Drawing.Color.White;
             this.addGameButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.addGameButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
-            this.addGameButton.Location = new System.Drawing.Point(16, 525);
+            this.addGameButton.Location = new System.Drawing.Point(16, 577);
             this.addGameButton.Name = "addGameButton";
             this.addGameButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.addGameButton.Size = new System.Drawing.Size(273, 36);
@@ -372,37 +398,38 @@
             this.addGameButton.Text = "Добавить игру";
             this.addGameButton.Click += new System.EventHandler(this.addGameButton_Click);
             // 
-            // genreCheckedList
+            // releaseDateTextBox
             // 
-            this.genreCheckedList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.genreCheckedList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.genreCheckedList.ColumnWidth = 187;
-            this.genreCheckedList.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.genreCheckedList.ForeColor = System.Drawing.Color.White;
-            this.genreCheckedList.FormattingEnabled = true;
-            this.genreCheckedList.Items.AddRange(new object[] {
-            "Souls-like",
-            "Экшен",
-            "Приключения",
-            "Ролевые",
-            "Симуляторы",
-            "Стратегии",
-            "Инди",
-            "Онлайн",
-            "Спорт",
-            "Гонки"});
-            this.genreCheckedList.Location = new System.Drawing.Point(16, 206);
-            this.genreCheckedList.MultiColumn = true;
-            this.genreCheckedList.Name = "genreCheckedList";
-            this.genreCheckedList.Size = new System.Drawing.Size(508, 100);
-            this.genreCheckedList.TabIndex = 45;
+            this.releaseDateTextBox.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.releaseDateTextBox.BorderRadius = 10;
+            this.releaseDateTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.releaseDateTextBox.DefaultText = "";
+            this.releaseDateTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.releaseDateTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.releaseDateTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.releaseDateTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.releaseDateTextBox.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.releaseDateTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.releaseDateTextBox.FocusedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.releaseDateTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.releaseDateTextBox.ForeColor = System.Drawing.Color.White;
+            this.releaseDateTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.releaseDateTextBox.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
+            this.releaseDateTextBox.Location = new System.Drawing.Point(16, 525);
+            this.releaseDateTextBox.Name = "releaseDateTextBox";
+            this.releaseDateTextBox.PlaceholderForeColor = System.Drawing.Color.White;
+            this.releaseDateTextBox.PlaceholderText = "Дата релиза";
+            this.releaseDateTextBox.SelectedText = "";
+            this.releaseDateTextBox.Size = new System.Drawing.Size(273, 36);
+            this.releaseDateTextBox.TabIndex = 54;
             // 
             // CreateOrUpdateGameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(305, 577);
+            this.ClientSize = new System.Drawing.Size(305, 630);
+            this.Controls.Add(this.releaseDateTextBox);
             this.Controls.Add(this.addGameButton);
             this.Controls.Add(this.discountTextBox);
             this.Controls.Add(this.priceTextBox);
@@ -437,15 +464,16 @@
         private Guna.UI2.WinForms.Guna2Button line;
         private Guna.UI2.WinForms.Guna2BorderlessForm FormRounded;
         private System.Windows.Forms.Label titleLabel;
-        private Guna.UI2.WinForms.Guna2TextBox nameTextBox;
         private Guna.UI2.WinForms.Guna2PictureBox gamePictureBox;
-        private Guna.UI2.WinForms.Guna2TextBox trailerNameTextBox;
-        private Guna.UI2.WinForms.Guna2ComboBox developerComboBox;
-        private Guna.UI2.WinForms.Guna2ComboBox categoryComboBox;
-        private Guna.UI2.WinForms.Guna2TextBox descriptionTextBox;
+        private System.Windows.Forms.CheckedListBox genreCheckedList;
+        private Guna.UI2.WinForms.Guna2TextBox releaseDateTextBox;
+        private Guna.UI2.WinForms.Guna2Button addGameButton;
         private Guna.UI2.WinForms.Guna2TextBox discountTextBox;
         private Guna.UI2.WinForms.Guna2TextBox priceTextBox;
-        private Guna.UI2.WinForms.Guna2Button addGameButton;
-        private System.Windows.Forms.CheckedListBox genreCheckedList;
+        private Guna.UI2.WinForms.Guna2TextBox descriptionTextBox;
+        private Guna.UI2.WinForms.Guna2ComboBox categoryComboBox;
+        private Guna.UI2.WinForms.Guna2TextBox trailerNameTextBox;
+        private Guna.UI2.WinForms.Guna2ComboBox developerComboBox;
+        private Guna.UI2.WinForms.Guna2TextBox nameTextBox;
     }
 }

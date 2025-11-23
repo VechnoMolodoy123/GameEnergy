@@ -36,11 +36,9 @@ namespace GameEnergy.CustomControls
             mainButton.Click += (s, e) => OpenForm<MainForm>();
             catalogButton.Click += (s, e) => OpenForm<GameСatalogForm>();
             notificationsButton.Click += (s, e) => OpenForm<NotifyForm>();
-            notifiPanel.Click += (s, e) => OpenForm<NotifyForm>();
             profileButton.Click += (s, e) => OpenForm<ProfileForm>();
             libraryButton.Click += (s, e) => OpenForm<LibraryForm>();
             cartButton.Click += (s, e) => OpenForm<CartForm>();
-            cartNotifiPanel.Click += (s, e) => OpenForm<CartForm>();
             searchTextBox.TextChanged += searchTextBox_TextChanged;
         }
 
@@ -102,8 +100,8 @@ namespace GameEnergy.CustomControls
             // Обновляем интерфейс
             hasNotifications = notificationsCount > 0;
             hasCartNotifications = cartNotificationsCount > 0;
-            notifiPanel.Visible = hasNotifications;
-            cartNotifiPanel.Visible = hasCartNotifications;
+            notificationsButton.Image = hasNotifications ? Properties.Resources.yellowNotifi : Properties.Resources.notifi;
+            cartButton.Image = hasCartNotifications ? Properties.Resources.yellowCart : Properties.Resources.cart;
         }
 
         private int CountAdminNotifications()
@@ -208,7 +206,7 @@ namespace GameEnergy.CustomControls
             {
                 _searchResultsPanel.Controls.Clear();
 
-                // 🔍 Поиск по названию ИЛИ имени разработчика
+                // Поиск по названию или имени разработчика
                 var games = (from g in Program.context.Games
                              join dev in Program.context.GameDevelopers
                                  on g.DeveloperID equals dev.DeveloperID into devGroup
@@ -255,7 +253,7 @@ namespace GameEnergy.CustomControls
                     WrapContents = true,
                     FlowDirection = FlowDirection.LeftToRight,
                     Visible = false,
-                    BackColor = Color.FromArgb(20, 17, 17), // чуть светлее для контраста
+                    BackColor = Color.FromArgb(20, 17, 17),
                     BorderStyle = BorderStyle.None
                 };
                 AutoScrollHelper.ConfigureScrollbars(_searchResultsPanel, disableHorizontal: true, disableVertical: true);

@@ -41,7 +41,7 @@ namespace GameEnergy.AppForms.UserForms
 
         private void SetFormStyle()
         {
-            AutoScrollHelper.ConfigureScrollbars(mainPanel, disableHorizontal: true, disableVertical: true);
+            AutoScrollHelper.ConfigureScrollbars(scrollPanel, disableHorizontal: true, disableVertical: true);
 
             navigationControl.leftPanel = leftPanel;
             navigationControl.rightPanel = rightPanel;
@@ -56,25 +56,19 @@ namespace GameEnergy.AppForms.UserForms
 
         private void LoadGameInfo()
         {
+            titleLabel.Text = _game.Title?.ToString();
             var genreNames = Program.context.GameGenres.Where(gg => gg.GameID == _game.GameID)
                 .Join(Program.context.Genres, gg => gg.GenreID, g => g.GenreID, (gg, g) => g.GenreName).ToList();
             genreLabel.Text = genreNames.Any() ? string.Join(", ", genreNames) : "";
             dateLabel.Text = _game.ReleaseDate?.ToString("d MMMM yyyy", new System.Globalization.CultureInfo("ru-RU"));
-            developerLabel.Text = _game.GameDevelopers.DeveloperName?.ToString();
-            titleLabel.Text = _game.Title?.ToString();
-            priceLabel.Text = _game.DiscountedPrice.HasValue ? $"{_game.DiscountedPrice} ₽" : $"{_game.Price} ₽";
+
+            ShowDeveloperAndPrice();
+            UpdateRating();
+
             discountLabel.Text = _game.Discount.HasValue ? $"-{_game.Discount}%" : "";
             descriptionLabel.Text = _game.Description != null ? _game.Description : "";
-            ratingLabel.Text = ((double)_game.AverageRating).ToString("F1", CultureInfo.InvariantCulture);
-
-            if (_game.DiscountedPrice != _game.Price)
-            {
-                oldPriceLabel.Text = $"{ _game.Price?.ToString()} ₽";
-                oldPriceLabel.Visible = true;
-            }
 
             RoundingHelper.SetRoundedRegion(ratingPanel, 12, 12);
-            
 
             TrailerHelper.LoadTrailerPreview(trailerPictureBox, _game.TrailerImage);
 
@@ -84,6 +78,24 @@ namespace GameEnergy.AppForms.UserForms
             {
                 gameImage.Image = image;
             }
+        }
+
+        private void ShowDeveloperAndPrice()
+        {
+            _game = Program.context.Games.AsNoTracking().FirstOrDefault(g => g.GameID == _game.GameID);
+
+            developerLabel.Text = _game.GameDevelopers.DeveloperName?.ToString();
+            priceLabel.Text = _game.DiscountedPrice.HasValue ? $"{_game.DiscountedPrice} ₽" : $"{_game.Price} ₽";
+
+            if (_game.DiscountedPrice != _game.Price)
+            {
+                oldPriceLabel.Text = $"{_game.Price?.ToString()} ₽";
+                oldPriceLabel.Visible = true;
+            }
+            else
+                oldPriceLabel.Visible = false;
+
+            //pricePanel.PerformLayout();
         }
 
         private int GetStarIndex(PictureBox star)
@@ -137,6 +149,12 @@ namespace GameEnergy.AppForms.UserForms
             likeButton.Image = isInLibrary
                 ? Properties.Resources.redLike
                 : Properties.Resources.whiteLike;
+        }
+
+        private void UpdateRating()
+        {
+            _game = Program.context.Games.AsNoTracking().FirstOrDefault(g => g.GameID == _game.GameID);
+            ratingLabel.Text = ((double)_game.AverageRating).ToString("F1", CultureInfo.InvariantCulture);
         }
 
         private void SendCommentLogic()
@@ -203,6 +221,8 @@ namespace GameEnergy.AppForms.UserForms
 
                 delimiterPanel5.Visible = false;
                 reviewPanel.Visible = false;
+
+                UpdateRating();
             }
             catch (Exception ex)
             {
@@ -288,7 +308,7 @@ namespace GameEnergy.AppForms.UserForms
                         Program.context.Games.Remove(bookToRemove);
                         Program.context.SaveChanges();
 
-                        MessageHelper.ShowInformationMessage("Книга успешно удалена", "Успех");
+                        MessageHelper.ShowInformationMessage("Игра успешно удалена", "Успех");
 
                         var mainform = new MainForm();
                         VisibilityHelper.ShowNewForm(this, mainform);
@@ -296,7 +316,7 @@ namespace GameEnergy.AppForms.UserForms
                     }
                     catch (Exception ex)
                     {
-                        MessageHelper.ShowErrorMessage("Произошла ошибка при удалении книги: " + ex.Message);
+                        MessageHelper.ShowErrorMessage("Произошла ошибка при удалении Игры: " + ex.Message);
                     }
                 }
                 else
@@ -306,7 +326,7 @@ namespace GameEnergy.AppForms.UserForms
             }
             else
             {
-                MessageHelper.ShowErrorMessage("Книга не найдена в базе данных.");
+                MessageHelper.ShowErrorMessage("Игра не найдена в базе данных.");
             }
         }
 

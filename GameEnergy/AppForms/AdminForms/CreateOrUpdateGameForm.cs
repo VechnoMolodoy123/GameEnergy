@@ -48,6 +48,8 @@ namespace GameEnergy.AppForms.AdminForms
                 priceTextBox.Text = _editingGame.Price.ToString();
                 discountTextBox.Text = _editingGame.Discount?.ToString() ?? string.Empty;
 
+                releaseDateTextBox.Text = _editingGame.ReleaseDate?.ToString("dd.MM.yyyy");
+
                 if (_editingGame.DeveloperID.HasValue)
                     developerComboBox.SelectedIndex = _editingGame.DeveloperID.Value;
 
@@ -72,6 +74,7 @@ namespace GameEnergy.AppForms.AdminForms
         {
             bool isValid = true;
 
+            // Название
             if (string.IsNullOrWhiteSpace(nameTextBox.Text))
             {
                 nameTextBox.BorderColor = Color.Red;
@@ -80,6 +83,7 @@ namespace GameEnergy.AppForms.AdminForms
             else
                 nameTextBox.BorderColor = Color.FromArgb(251, 187, 67);
 
+            // Разработчик
             if (developerComboBox.SelectedIndex == 0)
             {
                 developerComboBox.BorderColor = Color.Red;
@@ -120,6 +124,23 @@ namespace GameEnergy.AppForms.AdminForms
                 discountTextBox.BorderColor = Color.FromArgb(251, 187, 67);
             }
 
+            // Дата релиза (может быть пустой)
+            DateTime? releaseDate = null;
+            if (!string.IsNullOrWhiteSpace(releaseDateTextBox.Text))
+            {
+                // Попытка распарсить дату в формате "дд.ММ.гггг" (например, 11.09.2024)
+                if (!DateTime.TryParseExact(releaseDateTextBox.Text, "dd.MM.yyyy", null,
+                    System.Globalization.DateTimeStyles.None, out DateTime parsedDate))
+                {
+                    MessageHelper.ShowErrorMessage("Неверный формат даты релиза.\nПример правильного формата: 11.09.2024");
+                    isValid = false;
+                }
+                else
+                {
+                    releaseDate = parsedDate;
+                }
+            }
+
             // Описание
             if (string.IsNullOrWhiteSpace(descriptionTextBox.Text))
             {
@@ -153,11 +174,11 @@ namespace GameEnergy.AppForms.AdminForms
                 : "Добавить новую игру?";
             if (MessageBox.Show(message, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                SaveGameToDatabase(price, discount);
+                SaveGameToDatabase(price, discount, releaseDate);
             }
         }
 
-        private void SaveGameToDatabase(int price, int? discount)
+        private void SaveGameToDatabase(int price, int? discount, DateTime? releaseDate)
         {
             try
             {
@@ -186,7 +207,10 @@ namespace GameEnergy.AppForms.AdminForms
                         TrailerImage = trailerNameTextBox.Text ?? string.Empty,
                         GameImage = imageName ?? string.Empty,
                         DeveloperID = developerComboBox.SelectedIndex,
-                        CategoryID = categoryComboBox.SelectedIndex
+                        CategoryID = categoryComboBox.SelectedIndex == 0 ? (int?)null : categoryComboBox.SelectedIndex,
+                        AverageRating = 0,
+                        AddedDate = DateTime.Now,
+                        ReleaseDate = releaseDate
                     };
 
                     Program.context.Games.Add(newGame);
@@ -208,7 +232,8 @@ namespace GameEnergy.AppForms.AdminForms
                     gameToUpdate.TrailerImage = trailerNameTextBox.Text ?? string.Empty;
                     gameToUpdate.GameImage = imageName ?? string.Empty;
                     gameToUpdate.DeveloperID = developerComboBox.SelectedIndex;
-                    gameToUpdate.CategoryID = categoryComboBox.SelectedIndex;
+                    gameToUpdate.CategoryID = categoryComboBox.SelectedIndex == 0 ? (int?)null : categoryComboBox.SelectedIndex;
+                    gameToUpdate.ReleaseDate = releaseDate;
 
                     // Удаляем старые жанры и добавляем новые
                     var existingGenres = Program.context.GameGenres.Where(gg => gg.GameID == gameToUpdate.GameID);
@@ -219,7 +244,10 @@ namespace GameEnergy.AppForms.AdminForms
                 }
 
                 Program.context.SaveChanges();
-                GameUpdated?.Invoke();
+                if (_editingGame != null)
+                {
+                    GameUpdated?.Invoke();
+                }
                 MessageBox.Show(_editingGame == null ? "Игра добавлена!" : "Игра обновлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
