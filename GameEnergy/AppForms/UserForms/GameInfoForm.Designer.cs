@@ -57,7 +57,7 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.delimiterPanel4 = new System.Windows.Forms.Panel();
             this.infoPanel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.titleAndImagePanel = new System.Windows.Forms.Panel();
             this.trailerPictureBox = new System.Windows.Forms.PictureBox();
             this.delimiterPanel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -82,6 +82,9 @@
             this.leftPanel = new System.Windows.Forms.Panel();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
+            this.ratingPanel = new System.Windows.Forms.Panel();
+            this.ratingLabel = new System.Windows.Forms.Label();
+            this.oldPriceLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -96,7 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sendCommentButton)).BeginInit();
             this.descriptionPanel.SuspendLayout();
             this.infoPanel.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.titleAndImagePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trailerPictureBox)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,6 +108,7 @@
             this.imagePanel.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).BeginInit();
+            this.ratingPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -141,7 +145,7 @@
             this.commentsPanel.AutoSize = true;
             this.commentsPanel.BackColor = System.Drawing.Color.Transparent;
             this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 369);
+            this.commentsPanel.Location = new System.Drawing.Point(0, 372);
             this.commentsPanel.Name = "commentsPanel";
             this.commentsPanel.Size = new System.Drawing.Size(526, 0);
             this.commentsPanel.TabIndex = 56;
@@ -149,7 +153,7 @@
             // delimiterPanel7
             // 
             this.delimiterPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel7.Location = new System.Drawing.Point(0, 359);
+            this.delimiterPanel7.Location = new System.Drawing.Point(0, 362);
             this.delimiterPanel7.Name = "delimiterPanel7";
             this.delimiterPanel7.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel7.TabIndex = 55;
@@ -160,7 +164,7 @@
             this.panel21.Controls.Add(this.sortInterestingCommentButton);
             this.panel21.Controls.Add(this.sortNewCommentButton);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 329);
+            this.panel21.Location = new System.Drawing.Point(0, 332);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(526, 30);
             this.panel21.TabIndex = 54;
@@ -190,6 +194,7 @@
             this.sortInterestingCommentButton.Size = new System.Drawing.Size(127, 30);
             this.sortInterestingCommentButton.TabIndex = 3;
             this.sortInterestingCommentButton.Text = "По популярности";
+            this.sortInterestingCommentButton.Click += new System.EventHandler(this.sortInterestingCommentButton_Click);
             // 
             // sortNewCommentButton
             // 
@@ -197,6 +202,7 @@
             this.sortNewCommentButton.BorderColor = System.Drawing.Color.Empty;
             this.sortNewCommentButton.BorderRadius = 10;
             this.sortNewCommentButton.BorderThickness = 1;
+            this.sortNewCommentButton.Checked = true;
             this.sortNewCommentButton.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.sortNewCommentButton.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(68)))), ((int)(((byte)(32)))));
             this.sortNewCommentButton.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -216,11 +222,12 @@
             this.sortNewCommentButton.Size = new System.Drawing.Size(71, 30);
             this.sortNewCommentButton.TabIndex = 2;
             this.sortNewCommentButton.Text = "По дате";
+            this.sortNewCommentButton.Click += new System.EventHandler(this.sortNewCommentButton_Click);
             // 
             // delimiterPanel6
             // 
             this.delimiterPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel6.Location = new System.Drawing.Point(0, 319);
+            this.delimiterPanel6.Location = new System.Drawing.Point(0, 322);
             this.delimiterPanel6.Name = "delimiterPanel6";
             this.delimiterPanel6.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel6.TabIndex = 36;
@@ -234,7 +241,7 @@
             this.reviewPanel.Controls.Add(this.commentPanel);
             this.reviewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(0, 239);
+            this.reviewPanel.Location = new System.Drawing.Point(0, 242);
             this.reviewPanel.Name = "reviewPanel";
             this.reviewPanel.Size = new System.Drawing.Size(526, 80);
             this.reviewPanel.TabIndex = 35;
@@ -375,7 +382,7 @@
             // delimiterPanel5
             // 
             this.delimiterPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel5.Location = new System.Drawing.Point(0, 229);
+            this.delimiterPanel5.Location = new System.Drawing.Point(0, 232);
             this.delimiterPanel5.Name = "delimiterPanel5";
             this.delimiterPanel5.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel5.TabIndex = 34;
@@ -392,7 +399,7 @@
             this.descriptionPanel.Controls.Add(this.panel10);
             this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionPanel.FillColor = System.Drawing.Color.Black;
-            this.descriptionPanel.Location = new System.Drawing.Point(0, 194);
+            this.descriptionPanel.Location = new System.Drawing.Point(0, 197);
             this.descriptionPanel.Name = "descriptionPanel";
             this.descriptionPanel.Size = new System.Drawing.Size(526, 35);
             this.descriptionPanel.TabIndex = 33;
@@ -441,32 +448,32 @@
             // delimiterPanel4
             // 
             this.delimiterPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel4.Location = new System.Drawing.Point(0, 184);
+            this.delimiterPanel4.Location = new System.Drawing.Point(0, 187);
             this.delimiterPanel4.Name = "delimiterPanel4";
             this.delimiterPanel4.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel4.TabIndex = 32;
             // 
             // infoPanel
             // 
-            this.infoPanel.Controls.Add(this.panel3);
+            this.infoPanel.Controls.Add(this.titleAndImagePanel);
             this.infoPanel.Controls.Add(this.imagePanel);
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.infoPanel.Location = new System.Drawing.Point(0, 10);
+            this.infoPanel.Location = new System.Drawing.Point(0, 25);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(526, 174);
+            this.infoPanel.Size = new System.Drawing.Size(526, 162);
             this.infoPanel.TabIndex = 31;
             // 
-            // panel3
+            // titleAndImagePanel
             // 
-            this.panel3.Controls.Add(this.trailerPictureBox);
-            this.panel3.Controls.Add(this.delimiterPanel2);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.delimiterPanel3);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(170, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(356, 174);
-            this.panel3.TabIndex = 35;
+            this.titleAndImagePanel.Controls.Add(this.trailerPictureBox);
+            this.titleAndImagePanel.Controls.Add(this.delimiterPanel2);
+            this.titleAndImagePanel.Controls.Add(this.panel4);
+            this.titleAndImagePanel.Controls.Add(this.delimiterPanel3);
+            this.titleAndImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.titleAndImagePanel.Location = new System.Drawing.Point(170, 0);
+            this.titleAndImagePanel.Name = "titleAndImagePanel";
+            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 162);
+            this.titleAndImagePanel.TabIndex = 35;
             // 
             // trailerPictureBox
             // 
@@ -490,6 +497,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.oldPriceLabel);
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Controls.Add(this.cartButton);
             this.panel4.Controls.Add(this.discountLabel);
@@ -570,7 +578,7 @@
             this.discountLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.discountLabel.Location = new System.Drawing.Point(229, 72);
+            this.discountLabel.Location = new System.Drawing.Point(282, 72);
             this.discountLabel.Name = "discountLabel";
             this.discountLabel.Size = new System.Drawing.Size(50, 20);
             this.discountLabel.TabIndex = 13;
@@ -593,17 +601,18 @@
             this.delimiterPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel3.Location = new System.Drawing.Point(0, 0);
             this.delimiterPanel3.Name = "delimiterPanel3";
-            this.delimiterPanel3.Size = new System.Drawing.Size(16, 174);
+            this.delimiterPanel3.Size = new System.Drawing.Size(16, 162);
             this.delimiterPanel3.TabIndex = 38;
             // 
             // imagePanel
             // 
+            this.imagePanel.Controls.Add(this.ratingPanel);
             this.imagePanel.Controls.Add(this.panel6);
             this.imagePanel.Controls.Add(this.gameImage);
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(170, 174);
+            this.imagePanel.Size = new System.Drawing.Size(170, 162);
             this.imagePanel.TabIndex = 34;
             // 
             // panel6
@@ -653,7 +662,7 @@
             this.reportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.reportButton.ForeColor = System.Drawing.Color.Black;
             this.reportButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.reportButton.Location = new System.Drawing.Point(0, 113);
+            this.reportButton.Location = new System.Drawing.Point(0, 114);
             this.reportButton.Name = "reportButton";
             this.reportButton.Size = new System.Drawing.Size(162, 30);
             this.reportButton.TabIndex = 15;
@@ -703,7 +712,7 @@
             this.delimiterPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.delimiterPanel1.Location = new System.Drawing.Point(0, 0);
             this.delimiterPanel1.Name = "delimiterPanel1";
-            this.delimiterPanel1.Size = new System.Drawing.Size(526, 10);
+            this.delimiterPanel1.Size = new System.Drawing.Size(526, 25);
             this.delimiterPanel1.TabIndex = 3;
             // 
             // rightPanel
@@ -747,6 +756,39 @@
             this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 2;
             // 
+            // ratingPanel
+            // 
+            this.ratingPanel.BackColor = System.Drawing.Color.Black;
+            this.ratingPanel.Controls.Add(this.ratingLabel);
+            this.ratingPanel.Location = new System.Drawing.Point(125, 5);
+            this.ratingPanel.Name = "ratingPanel";
+            this.ratingPanel.Size = new System.Drawing.Size(40, 40);
+            this.ratingPanel.TabIndex = 13;
+            // 
+            // ratingLabel
+            // 
+            this.ratingLabel.AutoSize = true;
+            this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ratingLabel.ForeColor = System.Drawing.Color.White;
+            this.ratingLabel.Location = new System.Drawing.Point(2, 8);
+            this.ratingLabel.Name = "ratingLabel";
+            this.ratingLabel.Size = new System.Drawing.Size(35, 24);
+            this.ratingLabel.TabIndex = 0;
+            this.ratingLabel.Text = "4.5";
+            // 
+            // oldPriceLabel
+            // 
+            this.oldPriceLabel.AutoSize = true;
+            this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
+            this.oldPriceLabel.Location = new System.Drawing.Point(212, 72);
+            this.oldPriceLabel.Name = "oldPriceLabel";
+            this.oldPriceLabel.Size = new System.Drawing.Size(64, 20);
+            this.oldPriceLabel.TabIndex = 16;
+            this.oldPriceLabel.Text = "3999 ₽";
+            this.oldPriceLabel.Visible = false;
+            // 
             // GameInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -779,7 +821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.sendCommentButton)).EndInit();
             this.descriptionPanel.ResumeLayout(false);
             this.infoPanel.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
+            this.titleAndImagePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trailerPictureBox)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -790,6 +832,8 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
+            this.ratingPanel.ResumeLayout(false);
+            this.ratingPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -809,7 +853,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel delimiterPanel4;
         private System.Windows.Forms.Panel infoPanel;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel titleAndImagePanel;
         private System.Windows.Forms.PictureBox trailerPictureBox;
         private System.Windows.Forms.Panel delimiterPanel2;
         private System.Windows.Forms.Panel panel4;
@@ -847,5 +891,8 @@
         private Guna.UI2.WinForms.Guna2Button sortNewCommentButton;
         private System.Windows.Forms.Label genreLabel;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel ratingPanel;
+        private System.Windows.Forms.Label ratingLabel;
+        private System.Windows.Forms.Label oldPriceLabel;
     }
 }

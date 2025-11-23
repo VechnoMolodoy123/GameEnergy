@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -42,7 +43,7 @@ namespace GameEnergy.AppForms.UserForms
             navigationControl.leftPanel = leftPanel;
             navigationControl.rightPanel = rightPanel;
 
-            infoPanel.Height = 526;
+            infoPanel.Height = 461;
 
             LoadGameInfo();
             CheckUserRole();
@@ -59,7 +60,16 @@ namespace GameEnergy.AppForms.UserForms
             priceLabel.Text = _game.DiscountedPrice.HasValue ? $"{_game.DiscountedPrice} ₽" : $"{_game.Price} ₽";
             discountLabel.Text = _game.Discount.HasValue ? $"-{_game.Discount}%" : "";
             descriptionLabel.Text = _game.Description != null ? _game.Description : "";
+            ratingLabel.Text = ((double)_game.AverageRating).ToString("F1", CultureInfo.InvariantCulture);
 
+            if (_game.DiscountedPrice != _game.Price)
+            {
+                oldPriceLabel.Text = $"{ _game.Price?.ToString()} ₽";
+                oldPriceLabel.Visible = true;
+            }
+
+            RoundingHelper.SetRoundedRegion(ratingPanel, 12, 12);
+            
 
             TrailerHelper.LoadTrailerPreview(trailerPictureBox, _game.TrailerImage);
 
@@ -203,7 +213,6 @@ namespace GameEnergy.AppForms.UserForms
             {
                 if (isInLibrary)
                 {
-                    // Удаляем из избранного
                     var entryToRemove = Program.context.UserLibrary
                         .First(ul => ul.UserID == _currentUserId && ul.GameID == _game.GameID);
 
@@ -211,7 +220,6 @@ namespace GameEnergy.AppForms.UserForms
                 }
                 else
                 {
-                    // Добавляем в избранное
                     var newEntry = new UserLibrary
                     {
                         UserID = _currentUserId,
@@ -223,7 +231,6 @@ namespace GameEnergy.AppForms.UserForms
 
                 Program.context.SaveChanges();
 
-                // Обновляем изображение кнопки
                 UpdateLikeButtonState();
             }
             catch (Exception ex)
@@ -269,8 +276,7 @@ namespace GameEnergy.AppForms.UserForms
 
         private void SortCommentsByLikes()
         {
-            ShowComments(q => q.OrderByDescending(comment => comment.LikesCount)
-                .ThenByDescending(date => date.ReviewDate));
+            ShowComments(q => q.OrderByDescending(comment => comment.LikesCount).ThenByDescending(date => date.ReviewDate));
         }
 
         private int CalculateLabelHeight(string text, Font font, int width)
@@ -300,8 +306,10 @@ namespace GameEnergy.AppForms.UserForms
             {
                 navigationControl.LeftPanelWidth = 500;
                 navigationControl.RightPanelWidth = 500;
+                infoPanel.Height = 461;
                 imagePanel.Width = 255;
                 gameImage.Height = 317;
+                ratingPanel.Location = new Point(210, 5);
                 delimiterPanel3.Width = 30;
                 trailerPictureBox.Height = 336;
                 commentPanel.Width = 899;
@@ -312,8 +320,10 @@ namespace GameEnergy.AppForms.UserForms
             {
                 navigationControl.LeftPanelWidth = 100;
                 navigationControl.RightPanelWidth = 100;
+                infoPanel.Height = 355;
                 imagePanel.Width = 170;
                 gameImage.Height = 211;
+                ratingPanel.Location = new Point(125, 5);
                 delimiterPanel3.Width = 16;
                 trailerPictureBox.Height = 180;
                 commentPanel.Width = 505;
@@ -323,6 +333,11 @@ namespace GameEnergy.AppForms.UserForms
 
             navigationControl.UpdatePanelsWidth();
             DescriptionLabel_TextChanged(descriptionLabel, EventArgs.Empty);
+
+            this.BeginInvoke(new Action(() =>
+            {
+                RoundingHelper.SetRoundedRegion(trailerPictureBox, 12, 12);
+            }));
         }
 
         private void Star_Click(object sender, EventArgs e)

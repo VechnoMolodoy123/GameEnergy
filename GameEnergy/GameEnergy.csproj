@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Classes\Animations\FormDrag.cs" />
     <Compile Include="Classes\Customization\AutoScrollHelper.cs" />
+    <Compile Include="Classes\Customization\RoundingHelper.cs" />
     <Compile Include="Classes\DataAccess\GameSlideData.cs" />
     <Compile Include="Classes\Visibility\VisibilityHelper.cs" />
     <Compile Include="Classes\DataAccess\UserAvatarDataHelper.cs" />
