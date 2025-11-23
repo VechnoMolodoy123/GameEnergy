@@ -179,6 +179,7 @@
     <Compile Include="Models\CartItems.cs" />
     <Compile Include="Models\GameDevelopers.cs" />
     <Compile Include="Models\GameEnergyModel.cs" />
+    <Compile Include="Models\GameGenres.cs" />
     <Compile Include="Models\GameReportCategory.cs" />
     <Compile Include="Models\GameReports.cs" />
     <Compile Include="Models\Games.cs" />

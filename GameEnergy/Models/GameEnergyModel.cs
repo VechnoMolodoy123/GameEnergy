@@ -8,13 +8,14 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel1")
+            : base("name=GameEnergyModel3")
         {
         }
 
         public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<CartItems> CartItems { get; set; }
         public virtual DbSet<GameDevelopers> GameDevelopers { get; set; }
+        public virtual DbSet<GameGenres> GameGenres { get; set; }
         public virtual DbSet<GameReportCategory> GameReportCategory { get; set; }
         public virtual DbSet<GameReports> GameReports { get; set; }
         public virtual DbSet<Games> Games { get; set; }
@@ -67,11 +68,6 @@ namespace GameEnergy.Models
                 .HasMany(e => e.Reviews)
                 .WithOptional(e => e.Games)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<Games>()
-                .HasMany(e => e.Genres)
-                .WithMany(e => e.Games)
-                .Map(m => m.ToTable("GameGenres").MapLeftKey("GameID").MapRightKey("GenreID"));
 
             modelBuilder.Entity<OrderItems>()
                 .Property(e => e.PriceAtPurchase)

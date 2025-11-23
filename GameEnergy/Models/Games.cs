@@ -12,12 +12,12 @@ namespace GameEnergy.Models
         public Games()
         {
             CartItems = new HashSet<CartItems>();
+            GameGenres = new HashSet<GameGenres>();
             GameReports = new HashSet<GameReports>();
             OrderItems = new HashSet<OrderItems>();
             Rating = new HashSet<Rating>();
             Reviews = new HashSet<Reviews>();
             UserLibrary = new HashSet<UserLibrary>();
-            Genres = new HashSet<Genres>();
         }
 
         [Key]
@@ -58,6 +58,9 @@ namespace GameEnergy.Models
         public virtual GameDevelopers GameDevelopers { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<GameGenres> GameGenres { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameReports> GameReports { get; set; }
 
         public virtual MainCategory MainCategory { get; set; }
@@ -73,8 +76,5 @@ namespace GameEnergy.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserLibrary> UserLibrary { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Genres> Genres { get; set; }
     }
 }

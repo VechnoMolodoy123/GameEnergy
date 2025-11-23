@@ -56,7 +56,9 @@ namespace GameEnergy.AppForms.UserForms
 
         private void LoadGameInfo()
         {
-            genreLabel.Text = _game.Genres?.Any() == true ? string.Join(", ", _game.Genres.Select(g => g.GenreName)) : "";
+            var genreNames = Program.context.GameGenres.Where(gg => gg.GameID == _game.GameID)
+                .Join(Program.context.Genres, gg => gg.GenreID, g => g.GenreID, (gg, g) => g.GenreName).ToList();
+            genreLabel.Text = genreNames.Any() ? string.Join(", ", genreNames) : "";
             dateLabel.Text = _game.ReleaseDate?.ToString("d MMMM yyyy", new System.Globalization.CultureInfo("ru-RU"));
             developerLabel.Text = _game.GameDevelopers.DeveloperName?.ToString();
             titleLabel.Text = _game.Title?.ToString();

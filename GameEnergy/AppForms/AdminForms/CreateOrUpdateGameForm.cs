@@ -58,7 +58,7 @@ namespace GameEnergy.AppForms.AdminForms
 
                 if (image != null) gamePictureBox.Image = image;
 
-                var gameGenreIds = _editingGame.Genres.Select(g => g.GenreID).ToHashSet();
+                var gameGenreIds = _editingGame.GameGenres.Select(g => g.GenreID).ToHashSet();
                 for (int i = 0; i < genreCheckedList.Items.Count; i++)
                 {
                     var genreName = genreCheckedList.Items[i].ToString();
@@ -211,8 +211,8 @@ namespace GameEnergy.AppForms.AdminForms
                     gameToUpdate.CategoryID = categoryComboBox.SelectedIndex;
 
                     // Удаляем старые жанры и добавляем новые
-                    var oldRelations = Program.context.GameGenres.Where(gg => gg.GameID == gameToUpdate.GameID);
-                    Program.context.GameGenres.RemoveRange(oldRelations);
+                    var existingGenres = Program.context.GameGenres.Where(gg => gg.GameID == gameToUpdate.GameID);
+                    Program.context.GameGenres.RemoveRange(existingGenres);
                     Program.context.SaveChanges();
 
                     SaveGameGenres(gameToUpdate.GameID);
