@@ -46,7 +46,7 @@ namespace GameEnergy.AppForms.UserForms
             navigationControl.leftPanel = leftPanel;
             navigationControl.rightPanel = rightPanel;
 
-            infoPanel.Height = 461;
+            GameInfoForm_SizeChanged(null, null);
 
             LoadGameInfo();
             CheckUserRole();
@@ -404,7 +404,7 @@ namespace GameEnergy.AppForms.UserForms
 
             this.BeginInvoke(new Action(() =>
             {
-                RoundingHelper.SetRoundedRegion(trailerPictureBox, 12, 12);
+                RoundingHelper.SetRoundedRegion(trailerPictureBox, 20, 20);
             }));
         }
 

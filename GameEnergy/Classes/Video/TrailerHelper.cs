@@ -12,51 +12,75 @@ namespace GameEnergy.Classes.Video
 {
     internal class TrailerHelper
     {
+        private static readonly string[] ThumbnailQualities =
+        {
+            "maxresdefault.jpg", // 1280×720
+            "sddefault.jpg",     // 640×480
+            "hqdefault.jpg",     // 480×360
+            "mqdefault.jpg"      // 320×180
+        };
+
         public static async void LoadTrailerPreview(PictureBox pictureBox, string videoId)
         {
-            try
+            if (string.IsNullOrWhiteSpace(videoId))
             {
-                using (var client = new HttpClient())
+                pictureBox.Image = Properties.Resources.DefaultTrailerImage;
+                return;
+            }
+
+            foreach (var quality in ThumbnailQualities)
+            {
+                try
                 {
-                    var imageUrl = $"https://img.youtube.com/vi/{videoId}/mqdefault.jpg";
-                    var bytes = await client.GetByteArrayAsync(imageUrl);
-                    using (var ms = new MemoryStream(bytes))
+                    string url = $"https://img.youtube.com/vi/{videoId}/{quality}";
+                    using (var client = new HttpClient())
                     {
-                        using (var baseImage = Image.FromStream(ms) as Bitmap)
+                        // Проверяем, существует ли изображение (без загрузки всего тела)
+                        using (var headRequest = new HttpRequestMessage(HttpMethod.Head, url))
                         {
-                            var compositeImage = new Bitmap(baseImage.Width, baseImage.Height);
-                            using (var g = Graphics.FromImage(compositeImage))
+                            var headResponse = await client.SendAsync(headRequest);
+                            if (!headResponse.IsSuccessStatusCode)
+                                continue; // пропускаем, если 404 или другая ошибка
+                        }
+
+                        // Загружаем изображение
+                        var bytes = await client.GetByteArrayAsync(url);
+                        using (var ms = new MemoryStream(bytes))
+                        {
+                            using (var baseImage = Image.FromStream(ms) as Bitmap)
                             {
-                                g.DrawImage(baseImage, 0, 0);
+                                // Накладываем Play-кнопку
+                                var compositeImage = new Bitmap(baseImage.Width, baseImage.Height);
+                                using (var g = Graphics.FromImage(compositeImage))
+                                {
+                                    g.DrawImage(baseImage, 0, 0);
 
-                                // Пропорции твоей иконки Play: 783x550
-                                const double iconAspectRatio = 783.0 / 550.0; // ≈ 1.424
+                                    var playIcon = Properties.Resources.PlayTrailer;
+                                    double iconAspectRatio = (double)playIcon.Width / playIcon.Height;
+                                    int targetWidth = (int)(baseImage.Width * 0.14);
+                                    int targetHeight = (int)(targetWidth / iconAspectRatio);
+                                    int x = (baseImage.Width - targetWidth) / 2;
+                                    int y = (baseImage.Height - targetHeight) / 2;
 
-                                // Определяем желаемую ширину иконки (например, 40% от ширины превью)
-                                int targetWidth = (int)(baseImage.Width * 0.25);
-                                int targetHeight = (int)(targetWidth / iconAspectRatio);
+                                    g.DrawImage(playIcon, x, y, targetWidth, targetHeight);
+                                }
 
-                                // Центрируем иконку
-                                int x = (baseImage.Width - targetWidth) / 2;
-                                int y = (baseImage.Height - targetHeight) / 2;
-
-                                // Загружаем иконку из ресурсов (должна быть с прозрачным фоном)
-                                var playIcon = Properties.Resources.PlayTrailer; // Image или Bitmap
-
-                                // Рисуем с сохранением пропорций
-                                g.DrawImage(playIcon, x, y, targetWidth, targetHeight);
+                                pictureBox.Image?.Dispose();
+                                pictureBox.Image = compositeImage;
+                                return; // Успешно — выходим
                             }
-
-                            pictureBox.Image?.Dispose();
-                            pictureBox.Image = compositeImage;
                         }
                     }
                 }
+                catch
+                {
+                    // Игнорируем ошибку и пробуем следующее качество
+                    continue;
+                }
             }
-            catch
-            {
-                pictureBox.Image = Properties.Resources.DefaultTrailerImage;
-            }
+
+            // Если ни один не загрузился — ставим дефолт
+            pictureBox.Image = Properties.Resources.DefaultTrailerImage;
         }
 
         public static void ShowTrailer(string videoId)
