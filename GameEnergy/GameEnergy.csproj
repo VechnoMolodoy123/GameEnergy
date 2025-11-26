@@ -202,6 +202,9 @@
     <EmbeddedResource Include="AppForms\UserForms\CartForm.resx">
       <DependentUpon>CartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\ForgetPasswordForm.resx">
+      <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\GameInfoForm.resx">
       <DependentUpon>GameInfoForm.cs</DependentUpon>
     </EmbeddedResource>

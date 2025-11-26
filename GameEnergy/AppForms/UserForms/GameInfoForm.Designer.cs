@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameInfoForm));
             this.mainPanel = new System.Windows.Forms.Panel();
             this.scrollPanel = new System.Windows.Forms.Panel();
+            this.commentsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.delimiterPanel7 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.sortInterestingCommentButton = new Guna.UI2.WinForms.Guna2Button();
@@ -85,7 +86,6 @@
             this.leftPanel = new System.Windows.Forms.Panel();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
-            this.commentsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mainPanel.SuspendLayout();
             this.scrollPanel.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -140,6 +140,16 @@
             this.scrollPanel.Name = "scrollPanel";
             this.scrollPanel.Size = new System.Drawing.Size(526, 378);
             this.scrollPanel.TabIndex = 31;
+            // 
+            // commentsPanel
+            // 
+            this.commentsPanel.AutoSize = true;
+            this.commentsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.commentsPanel.Location = new System.Drawing.Point(0, 317);
+            this.commentsPanel.Name = "commentsPanel";
+            this.commentsPanel.Size = new System.Drawing.Size(526, 0);
+            this.commentsPanel.TabIndex = 56;
             // 
             // delimiterPanel7
             // 
@@ -807,16 +817,6 @@
             this.navigationControl.RightPanelWidth = 0;
             this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 2;
-            // 
-            // commentsPanel
-            // 
-            this.commentsPanel.AutoSize = true;
-            this.commentsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 317);
-            this.commentsPanel.Name = "commentsPanel";
-            this.commentsPanel.Size = new System.Drawing.Size(526, 0);
-            this.commentsPanel.TabIndex = 56;
             // 
             // GameInfoForm
             // 

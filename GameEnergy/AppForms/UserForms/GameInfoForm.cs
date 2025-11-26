@@ -369,10 +369,10 @@ namespace GameEnergy.AppForms.UserForms
                 {
                     var separator = new Panel
                     {
-                        Size = new Size(526, 1),
-                        Dock = DockStyle.Top, // или Bottom — зависит от того, где вы хотите линию
-                        BackColor = Color.Gray, // или Color.FromArgb(60, 60, 60) для более темного тона
-                        Margin = new Padding(10, 0, 10, 10) // отступы слева и справа, чтобы соответствовать комментарию
+                        Size = new Size(495, 1),
+                        Dock = DockStyle.Top,
+                        BackColor = Color.Gray,
+                        Margin = new Padding(15, 0, 10, 10)
                     };
                     commentsPanel.Controls.Add(separator);
                 }
