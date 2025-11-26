@@ -214,6 +214,9 @@
     <EmbeddedResource Include="AppForms\UserForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>

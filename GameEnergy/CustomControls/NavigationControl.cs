@@ -36,7 +36,7 @@ namespace GameEnergy.CustomControls
             mainButton.Click += (s, e) => OpenForm<MainForm>();
             catalogButton.Click += (s, e) => OpenForm<GameСatalogForm>();
             notificationsButton.Click += (s, e) => OpenForm<NotifyForm>();
-            profileButton.Click += (s, e) => OpenForm<ProfileForm>();
+            profileButton.Click += (s, e) => OpenProfileForm();
             libraryButton.Click += (s, e) => OpenForm<LibraryForm>();
             cartButton.Click += (s, e) => OpenForm<CartForm>();
             searchTextBox.TextChanged += searchTextBox_TextChanged;
@@ -60,6 +60,20 @@ namespace GameEnergy.CustomControls
             {
                 UpdateNotificationsCount();
             }
+        }
+
+        private void OpenProfileForm()
+        {
+            var parentForm = this.FindForm();
+            var profileForm = new ProfileForm(Program.CurrentUser.UserID);
+
+            if (parentForm != null)
+            {
+                profileForm.Owner = parentForm;
+                parentForm.Hide();
+            }
+
+            VisibilityHelper.ShowNewForm(parentForm, profileForm);
         }
 
         private void OpenForm<T>() where T : Form, new()

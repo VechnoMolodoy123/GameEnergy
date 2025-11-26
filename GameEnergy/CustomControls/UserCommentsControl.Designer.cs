@@ -30,16 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserCommentsControl));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.avatarPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.nameLabel = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
-            this.star5 = new System.Windows.Forms.PictureBox();
-            this.star4 = new System.Windows.Forms.PictureBox();
-            this.star3 = new System.Windows.Forms.PictureBox();
-            this.star2 = new System.Windows.Forms.PictureBox();
-            this.star1 = new System.Windows.Forms.PictureBox();
-            this.likesButton = new System.Windows.Forms.PictureBox();
             this.likesCountLabel = new System.Windows.Forms.Label();
             this.descriptionPanel = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -48,17 +41,24 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.commentLabel = new System.Windows.Forms.Label();
+            this.likesButton = new System.Windows.Forms.PictureBox();
+            this.star5 = new System.Windows.Forms.PictureBox();
+            this.star4 = new System.Windows.Forms.PictureBox();
+            this.star3 = new System.Windows.Forms.PictureBox();
+            this.star2 = new System.Windows.Forms.PictureBox();
+            this.star1 = new System.Windows.Forms.PictureBox();
+            this.avatarPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).BeginInit();
             this.panel2.SuspendLayout();
+            this.descriptionPanel.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.likesButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likesButton)).BeginInit();
-            this.descriptionPanel.SuspendLayout();
-            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,17 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 130);
             this.panel1.TabIndex = 0;
-            // 
-            // avatarPictureBox
-            // 
-            this.avatarPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.avatarPictureBox.ImageRotate = 0F;
-            this.avatarPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.avatarPictureBox.Name = "avatarPictureBox";
-            this.avatarPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.avatarPictureBox.Size = new System.Drawing.Size(40, 40);
-            this.avatarPictureBox.TabIndex = 0;
-            this.avatarPictureBox.TabStop = false;
             // 
             // panel2
             // 
@@ -110,6 +99,7 @@
             this.nameLabel.TabIndex = 11;
             this.nameLabel.Text = "Никнейм";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nameLabel.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // dateLabel
             // 
@@ -122,72 +112,6 @@
             this.dateLabel.TabIndex = 12;
             this.dateLabel.Text = "Дата";
             this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // star5
-            // 
-            this.star5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.star5.Image = ((System.Drawing.Image)(resources.GetObject("star5.Image")));
-            this.star5.Location = new System.Drawing.Point(329, 9);
-            this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(20, 20);
-            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star5.TabIndex = 17;
-            this.star5.TabStop = false;
-            // 
-            // star4
-            // 
-            this.star4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.star4.Image = ((System.Drawing.Image)(resources.GetObject("star4.Image")));
-            this.star4.Location = new System.Drawing.Point(298, 9);
-            this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(20, 20);
-            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star4.TabIndex = 16;
-            this.star4.TabStop = false;
-            // 
-            // star3
-            // 
-            this.star3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.star3.Image = ((System.Drawing.Image)(resources.GetObject("star3.Image")));
-            this.star3.Location = new System.Drawing.Point(267, 9);
-            this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(20, 20);
-            this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star3.TabIndex = 15;
-            this.star3.TabStop = false;
-            // 
-            // star2
-            // 
-            this.star2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.star2.Image = ((System.Drawing.Image)(resources.GetObject("star2.Image")));
-            this.star2.Location = new System.Drawing.Point(236, 9);
-            this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(20, 20);
-            this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star2.TabIndex = 14;
-            this.star2.TabStop = false;
-            // 
-            // star1
-            // 
-            this.star1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.star1.Image = ((System.Drawing.Image)(resources.GetObject("star1.Image")));
-            this.star1.Location = new System.Drawing.Point(206, 9);
-            this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(20, 20);
-            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star1.TabIndex = 13;
-            this.star1.TabStop = false;
-            // 
-            // likesButton
-            // 
-            this.likesButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.likesButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
-            this.likesButton.Location = new System.Drawing.Point(419, 9);
-            this.likesButton.Name = "likesButton";
-            this.likesButton.Size = new System.Drawing.Size(20, 20);
-            this.likesButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.likesButton.TabIndex = 19;
-            this.likesButton.TabStop = false;
             // 
             // likesCountLabel
             // 
@@ -268,6 +192,86 @@
             this.commentLabel.Size = new System.Drawing.Size(456, 16);
             this.commentLabel.TabIndex = 0;
             this.commentLabel.Text = "Комментарий";
+            this.commentLabel.TextChanged += new System.EventHandler(this.commentLabel_TextChanged);
+            // 
+            // likesButton
+            // 
+            this.likesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.likesButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
+            this.likesButton.Location = new System.Drawing.Point(419, 9);
+            this.likesButton.Name = "likesButton";
+            this.likesButton.Size = new System.Drawing.Size(20, 20);
+            this.likesButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.likesButton.TabIndex = 19;
+            this.likesButton.TabStop = false;
+            this.likesButton.Click += new System.EventHandler(this.likesButton_Click);
+            // 
+            // star5
+            // 
+            this.star5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.star5.Image = global::GameEnergy.Properties.Resources.star;
+            this.star5.Location = new System.Drawing.Point(329, 9);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(20, 20);
+            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star5.TabIndex = 17;
+            this.star5.TabStop = false;
+            // 
+            // star4
+            // 
+            this.star4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.star4.Image = ((System.Drawing.Image)(resources.GetObject("star4.Image")));
+            this.star4.Location = new System.Drawing.Point(298, 9);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(20, 20);
+            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star4.TabIndex = 16;
+            this.star4.TabStop = false;
+            // 
+            // star3
+            // 
+            this.star3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.star3.Image = ((System.Drawing.Image)(resources.GetObject("star3.Image")));
+            this.star3.Location = new System.Drawing.Point(267, 9);
+            this.star3.Name = "star3";
+            this.star3.Size = new System.Drawing.Size(20, 20);
+            this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star3.TabIndex = 15;
+            this.star3.TabStop = false;
+            // 
+            // star2
+            // 
+            this.star2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.star2.Image = ((System.Drawing.Image)(resources.GetObject("star2.Image")));
+            this.star2.Location = new System.Drawing.Point(236, 9);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(20, 20);
+            this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star2.TabIndex = 14;
+            this.star2.TabStop = false;
+            // 
+            // star1
+            // 
+            this.star1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.star1.Image = global::GameEnergy.Properties.Resources.star;
+            this.star1.Location = new System.Drawing.Point(206, 9);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(20, 20);
+            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star1.TabIndex = 13;
+            this.star1.TabStop = false;
+            // 
+            // avatarPictureBox
+            // 
+            this.avatarPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.avatarPictureBox.ImageRotate = 0F;
+            this.avatarPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.avatarPictureBox.Name = "avatarPictureBox";
+            this.avatarPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.avatarPictureBox.Size = new System.Drawing.Size(40, 40);
+            this.avatarPictureBox.TabIndex = 0;
+            this.avatarPictureBox.TabStop = false;
+            this.avatarPictureBox.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // UserCommentsControl
             // 
@@ -281,18 +285,18 @@
             this.Name = "UserCommentsControl";
             this.Size = new System.Drawing.Size(526, 130);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.descriptionPanel.ResumeLayout(false);
+            this.descriptionPanel.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.likesButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.likesButton)).EndInit();
-            this.descriptionPanel.ResumeLayout(false);
-            this.descriptionPanel.PerformLayout();
-            this.panel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
