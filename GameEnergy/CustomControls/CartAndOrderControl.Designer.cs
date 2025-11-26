@@ -56,7 +56,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoEllipsis = true;
-            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.titleLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(122, 21);
@@ -68,10 +68,10 @@
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.priceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.ForeColor = System.Drawing.Color.White;
-            this.priceLabel.Location = new System.Drawing.Point(123, 71);
+            this.priceLabel.Location = new System.Drawing.Point(123, 83);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(78, 25);
             this.priceLabel.TabIndex = 13;
@@ -79,8 +79,9 @@
             // 
             // deleteButton
             // 
+            this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteButton.Image = global::GameEnergy.Properties.Resources.close;
-            this.deleteButton.Location = new System.Drawing.Point(489, 0);
+            this.deleteButton.Location = new System.Drawing.Point(477, 0);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(23, 23);
             this.deleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,9 +94,9 @@
             // 
             this.oldPriceLabel.AutoSize = true;
             this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
-            this.oldPriceLabel.Location = new System.Drawing.Point(207, 71);
+            this.oldPriceLabel.Location = new System.Drawing.Point(207, 83);
             this.oldPriceLabel.Name = "oldPriceLabel";
             this.oldPriceLabel.Size = new System.Drawing.Size(78, 25);
             this.oldPriceLabel.TabIndex = 18;
@@ -108,7 +109,7 @@
             this.discountLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.discountLabel.Location = new System.Drawing.Point(291, 71);
+            this.discountLabel.Location = new System.Drawing.Point(291, 83);
             this.discountLabel.Name = "discountLabel";
             this.discountLabel.Size = new System.Drawing.Size(62, 25);
             this.discountLabel.TabIndex = 17;
@@ -127,7 +128,7 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.gameImage);
             this.Name = "CartAndOrderControl";
-            this.Size = new System.Drawing.Size(512, 130);
+            this.Size = new System.Drawing.Size(500, 130);
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
             this.ResumeLayout(false);

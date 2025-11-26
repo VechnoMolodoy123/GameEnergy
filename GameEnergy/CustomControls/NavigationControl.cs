@@ -158,13 +158,17 @@ namespace GameEnergy.CustomControls
         {
             try
             {
-                // Получаем список уведомлений для текущего пользователя
-                var hiddenNotificationIds = Program.context.Cart
-                    .Where(n => n.UserID == Program.CurrentUser.UserID)
-                    .ToList();
+                var cart = Program.context.Cart.FirstOrDefault(c => c.UserID == Program.CurrentUser.UserID);
 
-                // Считаем уведомления
-                return hiddenNotificationIds.Count();
+                if (cart == null)
+                {
+                    return 0;
+                }
+
+                // Считаем количество элементов в корзине
+                int itemCount = Program.context.CartItems.Count(ci => ci.CartID == cart.CartID);
+
+                return itemCount;
             }
             catch (Exception ex)
             {

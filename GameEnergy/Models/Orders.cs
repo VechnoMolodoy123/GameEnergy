@@ -22,7 +22,7 @@ namespace GameEnergy.Models
         [Column(TypeName = "datetime2")]
         public DateTime OrderDate { get; set; }
 
-        public decimal TotalAmount { get; set; }
+        public int TotalAmount { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderItems> OrderItems { get; set; }

@@ -73,14 +73,9 @@ namespace GameEnergy.CustomControls
                     Program.context.CartItems.Remove(itemToRemove);
                     Program.context.SaveChanges();
 
-                    // Удаляем сам контрол из родительской панели
-                    this.Parent?.Controls.Remove(this);
-                    this.Dispose();
-
-                    // Опционально: обновить общую сумму в корзине (если отображается)
                     if (this.ParentForm is CartAndOrderForm cartForm)
                     {
-                        cartForm.LoadCartInfo(); // вы должны реализовать этот метод в CartForm
+                        cartForm.LoadCartInfo();
                     }
                 }
             }

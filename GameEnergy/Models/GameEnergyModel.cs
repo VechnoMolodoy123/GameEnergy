@@ -8,7 +8,7 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel4")
+            : base("name=GameEnergyModel5")
         {
         }
 
@@ -33,10 +33,6 @@ namespace GameEnergy.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cart>()
-                .Property(e => e.TotalAmount)
-                .HasPrecision(10, 2);
-
             modelBuilder.Entity<CartItems>()
                 .Property(e => e.PriceAtAdd)
                 .HasPrecision(10, 2);
@@ -72,10 +68,6 @@ namespace GameEnergy.Models
 
             modelBuilder.Entity<OrderItems>()
                 .Property(e => e.PriceAtPurchase)
-                .HasPrecision(10, 2);
-
-            modelBuilder.Entity<Orders>()
-                .Property(e => e.TotalAmount)
                 .HasPrecision(10, 2);
 
             modelBuilder.Entity<UserRoles>()

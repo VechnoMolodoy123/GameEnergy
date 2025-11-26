@@ -68,7 +68,7 @@ BEGIN
     END
 END;
 
-CREATE TRIGGER [dbo].[trg_UpdateCartTotal]
+ALTER TRIGGER [dbo].[trg_UpdateCartTotal]
 ON [dbo].[CartItems]
 AFTER INSERT, UPDATE, DELETE
 AS

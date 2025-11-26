@@ -19,7 +19,7 @@ namespace GameEnergy.Models
 
         public int UserID { get; set; }
 
-        public decimal TotalAmount { get; set; }
+        public int TotalAmount { get; set; }
 
         public DateTime CreatedDate { get; set; }
 
