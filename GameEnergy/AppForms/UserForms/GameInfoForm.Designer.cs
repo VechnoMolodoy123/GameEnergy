@@ -118,10 +118,9 @@
             this.mainPanel.Controls.Add(this.rightPanel);
             this.mainPanel.Controls.Add(this.leftPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 100);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainPanel.Location = new System.Drawing.Point(0, 52);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1452, 727);
+            this.mainPanel.Size = new System.Drawing.Size(726, 378);
             this.mainPanel.TabIndex = 3;
             // 
             // scrollPanel
@@ -137,10 +136,9 @@
             this.scrollPanel.Controls.Add(this.infoPanel);
             this.scrollPanel.Controls.Add(this.delimiterPanel1);
             this.scrollPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.scrollPanel.Location = new System.Drawing.Point(200, 0);
-            this.scrollPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.scrollPanel.Location = new System.Drawing.Point(100, 0);
             this.scrollPanel.Name = "scrollPanel";
-            this.scrollPanel.Size = new System.Drawing.Size(1052, 727);
+            this.scrollPanel.Size = new System.Drawing.Size(526, 378);
             this.scrollPanel.TabIndex = 31;
             // 
             // commentsPanel
@@ -148,19 +146,17 @@
             this.commentsPanel.AutoSize = true;
             this.commentsPanel.BackColor = System.Drawing.Color.Transparent;
             this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 720);
-            this.commentsPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.commentsPanel.Location = new System.Drawing.Point(0, 375);
             this.commentsPanel.Name = "commentsPanel";
-            this.commentsPanel.Size = new System.Drawing.Size(1052, 0);
+            this.commentsPanel.Size = new System.Drawing.Size(526, 0);
             this.commentsPanel.TabIndex = 56;
             // 
             // delimiterPanel7
             // 
             this.delimiterPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel7.Location = new System.Drawing.Point(0, 701);
-            this.delimiterPanel7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.delimiterPanel7.Location = new System.Drawing.Point(0, 365);
             this.delimiterPanel7.Name = "delimiterPanel7";
-            this.delimiterPanel7.Size = new System.Drawing.Size(1052, 19);
+            this.delimiterPanel7.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel7.TabIndex = 55;
             // 
             // panel21
@@ -169,10 +165,9 @@
             this.panel21.Controls.Add(this.sortInterestingCommentButton);
             this.panel21.Controls.Add(this.sortNewCommentButton);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 643);
-            this.panel21.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel21.Location = new System.Drawing.Point(0, 335);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(1052, 58);
+            this.panel21.Size = new System.Drawing.Size(526, 30);
             this.panel21.TabIndex = 54;
             // 
             // sortInterestingCommentButton
@@ -194,11 +189,10 @@
             this.sortInterestingCommentButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.sortInterestingCommentButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.sortInterestingCommentButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.sortInterestingCommentButton.Location = new System.Drawing.Point(154, 0);
-            this.sortInterestingCommentButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sortInterestingCommentButton.Location = new System.Drawing.Point(77, 0);
             this.sortInterestingCommentButton.Name = "sortInterestingCommentButton";
             this.sortInterestingCommentButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.sortInterestingCommentButton.Size = new System.Drawing.Size(254, 58);
+            this.sortInterestingCommentButton.Size = new System.Drawing.Size(127, 30);
             this.sortInterestingCommentButton.TabIndex = 3;
             this.sortInterestingCommentButton.Text = "По популярности";
             this.sortInterestingCommentButton.Click += new System.EventHandler(this.sortInterestingCommentButton_Click);
@@ -224,10 +218,9 @@
             this.sortNewCommentButton.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.sortNewCommentButton.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
             this.sortNewCommentButton.Location = new System.Drawing.Point(0, 0);
-            this.sortNewCommentButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.sortNewCommentButton.Name = "sortNewCommentButton";
             this.sortNewCommentButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.sortNewCommentButton.Size = new System.Drawing.Size(142, 58);
+            this.sortNewCommentButton.Size = new System.Drawing.Size(71, 30);
             this.sortNewCommentButton.TabIndex = 2;
             this.sortNewCommentButton.Text = "По дате";
             this.sortNewCommentButton.Click += new System.EventHandler(this.sortNewCommentButton_Click);
@@ -235,10 +228,9 @@
             // delimiterPanel6
             // 
             this.delimiterPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel6.Location = new System.Drawing.Point(0, 624);
-            this.delimiterPanel6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.delimiterPanel6.Location = new System.Drawing.Point(0, 325);
             this.delimiterPanel6.Name = "delimiterPanel6";
-            this.delimiterPanel6.Size = new System.Drawing.Size(1052, 19);
+            this.delimiterPanel6.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel6.TabIndex = 36;
             // 
             // reviewPanel
@@ -250,10 +242,9 @@
             this.reviewPanel.Controls.Add(this.commentPanel);
             this.reviewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(0, 470);
-            this.reviewPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.reviewPanel.Location = new System.Drawing.Point(0, 245);
             this.reviewPanel.Name = "reviewPanel";
-            this.reviewPanel.Size = new System.Drawing.Size(1052, 154);
+            this.reviewPanel.Size = new System.Drawing.Size(526, 80);
             this.reviewPanel.TabIndex = 35;
             // 
             // panel8
@@ -267,19 +258,17 @@
             this.panel8.Controls.Add(this.label1);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1052, 58);
+            this.panel8.Size = new System.Drawing.Size(526, 30);
             this.panel8.TabIndex = 2;
             // 
             // star5
             // 
             this.star5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.star5.Image = ((System.Drawing.Image)(resources.GetObject("star5.Image")));
-            this.star5.Location = new System.Drawing.Point(474, 12);
-            this.star5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.star5.Location = new System.Drawing.Point(237, 6);
             this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(40, 38);
+            this.star5.Size = new System.Drawing.Size(20, 20);
             this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star5.TabIndex = 5;
             this.star5.TabStop = false;
@@ -289,10 +278,9 @@
             // 
             this.star4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.star4.Image = ((System.Drawing.Image)(resources.GetObject("star4.Image")));
-            this.star4.Location = new System.Drawing.Point(412, 12);
-            this.star4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.star4.Location = new System.Drawing.Point(206, 6);
             this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(40, 38);
+            this.star4.Size = new System.Drawing.Size(20, 20);
             this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star4.TabIndex = 4;
             this.star4.TabStop = false;
@@ -302,10 +290,9 @@
             // 
             this.star3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.star3.Image = ((System.Drawing.Image)(resources.GetObject("star3.Image")));
-            this.star3.Location = new System.Drawing.Point(350, 12);
-            this.star3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.star3.Location = new System.Drawing.Point(175, 6);
             this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(40, 38);
+            this.star3.Size = new System.Drawing.Size(20, 20);
             this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star3.TabIndex = 3;
             this.star3.TabStop = false;
@@ -315,10 +302,9 @@
             // 
             this.star2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.star2.Image = ((System.Drawing.Image)(resources.GetObject("star2.Image")));
-            this.star2.Location = new System.Drawing.Point(288, 12);
-            this.star2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.star2.Location = new System.Drawing.Point(144, 6);
             this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(40, 38);
+            this.star2.Size = new System.Drawing.Size(20, 20);
             this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star2.TabIndex = 2;
             this.star2.TabStop = false;
@@ -328,10 +314,9 @@
             // 
             this.star1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.star1.Image = ((System.Drawing.Image)(resources.GetObject("star1.Image")));
-            this.star1.Location = new System.Drawing.Point(228, 12);
-            this.star1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.star1.Location = new System.Drawing.Point(114, 6);
             this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(40, 38);
+            this.star1.Size = new System.Drawing.Size(20, 20);
             this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.star1.TabIndex = 1;
             this.star1.TabStop = false;
@@ -342,10 +327,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(16, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(8, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(183, 30);
+            this.label1.Size = new System.Drawing.Size(100, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Оцените игру:";
             // 
@@ -358,20 +342,18 @@
             this.commentPanel.Controls.Add(this.sendCommentButton);
             this.commentPanel.Controls.Add(this.commentTextBox);
             this.commentPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.commentPanel.Location = new System.Drawing.Point(22, 75);
-            this.commentPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.commentPanel.Location = new System.Drawing.Point(11, 39);
             this.commentPanel.Name = "commentPanel";
-            this.commentPanel.Size = new System.Drawing.Size(1010, 58);
+            this.commentPanel.Size = new System.Drawing.Size(505, 30);
             this.commentPanel.TabIndex = 1;
             // 
             // sendCommentButton
             // 
             this.sendCommentButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.sendCommentButton.Image = global::GameEnergy.Properties.Resources.sendMessage;
-            this.sendCommentButton.Location = new System.Drawing.Point(952, 6);
-            this.sendCommentButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sendCommentButton.Location = new System.Drawing.Point(476, 3);
             this.sendCommentButton.Name = "sendCommentButton";
-            this.sendCommentButton.Size = new System.Drawing.Size(52, 46);
+            this.sendCommentButton.Size = new System.Drawing.Size(26, 24);
             this.sendCommentButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.sendCommentButton.TabIndex = 1;
             this.sendCommentButton.TabStop = false;
@@ -391,21 +373,20 @@
             this.commentTextBox.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.commentTextBox.ForeColor = System.Drawing.Color.White;
             this.commentTextBox.HoverState.BorderColor = System.Drawing.Color.Black;
-            this.commentTextBox.Location = new System.Drawing.Point(8, 6);
-            this.commentTextBox.Margin = new System.Windows.Forms.Padding(12, 13, 12, 13);
+            this.commentTextBox.Location = new System.Drawing.Point(4, 3);
+            this.commentTextBox.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.commentTextBox.Name = "commentTextBox";
             this.commentTextBox.PlaceholderText = "От 50 до 1000 символов";
             this.commentTextBox.SelectedText = "";
-            this.commentTextBox.Size = new System.Drawing.Size(932, 46);
+            this.commentTextBox.Size = new System.Drawing.Size(466, 24);
             this.commentTextBox.TabIndex = 0;
             // 
             // delimiterPanel5
             // 
             this.delimiterPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel5.Location = new System.Drawing.Point(0, 451);
-            this.delimiterPanel5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.delimiterPanel5.Location = new System.Drawing.Point(0, 235);
             this.delimiterPanel5.Name = "delimiterPanel5";
-            this.delimiterPanel5.Size = new System.Drawing.Size(1052, 19);
+            this.delimiterPanel5.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel5.TabIndex = 34;
             // 
             // descriptionPanel
@@ -420,10 +401,9 @@
             this.descriptionPanel.Controls.Add(this.panel10);
             this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionPanel.FillColor = System.Drawing.Color.Black;
-            this.descriptionPanel.Location = new System.Drawing.Point(0, 384);
-            this.descriptionPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.descriptionPanel.Location = new System.Drawing.Point(0, 200);
             this.descriptionPanel.Name = "descriptionPanel";
-            this.descriptionPanel.Size = new System.Drawing.Size(1052, 67);
+            this.descriptionPanel.Size = new System.Drawing.Size(526, 35);
             this.descriptionPanel.TabIndex = 33;
             // 
             // descriptionLabel
@@ -432,11 +412,10 @@
             this.descriptionLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.descriptionLabel.ForeColor = System.Drawing.Color.White;
-            this.descriptionLabel.Location = new System.Drawing.Point(0, 19);
-            this.descriptionLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.descriptionLabel.Location = new System.Drawing.Point(0, 10);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.descriptionLabel.Size = new System.Drawing.Size(1032, 29);
+            this.descriptionLabel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.descriptionLabel.Size = new System.Drawing.Size(516, 15);
             this.descriptionLabel.TabIndex = 7;
             this.descriptionLabel.Text = "Описание";
             this.descriptionLabel.Click += new System.EventHandler(this.DescriptionLabel_TextChanged);
@@ -445,20 +424,18 @@
             // 
             this.panel12.BackColor = System.Drawing.Color.Transparent;
             this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(1032, 19);
-            this.panel12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel12.Location = new System.Drawing.Point(516, 10);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(20, 29);
+            this.panel12.Size = new System.Drawing.Size(10, 15);
             this.panel12.TabIndex = 6;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Transparent;
             this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Location = new System.Drawing.Point(0, 48);
-            this.panel11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel11.Location = new System.Drawing.Point(0, 25);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(1052, 19);
+            this.panel11.Size = new System.Drawing.Size(526, 10);
             this.panel11.TabIndex = 5;
             // 
             // panel10
@@ -466,18 +443,16 @@
             this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(1052, 19);
+            this.panel10.Size = new System.Drawing.Size(526, 10);
             this.panel10.TabIndex = 4;
             // 
             // delimiterPanel4
             // 
             this.delimiterPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel4.Location = new System.Drawing.Point(0, 365);
-            this.delimiterPanel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.delimiterPanel4.Location = new System.Drawing.Point(0, 190);
             this.delimiterPanel4.Name = "delimiterPanel4";
-            this.delimiterPanel4.Size = new System.Drawing.Size(1052, 19);
+            this.delimiterPanel4.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel4.TabIndex = 32;
             // 
             // infoPanel
@@ -485,10 +460,9 @@
             this.infoPanel.Controls.Add(this.titleAndImagePanel);
             this.infoPanel.Controls.Add(this.imagePanel);
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.infoPanel.Location = new System.Drawing.Point(0, 48);
-            this.infoPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.infoPanel.Location = new System.Drawing.Point(0, 25);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(1052, 317);
+            this.infoPanel.Size = new System.Drawing.Size(526, 165);
             this.infoPanel.TabIndex = 31;
             // 
             // titleAndImagePanel
@@ -498,20 +472,18 @@
             this.titleAndImagePanel.Controls.Add(this.pricePanel);
             this.titleAndImagePanel.Controls.Add(this.delimiterPanel3);
             this.titleAndImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleAndImagePanel.Location = new System.Drawing.Point(340, 0);
-            this.titleAndImagePanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.titleAndImagePanel.Location = new System.Drawing.Point(170, 0);
             this.titleAndImagePanel.Name = "titleAndImagePanel";
-            this.titleAndImagePanel.Size = new System.Drawing.Size(712, 317);
+            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 165);
             this.titleAndImagePanel.TabIndex = 35;
             // 
             // trailerPictureBox
             // 
             this.trailerPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.trailerPictureBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.trailerPictureBox.Location = new System.Drawing.Point(32, 238);
-            this.trailerPictureBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.trailerPictureBox.Location = new System.Drawing.Point(16, 124);
             this.trailerPictureBox.Name = "trailerPictureBox";
-            this.trailerPictureBox.Size = new System.Drawing.Size(680, 346);
+            this.trailerPictureBox.Size = new System.Drawing.Size(340, 180);
             this.trailerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.trailerPictureBox.TabIndex = 41;
             this.trailerPictureBox.TabStop = false;
@@ -520,10 +492,9 @@
             // delimiterPanel2
             // 
             this.delimiterPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel2.Location = new System.Drawing.Point(32, 200);
-            this.delimiterPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.delimiterPanel2.Location = new System.Drawing.Point(16, 104);
             this.delimiterPanel2.Name = "delimiterPanel2";
-            this.delimiterPanel2.Size = new System.Drawing.Size(680, 38);
+            this.delimiterPanel2.Size = new System.Drawing.Size(340, 20);
             this.delimiterPanel2.TabIndex = 40;
             // 
             // pricePanel
@@ -535,10 +506,9 @@
             this.pricePanel.Controls.Add(this.discountLabel);
             this.pricePanel.Controls.Add(this.priceLabel);
             this.pricePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pricePanel.Location = new System.Drawing.Point(32, 0);
-            this.pricePanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pricePanel.Location = new System.Drawing.Point(16, 0);
             this.pricePanel.Name = "pricePanel";
-            this.pricePanel.Size = new System.Drawing.Size(680, 200);
+            this.pricePanel.Size = new System.Drawing.Size(340, 104);
             this.pricePanel.TabIndex = 39;
             // 
             // deleteButton
@@ -556,10 +526,9 @@
             this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.deleteButton.ForeColor = System.Drawing.Color.Black;
             this.deleteButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.deleteButton.Location = new System.Drawing.Point(12, 131);
-            this.deleteButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.deleteButton.Location = new System.Drawing.Point(6, 68);
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(228, 58);
+            this.deleteButton.Size = new System.Drawing.Size(114, 30);
             this.deleteButton.TabIndex = 19;
             this.deleteButton.Text = "УДАЛИТЬ";
             this.deleteButton.Visible = false;
@@ -571,10 +540,9 @@
             this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Strikeout))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
-            this.oldPriceLabel.Location = new System.Drawing.Point(424, 138);
-            this.oldPriceLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.oldPriceLabel.Location = new System.Drawing.Point(212, 72);
             this.oldPriceLabel.Name = "oldPriceLabel";
-            this.oldPriceLabel.Size = new System.Drawing.Size(122, 37);
+            this.oldPriceLabel.Size = new System.Drawing.Size(64, 20);
             this.oldPriceLabel.TabIndex = 16;
             this.oldPriceLabel.Text = "3999 ₽";
             this.oldPriceLabel.Visible = false;
@@ -585,9 +553,8 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(680, 119);
+            this.panel1.Size = new System.Drawing.Size(340, 62);
             this.panel1.TabIndex = 15;
             // 
             // titleLabel
@@ -598,9 +565,8 @@
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
             this.titleLabel.Location = new System.Drawing.Point(0, 0);
-            this.titleLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(620, 119);
+            this.titleLabel.Size = new System.Drawing.Size(310, 62);
             this.titleLabel.TabIndex = 12;
             this.titleLabel.Text = "Название";
             // 
@@ -608,10 +574,9 @@
             // 
             this.panel2.Controls.Add(this.likeButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(620, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Location = new System.Drawing.Point(310, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(60, 119);
+            this.panel2.Size = new System.Drawing.Size(30, 62);
             this.panel2.TabIndex = 0;
             // 
             // likeButton
@@ -620,9 +585,8 @@
             this.likeButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.likeButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
             this.likeButton.Location = new System.Drawing.Point(0, 0);
-            this.likeButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.likeButton.Name = "likeButton";
-            this.likeButton.Size = new System.Drawing.Size(60, 58);
+            this.likeButton.Size = new System.Drawing.Size(30, 30);
             this.likeButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.likeButton.TabIndex = 0;
             this.likeButton.TabStop = false;
@@ -641,10 +605,9 @@
             this.cartButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cartButton.ForeColor = System.Drawing.Color.Black;
             this.cartButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.cartButton.Location = new System.Drawing.Point(12, 131);
-            this.cartButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cartButton.Location = new System.Drawing.Point(6, 68);
             this.cartButton.Name = "cartButton";
-            this.cartButton.Size = new System.Drawing.Size(228, 58);
+            this.cartButton.Size = new System.Drawing.Size(114, 30);
             this.cartButton.TabIndex = 14;
             this.cartButton.Text = "В КОРЗИНУ";
             // 
@@ -654,10 +617,9 @@
             this.discountLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.discountLabel.Location = new System.Drawing.Point(564, 138);
-            this.discountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.discountLabel.Location = new System.Drawing.Point(282, 72);
             this.discountLabel.Name = "discountLabel";
-            this.discountLabel.Size = new System.Drawing.Size(95, 37);
+            this.discountLabel.Size = new System.Drawing.Size(50, 20);
             this.discountLabel.TabIndex = 13;
             this.discountLabel.Text = "-50%";
             // 
@@ -667,10 +629,9 @@
             this.priceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.ForeColor = System.Drawing.Color.White;
-            this.priceLabel.Location = new System.Drawing.Point(284, 138);
-            this.priceLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.priceLabel.Location = new System.Drawing.Point(142, 72);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(122, 37);
+            this.priceLabel.Size = new System.Drawing.Size(64, 20);
             this.priceLabel.TabIndex = 12;
             this.priceLabel.Text = "3999 ₽";
             // 
@@ -678,9 +639,8 @@
             // 
             this.delimiterPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel3.Location = new System.Drawing.Point(0, 0);
-            this.delimiterPanel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.delimiterPanel3.Name = "delimiterPanel3";
-            this.delimiterPanel3.Size = new System.Drawing.Size(32, 317);
+            this.delimiterPanel3.Size = new System.Drawing.Size(16, 165);
             this.delimiterPanel3.TabIndex = 38;
             // 
             // imagePanel
@@ -690,19 +650,17 @@
             this.imagePanel.Controls.Add(this.gameImage);
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
-            this.imagePanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(340, 317);
+            this.imagePanel.Size = new System.Drawing.Size(170, 165);
             this.imagePanel.TabIndex = 34;
             // 
             // ratingPanel
             // 
             this.ratingPanel.BackColor = System.Drawing.Color.Black;
             this.ratingPanel.Controls.Add(this.ratingLabel);
-            this.ratingPanel.Location = new System.Drawing.Point(250, 10);
-            this.ratingPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ratingPanel.Location = new System.Drawing.Point(125, 5);
             this.ratingPanel.Name = "ratingPanel";
-            this.ratingPanel.Size = new System.Drawing.Size(80, 77);
+            this.ratingPanel.Size = new System.Drawing.Size(40, 40);
             this.ratingPanel.TabIndex = 13;
             // 
             // ratingLabel
@@ -710,10 +668,9 @@
             this.ratingLabel.AutoSize = true;
             this.ratingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ratingLabel.ForeColor = System.Drawing.Color.White;
-            this.ratingLabel.Location = new System.Drawing.Point(4, 15);
-            this.ratingLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ratingLabel.Location = new System.Drawing.Point(2, 8);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(72, 44);
+            this.ratingLabel.Size = new System.Drawing.Size(35, 24);
             this.ratingLabel.TabIndex = 0;
             this.ratingLabel.Text = "4.5";
             // 
@@ -725,10 +682,9 @@
             this.panel6.Controls.Add(this.developerLabel);
             this.panel6.Controls.Add(this.dateLabel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 406);
-            this.panel6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel6.Location = new System.Drawing.Point(0, 211);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(340, 0);
+            this.panel6.Size = new System.Drawing.Size(170, 0);
             this.panel6.TabIndex = 11;
             // 
             // genreLabel
@@ -738,10 +694,9 @@
             this.genreLabel.Dock = System.Windows.Forms.DockStyle.Top;
             this.genreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.genreLabel.ForeColor = System.Drawing.Color.White;
-            this.genreLabel.Location = new System.Drawing.Point(0, 27);
-            this.genreLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.genreLabel.Location = new System.Drawing.Point(0, 14);
             this.genreLabel.Name = "genreLabel";
-            this.genreLabel.Size = new System.Drawing.Size(340, 63);
+            this.genreLabel.Size = new System.Drawing.Size(170, 33);
             this.genreLabel.TabIndex = 18;
             this.genreLabel.Text = "Экшен, Приключения";
             // 
@@ -749,9 +704,8 @@
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(0, 0);
-            this.panel9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(340, 27);
+            this.panel9.Size = new System.Drawing.Size(170, 14);
             this.panel9.TabIndex = 17;
             // 
             // reportButton
@@ -767,10 +721,9 @@
             this.reportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.reportButton.ForeColor = System.Drawing.Color.Black;
             this.reportButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.reportButton.Location = new System.Drawing.Point(0, 219);
-            this.reportButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.reportButton.Location = new System.Drawing.Point(0, 114);
             this.reportButton.Name = "reportButton";
-            this.reportButton.Size = new System.Drawing.Size(324, 58);
+            this.reportButton.Size = new System.Drawing.Size(162, 30);
             this.reportButton.TabIndex = 15;
             this.reportButton.Text = "ПОЖАЛОВАТЬСЯ";
             this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
@@ -781,10 +734,9 @@
             this.developerLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.developerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.developerLabel.ForeColor = System.Drawing.Color.White;
-            this.developerLabel.Location = new System.Drawing.Point(-2, 163);
-            this.developerLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.developerLabel.Location = new System.Drawing.Point(-1, 85);
             this.developerLabel.Name = "developerLabel";
-            this.developerLabel.Size = new System.Drawing.Size(179, 30);
+            this.developerLabel.Size = new System.Drawing.Size(105, 16);
             this.developerLabel.TabIndex = 16;
             this.developerLabel.Text = "Разработчик";
             // 
@@ -794,10 +746,9 @@
             this.dateLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dateLabel.ForeColor = System.Drawing.Color.White;
-            this.dateLabel.Location = new System.Drawing.Point(-2, 112);
-            this.dateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.dateLabel.Location = new System.Drawing.Point(-1, 58);
             this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(179, 30);
+            this.dateLabel.Size = new System.Drawing.Size(100, 16);
             this.dateLabel.TabIndex = 15;
             this.dateLabel.Text = "Дата выхода";
             // 
@@ -810,9 +761,8 @@
             this.gameImage.Image = global::GameEnergy.Properties.Resources.DefaultGameImage;
             this.gameImage.ImageRotate = 0F;
             this.gameImage.Location = new System.Drawing.Point(0, 0);
-            this.gameImage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.gameImage.Name = "gameImage";
-            this.gameImage.Size = new System.Drawing.Size(340, 406);
+            this.gameImage.Size = new System.Drawing.Size(170, 211);
             this.gameImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gameImage.TabIndex = 10;
             this.gameImage.TabStop = false;
@@ -821,28 +771,27 @@
             // 
             this.delimiterPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.delimiterPanel1.Location = new System.Drawing.Point(0, 0);
-            this.delimiterPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.delimiterPanel1.Name = "delimiterPanel1";
-            this.delimiterPanel1.Size = new System.Drawing.Size(1052, 48);
+            this.delimiterPanel1.Size = new System.Drawing.Size(526, 25);
             this.delimiterPanel1.TabIndex = 3;
             // 
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(1252, 0);
-            this.rightPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rightPanel.Location = new System.Drawing.Point(626, 0);
+            this.rightPanel.Margin = new System.Windows.Forms.Padding(2);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(200, 727);
+            this.rightPanel.Size = new System.Drawing.Size(100, 378);
             this.rightPanel.TabIndex = 29;
             // 
             // leftPanel
             // 
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(2);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(200, 727);
+            this.leftPanel.Size = new System.Drawing.Size(100, 378);
             this.leftPanel.TabIndex = 28;
             // 
             // FormRounded
@@ -861,24 +810,23 @@
             this.navigationControl.leftPanel = null;
             this.navigationControl.LeftPanelWidth = 0;
             this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.navigationControl.Margin = new System.Windows.Forms.Padding(6);
             this.navigationControl.Name = "navigationControl";
             this.navigationControl.rightPanel = null;
             this.navigationControl.RightPanelWidth = 0;
-            this.navigationControl.Size = new System.Drawing.Size(1452, 100);
+            this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 2;
             // 
             // GameInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(1452, 827);
+            this.ClientSize = new System.Drawing.Size(726, 430);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navigationControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "GameInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameInfoForm";
