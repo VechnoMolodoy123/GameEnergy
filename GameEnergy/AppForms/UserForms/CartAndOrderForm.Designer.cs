@@ -33,12 +33,6 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.CartAndOrderTabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.cart = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.orders = new System.Windows.Forms.TabPage();
-            this.topSellersPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rightPanel = new System.Windows.Forms.Panel();
-            this.leftPanel = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -57,15 +51,21 @@
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.orders = new System.Windows.Forms.TabPage();
+            this.topSellersPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rightPanel = new System.Windows.Forms.Panel();
+            this.leftPanel = new System.Windows.Forms.Panel();
             this.mainPanel.SuspendLayout();
             this.CartAndOrderTabControl.SuspendLayout();
             this.cart.SuspendLayout();
-            this.orders.SuspendLayout();
             this.panel9.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
             this.reviewPanel.SuspendLayout();
+            this.orders.SuspendLayout();
             this.SuspendLayout();
             // 
             // navigationControl
@@ -141,62 +141,6 @@
             this.cart.Size = new System.Drawing.Size(518, 297);
             this.cart.TabIndex = 0;
             this.cart.Text = "Корзина";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 35);
-            this.panel2.TabIndex = 0;
-            // 
-            // orders
-            // 
-            this.orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.orders.Controls.Add(this.topSellersPanel);
-            this.orders.Location = new System.Drawing.Point(4, 44);
-            this.orders.Name = "orders";
-            this.orders.Padding = new System.Windows.Forms.Padding(3);
-            this.orders.Size = new System.Drawing.Size(518, 297);
-            this.orders.TabIndex = 1;
-            this.orders.Text = "Заказы";
-            // 
-            // topSellersPanel
-            // 
-            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
-            this.topSellersPanel.Name = "topSellersPanel";
-            this.topSellersPanel.Size = new System.Drawing.Size(512, 291);
-            this.topSellersPanel.TabIndex = 76;
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(100, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 33);
-            this.panel1.TabIndex = 28;
-            // 
-            // rightPanel
-            // 
-            this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(626, 0);
-            this.rightPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(100, 378);
-            this.rightPanel.TabIndex = 27;
-            // 
-            // leftPanel
-            // 
-            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(100, 378);
-            this.leftPanel.TabIndex = 26;
             // 
             // panel9
             // 
@@ -407,6 +351,62 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "МОЙ ЗАКАЗ";
             // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(512, 35);
+            this.panel2.TabIndex = 0;
+            // 
+            // orders
+            // 
+            this.orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.orders.Controls.Add(this.topSellersPanel);
+            this.orders.Location = new System.Drawing.Point(4, 44);
+            this.orders.Name = "orders";
+            this.orders.Padding = new System.Windows.Forms.Padding(3);
+            this.orders.Size = new System.Drawing.Size(518, 297);
+            this.orders.TabIndex = 1;
+            this.orders.Text = "Заказы";
+            // 
+            // topSellersPanel
+            // 
+            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
+            this.topSellersPanel.Name = "topSellersPanel";
+            this.topSellersPanel.Size = new System.Drawing.Size(512, 291);
+            this.topSellersPanel.TabIndex = 76;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(100, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(526, 33);
+            this.panel1.TabIndex = 28;
+            // 
+            // rightPanel
+            // 
+            this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rightPanel.Location = new System.Drawing.Point(626, 0);
+            this.rightPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(100, 378);
+            this.rightPanel.TabIndex = 27;
+            // 
+            // leftPanel
+            // 
+            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.leftPanel.Location = new System.Drawing.Point(0, 0);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(100, 378);
+            this.leftPanel.TabIndex = 26;
+            // 
             // CartAndOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,7 +426,6 @@
             this.CartAndOrderTabControl.ResumeLayout(false);
             this.cart.ResumeLayout(false);
             this.cart.PerformLayout();
-            this.orders.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
@@ -436,6 +435,7 @@
             this.panel3.PerformLayout();
             this.reviewPanel.ResumeLayout(false);
             this.reviewPanel.PerformLayout();
+            this.orders.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

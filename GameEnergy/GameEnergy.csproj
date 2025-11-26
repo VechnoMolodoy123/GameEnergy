@@ -151,11 +151,11 @@
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
-    <Compile Include="CustomControls\CartAndOrderControl.cs">
+    <Compile Include="CustomControls\CartAndOrderItemsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\CartAndOrderControl.Designer.cs">
-      <DependentUpon>CartAndOrderControl.cs</DependentUpon>
+    <Compile Include="CustomControls\CartAndOrderItemsControl.Designer.cs">
+      <DependentUpon>CartAndOrderItemsControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\GameSlideControl.cs">
       <SubType>UserControl</SubType>
@@ -229,8 +229,8 @@
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomControls\CartAndOrderControl.resx">
-      <DependentUpon>CartAndOrderControl.cs</DependentUpon>
+    <EmbeddedResource Include="CustomControls\CartAndOrderItemsControl.resx">
+      <DependentUpon>CartAndOrderItemsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\GameSlideControl.resx">
       <DependentUpon>GameSlideControl.cs</DependentUpon>

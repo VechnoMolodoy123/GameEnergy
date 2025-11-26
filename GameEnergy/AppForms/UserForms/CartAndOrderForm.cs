@@ -17,7 +17,7 @@ namespace GameEnergy.AppForms.UserForms
 {
     public partial class CartAndOrderForm : Form
     {
-        int _curentUser = Program.CurrentUser.UserRoleID;
+        int _currentUserId = Program.CurrentUser.UserID;
 
         public CartAndOrderForm()
         {
@@ -39,12 +39,19 @@ namespace GameEnergy.AppForms.UserForms
 
         public void LoadCartInfo()
         {
-            var cart = Program.context.Cart.AsNoTracking().FirstOrDefault(u => u.UserID == _curentUser);
-            var cartItems = Program.context.CartItems.AsNoTracking().Where(ci => ci.CartID == cart.CartID);
+            var cart = Program.context.Cart.AsNoTracking().FirstOrDefault(u => u.UserID == _currentUserId);
+            var cartItems = Program.context.CartItems.AsNoTracking().Where(ci => ci.CartID == cart.CartID).ToList();
 
             cartCountLabel.Text = cartItems.Count().ToString();
             totalPriceLabel.Text = cart.TotalAmount.ToString();
             payButton.Text = $"Оплатить {cart.TotalAmount}₽";
+
+            if (cart == null || cartItems.Count == 0)
+            {
+                payButton.Enabled = false;
+            }
+            else
+                payButton.Enabled = true;
 
             ShowCart();
             navigationControl.UpdateNotificationsCount();
@@ -59,7 +66,7 @@ namespace GameEnergy.AppForms.UserForms
         {
             cartPanel.Controls.Clear();
 
-            var cart = Program.context.Cart.FirstOrDefault(u => u.UserID == _curentUser);
+            var cart = Program.context.Cart.FirstOrDefault(u => u.UserID == _currentUserId);
 
             if (cart == null)
             {
@@ -72,7 +79,7 @@ namespace GameEnergy.AppForms.UserForms
 
             foreach (CartItems item in items)
             {
-                var cartControl = new CartAndOrderControl(item);
+                var cartControl = new CartAndOrderItemsControl(item);
                 cartControl.Margin = new Padding(10);
                 cartPanel.Controls.Add(cartControl);
             }
@@ -80,10 +87,75 @@ namespace GameEnergy.AppForms.UserForms
 
         private void OrderingLogic()
         {
-            // Если у пользователя на текущий момент нету товаров в корзине (CartItems.Count = 0), то мы устанавливаем payButton.Enable = false
-            // При нажатии на эту кнопку открой ссылку: https://i-mg24.ru/images/112625213619-wy9eo.png
-            // Затем добавь эту карзину (Cart) в заказ (Order), а элементы корзины (CartItems) добавь в таблицу OrderItems, после создания заказа очисти данные которые были в таблицах Cart и CartItems у этого пользователя.
-            // А затем установи CartAndOrderTabControl.SelectedIndex = 1;
+            // 1. Проверяем, есть ли корзина и товары
+            var cart = Program.context.Cart
+                .FirstOrDefault(c => c.UserID == _currentUserId);
+
+            if (cart == null)
+            {
+                payButton.Enabled = false;
+                return;
+            }
+
+            var cartItems = Program.context.CartItems
+                .Where(ci => ci.CartID == cart.CartID)
+                .ToList();
+
+            if (cartItems.Count == 0)
+            {
+                payButton.Enabled = false;
+                return;
+            }
+
+            try
+            {
+                // 2. Открываем QR-код (имитация оплаты)
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://i-mg24.ru/images/112625213619-wy9eo.png",
+                    UseShellExecute = true
+                });
+
+                // 3. Создаём заказ
+                var order = new Orders
+                {
+                    UserID = _currentUserId,
+                    OrderDate = DateTime.Now,
+                    TotalAmount = cart.TotalAmount
+                };
+                Program.context.Orders.Add(order);
+                Program.context.SaveChanges(); // чтобы получить OrderID
+
+                // 4. Переносим товары в OrderItems
+                foreach (var item in cartItems)
+                {
+                    var orderItem = new OrderItems
+                    {
+                        OrderID = order.OrderID,
+                        GameID = item.GameID,
+                        PriceAtPurchase = item.PriceAtAdd
+                    };
+                    Program.context.OrderItems.Add(orderItem);
+                }
+
+                // 5. Удаляем корзину (CartItems удалятся автоматически через CASCADE)
+                Program.context.Cart.Remove(cart);
+                Program.context.SaveChanges();
+
+                // 6. Переключаем вкладку на "Заказы"
+                if (this.Controls.Find("CartAndOrderTabControl", true).FirstOrDefault() is Guna.UI2.WinForms.Guna2TabControl tabControl)
+                {
+                    tabControl.SelectedIndex = 1;
+                }
+
+                // 7. Обновляем UI
+                LoadOrderInfo();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при оформлении заказа", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadCartAndOrderInfo()

@@ -1,6 +1,6 @@
 ﻿namespace GameEnergy.CustomControls
 {
-    partial class CartAndOrderControl
+    partial class CartAndOrderItemsControl
     {
         /// <summary> 
         /// Обязательная переменная конструктора.

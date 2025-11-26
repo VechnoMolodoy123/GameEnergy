@@ -15,12 +15,12 @@ using System.Xml.Linq;
 
 namespace GameEnergy.CustomControls
 {
-    public partial class CartAndOrderControl : UserControl
+    public partial class CartAndOrderItemsControl : UserControl
     {
         CartItems _item;
         bool _Discount;
 
-        public CartAndOrderControl(CartItems item, bool Discount = true)
+        public CartAndOrderItemsControl(CartItems item, bool Discount = true)
         {
             InitializeComponent();
 
@@ -79,7 +79,7 @@ namespace GameEnergy.CustomControls
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show(
                     "Ошибка при удалении из корзины",
