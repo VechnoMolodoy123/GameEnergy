@@ -8,7 +8,7 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel3")
+            : base("name=GameEnergyModel4")
         {
         }
 
@@ -20,6 +20,7 @@ namespace GameEnergy.Models
         public virtual DbSet<GameReports> GameReports { get; set; }
         public virtual DbSet<Games> Games { get; set; }
         public virtual DbSet<Genres> Genres { get; set; }
+        public virtual DbSet<Likes> Likes { get; set; }
         public virtual DbSet<MainCategory> MainCategory { get; set; }
         public virtual DbSet<OrderItems> OrderItems { get; set; }
         public virtual DbSet<Orders> Orders { get; set; }

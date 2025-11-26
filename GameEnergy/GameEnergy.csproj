@@ -184,6 +184,7 @@
     <Compile Include="Models\GameReports.cs" />
     <Compile Include="Models\Games.cs" />
     <Compile Include="Models\Genres.cs" />
+    <Compile Include="Models\Likes.cs" />
     <Compile Include="Models\MainCategory.cs" />
     <Compile Include="Models\OrderItems.cs" />
     <Compile Include="Models\Orders.cs" />

@@ -13,6 +13,7 @@ namespace GameEnergy.Models
         {
             Cart = new HashSet<Cart>();
             GameReports = new HashSet<GameReports>();
+            Likes = new HashSet<Likes>();
             Orders = new HashSet<Orders>();
             Rating = new HashSet<Rating>();
             Reviews = new HashSet<Reviews>();
@@ -50,6 +51,9 @@ namespace GameEnergy.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GameReports> GameReports { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Likes> Likes { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }

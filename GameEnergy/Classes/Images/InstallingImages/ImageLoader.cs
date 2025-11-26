@@ -52,5 +52,20 @@ namespace GameEnergy.Classes.Images.InstallingImages
                 File.AppendAllText(logPath, $"[{DateTime.Now}] Ошибка при загрузке изображения из базы данных:{ex.Message}\n");
             }
         }
+
+        public static void LoadAvatarImageFromUserID(int currentUserId, PictureBox avatarImage)
+        {
+            try
+            {
+                string base64Image = UserAvatarDataHelper.GetBase64ImageFromDatabase(currentUserId);
+
+                CodingOrDecoding.SetImageFromBase64(avatarImage, base64Image);
+            }
+            catch (Exception ex)
+            {
+                string logPath = "errorUserImages.txt";
+                File.AppendAllText(logPath, $"[{DateTime.Now}] Ошибка при загрузке изображения из базы данных:{ex.Message}\n");
+            }
+        }
     }
 }
