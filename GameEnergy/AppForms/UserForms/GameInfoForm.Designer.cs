@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameInfoForm));
             this.mainPanel = new System.Windows.Forms.Panel();
             this.scrollPanel = new System.Windows.Forms.Panel();
-            this.commentsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.delimiterPanel7 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.sortInterestingCommentButton = new Guna.UI2.WinForms.Guna2Button();
@@ -86,6 +85,7 @@
             this.leftPanel = new System.Windows.Forms.Panel();
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
+            this.commentsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.mainPanel.SuspendLayout();
             this.scrollPanel.SuspendLayout();
             this.panel21.SuspendLayout();
@@ -141,20 +141,10 @@
             this.scrollPanel.Size = new System.Drawing.Size(526, 378);
             this.scrollPanel.TabIndex = 31;
             // 
-            // commentsPanel
-            // 
-            this.commentsPanel.AutoSize = true;
-            this.commentsPanel.BackColor = System.Drawing.Color.Transparent;
-            this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentsPanel.Location = new System.Drawing.Point(0, 375);
-            this.commentsPanel.Name = "commentsPanel";
-            this.commentsPanel.Size = new System.Drawing.Size(526, 0);
-            this.commentsPanel.TabIndex = 56;
-            // 
             // delimiterPanel7
             // 
             this.delimiterPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel7.Location = new System.Drawing.Point(0, 365);
+            this.delimiterPanel7.Location = new System.Drawing.Point(0, 307);
             this.delimiterPanel7.Name = "delimiterPanel7";
             this.delimiterPanel7.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel7.TabIndex = 55;
@@ -165,7 +155,7 @@
             this.panel21.Controls.Add(this.sortInterestingCommentButton);
             this.panel21.Controls.Add(this.sortNewCommentButton);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(0, 335);
+            this.panel21.Location = new System.Drawing.Point(0, 277);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(526, 30);
             this.panel21.TabIndex = 54;
@@ -228,7 +218,7 @@
             // delimiterPanel6
             // 
             this.delimiterPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel6.Location = new System.Drawing.Point(0, 325);
+            this.delimiterPanel6.Location = new System.Drawing.Point(0, 267);
             this.delimiterPanel6.Name = "delimiterPanel6";
             this.delimiterPanel6.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel6.TabIndex = 36;
@@ -242,7 +232,7 @@
             this.reviewPanel.Controls.Add(this.commentPanel);
             this.reviewPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(0, 245);
+            this.reviewPanel.Location = new System.Drawing.Point(0, 187);
             this.reviewPanel.Name = "reviewPanel";
             this.reviewPanel.Size = new System.Drawing.Size(526, 80);
             this.reviewPanel.TabIndex = 35;
@@ -384,7 +374,7 @@
             // delimiterPanel5
             // 
             this.delimiterPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel5.Location = new System.Drawing.Point(0, 235);
+            this.delimiterPanel5.Location = new System.Drawing.Point(0, 177);
             this.delimiterPanel5.Name = "delimiterPanel5";
             this.delimiterPanel5.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel5.TabIndex = 34;
@@ -401,7 +391,7 @@
             this.descriptionPanel.Controls.Add(this.panel10);
             this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.descriptionPanel.FillColor = System.Drawing.Color.Black;
-            this.descriptionPanel.Location = new System.Drawing.Point(0, 200);
+            this.descriptionPanel.Location = new System.Drawing.Point(0, 142);
             this.descriptionPanel.Name = "descriptionPanel";
             this.descriptionPanel.Size = new System.Drawing.Size(526, 35);
             this.descriptionPanel.TabIndex = 33;
@@ -450,7 +440,7 @@
             // delimiterPanel4
             // 
             this.delimiterPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.delimiterPanel4.Location = new System.Drawing.Point(0, 190);
+            this.delimiterPanel4.Location = new System.Drawing.Point(0, 132);
             this.delimiterPanel4.Name = "delimiterPanel4";
             this.delimiterPanel4.Size = new System.Drawing.Size(526, 10);
             this.delimiterPanel4.TabIndex = 32;
@@ -462,7 +452,7 @@
             this.infoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.infoPanel.Location = new System.Drawing.Point(0, 25);
             this.infoPanel.Name = "infoPanel";
-            this.infoPanel.Size = new System.Drawing.Size(526, 165);
+            this.infoPanel.Size = new System.Drawing.Size(526, 107);
             this.infoPanel.TabIndex = 31;
             // 
             // titleAndImagePanel
@@ -474,7 +464,7 @@
             this.titleAndImagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.titleAndImagePanel.Location = new System.Drawing.Point(170, 0);
             this.titleAndImagePanel.Name = "titleAndImagePanel";
-            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 165);
+            this.titleAndImagePanel.Size = new System.Drawing.Size(356, 107);
             this.titleAndImagePanel.TabIndex = 35;
             // 
             // trailerPictureBox
@@ -640,7 +630,7 @@
             this.delimiterPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.delimiterPanel3.Location = new System.Drawing.Point(0, 0);
             this.delimiterPanel3.Name = "delimiterPanel3";
-            this.delimiterPanel3.Size = new System.Drawing.Size(16, 165);
+            this.delimiterPanel3.Size = new System.Drawing.Size(16, 107);
             this.delimiterPanel3.TabIndex = 38;
             // 
             // imagePanel
@@ -651,7 +641,7 @@
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(170, 165);
+            this.imagePanel.Size = new System.Drawing.Size(170, 107);
             this.imagePanel.TabIndex = 34;
             // 
             // ratingPanel
@@ -817,6 +807,16 @@
             this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 2;
             // 
+            // commentsPanel
+            // 
+            this.commentsPanel.AutoSize = true;
+            this.commentsPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.commentsPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.commentsPanel.Location = new System.Drawing.Point(0, 317);
+            this.commentsPanel.Name = "commentsPanel";
+            this.commentsPanel.Size = new System.Drawing.Size(526, 0);
+            this.commentsPanel.TabIndex = 56;
+            // 
             // GameInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -913,7 +913,6 @@
         private Guna.UI2.WinForms.Guna2TextBox commentTextBox;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel delimiterPanel6;
-        private System.Windows.Forms.FlowLayoutPanel commentsPanel;
         private System.Windows.Forms.Panel delimiterPanel7;
         private Guna.UI2.WinForms.Guna2Button sortInterestingCommentButton;
         private Guna.UI2.WinForms.Guna2Button sortNewCommentButton;
@@ -923,5 +922,6 @@
         private System.Windows.Forms.Label ratingLabel;
         private System.Windows.Forms.Label oldPriceLabel;
         private Guna.UI2.WinForms.Guna2Button deleteButton;
+        private System.Windows.Forms.FlowLayoutPanel commentsPanel;
     }
 }

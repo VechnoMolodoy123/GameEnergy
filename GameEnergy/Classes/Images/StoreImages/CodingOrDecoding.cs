@@ -32,7 +32,7 @@ namespace GameEnergy.Classes.Images.StoreImages
                 else
                 {
                     // Если путь не предоставлен, используем встроенный ресурс
-                    var bitmap = Properties.Resources.defaultAvatar;
+                    var bitmap = Properties.Resources.avatarButtonImage;
 
                     if (bitmap == null)
                         throw new InvalidOperationException("Ресурс defaultAvatar недоступен.");

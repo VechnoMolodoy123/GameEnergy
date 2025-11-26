@@ -30,35 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserCommentsControl));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.avatarPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.dateLabel = new System.Windows.Forms.Label();
-            this.likesCountLabel = new System.Windows.Forms.Label();
-            this.descriptionPanel = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.commentLabel = new System.Windows.Forms.Label();
             this.likesButton = new System.Windows.Forms.PictureBox();
+            this.likesCountLabel = new System.Windows.Forms.Label();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
-            this.avatarPictureBox = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.descriptionPanel = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.commentLabel = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).BeginInit();
             this.panel2.SuspendLayout();
-            this.descriptionPanel.SuspendLayout();
-            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.likesButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).BeginInit();
+            this.descriptionPanel.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,6 +69,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(50, 130);
             this.panel1.TabIndex = 0;
+            // 
+            // avatarPictureBox
+            // 
+            this.avatarPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.avatarPictureBox.ImageRotate = 0F;
+            this.avatarPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.avatarPictureBox.Name = "avatarPictureBox";
+            this.avatarPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.avatarPictureBox.Size = new System.Drawing.Size(40, 40);
+            this.avatarPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarPictureBox.TabIndex = 0;
+            this.avatarPictureBox.TabStop = false;
+            this.avatarPictureBox.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // panel2
             // 
@@ -87,31 +100,17 @@
             this.panel2.Size = new System.Drawing.Size(476, 40);
             this.panel2.TabIndex = 1;
             // 
-            // nameLabel
+            // likesButton
             // 
-            this.nameLabel.AutoEllipsis = true;
-            this.nameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.nameLabel.Location = new System.Drawing.Point(7, 20);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(189, 20);
-            this.nameLabel.TabIndex = 11;
-            this.nameLabel.Text = "Никнейм";
-            this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nameLabel.Click += new System.EventHandler(this.profileButton_Click);
-            // 
-            // dateLabel
-            // 
-            this.dateLabel.AutoSize = true;
-            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateLabel.ForeColor = System.Drawing.Color.Silver;
-            this.dateLabel.Location = new System.Drawing.Point(8, 0);
-            this.dateLabel.Name = "dateLabel";
-            this.dateLabel.Size = new System.Drawing.Size(37, 15);
-            this.dateLabel.TabIndex = 12;
-            this.dateLabel.Text = "Дата";
-            this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.likesButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.likesButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
+            this.likesButton.Location = new System.Drawing.Point(419, 9);
+            this.likesButton.Name = "likesButton";
+            this.likesButton.Size = new System.Drawing.Size(20, 20);
+            this.likesButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.likesButton.TabIndex = 19;
+            this.likesButton.TabStop = false;
+            this.likesButton.Click += new System.EventHandler(this.likesButton_Click);
             // 
             // likesCountLabel
             // 
@@ -125,86 +124,6 @@
             this.likesCountLabel.TabIndex = 18;
             this.likesCountLabel.Text = "10";
             this.likesCountLabel.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // descriptionPanel
-            // 
-            this.descriptionPanel.Controls.Add(this.panel7);
-            this.descriptionPanel.Controls.Add(this.panel6);
-            this.descriptionPanel.Controls.Add(this.panel5);
-            this.descriptionPanel.Controls.Add(this.panel4);
-            this.descriptionPanel.Controls.Add(this.panel3);
-            this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionPanel.Location = new System.Drawing.Point(50, 40);
-            this.descriptionPanel.Name = "descriptionPanel";
-            this.descriptionPanel.Size = new System.Drawing.Size(476, 90);
-            this.descriptionPanel.TabIndex = 3;
-            // 
-            // panel6
-            // 
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(10, 80);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(456, 10);
-            this.panel6.TabIndex = 75;
-            // 
-            // panel5
-            // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(466, 23);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(10, 67);
-            this.panel5.TabIndex = 74;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 23);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 67);
-            this.panel4.TabIndex = 73;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(476, 23);
-            this.panel3.TabIndex = 72;
-            // 
-            // panel7
-            // 
-            this.panel7.AutoSize = true;
-            this.panel7.Controls.Add(this.commentLabel);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(10, 23);
-            this.panel7.MinimumSize = new System.Drawing.Size(0, 16);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(456, 16);
-            this.panel7.TabIndex = 76;
-            // 
-            // commentLabel
-            // 
-            this.commentLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.commentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.commentLabel.ForeColor = System.Drawing.Color.White;
-            this.commentLabel.Location = new System.Drawing.Point(0, 0);
-            this.commentLabel.Name = "commentLabel";
-            this.commentLabel.Size = new System.Drawing.Size(456, 16);
-            this.commentLabel.TabIndex = 0;
-            this.commentLabel.Text = "Комментарий";
-            this.commentLabel.TextChanged += new System.EventHandler(this.commentLabel_TextChanged);
-            // 
-            // likesButton
-            // 
-            this.likesButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.likesButton.Image = global::GameEnergy.Properties.Resources.whiteLike;
-            this.likesButton.Location = new System.Drawing.Point(419, 9);
-            this.likesButton.Name = "likesButton";
-            this.likesButton.Size = new System.Drawing.Size(20, 20);
-            this.likesButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.likesButton.TabIndex = 19;
-            this.likesButton.TabStop = false;
-            this.likesButton.Click += new System.EventHandler(this.likesButton_Click);
             // 
             // star5
             // 
@@ -261,17 +180,100 @@
             this.star1.TabIndex = 13;
             this.star1.TabStop = false;
             // 
-            // avatarPictureBox
+            // dateLabel
             // 
-            this.avatarPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.avatarPictureBox.ImageRotate = 0F;
-            this.avatarPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.avatarPictureBox.Name = "avatarPictureBox";
-            this.avatarPictureBox.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.avatarPictureBox.Size = new System.Drawing.Size(40, 40);
-            this.avatarPictureBox.TabIndex = 0;
-            this.avatarPictureBox.TabStop = false;
-            this.avatarPictureBox.Click += new System.EventHandler(this.profileButton_Click);
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dateLabel.ForeColor = System.Drawing.Color.Silver;
+            this.dateLabel.Location = new System.Drawing.Point(8, 0);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(37, 15);
+            this.dateLabel.TabIndex = 12;
+            this.dateLabel.Text = "Дата";
+            this.dateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoEllipsis = true;
+            this.nameLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.nameLabel.Location = new System.Drawing.Point(7, 20);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(189, 20);
+            this.nameLabel.TabIndex = 11;
+            this.nameLabel.Text = "Никнейм";
+            this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nameLabel.Click += new System.EventHandler(this.profileButton_Click);
+            // 
+            // descriptionPanel
+            // 
+            this.descriptionPanel.AutoSize = true;
+            this.descriptionPanel.Controls.Add(this.panel7);
+            this.descriptionPanel.Controls.Add(this.panel6);
+            this.descriptionPanel.Controls.Add(this.panel5);
+            this.descriptionPanel.Controls.Add(this.panel4);
+            this.descriptionPanel.Controls.Add(this.panel3);
+            this.descriptionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.descriptionPanel.Location = new System.Drawing.Point(50, 40);
+            this.descriptionPanel.Name = "descriptionPanel";
+            this.descriptionPanel.Size = new System.Drawing.Size(476, 90);
+            this.descriptionPanel.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.AutoSize = true;
+            this.panel7.Controls.Add(this.commentLabel);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(10, 23);
+            this.panel7.MinimumSize = new System.Drawing.Size(0, 16);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(456, 16);
+            this.panel7.TabIndex = 76;
+            // 
+            // commentLabel
+            // 
+            this.commentLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.commentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.commentLabel.ForeColor = System.Drawing.Color.White;
+            this.commentLabel.Location = new System.Drawing.Point(0, 0);
+            this.commentLabel.Name = "commentLabel";
+            this.commentLabel.Size = new System.Drawing.Size(456, 16);
+            this.commentLabel.TabIndex = 0;
+            this.commentLabel.Text = "Комментарий";
+            this.commentLabel.TextChanged += new System.EventHandler(this.commentLabel_TextChanged);
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(10, 80);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(456, 10);
+            this.panel6.TabIndex = 75;
+            // 
+            // panel5
+            // 
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(466, 23);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 67);
+            this.panel5.TabIndex = 74;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 23);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 67);
+            this.panel4.TabIndex = 73;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(476, 23);
+            this.panel3.TabIndex = 72;
             // 
             // UserCommentsControl
             // 
@@ -282,22 +284,24 @@
             this.Controls.Add(this.descriptionPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MinimumSize = new System.Drawing.Size(526, 95);
             this.Name = "UserCommentsControl";
             this.Size = new System.Drawing.Size(526, 130);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.descriptionPanel.ResumeLayout(false);
-            this.descriptionPanel.PerformLayout();
-            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.likesButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).EndInit();
+            this.descriptionPanel.ResumeLayout(false);
+            this.descriptionPanel.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -68,6 +68,8 @@ namespace GameEnergy.AppForms.UserForms
             discountLabel.Text = _game.Discount.HasValue ? $"-{_game.Discount}%" : "";
             descriptionLabel.Text = _game.Description != null ? _game.Description : "";
 
+            ShowComments();
+
             RoundingHelper.SetRoundedRegion(ratingPanel, 12, 12);
 
             TrailerHelper.LoadTrailerPreview(trailerPictureBox, _game.TrailerImage);
@@ -94,8 +96,6 @@ namespace GameEnergy.AppForms.UserForms
             }
             else
                 oldPriceLabel.Visible = false;
-
-            //pricePanel.PerformLayout();
         }
 
         private int GetStarIndex(PictureBox star)
@@ -270,8 +270,6 @@ namespace GameEnergy.AppForms.UserForms
         {
             commentsPanel.Controls.Clear();
 
-            DateTime now = DateTime.Now;
-
             IQueryable<Reviews> query = Program.context.Reviews.Where(game => game.GameID == _game.GameID);
 
             IOrderedQueryable<Reviews> orderedQuery = sortingFunction != null ?
@@ -280,12 +278,31 @@ namespace GameEnergy.AppForms.UserForms
 
             List<Reviews> comments = orderedQuery.ToList();
 
-            foreach (Reviews comment in comments)
+            for (int i = 0; i < comments.Count; i++)
             {
+                Reviews comment = comments[i];
+
+                // Добавляем сам комментарий
                 var commentControl = new UserCommentsControl(this, comment);
                 commentControl.Margin = new Padding(10);
                 commentsPanel.Controls.Add(commentControl);
+
+                // Если это не последний комментарий — добавляем линию
+                if (i < comments.Count - 1)
+                {
+                    var separator = new Panel
+                    {
+                        Size = new Size(526, 1),
+                        Dock = DockStyle.Top, // или Bottom — зависит от того, где вы хотите линию
+                        BackColor = Color.Gray, // или Color.FromArgb(60, 60, 60) для более темного тона
+                        Margin = new Padding(10, 0, 10, 10) // отступы слева и справа, чтобы соответствовать комментарию
+                    };
+                    commentsPanel.Controls.Add(separator);
+                }
             }
+
+            // Принудительно обновляем layout
+            commentsPanel.PerformLayout();
         }
 
         private void DeleteGame()
