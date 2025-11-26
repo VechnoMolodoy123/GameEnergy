@@ -289,7 +289,7 @@ namespace GameEnergy.AppForms.UserForms
         {
             if (IsGameInUserCart())
             {
-                var cartForm = new CartForm();
+                var cartForm = new CartAndOrderForm();
                 VisibilityHelper.ShowNewForm(this, cartForm);
                 this.Hide();
             }

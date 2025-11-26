@@ -38,7 +38,7 @@ namespace GameEnergy.CustomControls
             notificationsButton.Click += (s, e) => OpenForm<NotifyForm>();
             profileButton.Click += (s, e) => OpenProfileForm();
             libraryButton.Click += (s, e) => OpenForm<LibraryForm>();
-            cartButton.Click += (s, e) => OpenForm<CartForm>();
+            cartButton.Click += (s, e) => OpenForm<CartAndOrderForm>();
             searchTextBox.TextChanged += searchTextBox_TextChanged;
         }
 

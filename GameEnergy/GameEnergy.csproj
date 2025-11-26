@@ -79,11 +79,11 @@
     <Compile Include="AppForms\AdminForms\CreateOrUpdateGameForm.Designer.cs">
       <DependentUpon>CreateOrUpdateGameForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppForms\UserForms\CartForm.cs">
+    <Compile Include="AppForms\UserForms\CartAndOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppForms\UserForms\CartForm.Designer.cs">
-      <DependentUpon>CartForm.cs</DependentUpon>
+    <Compile Include="AppForms\UserForms\CartAndOrderForm.Designer.cs">
+      <DependentUpon>CartAndOrderForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\UserForms\ForgetPasswordForm.cs">
       <SubType>Form</SubType>
@@ -151,11 +151,11 @@
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
-    <Compile Include="CustomControls\CartControl.cs">
+    <Compile Include="CustomControls\CartAndOrderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomControls\CartControl.Designer.cs">
-      <DependentUpon>CartControl.cs</DependentUpon>
+    <Compile Include="CustomControls\CartAndOrderControl.Designer.cs">
+      <DependentUpon>CartAndOrderControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\GameSlideControl.cs">
       <SubType>UserControl</SubType>
@@ -205,8 +205,8 @@
     <EmbeddedResource Include="AppForms\AdminForms\CreateOrUpdateGameForm.resx">
       <DependentUpon>CreateOrUpdateGameForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppForms\UserForms\CartForm.resx">
-      <DependentUpon>CartForm.cs</DependentUpon>
+    <EmbeddedResource Include="AppForms\UserForms\CartAndOrderForm.resx">
+      <DependentUpon>CartAndOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\ForgetPasswordForm.resx">
       <DependentUpon>ForgetPasswordForm.cs</DependentUpon>
@@ -228,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CartAndOrderControl.resx">
+      <DependentUpon>CartAndOrderControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\GameSlideControl.resx">
       <DependentUpon>GameSlideControl.cs</DependentUpon>

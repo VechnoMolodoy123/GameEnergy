@@ -13,18 +13,18 @@ using System.Xml.Linq;
 
 namespace GameEnergy.AppForms.UserForms
 {
-    public partial class CartForm : Form
+    public partial class CartAndOrderForm : Form
     {
         int _curentUser = Program.CurrentUser.UserRoleID;
 
-        public CartForm()
+        public CartAndOrderForm()
         {
             InitializeComponent();
 
             LoadCartAndOrderInfo();
         }
 
-        private void LoadCartInfo()
+        public void LoadCartInfo()
         {
             var cart = Program.context.Cart.FirstOrDefault(u => u.UserID == _curentUser);
             var cartItems = Program.context.CartItems.Where(ci => ci.CartID == cart.CartID);
@@ -56,7 +56,7 @@ namespace GameEnergy.AppForms.UserForms
                 var item = cartItems[i];
 
                 // Добавляем сам комментарий
-                var cartControl = new CartControl(item);
+                var cartControl = new CartAndOrderControl(item);
                 cartControl.Margin = new Padding(10);
                 cartPanel.Controls.Add(cartControl);
 
