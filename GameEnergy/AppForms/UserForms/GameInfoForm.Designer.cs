@@ -600,6 +600,7 @@
             this.cartButton.Size = new System.Drawing.Size(114, 30);
             this.cartButton.TabIndex = 14;
             this.cartButton.Text = "В КОРЗИНУ";
+            this.cartButton.Click += new System.EventHandler(this.cartButton_Click);
             // 
             // discountLabel
             // 

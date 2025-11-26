@@ -80,6 +80,8 @@ namespace GameEnergy.AppForms.UserForms
             {
                 gameImage.Image = image;
             }
+
+            UpdateCartButtonText();
         }
 
         private void ShowDeveloperAndPrice()
@@ -127,6 +129,23 @@ namespace GameEnergy.AppForms.UserForms
                 deleteButton.Visible = true;
                 _isUserAdmin = true;
             }
+        }
+
+        private bool IsGameInUserCart()
+        {
+            var userCart = Program.context.Cart
+                .FirstOrDefault(c => c.UserID == _currentUserId);
+
+            if (userCart == null)
+                return false;
+
+            return Program.context.CartItems
+                .Any(ci => ci.CartID == userCart.CartID && ci.GameID == _game.GameID);
+        }
+
+        private void UpdateCartButtonText()
+        {
+            cartButton.Text = IsGameInUserCart() ? "Добавлено" : "В КОРЗИНУ";
         }
 
         private void CheckIfReviewExists()
@@ -263,6 +282,64 @@ namespace GameEnergy.AppForms.UserForms
             {
                 MessageBox.Show($"Ошибка при обновлении избранного: {ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddGameToCart()
+        {
+            if (IsGameInUserCart())
+            {
+                var cartForm = new CartForm();
+                VisibilityHelper.ShowNewForm(this, cartForm);
+                this.Hide();
+            }
+            else
+            {
+                try
+                {
+                    // 1. Находим или создаём корзину пользователя
+                    var userCart = Program.context.Cart
+                        .FirstOrDefault(c => c.UserID == _currentUserId);
+
+                    if (userCart == null)
+                    {
+                        userCart = new Cart
+                        {
+                            UserID = _currentUserId,
+                            TotalAmount = 0,
+                            CreatedDate = DateTime.Now,
+                            ModifiedDate = DateTime.Now
+                        };
+                        Program.context.Cart.Add(userCart);
+                        Program.context.SaveChanges(); // Нужно, чтобы получить CartID
+                    }
+
+                    // 2. Определяем цену на момент добавления
+                    decimal priceAtAdd = _game.DiscountedPrice.HasValue
+                        ? (decimal)_game.DiscountedPrice.Value
+                        : (decimal)_game.Price;
+
+                    // 3. Добавляем в CartItems
+                    var cartItem = new CartItems
+                    {
+                        CartID = userCart.CartID,
+                        GameID = _game.GameID,
+                        PriceAtAdd = priceAtAdd,
+                        AddedDate = DateTime.Now
+                    };
+
+                    Program.context.CartItems.Add(cartItem);
+                    Program.context.SaveChanges();
+
+                    // 4. Обновляем текст кнопки
+                    cartButton.Text = "Добавлено";
+
+                    navigationControl.UpdateNotificationsCount();
+                }
+                catch (Exception ex)
+                {
+                    MessageHelper.ShowErrorMessage("Ошибка при добавлении в корзину");
+                }
             }
         }
 
@@ -492,6 +569,11 @@ namespace GameEnergy.AppForms.UserForms
                 var form = new GameReportForm(_game, _currentUserId);
                 form.ShowDialog();
             }
+        }
+
+        private void cartButton_Click(object sender, EventArgs e)
+        {
+            AddGameToCart();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
