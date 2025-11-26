@@ -43,8 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.reviewPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.cartCountLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.totalPriceLabel = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -56,6 +55,7 @@
             this.payButton = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.cartCountLabel = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.GamesTabControl.SuspendLayout();
             this.cart.SuspendLayout();
@@ -235,7 +235,7 @@
             this.reviewPanel.BorderColor = System.Drawing.Color.Gray;
             this.reviewPanel.BorderRadius = 10;
             this.reviewPanel.BorderThickness = 1;
-            this.reviewPanel.Controls.Add(this.label4);
+            this.reviewPanel.Controls.Add(this.totalPriceLabel);
             this.reviewPanel.Controls.Add(this.label2);
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
             this.reviewPanel.Location = new System.Drawing.Point(276, 0);
@@ -255,29 +255,18 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "ИТОГО";
             // 
-            // cartCountLabel
+            // totalPriceLabel
             // 
-            this.cartCountLabel.AutoSize = true;
-            this.cartCountLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cartCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.cartCountLabel.Location = new System.Drawing.Point(168, 0);
-            this.cartCountLabel.Name = "cartCountLabel";
-            this.cartCountLabel.Size = new System.Drawing.Size(33, 37);
-            this.cartCountLabel.TabIndex = 38;
-            this.cartCountLabel.Text = "2";
-            // 
-            // label4
-            // 
-            this.label4.AutoEllipsis = true;
-            this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.label4.Location = new System.Drawing.Point(104, 8);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(129, 37);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Цена";
+            this.totalPriceLabel.AutoEllipsis = true;
+            this.totalPriceLabel.BackColor = System.Drawing.Color.Black;
+            this.totalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.totalPriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.totalPriceLabel.Location = new System.Drawing.Point(104, 8);
+            this.totalPriceLabel.Name = "totalPriceLabel";
+            this.totalPriceLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.totalPriceLabel.Size = new System.Drawing.Size(129, 37);
+            this.totalPriceLabel.TabIndex = 4;
+            this.totalPriceLabel.Text = "Цена";
             // 
             // panel6
             // 
@@ -406,6 +395,17 @@
     "ты.";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cartCountLabel
+            // 
+            this.cartCountLabel.AutoSize = true;
+            this.cartCountLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cartCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.cartCountLabel.Location = new System.Drawing.Point(168, 0);
+            this.cartCountLabel.Name = "cartCountLabel";
+            this.cartCountLabel.Size = new System.Drawing.Size(33, 37);
+            this.cartCountLabel.TabIndex = 38;
+            this.cartCountLabel.Text = "2";
+            // 
             // CartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,11 +450,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label cartCountLabel;
         private Guna.UI2.WinForms.Guna2Panel reviewPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label5;
@@ -466,5 +465,6 @@
         private Guna.UI2.WinForms.Guna2Button payButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label cartCountLabel;
     }
 }

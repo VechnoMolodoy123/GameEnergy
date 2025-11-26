@@ -151,6 +151,12 @@
     <Compile Include="Classes\Messages\MessageHelper.cs" />
     <Compile Include="Classes\Validation\ValidationHelper.cs" />
     <Compile Include="Classes\Video\TrailerHelper.cs" />
+    <Compile Include="CustomControls\CartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CartControl.Designer.cs">
+      <DependentUpon>CartControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\GameSlideControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
