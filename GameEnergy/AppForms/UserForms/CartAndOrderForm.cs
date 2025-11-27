@@ -1,4 +1,5 @@
 ﻿using GameEnergy.Classes.Customization;
+using GameEnergy.Classes.Key;
 using GameEnergy.CustomControls;
 using GameEnergy.Models;
 using System;
@@ -39,19 +40,30 @@ namespace GameEnergy.AppForms.UserForms
 
         public void LoadCartInfo()
         {
-            var cart = Program.context.Cart.AsNoTracking().FirstOrDefault(u => u.UserID == _currentUserId);
-            var cartItems = Program.context.CartItems.AsNoTracking().Where(ci => ci.CartID == cart.CartID).ToList();
+            var cart = Program.context.Cart.AsNoTracking().FirstOrDefault(c => c.UserID == _currentUserId);
+
+            // Если корзины нет — сбрасываем UI и выходим
+            if (cart == null)
+            {
+                cartCountLabel.Text = "0";
+                totalPriceLabel.Text = "0";
+                payButton.Text = "Оплатить 0₽";
+                payButton.Enabled = false;
+                cartPanel.Controls.Clear();
+                navigationControl.UpdateNotificationsCount();
+                return;
+            }
+
+            var cartItems = Program.context.CartItems
+                .AsNoTracking()
+                .Where(ci => ci.CartID == cart.CartID)
+                .ToList();
 
             cartCountLabel.Text = cartItems.Count().ToString();
             totalPriceLabel.Text = cart.TotalAmount.ToString();
             payButton.Text = $"Оплатить {cart.TotalAmount}₽";
 
-            if (cart == null || cartItems.Count == 0)
-            {
-                payButton.Enabled = false;
-            }
-            else
-                payButton.Enabled = true;
+            payButton.Enabled = cartItems.Count > 0;
 
             ShowCart();
             navigationControl.UpdateNotificationsCount();
@@ -59,7 +71,21 @@ namespace GameEnergy.AppForms.UserForms
 
         private void LoadOrderInfo()
         {
+            orderPanel.Controls.Clear();
 
+            List<Orders> orders = Program.context.Orders.Where(u => u.UserID == _currentUserId).OrderBy(o => o.OrderDate).ToList();
+
+            if (orders == null)
+            {
+                return;
+            }
+
+            foreach (Orders order in orders)
+            {
+                var orderControl = new OrderControl(order);
+                orderControl.Margin = new Padding(10);
+                orderPanel.Controls.Add(orderControl);
+            }
         }
 
         private void ShowCart()
@@ -72,8 +98,6 @@ namespace GameEnergy.AppForms.UserForms
             {
                 return;
             }
-
-            int cartId = cart.CartID;
 
             List<CartItems> items = Program.context.CartItems.Where(ci => ci.CartID == cart.CartID).ToList();
 
@@ -88,8 +112,7 @@ namespace GameEnergy.AppForms.UserForms
         private void OrderingLogic()
         {
             // 1. Проверяем, есть ли корзина и товары
-            var cart = Program.context.Cart
-                .FirstOrDefault(c => c.UserID == _currentUserId);
+            var cart = Program.context.Cart.AsNoTracking().FirstOrDefault(c => c.UserID == _currentUserId);
 
             if (cart == null)
             {
@@ -97,9 +120,7 @@ namespace GameEnergy.AppForms.UserForms
                 return;
             }
 
-            var cartItems = Program.context.CartItems
-                .Where(ci => ci.CartID == cart.CartID)
-                .ToList();
+            var cartItems = Program.context.CartItems.Where(ci => ci.CartID == cart.CartID).ToList();
 
             if (cartItems.Count == 0)
             {
@@ -109,7 +130,7 @@ namespace GameEnergy.AppForms.UserForms
 
             try
             {
-                // 2. Открываем QR-код (имитация оплаты)
+                // 2. Открываем имитацию оплаты
                 System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
                 {
                     FileName = "https://i-mg24.ru/images/112625213619-wy9eo.png",
@@ -126,6 +147,8 @@ namespace GameEnergy.AppForms.UserForms
                 Program.context.Orders.Add(order);
                 Program.context.SaveChanges(); // чтобы получить OrderID
 
+                cart = Program.context.Cart.FirstOrDefault(c => c.UserID == _currentUserId);
+
                 // 4. Переносим товары в OrderItems
                 foreach (var item in cartItems)
                 {
@@ -134,7 +157,7 @@ namespace GameEnergy.AppForms.UserForms
                         OrderID = order.OrderID,
                         GameID = item.GameID,
                         PriceAtPurchase = item.PriceAtAdd,
-                        GameKey = GenerateGameKey()
+                        GameKey = KeyHelper.GenerateGameKey()
                     };
                     Program.context.OrderItems.Add(orderItem);
                 }
@@ -152,36 +175,21 @@ namespace GameEnergy.AppForms.UserForms
                 // 7. Обновляем UI
                 LoadOrderInfo();
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при оформлении заказа", "Ошибка",
+                MessageBox.Show($"Ошибка при оформлении заказа {ex}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private string GenerateGameKey()
-        {
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            var random = new Random();
-            var keyParts = new string[4];
-
-            for (int i = 0; i < 4; i++)
-            {
-                var part = new char[4];
-                for (int j = 0; j < 4; j++)
-                {
-                    part[j] = chars[random.Next(chars.Length)];
-                }
-                keyParts[i] = new string(part);
-            }
-
-            return string.Join("-", keyParts);
-        }
-
         private void LoadCartAndOrderInfo()
         {
-            LoadCartInfo();
-            LoadOrderInfo();
+            if (CartAndOrderTabControl.SelectedIndex == 0)
+            {
+                LoadCartInfo();
+            } 
+            else 
+                LoadOrderInfo();
         }
 
         private void CartAndOrderForm_Resize(object sender, EventArgs e)
@@ -210,6 +218,11 @@ namespace GameEnergy.AppForms.UserForms
             }
 
             navigationControl.UpdatePanelsWidth();
+        }
+
+        private void CartAndOrderTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadCartAndOrderInfo();
         }
     }
 }

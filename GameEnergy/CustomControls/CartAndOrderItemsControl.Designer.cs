@@ -34,6 +34,7 @@
             this.deleteButton = new System.Windows.Forms.PictureBox();
             this.oldPriceLabel = new System.Windows.Forms.Label();
             this.discountLabel = new System.Windows.Forms.Label();
+            this.keyButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@
             this.titleLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.titleLabel.ForeColor = System.Drawing.Color.White;
-            this.titleLabel.Location = new System.Drawing.Point(122, 21);
+            this.titleLabel.Location = new System.Drawing.Point(119, 21);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(341, 50);
             this.titleLabel.TabIndex = 12;
@@ -71,7 +72,7 @@
             this.priceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.priceLabel.ForeColor = System.Drawing.Color.White;
-            this.priceLabel.Location = new System.Drawing.Point(123, 83);
+            this.priceLabel.Location = new System.Drawing.Point(120, 83);
             this.priceLabel.Name = "priceLabel";
             this.priceLabel.Size = new System.Drawing.Size(78, 25);
             this.priceLabel.TabIndex = 13;
@@ -81,7 +82,7 @@
             // 
             this.deleteButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.deleteButton.Image = global::GameEnergy.Properties.Resources.close;
-            this.deleteButton.Location = new System.Drawing.Point(477, 0);
+            this.deleteButton.Location = new System.Drawing.Point(472, 0);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(23, 23);
             this.deleteButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -96,7 +97,7 @@
             this.oldPriceLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.oldPriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.oldPriceLabel.ForeColor = System.Drawing.Color.Gray;
-            this.oldPriceLabel.Location = new System.Drawing.Point(207, 83);
+            this.oldPriceLabel.Location = new System.Drawing.Point(198, 83);
             this.oldPriceLabel.Name = "oldPriceLabel";
             this.oldPriceLabel.Size = new System.Drawing.Size(78, 25);
             this.oldPriceLabel.TabIndex = 18;
@@ -109,26 +110,54 @@
             this.discountLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.discountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.discountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.discountLabel.Location = new System.Drawing.Point(291, 83);
+            this.discountLabel.Location = new System.Drawing.Point(276, 83);
             this.discountLabel.Name = "discountLabel";
             this.discountLabel.Size = new System.Drawing.Size(62, 25);
             this.discountLabel.TabIndex = 17;
             this.discountLabel.Text = "-50%";
             this.discountLabel.Visible = false;
             // 
-            // CartAndOrderControl
+            // keyButton
+            // 
+            this.keyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.keyButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.keyButton.BorderRadius = 8;
+            this.keyButton.BorderThickness = 1;
+            this.keyButton.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.keyButton.CheckedState.FillColor = System.Drawing.Color.Black;
+            this.keyButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.keyButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.keyButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.keyButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.keyButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.keyButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.keyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.keyButton.ForeColor = System.Drawing.Color.White;
+            this.keyButton.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.keyButton.HoverState.FillColor = System.Drawing.Color.Black;
+            this.keyButton.Location = new System.Drawing.Point(331, 96);
+            this.keyButton.Name = "keyButton";
+            this.keyButton.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.keyButton.Size = new System.Drawing.Size(164, 34);
+            this.keyButton.TabIndex = 21;
+            this.keyButton.Text = "89GJL-IH3RF-QXQDR";
+            this.keyButton.Visible = false;
+            this.keyButton.Click += new System.EventHandler(this.keyButton_Click);
+            // 
+            // CartAndOrderItemsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.Controls.Add(this.keyButton);
             this.Controls.Add(this.oldPriceLabel);
             this.Controls.Add(this.discountLabel);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.gameImage);
-            this.Name = "CartAndOrderControl";
-            this.Size = new System.Drawing.Size(500, 130);
+            this.Name = "CartAndOrderItemsControl";
+            this.Size = new System.Drawing.Size(495, 130);
             ((System.ComponentModel.ISupportInitialize)(this.gameImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deleteButton)).EndInit();
             this.ResumeLayout(false);
@@ -144,5 +173,6 @@
         private System.Windows.Forms.PictureBox deleteButton;
         private System.Windows.Forms.Label oldPriceLabel;
         private System.Windows.Forms.Label discountLabel;
+        private Guna.UI2.WinForms.Guna2Button keyButton;
     }
 }

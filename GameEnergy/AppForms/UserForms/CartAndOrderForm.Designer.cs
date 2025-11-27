@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CartAndOrderForm));
-            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.CartAndOrderTabControl = new Guna.UI2.WinForms.Guna2TabControl();
             this.cart = new System.Windows.Forms.TabPage();
@@ -53,10 +53,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.orders = new System.Windows.Forms.TabPage();
-            this.topSellersPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.orderPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
+            this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
+            this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainPanel.SuspendLayout();
             this.CartAndOrderTabControl.SuspendLayout();
             this.cart.SuspendLayout();
@@ -67,20 +70,6 @@
             this.reviewPanel.SuspendLayout();
             this.orders.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // navigationControl
-            // 
-            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationControl.leftPanel = null;
-            this.navigationControl.LeftPanelWidth = 0;
-            this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Margin = new System.Windows.Forms.Padding(6);
-            this.navigationControl.Name = "navigationControl";
-            this.navigationControl.rightPanel = null;
-            this.navigationControl.RightPanelWidth = 0;
-            this.navigationControl.Size = new System.Drawing.Size(726, 52);
-            this.navigationControl.TabIndex = 3;
             // 
             // mainPanel
             // 
@@ -101,10 +90,10 @@
             this.CartAndOrderTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CartAndOrderTabControl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CartAndOrderTabControl.ItemSize = new System.Drawing.Size(173, 40);
-            this.CartAndOrderTabControl.Location = new System.Drawing.Point(100, 33);
+            this.CartAndOrderTabControl.Location = new System.Drawing.Point(100, 30);
             this.CartAndOrderTabControl.Name = "CartAndOrderTabControl";
             this.CartAndOrderTabControl.SelectedIndex = 0;
-            this.CartAndOrderTabControl.Size = new System.Drawing.Size(526, 345);
+            this.CartAndOrderTabControl.Size = new System.Drawing.Size(526, 348);
             this.CartAndOrderTabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.CartAndOrderTabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(100)))), ((int)(((byte)(46)))));
             this.CartAndOrderTabControl.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -124,6 +113,7 @@
             this.CartAndOrderTabControl.TabIndex = 34;
             this.CartAndOrderTabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.CartAndOrderTabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            this.CartAndOrderTabControl.SelectedIndexChanged += new System.EventHandler(this.CartAndOrderTabControl_SelectedIndexChanged);
             // 
             // cart
             // 
@@ -138,7 +128,7 @@
             this.cart.Location = new System.Drawing.Point(4, 44);
             this.cart.Name = "cart";
             this.cart.Padding = new System.Windows.Forms.Padding(3);
-            this.cart.Size = new System.Drawing.Size(518, 297);
+            this.cart.Size = new System.Drawing.Size(518, 300);
             this.cart.TabIndex = 0;
             this.cart.Text = "Корзина";
             // 
@@ -362,7 +352,8 @@
             // orders
             // 
             this.orders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.orders.Controls.Add(this.topSellersPanel);
+            this.orders.Controls.Add(this.orderPanel);
+            this.orders.Controls.Add(this.panel12);
             this.orders.Location = new System.Drawing.Point(4, 44);
             this.orders.Name = "orders";
             this.orders.Padding = new System.Windows.Forms.Padding(3);
@@ -370,14 +361,23 @@
             this.orders.TabIndex = 1;
             this.orders.Text = "Заказы";
             // 
-            // topSellersPanel
+            // orderPanel
             // 
-            this.topSellersPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.topSellersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topSellersPanel.Location = new System.Drawing.Point(3, 3);
-            this.topSellersPanel.Name = "topSellersPanel";
-            this.topSellersPanel.Size = new System.Drawing.Size(512, 291);
-            this.topSellersPanel.TabIndex = 76;
+            this.orderPanel.AutoSize = true;
+            this.orderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.orderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.orderPanel.Location = new System.Drawing.Point(3, 38);
+            this.orderPanel.Name = "orderPanel";
+            this.orderPanel.Size = new System.Drawing.Size(512, 0);
+            this.orderPanel.TabIndex = 68;
+            // 
+            // panel12
+            // 
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(512, 35);
+            this.panel12.TabIndex = 65;
             // 
             // panel1
             // 
@@ -385,7 +385,7 @@
             this.panel1.Location = new System.Drawing.Point(100, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 33);
+            this.panel1.Size = new System.Drawing.Size(526, 30);
             this.panel1.TabIndex = 28;
             // 
             // rightPanel
@@ -406,6 +406,29 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(100, 378);
             this.leftPanel.TabIndex = 26;
+            // 
+            // navigationControl
+            // 
+            this.navigationControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.navigationControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.navigationControl.leftPanel = null;
+            this.navigationControl.LeftPanelWidth = 0;
+            this.navigationControl.Location = new System.Drawing.Point(0, 0);
+            this.navigationControl.Margin = new System.Windows.Forms.Padding(6);
+            this.navigationControl.Name = "navigationControl";
+            this.navigationControl.rightPanel = null;
+            this.navigationControl.RightPanelWidth = 0;
+            this.navigationControl.Size = new System.Drawing.Size(726, 52);
+            this.navigationControl.TabIndex = 3;
+            // 
+            // FormRounded
+            // 
+            this.FormRounded.BorderRadius = 11;
+            this.FormRounded.ContainerControl = this;
+            this.FormRounded.DockIndicatorTransparencyValue = 0.6D;
+            this.FormRounded.DragForm = false;
+            this.FormRounded.ResizeForm = false;
+            this.FormRounded.TransparentWhileDrag = true;
             // 
             // CartAndOrderForm
             // 
@@ -436,6 +459,7 @@
             this.reviewPanel.ResumeLayout(false);
             this.reviewPanel.PerformLayout();
             this.orders.ResumeLayout(false);
+            this.orders.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -450,7 +474,6 @@
         private Guna.UI2.WinForms.Guna2TabControl CartAndOrderTabControl;
         private System.Windows.Forms.TabPage cart;
         private System.Windows.Forms.TabPage orders;
-        private System.Windows.Forms.FlowLayoutPanel topSellersPanel;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel9;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
@@ -470,5 +493,8 @@
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel orderPanel;
+        private System.Windows.Forms.Panel panel12;
+        private Guna.UI2.WinForms.Guna2BorderlessForm FormRounded;
     }
 }

@@ -143,6 +143,7 @@
     <Compile Include="Classes\Customization\AutoScrollHelper.cs" />
     <Compile Include="Classes\Customization\RoundingHelper.cs" />
     <Compile Include="Classes\DataAccess\GameSlideData.cs" />
+    <Compile Include="Classes\Key\KeyHelper.cs" />
     <Compile Include="Classes\Visibility\VisibilityHelper.cs" />
     <Compile Include="Classes\DataAccess\UserAvatarDataHelper.cs" />
     <Compile Include="Classes\Hash\HashHelper.cs" />
@@ -174,6 +175,12 @@
     </Compile>
     <Compile Include="CustomControls\NavigationControl.Designer.cs">
       <DependentUpon>NavigationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\OrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\OrderControl.Designer.cs">
+      <DependentUpon>OrderControl.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomControls\UserCommentsControl.cs">
       <SubType>UserControl</SubType>
@@ -241,6 +248,9 @@
     <EmbeddedResource Include="CustomControls\NavigationControl.resx">
       <DependentUpon>NavigationControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\OrderControl.resx">
+      <DependentUpon>OrderControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\UserCommentsControl.resx">
       <DependentUpon>UserCommentsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,7 +279,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\Key\" />
     <Folder Include="Docs\" />
   </ItemGroup>
   <ItemGroup>

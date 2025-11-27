@@ -315,9 +315,9 @@ namespace GameEnergy.AppForms.UserForms
                     }
 
                     // 2. Определяем цену на момент добавления
-                    decimal priceAtAdd = _game.DiscountedPrice.HasValue
-                        ? (decimal)_game.DiscountedPrice.Value
-                        : (decimal)_game.Price;
+                    int priceAtAdd = (int)(_game.DiscountedPrice.HasValue
+                        ? _game.DiscountedPrice
+                        : _game.Price);
 
                     // 3. Добавляем в CartItems
                     var cartItem = new CartItems
@@ -336,7 +336,7 @@ namespace GameEnergy.AppForms.UserForms
 
                     navigationControl.UpdateNotificationsCount();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageHelper.ShowErrorMessage("Ошибка при добавлении в корзину");
                 }
