@@ -15,7 +15,7 @@ namespace GameEnergy.Models
 
         public int GameID { get; set; }
 
-        public decimal PriceAtAdd { get; set; }
+        public int PriceAtAdd { get; set; }
 
         public DateTime AddedDate { get; set; }
 

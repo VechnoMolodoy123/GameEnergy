@@ -8,7 +8,7 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel5")
+            : base("name=GameEnergyModel7")
         {
         }
 
@@ -33,10 +33,6 @@ namespace GameEnergy.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CartItems>()
-                .Property(e => e.PriceAtAdd)
-                .HasPrecision(10, 2);
-
             modelBuilder.Entity<GameReportCategory>()
                 .HasMany(e => e.GameReports)
                 .WithRequired(e => e.GameReportCategory)
@@ -65,10 +61,6 @@ namespace GameEnergy.Models
                 .HasMany(e => e.Reviews)
                 .WithOptional(e => e.Games)
                 .WillCascadeOnDelete();
-
-            modelBuilder.Entity<OrderItems>()
-                .Property(e => e.PriceAtPurchase)
-                .HasPrecision(10, 2);
 
             modelBuilder.Entity<UserRoles>()
                 .HasMany(e => e.Users)

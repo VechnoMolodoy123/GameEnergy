@@ -133,7 +133,8 @@ namespace GameEnergy.AppForms.UserForms
                     {
                         OrderID = order.OrderID,
                         GameID = item.GameID,
-                        PriceAtPurchase = item.PriceAtAdd
+                        PriceAtPurchase = item.PriceAtAdd,
+                        GameKey = GenerateGameKey()
                     };
                     Program.context.OrderItems.Add(orderItem);
                 }
@@ -156,6 +157,25 @@ namespace GameEnergy.AppForms.UserForms
                 MessageBox.Show("Ошибка при оформлении заказа", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private string GenerateGameKey()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var keyParts = new string[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                var part = new char[4];
+                for (int j = 0; j < 4; j++)
+                {
+                    part[j] = chars[random.Next(chars.Length)];
+                }
+                keyParts[i] = new string(part);
+            }
+
+            return string.Join("-", keyParts);
         }
 
         private void LoadCartAndOrderInfo()

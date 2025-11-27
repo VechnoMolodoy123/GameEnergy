@@ -15,7 +15,10 @@ namespace GameEnergy.Models
 
         public int GameID { get; set; }
 
-        public decimal PriceAtPurchase { get; set; }
+        public int PriceAtPurchase { get; set; }
+
+        [StringLength(200)]
+        public string GameKey { get; set; }
 
         public virtual Games Games { get; set; }
 
