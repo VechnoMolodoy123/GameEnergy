@@ -126,13 +126,13 @@ namespace GameEnergy.AppForms.UserForms
             UpdateGamesList(query.ToList());
         }
 
-        private void UpdateGamesList(List<Games> books)
+        private void UpdateGamesList(List<Games> games)
         {
             gamesPanel.Controls.Clear();
 
-            foreach (Games book in books)
+            foreach (Games game in games)
             {
-                var gamesControl = new MainGameControl(book);
+                var gamesControl = new MainGameControl(game);
                 gamesControl.Margin = new Padding(10);
                 gamesControl.GameClicked += GameControl_GameClicked;
                 gamesPanel.Controls.Add(gamesControl);

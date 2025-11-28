@@ -227,6 +227,9 @@
     <EmbeddedResource Include="AppForms\UserForms\GameСatalogForm.resx">
       <DependentUpon>GameСatalogForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\LibraryForm.resx">
+      <DependentUpon>LibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
