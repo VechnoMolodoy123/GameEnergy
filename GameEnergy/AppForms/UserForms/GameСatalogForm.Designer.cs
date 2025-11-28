@@ -34,6 +34,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.gamesPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.addGamePanel = new System.Windows.Forms.Panel();
+            this.addGameButton = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.developerComboBox = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
-            this.addGameButton = new Guna.UI2.WinForms.Guna2Button();
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.mainPanel.SuspendLayout();
             this.addGamePanel.SuspendLayout();
@@ -93,6 +93,27 @@
             this.addGamePanel.Name = "addGamePanel";
             this.addGamePanel.Size = new System.Drawing.Size(526, 76);
             this.addGamePanel.TabIndex = 30;
+            // 
+            // addGameButton
+            // 
+            this.addGameButton.Animated = true;
+            this.addGameButton.BorderRadius = 8;
+            this.addGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addGameButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.addGameButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.addGameButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.addGameButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.addGameButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.addGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addGameButton.ForeColor = System.Drawing.Color.Black;
+            this.addGameButton.HoverState.FillColor = System.Drawing.Color.White;
+            this.addGameButton.Location = new System.Drawing.Point(0, 20);
+            this.addGameButton.Name = "addGameButton";
+            this.addGameButton.Size = new System.Drawing.Size(155, 36);
+            this.addGameButton.TabIndex = 15;
+            this.addGameButton.Text = "ДОБАВИТЬ ИГРУ";
+            this.addGameButton.Visible = false;
+            this.addGameButton.Click += new System.EventHandler(this.addGameButton_Click);
             // 
             // panel2
             // 
@@ -325,27 +346,6 @@
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(100, 378);
             this.leftPanel.TabIndex = 26;
-            // 
-            // addGameButton
-            // 
-            this.addGameButton.Animated = true;
-            this.addGameButton.BorderRadius = 8;
-            this.addGameButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addGameButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.addGameButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.addGameButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.addGameButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.addGameButton.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.addGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addGameButton.ForeColor = System.Drawing.Color.Black;
-            this.addGameButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.addGameButton.Location = new System.Drawing.Point(0, 20);
-            this.addGameButton.Name = "addGameButton";
-            this.addGameButton.Size = new System.Drawing.Size(155, 36);
-            this.addGameButton.TabIndex = 15;
-            this.addGameButton.Text = "ДОБАВИТЬ ИГРУ";
-            this.addGameButton.Visible = false;
-            this.addGameButton.Click += new System.EventHandler(this.addGameButton_Click);
             // 
             // navigationControl
             // 

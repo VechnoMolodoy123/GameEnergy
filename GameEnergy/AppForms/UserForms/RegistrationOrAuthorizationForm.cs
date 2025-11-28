@@ -98,7 +98,7 @@ namespace GameEnergy
             {
                 if (ValidationHelper.ValidateMailField(mail))
                 {
-                    if (ValidationHelper.ValidationPasswordField(passwordTextField, confirmPasswordTextField))
+                    if (ValidationHelper.ValidationPasswordFields(passwordTextField, confirmPasswordTextField))
                     {
                         if (ValidationHelper.ValidationRegistration(nameTextField, mailTextField, passwordTextField, confirmPasswordTextField))
                         {

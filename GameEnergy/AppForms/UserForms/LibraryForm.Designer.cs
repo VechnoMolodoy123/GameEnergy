@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LibraryForm));
             this.FormRounded = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.gamesPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.gameCountLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gamesPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.gameCountLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,49 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(726, 378);
             this.mainPanel.TabIndex = 7;
+            // 
+            // gamesPanel
+            // 
+            this.gamesPanel.AutoSize = true;
+            this.gamesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.gamesPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gamesPanel.Location = new System.Drawing.Point(100, 80);
+            this.gamesPanel.Name = "gamesPanel";
+            this.gamesPanel.Size = new System.Drawing.Size(526, 0);
+            this.gamesPanel.TabIndex = 77;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.gameCountLabel);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(100, 30);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(526, 50);
+            this.panel2.TabIndex = 29;
+            // 
+            // gameCountLabel
+            // 
+            this.gameCountLabel.AutoSize = true;
+            this.gameCountLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gameCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
+            this.gameCountLabel.Location = new System.Drawing.Point(173, 0);
+            this.gameCountLabel.Name = "gameCountLabel";
+            this.gameCountLabel.Size = new System.Drawing.Size(33, 37);
+            this.gameCountLabel.TabIndex = 40;
+            this.gameCountLabel.Text = "2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(180, 37);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "ИЗБРАННОЕ";
             // 
             // panel1
             // 
@@ -107,49 +150,6 @@
             this.navigationControl.RightPanelWidth = 0;
             this.navigationControl.Size = new System.Drawing.Size(726, 52);
             this.navigationControl.TabIndex = 6;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gameCountLabel);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(100, 30);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 50);
-            this.panel2.TabIndex = 29;
-            // 
-            // gamesPanel
-            // 
-            this.gamesPanel.AutoSize = true;
-            this.gamesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.gamesPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gamesPanel.Location = new System.Drawing.Point(100, 80);
-            this.gamesPanel.Name = "gamesPanel";
-            this.gamesPanel.Size = new System.Drawing.Size(526, 0);
-            this.gamesPanel.TabIndex = 77;
-            // 
-            // gameCountLabel
-            // 
-            this.gameCountLabel.AutoSize = true;
-            this.gameCountLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gameCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.gameCountLabel.Location = new System.Drawing.Point(173, 0);
-            this.gameCountLabel.Name = "gameCountLabel";
-            this.gameCountLabel.Size = new System.Drawing.Size(33, 37);
-            this.gameCountLabel.TabIndex = 40;
-            this.gameCountLabel.Text = "2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 37);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "ИЗБРАННОЕ";
             // 
             // LibraryForm
             // 

@@ -2,6 +2,7 @@
 using GameEnergy.Classes.Images.StoreImages;
 using GameEnergy.Classes.Messages;
 using GameEnergy.Models;
+using Guna.UI2.WinForms;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -172,12 +173,32 @@ namespace GameEnergy.Classes.Validation
             }
         }
 
+        public static bool ValidateNewMail(Guna2TextBox newMail)
+        {
+            string mail = newMail.Text?.Trim();
+            int currentUserId = Program.CurrentUser.UserID;
+
+            Users currentUser = Program.context.Users.FirstOrDefault(u => u.UserID == currentUserId);
+
+            if (mail != currentUser.Email)
+            {
+                currentUser.Email = mail;
+                Program.context.SaveChanges();
+                return true;
+            }
+            else
+            {
+                MessageHelper.ShowErrorMessage("Новая почта должна отличаться от старой");
+                return false;
+            }
+        }
+
         private static readonly Regex _hasUpperChar = new Regex(@"[A-Z]");
         private static readonly Regex _hasLowerChar = new Regex(@"[a-z]");
         private static readonly Regex _hasDigit = new Regex(@"\d");
         private static readonly Regex _hasSpecialChar = new Regex(@"[\W_]");
 
-        public static bool ValidatePassword(string password, string confirmPassword)
+        public static bool ValidatePasswords(string password, string confirmPassword)
         {
             if (!_onlyEnglishChars.IsMatch(password))
             {
@@ -235,9 +256,105 @@ namespace GameEnergy.Classes.Validation
             return true;
         }
 
-        public static bool ValidationPasswordField(MaterialSingleLineTextField passwordField, MaterialSingleLineTextField confirmPasswordField)
+        public static bool ValidationResetPassword(Guna2TextBox OldPasswordField, Guna2TextBox PasswordField)
         {
-            return ValidatePassword(passwordField.Text, confirmPasswordField.Text);
+            string newPassword = PasswordField.Text;
+            string oldPassword = OldPasswordField.Text;
+
+            int currentUserId = Program.CurrentUser.UserID;
+
+            Users currentUser = Program.context.Users.FirstOrDefault(user => user.UserID == currentUserId);
+
+            if (ValidationOldPassword(currentUser, oldPassword))
+            {
+                if (ValidationPasswordFields(currentUser, newPassword))
+                {
+                    OldPasswordField.Clear();
+                    PasswordField.Clear();
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool ValidationOldPassword(Users user, string OldPasswordField)
+        {
+            string passwordHash = HashHelper.HashData(OldPasswordField);
+
+            bool isPasswordCorrect = HashHelper.VerifyData(OldPasswordField, user.PasswordHash);
+
+            if (isPasswordCorrect)
+            {
+                return true;
+            }
+            else
+            {
+                MessageHelper.ShowErrorMessage("Неверный пароль");
+                return false;
+            }
+        }
+
+        public static bool ValidatePassword(string password)
+        {
+            if (!_onlyEnglishChars.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать только английские буквы.");
+                return false;
+            }
+
+            if (password.Contains(" "))
+            {
+                MessageHelper.ShowErrorMessage("Пароль не должен содержать пробелов.");
+                return false;
+            }
+
+            if (!_hasUpperChar.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы одну заглавную букву.");
+                return false;
+            }
+
+            if (!_hasLowerChar.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы одну строчную букву.");
+                return false;
+            }
+
+            if (!_hasDigit.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы одну цифру.");
+                return false;
+            }
+
+            if (!_hasSpecialChar.IsMatch(password))
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать хотя бы один специальный символ.");
+                return false;
+            }
+
+            if (password.Length < 8)
+            {
+                MessageHelper.ShowErrorMessage("Пароль должен содержать минимум 8 символов.");
+                return false;
+            }
+
+            if (password.Length > 32)
+            {
+                MessageHelper.ShowErrorMessage("Пароль не должен превышать 32 символа.");
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidationPasswordFields(MaterialSingleLineTextField passwordField, MaterialSingleLineTextField confirmPasswordField)
+        {
+            return ValidatePasswords(passwordField.Text, confirmPasswordField.Text);
+        }
+
+        public static bool ValidationPasswordField(Guna2TextBox passwordField)
+        {
+            return ValidatePassword(passwordField.Text);
         }
     }
 }
