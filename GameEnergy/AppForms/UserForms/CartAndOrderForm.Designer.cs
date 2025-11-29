@@ -78,9 +78,10 @@
             this.mainPanel.Controls.Add(this.rightPanel);
             this.mainPanel.Controls.Add(this.leftPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(0, 52);
+            this.mainPanel.Location = new System.Drawing.Point(0, 100);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(726, 378);
+            this.mainPanel.Size = new System.Drawing.Size(1452, 727);
             this.mainPanel.TabIndex = 4;
             // 
             // CartAndOrderTabControl
@@ -90,10 +91,11 @@
             this.CartAndOrderTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CartAndOrderTabControl.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.CartAndOrderTabControl.ItemSize = new System.Drawing.Size(173, 40);
-            this.CartAndOrderTabControl.Location = new System.Drawing.Point(100, 30);
+            this.CartAndOrderTabControl.Location = new System.Drawing.Point(200, 58);
+            this.CartAndOrderTabControl.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CartAndOrderTabControl.Name = "CartAndOrderTabControl";
             this.CartAndOrderTabControl.SelectedIndex = 0;
-            this.CartAndOrderTabControl.Size = new System.Drawing.Size(526, 348);
+            this.CartAndOrderTabControl.Size = new System.Drawing.Size(1052, 669);
             this.CartAndOrderTabControl.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.CartAndOrderTabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(100)))), ((int)(((byte)(46)))));
             this.CartAndOrderTabControl.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -126,9 +128,10 @@
             this.cart.Controls.Add(this.panel3);
             this.cart.Controls.Add(this.panel2);
             this.cart.Location = new System.Drawing.Point(4, 44);
+            this.cart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cart.Name = "cart";
-            this.cart.Padding = new System.Windows.Forms.Padding(3);
-            this.cart.Size = new System.Drawing.Size(518, 300);
+            this.cart.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cart.Size = new System.Drawing.Size(1044, 621);
             this.cart.TabIndex = 0;
             this.cart.Text = "Корзина";
             // 
@@ -138,9 +141,10 @@
             this.panel9.Controls.Add(this.panel10);
             this.panel9.Controls.Add(this.label5);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(3, 143);
+            this.panel9.Location = new System.Drawing.Point(6, 274);
+            this.panel9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(512, 195);
+            this.panel9.Size = new System.Drawing.Size(1032, 375);
             this.panel9.TabIndex = 67;
             // 
             // guna2Panel1
@@ -153,9 +157,10 @@
             this.guna2Panel1.Controls.Add(this.label7);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.FillColor = System.Drawing.Color.Black;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 48);
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 96);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(512, 147);
+            this.guna2Panel1.Size = new System.Drawing.Size(1024, 279);
             this.guna2Panel1.TabIndex = 40;
             // 
             // label6
@@ -164,9 +169,10 @@
             this.label6.BackColor = System.Drawing.Color.Black;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(104, 52);
+            this.label6.Location = new System.Drawing.Point(208, 100);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(312, 34);
+            this.label6.Size = new System.Drawing.Size(617, 72);
             this.label6.TabIndex = 21;
             this.label6.Text = "Вы будете перенаправлены на сайт платежной\r\nсистемы для завершения процедуры опла" +
     "ты.";
@@ -187,9 +193,10 @@
             this.payButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
             this.payButton.ForeColor = System.Drawing.Color.Black;
             this.payButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.payButton.Location = new System.Drawing.Point(160, 100);
+            this.payButton.Location = new System.Drawing.Point(320, 192);
+            this.payButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.payButton.Name = "payButton";
-            this.payButton.Size = new System.Drawing.Size(177, 34);
+            this.payButton.Size = new System.Drawing.Size(354, 65);
             this.payButton.TabIndex = 20;
             this.payButton.Text = "ОПЛАТИТЬ 3490₽";
             this.payButton.Click += new System.EventHandler(this.payButton_Click);
@@ -200,18 +207,20 @@
             this.label7.BackColor = System.Drawing.Color.Black;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(13, 13);
+            this.label7.Location = new System.Drawing.Point(26, 25);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(215, 17);
+            this.label7.Size = new System.Drawing.Size(427, 36);
             this.label7.TabIndex = 3;
             this.label7.Text = "СИСТЕМА БЫСТРЫХ ПЛАТЕЖЕЙ";
             // 
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 32);
+            this.panel10.Location = new System.Drawing.Point(0, 65);
+            this.panel10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(512, 16);
+            this.panel10.Size = new System.Drawing.Size(1032, 31);
             this.panel10.TabIndex = 39;
             // 
             // label5
@@ -221,17 +230,19 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(214, 32);
+            this.label5.Size = new System.Drawing.Size(426, 65);
             this.label5.TabIndex = 3;
             this.label5.Text = "ОПЛАТА ЗАКАЗА";
             // 
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel8.Location = new System.Drawing.Point(3, 119);
+            this.panel8.Location = new System.Drawing.Point(6, 228);
+            this.panel8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(512, 24);
+            this.panel8.Size = new System.Drawing.Size(1032, 46);
             this.panel8.TabIndex = 66;
             // 
             // cartPanel
@@ -239,34 +250,38 @@
             this.cartPanel.AutoSize = true;
             this.cartPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.cartPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cartPanel.Location = new System.Drawing.Point(3, 119);
+            this.cartPanel.Location = new System.Drawing.Point(6, 228);
+            this.cartPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.cartPanel.Name = "cartPanel";
-            this.cartPanel.Size = new System.Drawing.Size(512, 0);
+            this.cartPanel.Size = new System.Drawing.Size(1032, 0);
             this.cartPanel.TabIndex = 65;
             // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(3, 109);
+            this.panel7.Location = new System.Drawing.Point(6, 209);
+            this.panel7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(512, 10);
+            this.panel7.Size = new System.Drawing.Size(1032, 19);
             this.panel7.TabIndex = 64;
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.grayLine);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 98);
+            this.panel6.Location = new System.Drawing.Point(6, 188);
+            this.panel6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(512, 11);
+            this.panel6.Size = new System.Drawing.Size(1032, 21);
             this.panel6.TabIndex = 63;
             // 
             // grayLine
             // 
             this.grayLine.BackColor = System.Drawing.Color.Gray;
-            this.grayLine.Location = new System.Drawing.Point(10, 10);
+            this.grayLine.Location = new System.Drawing.Point(20, 19);
+            this.grayLine.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.grayLine.Name = "grayLine";
-            this.grayLine.Size = new System.Drawing.Size(502, 1);
+            this.grayLine.Size = new System.Drawing.Size(1004, 2);
             this.grayLine.TabIndex = 13;
             // 
             // panel3
@@ -275,9 +290,10 @@
             this.panel3.Controls.Add(this.reviewPanel);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(3, 38);
+            this.panel3.Location = new System.Drawing.Point(6, 73);
+            this.panel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(512, 60);
+            this.panel3.Size = new System.Drawing.Size(1032, 115);
             this.panel3.TabIndex = 62;
             // 
             // cartCountLabel
@@ -285,9 +301,10 @@
             this.cartCountLabel.AutoSize = true;
             this.cartCountLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cartCountLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.cartCountLabel.Location = new System.Drawing.Point(168, 0);
+            this.cartCountLabel.Location = new System.Drawing.Point(336, 0);
+            this.cartCountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.cartCountLabel.Name = "cartCountLabel";
-            this.cartCountLabel.Size = new System.Drawing.Size(33, 37);
+            this.cartCountLabel.Size = new System.Drawing.Size(61, 72);
             this.cartCountLabel.TabIndex = 38;
             this.cartCountLabel.Text = "2";
             // 
@@ -299,9 +316,10 @@
             this.reviewPanel.Controls.Add(this.totalPriceLabel);
             this.reviewPanel.Controls.Add(this.label2);
             this.reviewPanel.FillColor = System.Drawing.Color.Black;
-            this.reviewPanel.Location = new System.Drawing.Point(276, 0);
+            this.reviewPanel.Location = new System.Drawing.Point(552, 0);
+            this.reviewPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.reviewPanel.Name = "reviewPanel";
-            this.reviewPanel.Size = new System.Drawing.Size(236, 52);
+            this.reviewPanel.Size = new System.Drawing.Size(472, 100);
             this.reviewPanel.TabIndex = 37;
             // 
             // totalPriceLabel
@@ -310,10 +328,11 @@
             this.totalPriceLabel.BackColor = System.Drawing.Color.Black;
             this.totalPriceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.totalPriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(67)))));
-            this.totalPriceLabel.Location = new System.Drawing.Point(104, 8);
+            this.totalPriceLabel.Location = new System.Drawing.Point(208, 15);
+            this.totalPriceLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.totalPriceLabel.Name = "totalPriceLabel";
             this.totalPriceLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.totalPriceLabel.Size = new System.Drawing.Size(129, 37);
+            this.totalPriceLabel.Size = new System.Drawing.Size(258, 71);
             this.totalPriceLabel.TabIndex = 4;
             this.totalPriceLabel.Text = "Цена";
             // 
@@ -323,9 +342,10 @@
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(6, 8);
+            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 32);
+            this.label2.Size = new System.Drawing.Size(188, 65);
             this.label2.TabIndex = 3;
             this.label2.Text = "ИТОГО";
             // 
@@ -336,17 +356,19 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 37);
+            this.label1.Size = new System.Drawing.Size(352, 72);
             this.label1.TabIndex = 2;
             this.label1.Text = "МОЙ ЗАКАЗ";
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 35);
+            this.panel2.Size = new System.Drawing.Size(1032, 67);
             this.panel2.TabIndex = 0;
             // 
             // orders
@@ -355,9 +377,10 @@
             this.orders.Controls.Add(this.orderPanel);
             this.orders.Controls.Add(this.panel12);
             this.orders.Location = new System.Drawing.Point(4, 44);
+            this.orders.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.orders.Name = "orders";
-            this.orders.Padding = new System.Windows.Forms.Padding(3);
-            this.orders.Size = new System.Drawing.Size(518, 300);
+            this.orders.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.orders.Size = new System.Drawing.Size(1044, 621);
             this.orders.TabIndex = 1;
             this.orders.Text = "Заказы";
             // 
@@ -366,45 +389,47 @@
             this.orderPanel.AutoSize = true;
             this.orderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.orderPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.orderPanel.Location = new System.Drawing.Point(3, 38);
+            this.orderPanel.Location = new System.Drawing.Point(6, 73);
+            this.orderPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.orderPanel.Name = "orderPanel";
-            this.orderPanel.Size = new System.Drawing.Size(512, 0);
+            this.orderPanel.Size = new System.Drawing.Size(1032, 0);
             this.orderPanel.TabIndex = 68;
             // 
             // panel12
             // 
             this.panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel12.Location = new System.Drawing.Point(3, 3);
+            this.panel12.Location = new System.Drawing.Point(6, 6);
+            this.panel12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(512, 35);
+            this.panel12.Size = new System.Drawing.Size(1032, 67);
             this.panel12.TabIndex = 65;
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(100, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(200, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 30);
+            this.panel1.Size = new System.Drawing.Size(1052, 58);
             this.panel1.TabIndex = 28;
             // 
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rightPanel.Location = new System.Drawing.Point(626, 0);
-            this.rightPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.rightPanel.Location = new System.Drawing.Point(1252, 0);
+            this.rightPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rightPanel.Name = "rightPanel";
-            this.rightPanel.Size = new System.Drawing.Size(100, 378);
+            this.rightPanel.Size = new System.Drawing.Size(200, 727);
             this.rightPanel.TabIndex = 27;
             // 
             // leftPanel
             // 
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Size = new System.Drawing.Size(100, 378);
+            this.leftPanel.Size = new System.Drawing.Size(200, 727);
             this.leftPanel.TabIndex = 26;
             // 
             // navigationControl
@@ -414,11 +439,11 @@
             this.navigationControl.leftPanel = null;
             this.navigationControl.LeftPanelWidth = 0;
             this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Margin = new System.Windows.Forms.Padding(6);
+            this.navigationControl.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
             this.navigationControl.Name = "navigationControl";
             this.navigationControl.rightPanel = null;
             this.navigationControl.RightPanelWidth = 0;
-            this.navigationControl.Size = new System.Drawing.Size(726, 52);
+            this.navigationControl.Size = new System.Drawing.Size(1452, 100);
             this.navigationControl.TabIndex = 3;
             // 
             // FormRounded
@@ -432,14 +457,15 @@
             // 
             // CartAndOrderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(726, 430);
+            this.ClientSize = new System.Drawing.Size(1452, 827);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.navigationControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "CartAndOrderForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CartForm";
