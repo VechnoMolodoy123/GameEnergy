@@ -287,6 +287,7 @@
     <None Include="Docs\DB\Agent.docx" />
     <None Include="Docs\DB\Diagram.pdf" />
     <None Include="Docs\Diagrams\ClassDiagram.cd" />
+    <None Include="Docs\Documentations\Пояснительная_записка.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -301,9 +302,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Docs\Documentations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
