@@ -8,12 +8,13 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel7")
+            : base("name=GameEnergyModel9")
         {
         }
 
         public virtual DbSet<Cart> Cart { get; set; }
         public virtual DbSet<CartItems> CartItems { get; set; }
+        public virtual DbSet<DeletedNotifications> DeletedNotifications { get; set; }
         public virtual DbSet<GameDevelopers> GameDevelopers { get; set; }
         public virtual DbSet<GameGenres> GameGenres { get; set; }
         public virtual DbSet<GameReportCategory> GameReportCategory { get; set; }
@@ -62,6 +63,11 @@ namespace GameEnergy.Models
                 .WithOptional(e => e.Games)
                 .WillCascadeOnDelete();
 
+            modelBuilder.Entity<SystemNotifications>()
+                .HasMany(e => e.DeletedNotifications)
+                .WithRequired(e => e.SystemNotifications)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<UserRoles>()
                 .HasMany(e => e.Users)
                 .WithRequired(e => e.UserRoles)
@@ -69,6 +75,11 @@ namespace GameEnergy.Models
 
             modelBuilder.Entity<Users>()
                 .HasMany(e => e.Cart)
+                .WithRequired(e => e.Users)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.DeletedNotifications)
                 .WithRequired(e => e.Users)
                 .WillCascadeOnDelete(false);
 

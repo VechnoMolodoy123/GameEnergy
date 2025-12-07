@@ -8,6 +8,12 @@ namespace GameEnergy.Models
 
     public partial class SystemNotifications
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SystemNotifications()
+        {
+            DeletedNotifications = new HashSet<DeletedNotifications>();
+        }
+
         [Key]
         public int NotifyID { get; set; }
 
@@ -21,6 +27,9 @@ namespace GameEnergy.Models
         public string NotifyMessage { get; set; }
 
         public DateTime NotifyDate { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DeletedNotifications> DeletedNotifications { get; set; }
 
         public virtual Users Users { get; set; }
     }
