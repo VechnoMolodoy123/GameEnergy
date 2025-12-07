@@ -230,6 +230,9 @@
     <EmbeddedResource Include="AppForms\AdminForms\CreateOrUpdateGameForm.resx">
       <DependentUpon>CreateOrUpdateGameForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\AdminForms\WriteNotifyForm.resx">
+      <DependentUpon>WriteNotifyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\CartAndOrderForm.resx">
       <DependentUpon>CartAndOrderForm.cs</DependentUpon>
     </EmbeddedResource>
