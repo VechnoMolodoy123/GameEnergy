@@ -62,7 +62,7 @@
             this.mainPanel.Controls.Add(this.leftPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 100);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(6);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1452, 727);
             this.mainPanel.TabIndex = 7;
@@ -73,7 +73,7 @@
             this.gamesPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.gamesPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.gamesPanel.Location = new System.Drawing.Point(200, 154);
-            this.gamesPanel.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gamesPanel.Margin = new System.Windows.Forms.Padding(6);
             this.gamesPanel.Name = "gamesPanel";
             this.gamesPanel.Size = new System.Drawing.Size(1052, 0);
             this.gamesPanel.TabIndex = 77;
@@ -84,7 +84,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(200, 58);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1052, 96);
             this.panel2.TabIndex = 29;
@@ -118,7 +118,7 @@
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(200, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1052, 58);
             this.panel1.TabIndex = 28;
@@ -128,7 +128,7 @@
             this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.rightPanel.Location = new System.Drawing.Point(1252, 0);
-            this.rightPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rightPanel.Margin = new System.Windows.Forms.Padding(4);
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(200, 727);
             this.rightPanel.TabIndex = 27;
@@ -137,7 +137,7 @@
             // 
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.leftPanel.Margin = new System.Windows.Forms.Padding(4);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(200, 727);
             this.leftPanel.TabIndex = 26;
@@ -149,7 +149,7 @@
             this.navigationControl.leftPanel = null;
             this.navigationControl.LeftPanelWidth = 0;
             this.navigationControl.Location = new System.Drawing.Point(0, 0);
-            this.navigationControl.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.navigationControl.Margin = new System.Windows.Forms.Padding(12);
             this.navigationControl.Name = "navigationControl";
             this.navigationControl.rightPanel = null;
             this.navigationControl.RightPanelWidth = 0;
@@ -166,7 +166,7 @@
             this.Controls.Add(this.navigationControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LibraryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LibraryForm";

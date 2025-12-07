@@ -25,7 +25,7 @@ namespace GameEnergy.CustomControls
         {
             InitializeComponent();
 
-            _cartItem = cartitem;
+            _cartItem = Program.context.CartItems.AsNoTracking().FirstOrDefault(ci => ci.CartItemID == cartitem.CartItemID);
             _tipe = "cart";
 
             LoadItemInfo();
@@ -43,6 +43,7 @@ namespace GameEnergy.CustomControls
 
         private void LoadItemInfo()
         {
+            
             titleLabel.Text = _cartItem.Games.Title;
             priceLabel.Text = _cartItem.Games.DiscountedPrice.HasValue ? $"{_cartItem.Games.DiscountedPrice} ₽" : $"{_cartItem.Games.Price} ₽";
 
