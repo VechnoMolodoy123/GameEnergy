@@ -82,6 +82,12 @@
     <Compile Include="AppForms\AdminForms\CreateOrUpdateGameForm.Designer.cs">
       <DependentUpon>CreateOrUpdateGameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\AdminForms\WriteNotifyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\AdminForms\WriteNotifyForm.Designer.cs">
+      <DependentUpon>WriteNotifyForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UserForms\CartAndOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,7 @@
     </Compile>
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItems.cs" />
+    <Compile Include="Models\DeletedNotifications.cs" />
     <Compile Include="Models\GameDevelopers.cs" />
     <Compile Include="Models\GameEnergyModel.cs" />
     <Compile Include="Models\GameGenres.cs" />

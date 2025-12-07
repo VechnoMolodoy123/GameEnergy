@@ -56,7 +56,8 @@ namespace GameEnergy.CustomControls
                     .FirstOrDefault(n => n.NotifyID == systemNotification.NotifyID);
                 titleLabel.Text = systemNotification.NotifyTitle;
                 messageLabel.Text = systemNotification.NotifyMessage;
-                dateLabel.Text = systemNotification.NotifyDate.ToShortDateString();
+                dateLabel.Text = systemNotification.NotifyDate
+                    .ToString("d MMMM yyyy 'в' HH:mm", new System.Globalization.CultureInfo("ru-RU"));
                 return;
             }
             else if (_notificationData is GameReports gameReport)
@@ -69,7 +70,8 @@ namespace GameEnergy.CustomControls
                 titleLabel.Text = "Жалоба на игру:";
                 gameLabel.Text = newGameReport.Games.Title;
                 messageLabel.Text = newGameReport.ReportMessage;
-                dateLabel.Text = newGameReport.ReportDate.ToShortDateString();
+                dateLabel.Text = newGameReport.ReportDate
+                    .ToString("d MMMM yyyy 'в' HH:mm", new System.Globalization.CultureInfo("ru-RU"));
             }
         }
 
@@ -108,11 +110,15 @@ namespace GameEnergy.CustomControls
         {
             if (_notificationData is SystemNotifications systemNotification)
             {
-                var entry = Program.context.SystemNotifications.Find(systemNotification.NotifyID);
-                if (entry != null)
+                if (!Program.context.DeletedNotifications
+                    .Any(dn => dn.NotifyID == systemNotification.NotifyID && dn.UserID == _currentUser.UserID))
                 {
-                    Program.context.SystemNotifications.Remove(entry);
-                    Program.context.SaveChanges();
+                    Program.context.DeletedNotifications.Add(new DeletedNotifications
+                    {
+                        NotifyID = systemNotification.NotifyID,
+                        UserID = _currentUser.UserID,
+                        DeletedDate = DateTime.Now
+                    });
                 }
             }
             else if (_notificationData is GameReports gameReport)
