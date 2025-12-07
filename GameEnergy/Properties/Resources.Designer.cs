@@ -113,6 +113,16 @@ namespace GameEnergy.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Complaint {
+            get {
+                object obj = ResourceManager.GetObject("Complaint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Days_GoneSlide {
             get {
                 object obj = ResourceManager.GetObject("Days_GoneSlide", resourceCulture);

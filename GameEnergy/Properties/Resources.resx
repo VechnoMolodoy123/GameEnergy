@@ -133,6 +133,9 @@
   <data name="collapse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\collapse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Complaint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Complaint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Days_GoneSlide" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Days GoneSlide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

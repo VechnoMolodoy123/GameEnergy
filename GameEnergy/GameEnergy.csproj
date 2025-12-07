@@ -181,6 +181,12 @@
     <Compile Include="CustomControls\NavigationControl.Designer.cs">
       <DependentUpon>NavigationControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomControls\NotifyControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\NotifyControl.Designer.cs">
+      <DependentUpon>NotifyControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomControls\OrderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     <EmbeddedResource Include="CustomControls\NavigationControl.resx">
       <DependentUpon>NavigationControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\NotifyControl.resx">
+      <DependentUpon>NotifyControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomControls\OrderControl.resx">
       <DependentUpon>OrderControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,7 +284,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Docs\ClassDiagram.cd" />
+    <None Include="Docs\DB\Agent.docx" />
+    <None Include="Docs\DB\Diagram.pdf" />
+    <None Include="Docs\Diagrams\ClassDiagram.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -290,7 +301,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Docs\Documentations\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
@@ -352,7 +365,35 @@
     <None Include="Resources\whiteLike.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Docs\DB\Script.sql" />
+    <Content Include="Docs\DB\Triggers.txt" />
+    <Content Include="Docs\GameEnergyRes\ARC RaidersImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Assassin%27s Creed OdysseyImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\BeholderImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Crusader Kings III Chapter IVImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Cyberpunk 2077Img.jpg" />
+    <Content Include="Docs\GameEnergyRes\Dark Souls RemasteredImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Days GoneImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Detroit Become HumanImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\DOOM The Dark AgesImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Dragon%27s Dogma 2Img.jpg" />
+    <Content Include="Docs\GameEnergyRes\ELDEN RINGImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Europa Universalis VImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Ghost of Tsushima DIRECTOR%27S CUTImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Grand Theft Auto VImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\HELLDIVERS 2Img.jpg" />
+    <Content Include="Docs\GameEnergyRes\Kingdom Come Deliverance IIImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Kingdom Come DeliveranceImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Mad MaxImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Manor LordsImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Metro ExodusImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\No Man%27s SkyImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Resident Evil 7Img.jpg" />
+    <Content Include="Docs\GameEnergyRes\Sid Meier’s Civilization VIImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\StellarisImg.jpg" />
+    <Content Include="Docs\GameEnergyRes\Warhammer 40,000 Rogue TraderImg.jpg" />
     <Content Include="Icon.ico" />
+    <None Include="Resources\Complaint.png" />
     <None Include="Resources\yellowNotifi.png" />
     <None Include="Resources\yellowCart.png" />
     <None Include="Resources\star.png" />
