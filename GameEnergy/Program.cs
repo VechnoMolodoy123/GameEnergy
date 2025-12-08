@@ -1,5 +1,6 @@
 ﻿using GameEnergy.AppForms.UserForms;
 using GameEnergy.Classes.Messages;
+using GameEnergy.Classes.Services;
 using GameEnergy.Models;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,8 @@ namespace GameEnergy
                 MessageHelper.ShowErrorMessage("Не удалось подключиться к базе данных");
                 return;
             }
+
+            CleanupService.CleanupExpiredConfirmationCodes();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

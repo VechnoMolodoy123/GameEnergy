@@ -155,6 +155,7 @@
     <Compile Include="Classes\Customization\RoundingHelper.cs" />
     <Compile Include="Classes\DataAccess\GameSlideData.cs" />
     <Compile Include="Classes\Key\KeyHelper.cs" />
+    <Compile Include="Classes\Services\CleanupService.cs" />
     <Compile Include="Classes\Visibility\VisibilityHelper.cs" />
     <Compile Include="Classes\DataAccess\UserAvatarDataHelper.cs" />
     <Compile Include="Classes\Hash\HashHelper.cs" />
