@@ -13,11 +13,11 @@ namespace GameEnergy.Classes.Images.InstallingImages
 {
     internal class ImageLoader
     {
-        private static readonly string _path = "C:\\Users\\lamki\\OneDrive\\Документы\\GameEnergyRes\\";
+        private static readonly string _path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameEnergyRes");
 
         public static Image LoadGameImage(string imagePath)
         {
-            string fullImagePath = _path + imagePath + ".jpg";
+            string fullImagePath = Path.Combine(_path, imagePath + ".jpg");
 
             if (string.IsNullOrEmpty(fullImagePath) || !File.Exists(fullImagePath))
             {
@@ -30,7 +30,7 @@ namespace GameEnergy.Classes.Images.InstallingImages
             }
             catch (Exception ex)
             {
-                string logPath = "errorBookImages_log.txt";
+                string logPath = "errorGameImages_log.txt";
                 File.AppendAllText(logPath, $"[{DateTime.Now}] Ошибка при загрузке изображения: {ex.Message}\n");
                 return Properties.Resources.DefaultGameImage;
             }

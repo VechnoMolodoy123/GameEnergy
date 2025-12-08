@@ -25,6 +25,8 @@ namespace GameEnergy.AppForms.AdminForms
         private string _selectedImagePath;
         private Games _editingGame;
 
+        private static readonly string _gameImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameEnergyRes");
+
         public CreateOrUpdateGameForm(Games game = null)
         {
             InitializeComponent();
@@ -38,8 +40,8 @@ namespace GameEnergy.AppForms.AdminForms
         {
             if (_editingGame != null)
             {
-                titleLabel.Text = "Изменить книгу";
-                addGameButton.Text = "Изменить книгу";
+                titleLabel.Text = "Изменить игру";
+                addGameButton.Text = "Изменить игру";
 
                 nameTextBox.Text = _editingGame.Title;
                 trailerNameTextBox.Text = _editingGame.TrailerImage;
@@ -182,17 +184,29 @@ namespace GameEnergy.AppForms.AdminForms
         {
             try
             {
-                string imageName = _editingGame?.GameImage; // сохраняем старое имя, если не меняли
+                Directory.CreateDirectory(_gameImagePath);
+
+                string imgFileName = _editingGame?.GameImage; // сохраняем старое имя, если не меняли
 
                 // Сохранение изображения, если выбрано новое
                 if (!string.IsNullOrEmpty(_selectedImagePath))
                 {
-                    string fileName = Path.GetFileName(_selectedImagePath);
-                    string imgDir = Path.Combine(Application.StartupPath, "gameImg");
-                    Directory.CreateDirectory(imgDir);
-                    string destPath = Path.Combine(imgDir, fileName);
-                    File.Copy(_selectedImagePath, destPath, overwrite: true);
-                    imageName = fileName;
+                    // Проверяем, изменилось ли изображение
+                    if (_editingGame == null || Path.GetFileName(_selectedImagePath) != _editingGame.GameImage)
+                    {
+                        imgFileName = Path.GetFileName(_selectedImagePath);
+                        string destPath = Path.Combine(_gameImagePath, imgFileName);
+
+                        try
+                        {
+                            File.Copy(_selectedImagePath, destPath, overwrite: true);
+                        }
+                        catch (IOException)
+                        {
+                            MessageHelper.ShowErrorMessage("Изображение с таким именем уже существует. Пожалуйста, переименуйте файл.");
+                            return;
+                        }
+                    }
                 }
 
                 if (_editingGame == null)
@@ -205,7 +219,7 @@ namespace GameEnergy.AppForms.AdminForms
                         Price = price,
                         Discount = discount,
                         TrailerImage = trailerNameTextBox.Text ?? string.Empty,
-                        GameImage = imageName ?? string.Empty,
+                        GameImage = imgFileName ?? string.Empty,
                         DeveloperID = developerComboBox.SelectedIndex,
                         CategoryID = categoryComboBox.SelectedIndex == 0 ? (int?)null : categoryComboBox.SelectedIndex,
                         AverageRating = 0,
@@ -230,7 +244,7 @@ namespace GameEnergy.AppForms.AdminForms
                     gameToUpdate.Price = price;
                     gameToUpdate.Discount = discount;
                     gameToUpdate.TrailerImage = trailerNameTextBox.Text ?? string.Empty;
-                    gameToUpdate.GameImage = imageName ?? string.Empty;
+                    gameToUpdate.GameImage = imgFileName ?? string.Empty;
                     gameToUpdate.DeveloperID = developerComboBox.SelectedIndex;
                     gameToUpdate.CategoryID = categoryComboBox.SelectedIndex == 0 ? (int?)null : categoryComboBox.SelectedIndex;
                     gameToUpdate.ReleaseDate = releaseDate;

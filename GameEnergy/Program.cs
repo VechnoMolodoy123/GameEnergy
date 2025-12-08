@@ -1,6 +1,7 @@
 ﻿using GameEnergy.AppForms.UserForms;
 using GameEnergy.Classes.Messages;
 using GameEnergy.Classes.Services;
+using GameEnergy.Classes.Validation;
 using GameEnergy.Models;
 using System;
 using System.Collections.Generic;
@@ -21,16 +22,31 @@ namespace GameEnergy
         [STAThread]
         static void Main()
         {
-            if (!context.Database.Exists())
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            AppDomain.CurrentDomain.SetData("DataDirectory", System.IO.Path
+                .GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+
+            try
             {
-                MessageHelper.ShowErrorMessage("Не удалось подключиться к базе данных");
+                using (var testContext = new GameEnergyModel())
+                {
+                    if (!testContext.Database.Exists())
+                    {
+                        MessageHelper.ShowErrorMessage("База данных не найдена.\nУбедитесь, что файл GameEnergy.mdf находится рядом с GameEnergy.exe.");
+                        return;
+                    }
+                }
+
+                CleanupService.CleanupExpiredConfirmationCodes();
+            }
+            catch (Exception ex)
+            {
+                MessageHelper.ShowErrorMessage($"Ошибка подключения к БД:\n{ex.Message}");
                 return;
             }
 
-            CleanupService.CleanupExpiredConfirmationCodes();
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new RegistrationOrAuthorizationForm());
         }
     }

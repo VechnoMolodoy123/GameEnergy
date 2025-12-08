@@ -8,7 +8,7 @@ namespace GameEnergy.Models
     public partial class GameEnergyModel : DbContext
     {
         public GameEnergyModel()
-            : base("name=GameEnergyModel9")
+            : base("name=GameEnergyModel")
         {
         }
 
