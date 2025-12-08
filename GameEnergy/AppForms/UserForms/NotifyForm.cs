@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using Control = System.Web.UI.Control;
 
 namespace GameEnergy.AppForms.UserForms
 {
@@ -35,6 +37,7 @@ namespace GameEnergy.AppForms.UserForms
             navigationControl.rightPanel = rightPanel;
 
             CheckUserRole();
+            this.SizeChanged += (s, e) => UpdateControlsSize();
         }
 
         private void CheckUserRole()
@@ -106,6 +109,19 @@ namespace GameEnergy.AppForms.UserForms
             }
         }
 
+        private void UpdateControlsSize()
+        {
+            foreach (NotifyControl notifyControl in notifyPanel.Controls.OfType<NotifyControl>())
+            {
+                UpdateControlSize(notifyControl);
+            }
+        }
+
+        private void UpdateControlSize(NotifyControl control)
+        {
+            control.Width = this.WindowState == FormWindowState.Maximized ? 1320 : 526;
+        }
+
         private void newNotifyButton_Click(object sender, EventArgs e)
         {
             Form form = new WriteNotifyForm();
@@ -115,6 +131,11 @@ namespace GameEnergy.AppForms.UserForms
         private void NotifyForm_Resize(object sender, EventArgs e)
         {
             navigationControl.HandleFormResize(this);
+        }
+
+        private void NotifyForm_SizeChanged(object sender, EventArgs e)
+        {
+            UpdateControlsSize();
         }
     }
 }

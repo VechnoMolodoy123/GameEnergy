@@ -146,7 +146,8 @@ namespace GameEnergy.AppForms.UserForms
                 navigationControl.LeftPanelWidth = 500;
                 navigationControl.RightPanelWidth = 500;
                 sortComboBox.Width = 190;
-                genreComboBox.Width = 135;
+                priceComboBox.Width = 115;
+                genreComboBox.Width = 140;
                 developerComboBox.Width = 221;
             }
             else
@@ -154,6 +155,7 @@ namespace GameEnergy.AppForms.UserForms
                 navigationControl.LeftPanelWidth = 100;
                 navigationControl.RightPanelWidth = 100;
                 sortComboBox.Width = 155;
+                priceComboBox.Width = 110;
                 genreComboBox.Width = 100;
                 developerComboBox.Width = 125;
             }

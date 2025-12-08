@@ -34,12 +34,14 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.notifyPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.newNotifyButton = new Guna.UI2.WinForms.Guna2Button();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.leftPanel = new System.Windows.Forms.Panel();
             this.navigationControl = new GameEnergy.CustomControls.NavigationControl();
             this.mainPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // FormRounded
@@ -76,13 +78,22 @@
             // 
             // topPanel
             // 
-            this.topPanel.Controls.Add(this.newNotifyButton);
+            this.topPanel.Controls.Add(this.panel1);
             this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topPanel.Location = new System.Drawing.Point(100, 0);
             this.topPanel.Margin = new System.Windows.Forms.Padding(2);
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(526, 76);
             this.topPanel.TabIndex = 31;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.newNotifyButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(351, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(175, 76);
+            this.panel1.TabIndex = 17;
             // 
             // newNotifyButton
             // 
@@ -97,13 +108,12 @@
             this.newNotifyButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.newNotifyButton.ForeColor = System.Drawing.Color.Black;
             this.newNotifyButton.HoverState.FillColor = System.Drawing.Color.White;
-            this.newNotifyButton.Location = new System.Drawing.Point(351, 20);
+            this.newNotifyButton.Location = new System.Drawing.Point(0, 20);
             this.newNotifyButton.Name = "newNotifyButton";
             this.newNotifyButton.Size = new System.Drawing.Size(175, 36);
-            this.newNotifyButton.TabIndex = 16;
+            this.newNotifyButton.TabIndex = 17;
             this.newNotifyButton.Text = "НОВОЕ УВЕДОМЛЕНИЕ";
             this.newNotifyButton.Visible = false;
-            this.newNotifyButton.Click += new System.EventHandler(this.newNotifyButton_Click);
             // 
             // rightPanel
             // 
@@ -151,10 +161,12 @@
             this.Name = "NotifyForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NotifyForm";
+            this.SizeChanged += new System.EventHandler(this.NotifyForm_SizeChanged);
             this.Resize += new System.EventHandler(this.NotifyForm_Resize);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.topPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -168,6 +180,7 @@
         private System.Windows.Forms.Panel leftPanel;
         private CustomControls.NavigationControl navigationControl;
         private System.Windows.Forms.FlowLayoutPanel notifyPanel;
+        private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button newNotifyButton;
     }
 }
