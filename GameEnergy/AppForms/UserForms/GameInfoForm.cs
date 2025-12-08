@@ -2,23 +2,18 @@
 using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Classes.Messages;
-using GameEnergy.Classes.Validation;
 using GameEnergy.Classes.Video;
 using GameEnergy.CustomControls;
 using GameEnergy.Models;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.AppForms.UserForms
 {

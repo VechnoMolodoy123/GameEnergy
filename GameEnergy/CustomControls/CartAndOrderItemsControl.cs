@@ -3,15 +3,10 @@ using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace GameEnergy.CustomControls
 {
@@ -43,7 +38,7 @@ namespace GameEnergy.CustomControls
 
         private void LoadItemInfo()
         {
-            
+
             titleLabel.Text = _cartItem.Games.Title;
             priceLabel.Text = _cartItem.Games.DiscountedPrice.HasValue ? $"{_cartItem.Games.DiscountedPrice} ₽" : $"{_cartItem.Games.Price} ₽";
 

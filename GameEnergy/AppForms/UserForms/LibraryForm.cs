@@ -2,16 +2,9 @@
 using GameEnergy.CustomControls;
 using GameEnergy.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.AppForms.UserForms
 {

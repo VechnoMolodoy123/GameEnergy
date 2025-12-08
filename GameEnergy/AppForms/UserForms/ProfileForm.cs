@@ -4,17 +4,11 @@ using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Classes.Images.StoreImages;
 using GameEnergy.Classes.Messages;
 using GameEnergy.Classes.Validation;
-using GameEnergy.CustomControls;
 using GameEnergy.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GameEnergy.AppForms.UserForms

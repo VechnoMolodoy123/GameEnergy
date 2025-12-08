@@ -1,21 +1,13 @@
 ﻿using GameEnergy.Classes.Animations;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Classes.Messages;
-using GameEnergy.Classes.Validation;
 using GameEnergy.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
-using System.Xml.Linq;
-using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.AppForms.AdminForms
 {

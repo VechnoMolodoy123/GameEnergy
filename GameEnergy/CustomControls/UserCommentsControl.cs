@@ -3,15 +3,9 @@ using GameEnergy.Classes.Customization;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace GameEnergy.CustomControls
 {
@@ -39,7 +33,7 @@ namespace GameEnergy.CustomControls
             ImageLoader.LoadAvatarImageFromUserID(user, avatarPictureBox);
 
             nameLabel.Text = _comment.Users.Username;
-            dateLabel.Text = _comment.ReviewDate?.ToString("d MMMM yyyy 'в' HH:mm", 
+            dateLabel.Text = _comment.ReviewDate?.ToString("d MMMM yyyy 'в' HH:mm",
                 new System.Globalization.CultureInfo("ru-RU")) ?? "";
             commentLabel.Text = _comment.Comment;
             LoadUserRatingForComment();

@@ -4,15 +4,9 @@ using GameEnergy.CustomControls;
 using GameEnergy.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static Guna.UI2.Native.WinApi;
 
 namespace GameEnergy.AppForms.UserForms
 {
@@ -61,7 +55,7 @@ namespace GameEnergy.AppForms.UserForms
             {
                 case 0: // По популярности (кол-во отзывов)
                     query = query
-                        .GroupJoin(Program.context.Reviews, g => g.GameID, r => r.GameID, 
+                        .GroupJoin(Program.context.Reviews, g => g.GameID, r => r.GameID,
                             (g, reviews) => new { Game = g, ReviewCount = reviews.Count() })
                         .OrderByDescending(x => x.ReviewCount)
                         .Select(x => x.Game);
