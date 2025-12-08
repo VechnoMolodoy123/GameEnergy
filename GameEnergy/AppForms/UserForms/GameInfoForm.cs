@@ -56,6 +56,7 @@ namespace GameEnergy.AppForms.UserForms
 
         private void LoadGameInfo()
         {
+            _game = Program.context.Games.AsNoTracking().FirstOrDefault(g => g.GameID == _game.GameID);
             titleLabel.Text = _game.Title?.ToString();
             var genreNames = Program.context.GameGenres.Where(gg => gg.GameID == _game.GameID)
                 .Join(Program.context.Genres, gg => gg.GenreID, g => g.GenreID, (gg, g) => g.GenreName).ToList();
@@ -384,9 +385,9 @@ namespace GameEnergy.AppForms.UserForms
 
         private void DeleteGame()
         {
-            var bookToRemove = Program.context.Games.Find(_game.GameID);
+            var gameToRemove = Program.context.Games.Find(_game.GameID);
 
-            if (bookToRemove != null)
+            if (gameToRemove != null)
             {
                 DialogResult result = MessageBox.Show(
                     "Вы уверены, что хотите удалить эту игру?",
@@ -397,9 +398,31 @@ namespace GameEnergy.AppForms.UserForms
 
                 if (result == DialogResult.Yes)
                 {
+                    bool hasOrders = Program.context.OrderItems
+                        .Any(oi => oi.GameID == gameToRemove.GameID);
+
+                    if (hasOrders)
+                    {
+                        // Получаем количество заказов для информации
+                        int orderCount = Program.context.OrderItems
+                            .Count(oi => oi.GameID == gameToRemove.GameID);
+
+                        int userCount = Program.context.OrderItems
+                            .Where(oi => oi.GameID == gameToRemove.GameID)
+                            .Select(oi => oi.Orders.UserID)
+                            .Distinct()
+                            .Count();
+
+                        MessageHelper.ShowCustomTitleErrorMessage(
+                            $"Невозможно удалить игру \"{gameToRemove.Title}\".\n\n" +
+                            $"Эта игра есть в {orderCount} заказах у {userCount} пользователей.\n",
+                            "Удаление невозможно");
+
+                        return;
+                    }
                     try
                     {
-                        Program.context.Games.Remove(bookToRemove);
+                        Program.context.Games.Remove(gameToRemove);
                         Program.context.SaveChanges();
 
                         MessageHelper.ShowInformationMessage("Игра успешно удалена", "Успех");
