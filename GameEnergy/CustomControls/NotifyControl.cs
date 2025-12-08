@@ -36,6 +36,8 @@ namespace GameEnergy.CustomControls
             senderLabel.Visible = true;
             nameLabel.Visible = true;
             gameLabel.Visible = true;
+            copyMailButton.Visible = true;
+            titlePanel.Width = 130;
         }
 
         private void NewStyle()
@@ -43,6 +45,8 @@ namespace GameEnergy.CustomControls
             senderLabel.Visible = false;
             nameLabel.Visible = false;
             gameLabel.Visible = false;
+            copyMailButton.Visible = false;
+            titlePanel.Width = 413;
         }
 
         private void LoadNotifyInfo()
@@ -77,14 +81,18 @@ namespace GameEnergy.CustomControls
 
         private void nameLabel_Click(object sender, EventArgs e)
         {
+            NavigationControl.IsHide = true;
             Form form = new ProfileForm(_currentUser.UserID);
             form.ShowDialog();
+            NavigationControl.IsHide = false;
         }
 
         private void gameLabel_Click(object sender, EventArgs e)
         {
+            NavigationControl.IsHide = true;
             Form form = new GameInfoForm(_game);
             form.ShowDialog();
+            NavigationControl.IsHide = false;
         }
 
         private void copyMailButton_Click(object sender, EventArgs e)
@@ -111,14 +119,16 @@ namespace GameEnergy.CustomControls
             if (_notificationData is SystemNotifications systemNotification)
             {
                 if (!Program.context.DeletedNotifications
-                    .Any(dn => dn.NotifyID == systemNotification.NotifyID && dn.UserID == _currentUser.UserID))
+                    .Any(dn => dn.NotifyID == systemNotification.NotifyID && dn.UserID == Program.CurrentUser.UserID))
                 {
                     Program.context.DeletedNotifications.Add(new DeletedNotifications
                     {
                         NotifyID = systemNotification.NotifyID,
-                        UserID = _currentUser.UserID,
+                        UserID = Program.CurrentUser.UserID,
                         DeletedDate = DateTime.Now
                     });
+
+                    Program.context.SaveChanges();
                 }
             }
             else if (_notificationData is GameReports gameReport)

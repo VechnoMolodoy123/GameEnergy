@@ -138,14 +138,15 @@ namespace GameEnergy.CustomControls
         {
             try
             {
-                // Получаем список уведомлений для текущего пользователя
-                var hiddenNotificationIds = Program.context.SystemNotifications
-                    .Where(n => n.UserID == Program.CurrentUser.UserID)
-                    .Select(n => n.NotifyID)
+                // Получаем ID скрытых уведомлений для текущего пользователя
+                var hiddenNotificationIds = Program.context.DeletedNotifications
+                    .Where(dn => dn.UserID == Program.CurrentUser.UserID)
+                    .Select(dn => dn.NotifyID)
                     .ToList();
 
-                // Считаем уведомления
-                return hiddenNotificationIds.Count();
+                // Считаем только неудаленные уведомления
+                return Program.context.SystemNotifications
+                    .Count(n => !hiddenNotificationIds.Contains(n.NotifyID));
             }
             catch (Exception ex)
             {

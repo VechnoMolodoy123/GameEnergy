@@ -31,7 +31,20 @@ namespace GameEnergy.AppForms.AdminForms
                 descriptionTextBox.BorderColor = descEmpty ? Color.Red : Color.FromArgb(251, 187, 67);
             }
             else
+                ProcessNotifySubmission();
+        }
+
+        private void ProcessNotifySubmission()
+        {
+            var result = MessageBox.Show("Вы уверены, что хотите отправить это сообщение?",
+                "Подтвердите действие!",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
                 SendNotifyToDatabase();
+            }
         }
 
         private void SendNotifyToDatabase()
@@ -40,6 +53,7 @@ namespace GameEnergy.AppForms.AdminForms
             {
                 var systemNotify = new SystemNotifications
                 {
+                    UserID = Program.CurrentUser.UserID,
                     NotifyTitle = titleTextBox.Text,
                     NotifyMessage = descriptionTextBox.Text,
                     NotifyDate = DateTime.Now
@@ -48,7 +62,7 @@ namespace GameEnergy.AppForms.AdminForms
                 Program.context.SystemNotifications.Add(systemNotify);
                 Program.context.SaveChanges();
 
-                MessageHelper.ShowInformationMessage("Сообщение успешно отправлено", "Успех");
+                MessageHelper.ShowInformationMessage("Сообщение отправлено", "Успех");
                 this.Close();
             }
             catch (Exception ex)

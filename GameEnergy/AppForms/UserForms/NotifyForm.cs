@@ -55,8 +55,7 @@ namespace GameEnergy.AppForms.UserForms
 
         private void OnNotifyControlDeleted(NotifyControl control)
         {
-            notifyPanel.Controls.Remove(control);
-            control.Dispose();
+            CheckUserRole();
         }
 
         private void ShowUserNotify()
@@ -111,6 +110,11 @@ namespace GameEnergy.AppForms.UserForms
         {
             Form form = new WriteNotifyForm();
             form.ShowDialog();
+        }
+
+        private void NotifyForm_Resize(object sender, EventArgs e)
+        {
+            navigationControl.HandleFormResize(this);
         }
     }
 }

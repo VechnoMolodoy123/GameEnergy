@@ -47,7 +47,7 @@ namespace GameEnergy.AppForms.UserForms
             {
                 UserID = _currentUserId,
                 GameID = _game.GameID,
-                ReportCategoryID = reportReasonComboBox.SelectedIndex + 2,
+                ReportCategoryID = reportReasonComboBox.SelectedIndex,
                 ReportMessage = reportMessageTextBox.Text,
                 ReportDate = DateTime.Now
             };

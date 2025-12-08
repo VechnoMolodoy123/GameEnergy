@@ -37,7 +37,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.gameLabel = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.titlePanel = new System.Windows.Forms.Panel();
             this.titleLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.titlePanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,7 +171,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.gameLabel);
-            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.titlePanel);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
@@ -186,21 +186,21 @@
             this.gameLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gameLabel.ForeColor = System.Drawing.Color.White;
-            this.gameLabel.Location = new System.Drawing.Point(131, 15);
+            this.gameLabel.Location = new System.Drawing.Point(130, 15);
             this.gameLabel.Name = "gameLabel";
-            this.gameLabel.Size = new System.Drawing.Size(285, 16);
+            this.gameLabel.Size = new System.Drawing.Size(286, 16);
             this.gameLabel.TabIndex = 18;
             this.gameLabel.Text = "Игра";
             this.gameLabel.Click += new System.EventHandler(this.gameLabel_Click);
             // 
-            // panel7
+            // titlePanel
             // 
-            this.panel7.Controls.Add(this.titleLabel);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(131, 31);
-            this.panel7.TabIndex = 17;
+            this.titlePanel.Controls.Add(this.titleLabel);
+            this.titlePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.titlePanel.Location = new System.Drawing.Point(0, 0);
+            this.titlePanel.Name = "titlePanel";
+            this.titlePanel.Size = new System.Drawing.Size(130, 31);
+            this.titlePanel.TabIndex = 17;
             // 
             // titleLabel
             // 
@@ -255,13 +255,14 @@
             // senderLabel
             // 
             this.senderLabel.AutoEllipsis = true;
+            this.senderLabel.AutoSize = true;
             this.senderLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.senderLabel.Cursor = System.Windows.Forms.Cursors.Default;
             this.senderLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.senderLabel.ForeColor = System.Drawing.Color.White;
             this.senderLabel.Location = new System.Drawing.Point(54, 12);
             this.senderLabel.Name = "senderLabel";
-            this.senderLabel.Size = new System.Drawing.Size(84, 18);
+            this.senderLabel.Size = new System.Drawing.Size(84, 16);
             this.senderLabel.TabIndex = 15;
             this.senderLabel.Text = "Отправил:";
             // 
@@ -317,11 +318,12 @@
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.titlePanel.ResumeLayout(false);
+            this.titlePanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.avatarPictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -342,7 +344,7 @@
         private Guna.UI2.WinForms.Guna2PictureBox avatarPictureBox;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label gameLabel;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel titlePanel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label messageLabel;
         private System.Windows.Forms.Panel panel8;
