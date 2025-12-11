@@ -1,12 +1,14 @@
 ﻿using GameEnergy.Classes.Animations;
 using GameEnergy.Classes.Images.InstallingImages;
 using GameEnergy.Classes.Messages;
+using GameEnergy.Classes.Video;
 using GameEnergy.Models;
 using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GameEnergy.AppForms.AdminForms
@@ -64,7 +66,7 @@ namespace GameEnergy.AppForms.AdminForms
             }
         }
 
-        private void ValidateAndSubmit()
+        private async Task ValidateAndSubmit()
         {
             bool isValid = true;
 
@@ -168,11 +170,11 @@ namespace GameEnergy.AppForms.AdminForms
                 : "Добавить новую игру?";
             if (MessageBox.Show(message, "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                SaveGameToDatabase(price, discount, releaseDate);
+                await SaveGameToDatabase(price, discount, releaseDate);
             }
         }
 
-        private void SaveGameToDatabase(int price, int? discount, DateTime? releaseDate)
+        private async Task SaveGameToDatabase(int price, int? discount, DateTime? releaseDate)
         {
             try
             {
@@ -183,34 +185,42 @@ namespace GameEnergy.AppForms.AdminForms
                 // Сохранение изображения, если выбрано новое
                 if (!string.IsNullOrEmpty(_selectedImagePath))
                 {
+                    string selectedFileName = Path.GetFileName(_selectedImagePath);
+                    string nameWithoutExtension = Path.GetFileNameWithoutExtension(selectedFileName); // Удаляем расширение
+                    string extension = Path.GetExtension(selectedFileName);
+
                     // Проверяем, изменилось ли изображение
-                    if (_editingGame == null || Path.GetFileName(_selectedImagePath) != _editingGame.GameImage)
+                    if (_editingGame == null || nameWithoutExtension != _editingGame.GameImage)
                     {
-                        imgFileName = Path.GetFileName(_selectedImagePath);
-                        string destPath = Path.Combine(_gameImagePath, imgFileName);
+                        string uniqueName = GetUniqueFileName(_gameImagePath, nameWithoutExtension, extension);
+                        string destPath = Path.Combine(_gameImagePath, uniqueName);
 
                         try
                         {
-                            File.Copy(_selectedImagePath, destPath, overwrite: true);
+                            File.Copy(_selectedImagePath, destPath, overwrite: false);
+                            imgFileName = Path.GetFileNameWithoutExtension(uniqueName);
                         }
-                        catch (IOException)
+                        catch (Exception ex)
                         {
-                            MessageHelper.ShowErrorMessage("Изображение с таким именем уже существует. Пожалуйста, переименуйте файл.");
+                            MessageHelper.ShowErrorMessage($"Не удалось сохранить изображение: {ex.Message}");
                             return;
                         }
                     }
                 }
+
+                string gameTitle = nameTextBox.Text;
+                string trailerCode = trailerNameTextBox.Text?.Trim();
 
                 if (_editingGame == null)
                 {
                     // Создание новой игры
                     var newGame = new Games
                     {
-                        Title = nameTextBox.Text,
+                        Title = gameTitle,
                         Description = descriptionTextBox.Text,
                         Price = price,
                         Discount = discount,
-                        TrailerImage = trailerNameTextBox.Text ?? string.Empty,
+                        TrailerImage = trailerCode,
                         GameImage = imgFileName ?? string.Empty,
                         DeveloperID = developerComboBox.SelectedIndex,
                         CategoryID = categoryComboBox.SelectedIndex == 0 ? (int?)null : categoryComboBox.SelectedIndex,
@@ -250,17 +260,46 @@ namespace GameEnergy.AppForms.AdminForms
                 }
 
                 Program.context.SaveChanges();
+
+                if (!string.IsNullOrEmpty(trailerCode))
+                {
+                    bool success = await TrailerHelper.DownloadAndSaveThumbnail(trailerCode, gameTitle);
+                    if (!success)
+                    {
+                        MessageBox.Show(
+                            $"Не удалось загрузить обложку трейлера для видео: {trailerCode}\n" +
+                            "Будет использоваться заглушка.",
+                            "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
                 if (_editingGame != null)
                 {
                     GameUpdated?.Invoke();
                 }
-                MessageBox.Show(_editingGame == null ? "Игра добавлена!" : "Игра обновлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                MessageBox.Show(_editingGame == null ? "Игра добавлена!" : "Игра обновлена!", "Успех"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private string GetUniqueFileName(string folderPath, string baseName, string extension)
+        {
+            string candidate = baseName + extension;
+            int counter = 1;
+
+            while (File.Exists(Path.Combine(folderPath, candidate)))
+            {
+                candidate = $"{baseName}_{counter}{extension}";
+                counter++;
+            }
+
+            return candidate;
         }
 
         private void SaveGameGenres(int gameId)
@@ -310,9 +349,9 @@ namespace GameEnergy.AppForms.AdminForms
             FormDrag.DragingForm(this);
         }
 
-        private void addGameButton_Click(object sender, EventArgs e)
+        private async void addGameButton_Click(object sender, EventArgs e)
         {
-            ValidateAndSubmit();
+            await ValidateAndSubmit();
         }
     }
 }

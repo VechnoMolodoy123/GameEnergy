@@ -11,25 +11,33 @@ namespace GameEnergy.Classes.Images.InstallingImages
     {
         private static readonly string _path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameEnergyRes");
 
-        public static Image LoadGameImage(string imagePath)
+        public static Image LoadGameImage(string imageName)
         {
-            string fullImagePath = Path.Combine(_path, imagePath + ".jpg");
-
-            if (string.IsNullOrEmpty(fullImagePath) || !File.Exists(fullImagePath))
-            {
+            if (string.IsNullOrEmpty(imageName))
                 return Properties.Resources.DefaultGameImage;
+
+            // Пробуем сначала .jpg, потом .png
+            string[] extensions = { ".jpg", ".jpeg", ".png" };
+
+            foreach (string ext in extensions)
+            {
+                string fullPath = Path.Combine(_path, imageName + ext);
+                if (File.Exists(fullPath))
+                {
+                    try
+                    {
+                        return Image.FromFile(fullPath);
+                    }
+                    catch (Exception ex)
+                    {
+                        string logPath = "errorGameImages_log.txt";
+                        File.AppendAllText(logPath, $"[{DateTime.Now}] Ошибка при загрузке изображения '{fullPath}': {ex.Message}\n");
+                        // Продолжаем пробовать другие расширения
+                    }
+                }
             }
 
-            try
-            {
-                return Image.FromFile(fullImagePath);
-            }
-            catch (Exception ex)
-            {
-                string logPath = "errorGameImages_log.txt";
-                File.AppendAllText(logPath, $"[{DateTime.Now}] Ошибка при загрузке изображения: {ex.Message}\n");
-                return Properties.Resources.DefaultGameImage;
-            }
+            return Properties.Resources.DefaultGameImage;
         }
 
         public static void LoadAvatarImage(PictureBox avatarImage)

@@ -68,7 +68,7 @@ namespace GameEnergy.AppForms.UserForms
 
             RoundingHelper.SetRoundedRegion(ratingPanel, 12, 12);
 
-            TrailerHelper.LoadTrailerPreview(trailerPictureBox, _game.TrailerImage);
+            TrailerHelper.LoadLocalOrOnlinePreview(trailerPictureBox, _game.Title, _game.TrailerImage);
 
             Image image = ImageLoader.LoadGameImage(_game.GameImage);
 
