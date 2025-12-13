@@ -238,6 +238,7 @@ namespace GameEnergy.AppForms.UserForms
                 reviewPanel.Visible = false;
 
                 UpdateRating();
+                ShowComments();
             }
             catch (Exception ex)
             {

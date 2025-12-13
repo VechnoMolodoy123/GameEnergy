@@ -114,6 +114,7 @@
             this.newNotifyButton.TabIndex = 17;
             this.newNotifyButton.Text = "НОВОЕ УВЕДОМЛЕНИЕ";
             this.newNotifyButton.Visible = false;
+            this.newNotifyButton.Click += new System.EventHandler(this.newNotifyButton_Click);
             // 
             // rightPanel
             // 
