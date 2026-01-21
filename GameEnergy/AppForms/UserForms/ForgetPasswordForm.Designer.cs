@@ -37,7 +37,9 @@
             this.line = new Guna.UI2.WinForms.Guna2Button();
             this.mailTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.sendCodeButton = new Guna.UI2.WinForms.Guna2Button();
-            this.confirmationCodeTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.verificationCodeTextField = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.ResendVerificationCodeLabel = new System.Windows.Forms.Label();
+            this.timerLabel = new System.Windows.Forms.Label();
             this.navigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).BeginInit();
@@ -116,7 +118,7 @@
             this.mailTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mailTextField.ForeColor = System.Drawing.Color.White;
             this.mailTextField.Hint = "Введите почту, на нее придет код";
-            this.mailTextField.Location = new System.Drawing.Point(31, 71);
+            this.mailTextField.Location = new System.Drawing.Point(31, 70);
             this.mailTextField.MouseState = MaterialSkin.MouseState.HOVER;
             this.mailTextField.Name = "mailTextField";
             this.mailTextField.PasswordChar = '\0';
@@ -142,30 +144,60 @@
             this.sendCodeButton.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sendCodeButton.ForeColor = System.Drawing.Color.Black;
             this.sendCodeButton.IndicateFocus = true;
-            this.sendCodeButton.Location = new System.Drawing.Point(81, 158);
+            this.sendCodeButton.Location = new System.Drawing.Point(81, 167);
             this.sendCodeButton.Name = "sendCodeButton";
             this.sendCodeButton.PressedColor = System.Drawing.Color.Yellow;
             this.sendCodeButton.Size = new System.Drawing.Size(138, 34);
             this.sendCodeButton.TabIndex = 13;
             this.sendCodeButton.Text = "ОТПРАВИТЬ КОД";
+            this.sendCodeButton.Click += new System.EventHandler(this.sendCodeButton_Click);
             // 
-            // confirmationCodeTextField
+            // verificationCodeTextField
             // 
-            this.confirmationCodeTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.confirmationCodeTextField.Depth = 0;
-            this.confirmationCodeTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.confirmationCodeTextField.ForeColor = System.Drawing.Color.White;
-            this.confirmationCodeTextField.Hint = "Код подтверждения";
-            this.confirmationCodeTextField.Location = new System.Drawing.Point(31, 111);
-            this.confirmationCodeTextField.MouseState = MaterialSkin.MouseState.HOVER;
-            this.confirmationCodeTextField.Name = "confirmationCodeTextField";
-            this.confirmationCodeTextField.PasswordChar = '\0';
-            this.confirmationCodeTextField.SelectedText = "";
-            this.confirmationCodeTextField.SelectionLength = 0;
-            this.confirmationCodeTextField.SelectionStart = 0;
-            this.confirmationCodeTextField.Size = new System.Drawing.Size(245, 23);
-            this.confirmationCodeTextField.TabIndex = 14;
-            this.confirmationCodeTextField.UseSystemPasswordChar = false;
+            this.verificationCodeTextField.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.verificationCodeTextField.Depth = 0;
+            this.verificationCodeTextField.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.verificationCodeTextField.ForeColor = System.Drawing.Color.White;
+            this.verificationCodeTextField.Hint = "Код подтверждения";
+            this.verificationCodeTextField.Location = new System.Drawing.Point(31, 110);
+            this.verificationCodeTextField.MouseState = MaterialSkin.MouseState.HOVER;
+            this.verificationCodeTextField.Name = "verificationCodeTextField";
+            this.verificationCodeTextField.PasswordChar = '\0';
+            this.verificationCodeTextField.SelectedText = "";
+            this.verificationCodeTextField.SelectionLength = 0;
+            this.verificationCodeTextField.SelectionStart = 0;
+            this.verificationCodeTextField.Size = new System.Drawing.Size(245, 23);
+            this.verificationCodeTextField.TabIndex = 14;
+            this.verificationCodeTextField.UseSystemPasswordChar = false;
+            this.verificationCodeTextField.Visible = false;
+            // 
+            // ResendVerificationCodeLabel
+            // 
+            this.ResendVerificationCodeLabel.AutoSize = true;
+            this.ResendVerificationCodeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ResendVerificationCodeLabel.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ResendVerificationCodeLabel.ForeColor = System.Drawing.Color.Gray;
+            this.ResendVerificationCodeLabel.Location = new System.Drawing.Point(75, 141);
+            this.ResendVerificationCodeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ResendVerificationCodeLabel.Name = "ResendVerificationCodeLabel";
+            this.ResendVerificationCodeLabel.Size = new System.Drawing.Size(144, 16);
+            this.ResendVerificationCodeLabel.TabIndex = 21;
+            this.ResendVerificationCodeLabel.Text = "Отправить код повторно";
+            this.ResendVerificationCodeLabel.Visible = false;
+            this.ResendVerificationCodeLabel.Click += new System.EventHandler(this.ResendVerificationCodeLabel_Click);
+            // 
+            // timerLabel
+            // 
+            this.timerLabel.AutoSize = true;
+            this.timerLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.timerLabel.Font = new System.Drawing.Font("Microsoft YaHei", 7F);
+            this.timerLabel.ForeColor = System.Drawing.Color.Gray;
+            this.timerLabel.Location = new System.Drawing.Point(215, 143);
+            this.timerLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.timerLabel.Name = "timerLabel";
+            this.timerLabel.Size = new System.Drawing.Size(0, 16);
+            this.timerLabel.TabIndex = 22;
+            this.timerLabel.Visible = false;
             // 
             // ForgetPasswordForm
             // 
@@ -173,7 +205,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(305, 220);
-            this.Controls.Add(this.confirmationCodeTextField);
+            this.Controls.Add(this.timerLabel);
+            this.Controls.Add(this.ResendVerificationCodeLabel);
+            this.Controls.Add(this.verificationCodeTextField);
             this.Controls.Add(this.sendCodeButton);
             this.Controls.Add(this.mailTextField);
             this.Controls.Add(this.navigationPanel);
@@ -186,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.collapseButton)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,6 +233,8 @@
         private Guna.UI2.WinForms.Guna2Button line;
         private MaterialSkin.Controls.MaterialSingleLineTextField mailTextField;
         private Guna.UI2.WinForms.Guna2Button sendCodeButton;
-        private MaterialSkin.Controls.MaterialSingleLineTextField confirmationCodeTextField;
+        private MaterialSkin.Controls.MaterialSingleLineTextField verificationCodeTextField;
+        private System.Windows.Forms.Label ResendVerificationCodeLabel;
+        private System.Windows.Forms.Label timerLabel;
     }
 }

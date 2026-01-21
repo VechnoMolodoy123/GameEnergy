@@ -1,6 +1,9 @@
 ﻿using GameEnergy.Classes.Hash;
+using GameEnergy.Classes.VisibilityOrEnabled;
 using GameEnergy.Models;
 using System;
+using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace GameEnergy.Classes.ConfirmationCode
 {
@@ -31,6 +34,66 @@ namespace GameEnergy.Classes.ConfirmationCode
             user.ConfirmationCodeExpiration = DateTime.Now.AddMinutes(5);
             Program.context.SaveChanges();
             return confirmationCode;
+        }
+
+        private static System.Windows.Forms.Timer resendTimer;
+        private static int remainingSeconds = 60;
+        public static event EventHandler TimerEnded;
+
+        /// <summary>
+        /// Запуск таймера для повторной отправки кода
+        /// </summary>
+        /// <param name="TimeInfo">Элемент управления для отображения времени ожидания</param>
+        /// <param name="verificationControl">Элемент, который будет блокироваться, на пример PictureBox или Label</param>
+        public static void StartResendTimer(Label TimeInfo, IComponent verificationControl)
+        {
+            if (resendTimer != null)
+            {
+                resendTimer.Stop();
+                resendTimer.Dispose();
+            }
+
+            remainingSeconds = 60;
+
+            resendTimer = new System.Windows.Forms.Timer();
+            resendTimer.Interval = 1000;
+            resendTimer.Tick += (sender, e) =>
+            {
+                if (remainingSeconds > 0)
+                {
+                    remainingSeconds--;
+                    UpdateTimeRemaining(TimeInfo, remainingSeconds);
+                    EnabledHelper.DisableVerificationControl(verificationControl);
+                }
+                else
+                {
+                    TimeInfo.Text = "";
+                    EnabledHelper.EnableVerificationControl(verificationControl);
+                    resendTimer.Stop();
+                    TimerEnded?.Invoke(null, EventArgs.Empty);
+                }
+            };
+
+            resendTimer.Start();
+        }
+
+        /// <summary>
+        /// Обновление оставшегося времени на форме
+        /// </summary>
+        /// <param name="TimeInfo">Элемент управления для отображения времени ожидания</param>
+        /// <param name="seconds">Оставшееся количество секунд</param>
+        private static void UpdateTimeRemaining(Label TimeInfo, int seconds)
+        {
+            int remainingSeconds = seconds % 60;
+
+            if (seconds > 0)
+            {
+                TimeInfo.Text = $"({remainingSeconds})";
+            }
+            else
+            {
+                TimeInfo.Text = "";
+            }
         }
     }
 }

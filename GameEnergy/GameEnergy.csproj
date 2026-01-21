@@ -136,11 +136,23 @@
     <Compile Include="AppForms\UserForms\NotifyForm.Designer.cs">
       <DependentUpon>NotifyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForms\UserForms\PaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\PaymentForm.Designer.cs">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForms\UserForms\ProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppForms\UserForms\ProfileForm.Designer.cs">
       <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForms\UserForms\RecoverPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\UserForms\RecoverPasswordForm.Designer.cs">
+      <DependentUpon>RecoverPasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForms\UserForms\RegistrationOrAuthorizationForm.cs">
       <SubType>Form</SubType>
@@ -156,7 +168,8 @@
     <Compile Include="Classes\DataAccess\GameSlideData.cs" />
     <Compile Include="Classes\Key\KeyHelper.cs" />
     <Compile Include="Classes\Services\CleanupService.cs" />
-    <Compile Include="Classes\Visibility\VisibilityHelper.cs" />
+    <Compile Include="Classes\VisibilityOrEnabled\EnabledHelper.cs" />
+    <Compile Include="Classes\VisibilityOrEnabled\VisibilityHelper.cs" />
     <Compile Include="Classes\DataAccess\UserAvatarDataHelper.cs" />
     <Compile Include="Classes\Hash\HashHelper.cs" />
     <Compile Include="Classes\Images\InstallingImages\ImageLoader.cs" />
@@ -258,8 +271,14 @@
     <EmbeddedResource Include="AppForms\UserForms\NotifyForm.resx">
       <DependentUpon>NotifyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\PaymentForm.resx">
+      <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\ProfileForm.resx">
       <DependentUpon>ProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForms\UserForms\RecoverPasswordForm.resx">
+      <DependentUpon>RecoverPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForms\UserForms\RegistrationOrAuthorizationForm.resx">
       <DependentUpon>RegistrationOrAuthorizationForm.cs</DependentUpon>

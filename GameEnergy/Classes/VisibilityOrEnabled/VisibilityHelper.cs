@@ -27,6 +27,13 @@ namespace GameEnergy.Classes.Customization
             }
         }
 
+        public static void ShowVerificationCode(MaterialSingleLineTextField VerificationCodeField, Label ResendVerificationCode, Label TimeInfo)
+        {
+            VerificationCodeField.Visible = true;
+            ResendVerificationCode.Visible = true;
+            TimeInfo.Visible = true;
+        }
+
         public static void ShowNewForm(Form form, Form newForm)
         {
             newForm.StartPosition = FormStartPosition.Manual;

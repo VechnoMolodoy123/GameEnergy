@@ -1,4 +1,6 @@
-﻿using GameEnergy.Classes.Hash;
+﻿using GameEnergy.Classes.ConfirmationCode;
+using GameEnergy.Classes.Customization;
+using GameEnergy.Classes.Hash;
 using GameEnergy.Classes.Images.StoreImages;
 using GameEnergy.Classes.Messages;
 using GameEnergy.Models;
@@ -10,10 +12,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GameEnergy.Classes.Validation
 {
-    internal class ValidationHelper
+    public class ValidationHelper
     {
         public static bool ValidateLogIn(MaterialSingleLineTextField loginField, MaterialSingleLineTextField passwordField)
         {
@@ -89,6 +92,118 @@ namespace GameEnergy.Classes.Validation
                 return false;
             }
             MessageHelper.ShowErrorMessage("Имя пользователя должно содержать только английские буквы, символы или цифры.");
+            return false;
+        }
+
+        public static bool _isCodeSent = false;
+
+        public async Task<(bool success, string email)> ValidationForgetPassword(MaterialSingleLineTextField MailField, MaterialSingleLineTextField VerificationCodeField, Label ResendVerificationCode, Label TimeInfo)
+        {
+            List<Users> users = Program.context.Users.ToList();
+            string email = MailField.Text;
+
+            Users user = users.FirstOrDefault(u => u.Email == email);
+
+            if (user == null)
+            {
+                MessageHelper.ShowErrorMessage("Данная почта не числится в системе");
+                return (false, null);
+            }
+
+            if (!_isCodeSent)
+            {
+                if (user.ConfirmationCodeHash == null || user.ConfirmationCodeExpiration == null || user.ConfirmationCodeExpiration < DateTime.Now)
+                {
+                    string confirmationCode = ConfirmationCodeHelper.GenerateAndSetConfirmationCode(user);
+
+                    var sendMessageCode = new SendMessageCode();
+                    PostResult result = await sendMessageCode.SendPostRequest(email, confirmationCode);
+
+                    if (result.IsSuccess)
+                    {
+                        VisibilityHelper.ShowVerificationCode(VerificationCodeField, ResendVerificationCode, TimeInfo);
+                        ConfirmationCodeHelper.StartResendTimer(TimeInfo, ResendVerificationCode);
+                        _isCodeSent = true;
+                    }
+                    else
+                    {
+                        MessageHelper.ShowErrorMessage("Не удалось отправить код подтверждения.");
+                        user.ConfirmationCodeHash = null;
+                        user.ConfirmationCodeExpiration = null;
+                        return (false, user.Email);
+                    }
+                }
+                return (false, user.Email);
+            }
+
+            else
+            {
+                if (HashHelper.VerifyData(VerificationCodeField.Text, user.ConfirmationCodeHash))
+                {
+                    user.ConfirmationCodeHash = null;
+                    user.ConfirmationCodeExpiration = null;
+                    Program.context.SaveChanges();
+
+                    MessageHelper.ShowInformationMessage("Пожалуйста введите новый пароль", "Код верификации введен успешно");
+                    return (true, user.Email);
+                }
+                else
+                {
+                    MessageHelper.ShowCustomTitleErrorMessage("Попробуйте ввести код заново или нажмите 'Отправить еще раз'", "Неверный код подтверждения");
+                    return (false, null);
+                }
+            }
+        }
+
+        public static async Task ResendConfirmationCode(MaterialSingleLineTextField MailField, Label TimeInfo, Label ResendVerificationCode)
+        {
+            string email = MailField.Text;
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageHelper.ShowErrorMessage("Введите электронную почту");
+                return;
+            }
+
+            Users user = Program.context.Users.FirstOrDefault(u => u.Email == email);
+
+            if (user != null)
+            {
+                string confirmationCode = ConfirmationCodeHelper.GenerateAndSetConfirmationCode(user);
+
+                var sendMessageCode = new SendMessageCode();
+                PostResult result = await sendMessageCode.SendPostRequest(email, confirmationCode);
+
+                if (result.IsSuccess)
+                {
+                    ConfirmationCodeHelper.StartResendTimer(TimeInfo, ResendVerificationCode);
+                    MessageHelper.ShowInformationMessage("Новый код подтверждения отправлен на вашу электронную почту.", "Проверьте почту");
+                }
+                else
+                {
+                    MessageHelper.ShowErrorMessage("Не удалось отправить код подтверждения.");
+                }
+            }
+            else
+            {
+                MessageHelper.ShowErrorMessage("Данная почта не числится в системе");
+            }
+        }
+
+        public bool ValidationPasswordRecovery(string email, MaterialSingleLineTextField PasswordField, MaterialSingleLineTextField ConfirmPasswordField)
+        {
+            string newPassword = PasswordField.Text;
+
+            Users currentUser = Program.context.Users.FirstOrDefault(user => user.Email == email);
+
+            if (ValidationPasswordFields(currentUser, newPassword))
+            {
+                PasswordField.Clear();
+                ConfirmPasswordField.Clear();
+                MessageHelper.ShowInformationMessage("Пожалуйста войдите в систему", "Вы успешно сменили пароль");
+                return true;
+            }
+
             return false;
         }
 

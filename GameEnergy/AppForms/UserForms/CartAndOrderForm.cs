@@ -124,14 +124,7 @@ namespace GameEnergy.AppForms.UserForms
 
             try
             {
-                // 2. Открываем имитацию оплаты
-                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
-                {
-                    FileName = "https://i-mg24.ru/images/112625213619-wy9eo.png",
-                    UseShellExecute = true
-                });
-
-                // 3. Создаём заказ
+                // 2. Создаём заказ
                 var order = new Orders
                 {
                     UserID = _currentUserId,
@@ -143,7 +136,7 @@ namespace GameEnergy.AppForms.UserForms
 
                 cart = Program.context.Cart.FirstOrDefault(c => c.UserID == _currentUserId);
 
-                // 4. Переносим товары в OrderItems
+                // 3. Переносим товары в OrderItems
                 foreach (var item in cartItems)
                 {
                     var orderItem = new OrderItems
@@ -155,6 +148,10 @@ namespace GameEnergy.AppForms.UserForms
                     };
                     Program.context.OrderItems.Add(orderItem);
                 }
+
+                // 4. Открываем имитацию оплаты
+                Form form = new PaymentForm(order.OrderID);
+                form.ShowDialog();
 
                 // 5. Удаляем корзину (CartItems удалятся автоматически через CASCADE)
                 Program.context.Cart.Remove(cart);
